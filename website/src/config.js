@@ -17,4 +17,5 @@ export const HOME_HEADING =
 
 export const HOME_BULLETS = [];
 
-export const ADDITIONAL_LINKS = [];
+export const ADDITIONAL_LINKS = [
+];
