@@ -1,10 +1,10 @@
 module.exports = {
+  title: "Uber's Visualization Frameworks",
 
-  title: 'UBER VISUALIZATION FRAMEWORK SUITE',
-
-  meta: [{
-    name: 'description',
-    content: 'Uber\'s Visualization Frameworks'
-  }]
-
-};
+  meta: [
+    {
+      name: 'description',
+      content: "Uber's Visualization Frameworks",
+    },
+  ],
+}

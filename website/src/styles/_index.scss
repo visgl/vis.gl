@@ -1,5 +1,55 @@
-.Hero {
-  background: url("/images/framework-suite.png") center;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
+@import '~odometer/themes/odometer-theme-default.css';
+
+header {
+  background-color: white;
+
+  > div {
+    padding: 0 2rem;
+  }
+
+  h1 {
+    font-weight: bold;
+    letter-spacing: 4px;
+  }
+
+  a + a {
+    margin-left: 1rem;
+  }
+}
+
+.ph {
+  padding: 0 1rem;
+}
+
+.Tile {
+  height: 15rem;
+  padding: 1rem;
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  background-color: red;
+  min-width: 15rem;
+  margin: 1rem;
+
+  > div {
+    position: absolute;
+    color: white;
+
+    h1 {
+      text-transform: uppercase;
+      text-shadow: 1px 1px 3px rgba(black, .5);
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  }
+
+  .Stars {
+    > div {
+      margin-left: 0.5rem;
+    }
+    svg {
+      fill: #ffb400;
+    }
+  }
+
 }
