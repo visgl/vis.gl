@@ -1,5 +1,9 @@
 @import 'variables';
 
+html, body {
+  height: initial !important;
+}
+
 .main-container {
   max-width: 80rem;
   width: 100%;

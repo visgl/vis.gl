@@ -26,6 +26,7 @@ header {
   min-width: 15rem;
   margin: 1rem;
   cursor: pointer;
+  transition: opacity 250ms ease-in;
 
   .Stars {
     > div {
@@ -34,6 +35,10 @@ header {
     svg {
       fill: #ffb400;
     }
+  }
+
+  &.opaque {
+    opacity: 0.9;
   }
 
 }

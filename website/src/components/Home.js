@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import Tile from 'components/Tile'
 
+import colors from 'colors'
 import { fetchRepos } from 'actions/github'
 
 @connect(null, { fetchRepos })
@@ -32,14 +33,19 @@ class Home extends Component {
         <Tile img="images/react-map-gl.png" url="uber/react-map-gl" />
 
         <div className="f fw">
-          <Tile url="ibgreen/math.gl" />
-          <Tile url="ibgreen/mjolnir.js" />
-          <Tile url="uber-common/viewport-mercator-project" titleStyle={{ fontSize: '0.7rem' }} />
+          <Tile url="ibgreen/math.gl" color={colors.uber_blue} />
+          <Tile url="ibgreen/mjolnir.js" useGithub color={colors.portage} />
+          <Tile
+            useGithub
+            url="uber-common/viewport-mercator-project"
+            titleStyle={{ fontSize: '0.7rem' }}
+            color={colors.flame}
+          />
         </div>
 
         <div className="f fw">
-          <Tile url="Apercu/ocular" />
-          <Tile url="uber-web/Seer" />
+          <Tile url="Apercu/ocular" useGithub color={colors.sapphire} />
+          <Tile url="uber-web/Seer" useGithub color={colors.chathams_blue} />
         </div>
       </div>
     )

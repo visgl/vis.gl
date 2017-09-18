@@ -1,28 +1,37 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import cx from 'classnames'
 import Odometer from 'react-odometerjs'
 import PlaceLoader from 'placeloader'
 
 import Star from 'react-icons/lib/go/star'
 
+import { setActive } from 'reducers/home'
+
 import { getRandom } from 'colors'
 
-@connect(({ github }, { url }) => {
-  const [org, name] = url.split('/')
-  const project = github[name]
-  if (!project) {
-    return { org, name }
-  }
+@connect(
+  ({ github, home: { activeTile } }, { url }) => {
+    const [org, name] = url.split('/')
+    const project = github[name]
+    if (!project) {
+      return { org, name, activeTile }
+    }
 
-  return {
-    org,
-    name,
-    desc: project.description,
-    stars: project.stargazers_count,
-    contribs: project.contribs.slice(0, 5),
-  }
-})
+    return {
+      org,
+      name,
+      activeTile,
+      desc: project.description,
+      stars: project.stargazers_count,
+      contribs: project.contribs.slice(0, 5),
+    }
+  },
+  {
+    setActive,
+  },
+)
 class Tile extends Component {
   static defaultProps = {
     img: null,
@@ -37,25 +46,49 @@ class Tile extends Component {
   }
 
   open = () => {
-    const { org, name } = this.props
-    window.open(`https://${org}.github.io/${name}`, '_blank')
+    const { org, name, url, useGithub } = this.props
+    window.open(
+      useGithub ? `https://github.com/${url}` : `https://${org}.github.io/${name}`,
+      '_blank',
+    )
   }
 
   stopPropa = e => {
     e.stopPropagation()
   }
 
+  onEnter = () => this.props.setActive(this.props.name)
+
+  onLeave = () => this.props.setActive(null)
+
   render() {
-    const { img, url, name, desc, contentStyle, titleStyle, stars, contribs } = this.props
+    const {
+      activeTile,
+      img,
+      url,
+      name,
+      desc,
+      contentStyle,
+      titleStyle,
+      stars,
+      contribs,
+      color,
+    } = this.props
 
     const style = img
       ? {
           background: `url(/${img}) top left / cover no-repeat`,
         }
-      : { backgroundColor: getRandom() }
+      : { backgroundColor: color }
 
     return (
-      <div style={style} className="Tile fg" onClick={this.open}>
+      <div
+        style={style}
+        onMouseEnter={this.onEnter}
+        onMouseLeave={this.onLeave}
+        className={cx('Tile fg', { opaque: activeTile && activeTile !== name })}
+        onClick={this.open}
+      >
         <div className="Tile-main" style={contentStyle}>
           <div className="Tile-desc">{desc}</div>
           <div>
