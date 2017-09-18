@@ -13,8 +13,9 @@ export const fetchRepos = repos => dispatch => {
   repos.forEach(async repo => {
     try {
       const headers = getHeaders()
-      const res = await fetch(`${BASE}/repos/${repo}`, { headers })
-      dispatch(projectFetched(res))
+      const base = await fetch(`${BASE}/repos/${repo}`, { headers })
+      const contribs = await fetch(`${BASE}/repos/${repo}/contributors`, { headers })
+      dispatch(projectFetched({ ...base, contribs }))
     } catch (e) {}
   })
 }

@@ -1,0 +1,65 @@
+@import 'variables';
+
+.main-container {
+  max-width: 80rem;
+  width: 100%;
+  margin: 0 auto;
+
+  > .toc {
+    position: relative;
+    box-shadow: none;
+    height: initial;
+    width: 13rem;
+    & + * {
+      margin-left: 0;
+    }
+
+    @media screen and (max-width: 576px) {
+      position: absolute;
+      width: 100vw;
+      height: 0;
+      padding: 0;
+    }
+
+  }
+}
+
+.menu-toggle {
+  color: black !important;
+}
+
+@media screen and (max-width: 576px) {
+  header {
+    &.open {
+      .links {
+        display: block;
+        max-height: $topbar-maxheight;
+      }
+    }
+    .links {
+      position: fixed;
+      top: 0;
+      background-color: white !important;
+    }
+  }
+
+  .toc {
+    > div {
+      padding: 0 !important;
+    }
+    &.open {
+      position: absolute;
+      top: 16rem;
+      height: initial !important;
+    }
+  }
+}
+
+header .links a.active {
+  color: black !important;
+}
+
+.markdown {
+  position: relative !important;
+  width: intial !important;
+}

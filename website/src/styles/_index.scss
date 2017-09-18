@@ -1,28 +1,10 @@
 @import '~odometer/themes/odometer-theme-default.css';
+@import '~placeloader/main';
 
-html, body {
-  // height: inherit !important;
-}
-
-.markdown {
-  position: relative !important;
-  width: intial !important;
-}
-
-.toc {
-  position: relative !important;
-  box-shadow: none !important;
-  & + * {
-    margin-left: 0 !important;
-  }
-}
+@import 'overrides';
 
 header {
   background-color: white;
-
-  > div {
-    padding: 0 2rem;
-  }
 
   h1 {
     font-weight: bold;
@@ -32,9 +14,7 @@ header {
     }
   }
 
-  a + a {
-    margin-left: 1rem;
-  }
+  a { padding: 0 1rem; }
 }
 
 .Tile {
@@ -43,21 +23,9 @@ header {
   position: relative;
   display: block;
   flex-shrink: 0;
-  background-color: red;
   min-width: 15rem;
   margin: 1rem;
-
-  > div {
-    position: absolute;
-    color: white;
-
-    h1 {
-      text-transform: uppercase;
-      text-shadow: 1px 1px 3px rgba(black, .5);
-      font-weight: bold;
-      font-size: 1rem;
-    }
-  }
+  cursor: pointer;
 
   .Stars {
     > div {
@@ -68,4 +36,41 @@ header {
     }
   }
 
+}
+
+.Tile-contrib-load {
+  height: 2rem;
+  width: 2rem;
+  background-color: lighten(black, 70);
+}
+
+.Tile-main {
+  position: absolute;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(black, .5);
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.Tile-contribs {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  img {
+    background-color: lighten(black, 70);
+    width: 2rem;
+    height: 2rem;
+  }
+  > * + * {
+    margin-left: 0.5rem;
+  }
+}
+
+@media only screen and (max-device-width: 47.9rem) {
+  .Tile {
+    height: 10rem;
+  }
 }

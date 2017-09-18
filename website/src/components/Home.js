@@ -34,7 +34,7 @@ class Home extends Component {
         <div className="f fw">
           <Tile url="ibgreen/math.gl" />
           <Tile url="ibgreen/mjolnir.js" />
-          <Tile url="uber-common/viewport-mercator-project" />
+          <Tile url="uber-common/viewport-mercator-project" titleStyle={{ fontSize: '0.7rem' }} />
         </div>
 
         <div className="f fw">

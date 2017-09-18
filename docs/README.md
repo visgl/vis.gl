@@ -1,7 +1,4 @@
-# VIS
-
 This is the [home page]() for Uber's Suite of Open Source Visualization Frameworks.
-
 
 ## Why an Open Source Visualization Suite?
 
@@ -9,12 +6,10 @@ We rely heavily on open source in our day to day work and this visualization sui
 
 Finally, and perhaps most importantly, from a pragmatic we believe that making the extra effort required to improve our code and documentation quality to the level where it can support external use and scrutiny really benefits our internal development and tooling.
 
-
 ## Design Principles
 
 * **WebGL** - From the outset we decided that one of our principles would be to use WebGL as the basis for big data visualization, and several of our frameworks has emerged from this. And now that WebGL 2 has finally arrived, we are determined to be early adopters of all the wonderful new computation and rendering techniques that this standard enables.
 * **React** - The larger front-end organization that we serve at Uber is using React which means that we design our frameworks integrate perfectly with React.
-
 
 ## Is this Suite only for React?
 
@@ -22,7 +17,6 @@ Our ambition is that the frameworks and components in this suite should be "Reac
 * It is true that some frameworks (namely react-map-gl and react-vis) are obviously completely designed for and dependent on React.
 * Mst of the remaining frameworks (e.g. luma.gl and all the utility modules) are completely UI framework agnostic.
 * In the specific case of deck.gl, the framework itself, while designed on "reactive programming principles" is completely generic. It comes with a strong React integration, but the integration is very thin and can easily be replicated in other UI frameworks.
-
 
 ## History
 
