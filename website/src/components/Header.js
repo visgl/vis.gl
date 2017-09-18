@@ -8,7 +8,9 @@ class Header extends Component {
     return (
       <header>
         <div className="f container">
-          <h1 className="fg">{'VIS'}</h1>
+          <h1 className="fg">
+            <Link to="/">{'VIS'}</Link>
+          </h1>
           {links.map(link => (
             <Link to={link} key={link}>
               {link.substr(1).toUpperCase()}

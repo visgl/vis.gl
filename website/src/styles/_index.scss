@@ -1,5 +1,22 @@
 @import '~odometer/themes/odometer-theme-default.css';
 
+html, body {
+  // height: inherit !important;
+}
+
+.markdown {
+  position: relative !important;
+  width: intial !important;
+}
+
+.toc {
+  position: relative !important;
+  box-shadow: none !important;
+  & + * {
+    margin-left: 0 !important;
+  }
+}
+
 header {
   background-color: white;
 
@@ -10,15 +27,14 @@ header {
   h1 {
     font-weight: bold;
     letter-spacing: 4px;
+    a {
+      color: black !important;
+    }
   }
 
   a + a {
     margin-left: 1rem;
   }
-}
-
-.ph {
-  padding: 0 1rem;
 }
 
 .Tile {

@@ -1,12 +1,12 @@
-import overview from '../../docs/README.md';
-import frameworks from '../../docs/frameworks.md';
-import articles from '../../docs/articles.md';
-import whatsNew from '../../docs/whats-new.md';
-import about from '../../docs/about.md';
+import overview from '../../docs/README.md'
+import frameworks from '../../docs/frameworks.md'
+import articles from '../../docs/articles.md'
+import whatsNew from '../../docs/whats-new.md'
 
-export default [{
-  name: 'Documentation',
-  path: '/documentation',
+export default [
+  {
+    name: 'Documentation',
+    path: '/documentation',
     path: '/docs',
     data: [
       {
@@ -14,26 +14,22 @@ export default [{
         children: [
           {
             name: 'Introduction',
-            markdown: overview
+            markdown: overview,
           },
           {
             name: 'Frameworks',
-            markdown: frameworks
+            markdown: frameworks,
           },
           {
             name: 'Articles',
-            markdown: articles
+            markdown: articles,
           },
           {
-            name: 'About',
-            markdown: about
+            name: "What's New",
+            markdown: whatsNew,
           },
-          {
-            name: 'What\'s New',
-            markdown: whatsNew
-          }
-        ]
-      }
-    ]
-  }
-];
+        ],
+      },
+    ],
+  },
+]

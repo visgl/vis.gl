@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "ocular": "^0.2.4",
+    "ocular": "^0.2.5",
     "prop-types": "^15.5.10",
     "react-icons": "^2.2.5",
     "react-odometerjs": "^1.0.1"
