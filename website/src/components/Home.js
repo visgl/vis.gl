@@ -43,9 +43,13 @@ class Home extends Component {
           />
         </div>
 
-        <div className="f fw">
+        <div className="f fw m2-bottom">
           <Tile url="Apercu/ocular" useGithub color={colors.sapphire} />
           <Tile url="uber-web/Seer" useGithub color={colors.chathams_blue} />
+        </div>
+
+        <div className="container">
+          <img src="/images/logo.svg" style={{ height: '3rem' }} />
         </div>
       </div>
     )

@@ -4,6 +4,10 @@ html, body {
   height: initial !important;
 }
 
+#root > div > div {
+  margin-bottom: 1rem !important;
+}
+
 .main-container {
   max-width: 80rem;
   width: 100%;
