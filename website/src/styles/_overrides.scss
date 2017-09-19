@@ -8,6 +8,16 @@ html, body {
   margin-bottom: 1rem !important;
 }
 
+.main-container > div:not(.toc):after {
+  content: '';
+  background-image: url('/images/logo.svg');
+  background-repeat: no-repeat;
+  width: 8rem;
+  height: 3rem;
+  margin-top: 3rem;
+  display: inherit;
+}
+
 .main-container {
   max-width: 80rem;
   width: 100%;
