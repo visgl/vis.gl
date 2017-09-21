@@ -78,7 +78,7 @@ class Tile extends Component {
 
     const style = img
       ? {
-          background: `url(/${img}) top left / cover no-repeat`,
+          background: `url(${img}) top left / cover no-repeat`,
         }
       : { backgroundColor: color }
 

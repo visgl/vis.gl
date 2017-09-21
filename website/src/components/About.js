@@ -20,10 +20,10 @@ class About extends Component {
             {'Team'}
           </h1>
 
-          <img src="/images/team1.jpg" style={{ maxWidth: '100%' }} />
-          <img src="/images/team2.jpg" style={{ maxWidth: '100%' }} />
-          <img src="/images/team3.jpg" style={{ maxWidth: '100%' }} />
-          <img src="/images/team4.png" style={{ maxWidth: '100%' }} />
+          <img src="images/team1.jpg" style={{ maxWidth: '100%' }} />
+          <img src="images/team2.jpg" style={{ maxWidth: '100%' }} />
+          <img src="images/team3.jpg" style={{ maxWidth: '100%' }} />
+          <img src="images/team4.png" style={{ maxWidth: '100%' }} />
         </div>
       </div>
     )
