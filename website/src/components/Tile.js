@@ -73,6 +73,7 @@ class Tile extends Component {
       stars,
       contribs,
       color,
+      big,
     } = this.props
 
     const style = img
@@ -86,7 +87,7 @@ class Tile extends Component {
         style={style}
         onMouseEnter={this.onEnter}
         onMouseLeave={this.onLeave}
-        className={cx('Tile fg', { opaque: activeTile && activeTile !== name })}
+        className={cx('Tile fg', { big, opaque: activeTile && activeTile !== name })}
         onClick={this.open}
       >
         <div className="Tile-main" style={contentStyle}>

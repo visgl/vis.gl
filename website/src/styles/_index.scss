@@ -21,6 +21,18 @@ header {
   flex-direction: column;
 }
 
+.Background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: url('/images/bg2.jpg');
+  background-size: cover;
+  filter: saturate(20%) brightness(70%) invert(100%);
+}
+
 .Member {
 
   width: 10rem;
@@ -61,7 +73,6 @@ header {
 
 .Tile {
   height: 15rem;
-  padding: 1rem;
   position: relative;
   display: block;
   flex-shrink: 0;
@@ -69,6 +80,10 @@ header {
   margin: 1rem;
   cursor: pointer;
   transition: opacity 250ms ease-in;
+
+  &.big {
+    margin-top: 2rem;
+  }
 
   .Stars {
     > div {
@@ -80,7 +95,7 @@ header {
   }
 
   &.opaque {
-    opacity: 0.6;
+    opacity: 0.1;
   }
 
 }

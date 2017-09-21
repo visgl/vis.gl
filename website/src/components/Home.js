@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import Tile from 'components/Tile'
-
 import colors from 'colors'
 import { fetchRepos } from 'actions/github'
 
@@ -24,13 +23,16 @@ class Home extends Component {
   render() {
     return (
       <div className="fg fcol ph container">
-        <Tile img="images/deck.png" url="uber/deck.gl" />
+        <div className="Background" />
+
+        <Tile img="images/deck.png" url="uber/deck.gl" big />
         <Tile
           contentStyle={{ bottom: '1rem', right: '1rem', textAlign: 'right' }}
           img="images/luma.png"
           url="uber/luma.gl"
+          big
         />
-        <Tile img="images/react-map-gl.png" url="uber/react-map-gl" />
+        <Tile img="images/react-map-gl.png" url="uber/react-map-gl" big />
 
         <div className="f fw">
           <Tile url="ibgreen/math.gl" color={colors.uber_blue} />
