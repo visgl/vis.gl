@@ -17,3 +17,6 @@ export const HOME_HEADING = 'THE UBER VISUALIZATION FRAMEWORK SUITE.'
 export const HOME_BULLETS = []
 
 export const ADDITIONAL_LINKS = []
+
+export const BASENAME = process.env.NODE_ENV === 'production' ? '/~ib/vis' : ''
+export const HISTORY = 'browser'
