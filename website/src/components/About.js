@@ -16,9 +16,11 @@ class About extends Component {
             </a>
           </div>
 
-          <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>{'Team'}</h1>
+          <h1 style={{ fontSize: '2rem' }} className="m-bottom">
+            {'(Part of the) Team'}
+          </h1>
 
-          <div />
+          <img src="/images/team1.png" style={{ maxWidth: '100%' }} />
         </div>
       </div>
     )
