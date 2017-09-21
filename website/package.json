@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "ocular": "^0.2.7",
+    "ocular": "^0.2.13",
     "placeloader": "^0.1.0",
     "prop-types": "^15.5.10",
     "react-icons": "^2.2.5",

@@ -17,6 +17,48 @@ header {
   a { padding: 0 1rem; }
 }
 
+.main-container > div.f {
+  flex-direction: column;
+}
+
+.Member {
+
+  width: 10rem;
+  height: 11rem;
+
+  margin: 1rem;
+
+  img {
+    object-fit: cover;
+    background: rgba(black, .1);
+    width: 100%;
+    height: 10rem;
+  }
+
+}
+
+.Join {
+  margin: 2rem 0;
+  a {
+    padding: 0.5rem 2rem;
+    color: $primary;
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 2rem;
+
+    border: 0.2rem solid $primary;
+    border-image: linear-gradient(to right, $primary 0%, $secondary 100%);
+    border-image-slice: 2;
+
+    transition: all 150ms ease-in;
+    &:hover {
+      color: white;
+      background-color: $primary;
+    }
+  }
+
+}
+
 .Tile {
   height: 15rem;
   padding: 1rem;

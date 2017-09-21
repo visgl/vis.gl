@@ -1,5 +1,3 @@
-This is the [home page]() for Uber's Suite of Open Source Visualization Frameworks.
-
 ## Why an Open Source Visualization Suite?
 
 We rely heavily on open source in our day to day work and this visualization suite is our way to give back to a community that has given us so much. Open sourcing our frameworks lets us share our passion for visualization and graphics with others, and opens the door for future collaborations and engagements.
