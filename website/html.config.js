@@ -1,7 +1,7 @@
 module.exports = {
   title: "Uber's Visualization Frameworks",
 
-  baseHref: process.env.NODE_ENV === 'production' ? '~ib/vis/' : '/',
+  baseHref: process.env.NODE_ENV === 'production' ? '/~ib/vis/' : '/',
 
   meta: [
     {
