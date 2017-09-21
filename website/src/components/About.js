@@ -66,6 +66,8 @@ class About extends Component {
             </a>
           </div>
 
+          <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>{'Team'}</h1>
+
           <div className="f fjc fw">
             {shuffle(members).map(member => (
               <div className="Member" key={member.name}>
