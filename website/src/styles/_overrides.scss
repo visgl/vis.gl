@@ -10,7 +10,7 @@ html, body {
 
 .main-container > div:not(.toc):after {
   content: '';
-  background-image: url('/images/logo.svg');
+  background-image: none;
   background-repeat: no-repeat;
   width: 8rem;
   height: 3rem;
@@ -21,9 +21,9 @@ html, body {
 }
 
 .main-container {
-  max-width: 80rem;
   width: 100%;
-  margin: 0 auto;
+  position: absolute;
+  top: 0;
 
   > .toc {
     position: relative;

@@ -3,50 +3,276 @@
 
 @import 'overrides';
 
-header {
-  background-color: white;
+header.home {
+  color: white;
+  max-height: 100% !important;
+  padding-top: 40px;
+  position: absolute !important;
 
-  h1 {
-    font-weight: bold;
-    letter-spacing: 4px;
-    a {
-      color: black !important;
+    h1 {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 4px;
+      position: relative;
+      &:before {
+        content: '';
+        background: url("/images/logo-small.png") no-repeat;
+        background-size: cover;
+        height: 38px;
+        width: 47px;
+        position: absolute;
+        top: 10px;
+        left: -40px;
+      }
+      a:visited {
+        color: $white;
+      }
+    }
+    .links a {
+      font-size: 14px;
+      font-weight: 400;
+      margin-left: 48px !important;
+      text-transform: capitalize !important;
+      transition: color 0.5s;
+      &:hover {
+        border-top-color: transparent !important;
+        color: $white;
+      }
+    }
+
+    a { padding: 0 1rem; }
+  }
+
+#hero {
+  background: $deepcalm;
+  color: $white;
+  height: 690px;
+  padding-top: 232px;
+  width: 100vw;
+
+  .main {
+    font-size: 55px;
+    font-weight: 100;
+    line-height: 1.5em;
+    margin: 0 auto 34px;
+    max-width: 883px;
+    text-align: center;
+
+    em {
+      color: $red;
     }
   }
 
-  a { padding: 0 1rem; }
+  .secondary {
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+  }
 }
+
+#repos {
+  width: 100%;
+}
+
+.Repo {
+  margin: 0 auto;
+  max-width: 1172px;
+  height: 623px;
+  margin-bottom: 158px;
+  &.small {
+    border: 1px solid #EDEDED;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16);
+    display: inline-block;
+    height: 264px;
+    width: 371px;
+    margin-right: 29px;
+    margin-bottom: 21px;
+    padding: 24px 33px;
+    transition: box-shadow 0.5s;
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.16);
+    }
+    .Repo-desc {
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+}
+
+.Repo-img {
+  max-width: 1172px;
+  height: 360px;
+  background-size: cover;
+  background-color: $deepcalm;
+  margin-bottom: 63px;
+}
+
+.Repo-github {
+  display: inline-block;
+  margin-right: 125px;
+  position: relative;
+  width: 169px;
+  h1 {
+    font-size: 21px;
+    font-weight: 500;
+    color: $black;
+    margin-bottom: 10px;
+  }
+  h1:first-letter {
+    text-transform: capitalize;
+  }
+  .badge {
+    background: $white;
+    border: 1px solid $grey;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 10px;
+    padding: 0 5px;
+    margin: 0 0 21px;
+    line-height: 24px;
+    text-transform: uppercase;
+    transition: color 0.5s, border-color 0.5s, background 0.5s;
+    &:hover {
+      background: $grey;
+      color: $white !important;
+    }
+  }
+  .Repo-label {
+    color: $linkblue;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .Repo-get-started {
+    border-bottom: 1px solid $lightgrey;
+    margin-bottom: 10px;
+    padding-bottom: 12px;
+  }
+  .Stars {
+    bottom: 0;
+    color: $gold;
+    position: absolute;
+    right: 0;
+    .odometer {
+      color: $black;
+      font-family: inherit;
+      margin-left: 6px;
+    }
+  }
+}
+
+.Repo-desc {
+  display: inline-block;
+  font-size: 32px;
+  font-weight: 100;
+  line-height: 49px;
+  max-width: 878px;
+  vertical-align: top;
+}
+
+
 
 .main-container > div.f {
   flex-direction: column;
 }
 
-.Background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+.section-title {
+  background: url("/images/vis-logo.png") no-repeat;
+  height: 296px;
+  margin-top: 67px;
+  max-width: 1172px;
+  margin: 67px auto 57px;
+  padding: 47px 0 0 213px;
+  width: 100%;
 
-  background: url('/images/bg2.jpg');
-  background-size: cover;
-  filter: saturate(20%) brightness(70%) invert(100%);
-}
-
-.Member {
-
-  width: 10rem;
-  height: 11rem;
-
-  margin: 1rem;
-
-  img {
-    object-fit: cover;
-    background: rgba(black, .1);
-    width: 100%;
-    height: 10rem;
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 18px;
   }
 
+  p {
+    font-size: 48px;
+    font-weight: 100;
+    line-height: 1.5em;
+    max-width: 600px;
+  }
+}
+
+.section-title--no-logo {
+  background: none;
+  p {
+    max-width: 1000px;
+  }
+}
+
+#showcase {
+  background: $deepcalm;
+  color: $white;
+  font-size: 16px;
+  padding: 67px 0 220px;
+  h1 {
+    font-weight: 500;
+    line-height: 34px;
+  }
+  .description {
+    font-weight: 200;
+    line-height: 24px;
+    margin-bottom: 27px;
+    opacity: 0.6;
+  }
+  a, a:visited {
+    color: $white;
+  }
+  a:hover .arrow {
+    margin-left: 20px;
+  }
+}
+
+.cases {
+  max-width: 1242px;
+  margin: 0 auto;
+  transform: translate(-50px)
+}
+
+.case {
+  display: inline-block;
+  width: 590px;
+  margin-right: 31px;
+}
+
+.frame {
+  border-radius: 6px;
+  overflow: hidden;
+
+}
+.browser-bar {
+  background: $softgrey;
+  height: 23px;
+  padding: 8px;
+}
+
+.browser-bar-button {
+  background: $softgrey;
+  border-radius: 50%;
+  display: inline-block;
+  height: 8px;
+  margin-right: 6px;
+  vertical-align: top;
+  width: 8px;
+}
+
+.arrow {
+  margin-left: 10px;
+  transition: margin 0.5s;
+}
+
+.modules {
+  max-width: 1200px;
+  margin: 0 auto;
+  transform: translateX(-48px);
 }
 
 .Join {
@@ -71,64 +297,9 @@ header {
 
 }
 
-.Tile {
-  height: 15rem;
-  position: relative;
-  display: block;
-  flex-shrink: 0;
-  min-width: 15rem;
-  margin: 1rem;
-  cursor: pointer;
-  transition: opacity 250ms ease-in;
-
-  &.big {
-    margin-top: 2rem;
-  }
-
-  .Stars {
-    > div {
-      margin-left: 0.5rem;
-    }
-    svg {
-      fill: #ffb400;
-    }
-  }
-
-  &.opaque {
-    opacity: 0.1;
-  }
-
-}
-
-.Tile-contrib-load {
-  height: 2rem;
-  width: 2rem;
-  background-color: lighten(black, 70);
-}
-
-.Tile-main {
-  position: absolute;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(black, .5);
-
-  h1 {
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-}
-
-.Tile-contribs {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  img {
-    background-color: lighten(black, 70);
-    width: 2rem;
-    height: 2rem;
-  }
-  > * + * {
-    margin-left: 0.5rem;
-  }
+#academy {
+  background: $lightestgrey;
+  padding: 67px 0;
 }
 
 @media only screen and (max-device-width: 47.9rem) {
