@@ -1,57 +1,18 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
+import Hero from './Hero';
+import Repos from './Repos';
+import Showcase from './Showcase';
+import Academy from './Academy';
+import Modules from './Modules';
 
-import Tile from 'components/Tile'
-import colors from 'colors'
-import { fetchRepos } from 'actions/github'
-
-@connect(null, { fetchRepos })
-class Home extends Component {
-  componentWillMount() {
-    this.props.fetchRepos([
-      'uber/deck.gl',
-      'uber/luma.gl',
-      'uber/react-map-gl',
-      'uber-common/viewport-mercator-project',
-      'uber-web/seer',
-      'ibgreen/math.gl',
-      'ibgreen/mjolnir.js',
-      'Apercu/ocular',
-    ])
-  }
-
-  render() {
-    return (
-      <div className="fg fcol ph container">
-        <div className="Background" />
-
-        <Tile img="images/deck.png" url="uber/deck.gl" big />
-        <Tile
-          contentStyle={{ bottom: '1rem', right: '1rem', textAlign: 'right' }}
-          img="images/luma.png"
-          url="uber/luma.gl"
-          big
-        />
-        <Tile img="images/react-map-gl.png" url="uber/react-map-gl" big />
-
-        <div className="f fw">
-          <Tile url="ibgreen/math.gl" color={colors.uber_blue} />
-          <Tile url="ibgreen/mjolnir.js" useGithub color={colors.portage} />
-          <Tile
-            useGithub
-            url="uber-common/viewport-mercator-project"
-            titleStyle={{ fontSize: '0.7rem' }}
-            color={colors.flame}
-          />
-        </div>
-
-        <div className="f fw">
-          <Tile url="Apercu/ocular" useGithub color={colors.sapphire} />
-          <Tile url="uber-web/Seer" useGithub color={colors.chathams_blue} />
-        </div>
-      </div>
-    )
-  }
+function Home() {
+  return <div id="home">
+    <Hero />
+    <Repos />
+    <Showcase />
+    <Academy />
+    <Modules />
+  </div>
 }
 
 export default Home

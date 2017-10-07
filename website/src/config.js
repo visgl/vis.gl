@@ -1,6 +1,6 @@
 export const PROJECT_TYPE = 'none'
 
-export const PROJECT_NAME = 'vis'
+export const PROJECT_NAME = 'vis.gl'
 export const PROJECT_ORG = 'ibgreen'
 export const PROJECT_URL = `https://github.com/${PROJECT_ORG}/${PROJECT_NAME}`
 export const PROJECT_DESC = 'THE UBER VISUALIZATION FRAMEWORK SUITE'
