@@ -9,6 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "luma.gl": "^4.0.5",
     "ocular": "^0.2.13",
     "placeloader": "^0.1.0",
     "prop-types": "^15.5.10",
