@@ -43,7 +43,7 @@ class Repo extends Component {
   }
 
   static propTypes = {
-    url: PropTypes.string.isRequired,
+    url: PropTypes.string
   }
 
   open = (page) => {
@@ -67,6 +67,7 @@ class Repo extends Component {
     const {
       activeRepo,
       img,
+      key,
       desc,
       url,
       name,
@@ -104,8 +105,7 @@ class Repo extends Component {
         <div className="Repo-desc">{desc}</div>
       </div> );
     }
-    console.log(this.props);
-    return (<div className="Repo-github Repo small ">
+    return (<div className="Repo-github Repo small">
       <h1>{this.props.displayname || name}</h1>
         {this.props.badges.map(badge => <div
           className="badge"

@@ -48,7 +48,7 @@ class Modules extends Component {
           <p>A suite of open-source visualization frameworks</p>
         </div>
         <div className="modules">
-        	{modules.map(d => <Repo key={d.name} {...d} />)}
+        	{modules.map((d, i) => <Repo key={i} {...d} />)}
         </div>
       </div>
     )
