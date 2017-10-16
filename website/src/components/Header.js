@@ -28,7 +28,7 @@ class Header extends Component {
   render() {
     const { pathname, isMenuOpen } = this.props
     return (
-      <header className={cx({ open: isMenuOpen, home: pathname === '/'})}>
+      <header className={cx({ open: isMenuOpen, [pathname.slice(1) || "home"]: true})}>
         <div className="f container ph2">
           <h1 className="fg">
             <Link to="/">{'VIS.GL'}</Link>
