@@ -4,30 +4,11 @@
 @import 'overrides';
 
 header.home {
-  color: white;
+  color: $white;
   max-height: 100% !important;
   padding-top: 40px;
   position: absolute !important;
 
-    h1 {
-      font-size: 18px;
-      font-weight: bold;
-      letter-spacing: 4px;
-      position: relative;
-      &:before {
-        content: '';
-        background: url("/images/logo-small.png") no-repeat;
-        background-size: cover;
-        height: 38px;
-        width: 47px;
-        position: absolute;
-        top: 10px;
-        left: -40px;
-      }
-      a:visited {
-        color: $white;
-      }
-    }
     .links a {
       font-size: 14px;
       font-weight: 400;
@@ -66,6 +47,28 @@ header.home {
     font-size: 24px;
     font-weight: 300;
     text-align: center;
+  }
+}
+
+header.home h1, footer h1 {
+  font-size: 18px;
+  font-weight: bold;
+  height: 70px;
+  letter-spacing: 4px;
+  line-height: 70px;
+  position: relative;
+  &:before {
+    content: '';
+    background: url("/images/logo-small.png") no-repeat;
+    background-size: cover;
+    height: 38px;
+    width: 47px;
+    position: absolute;
+    top: 10px;
+    left: -40px;
+  }
+  a:visited {
+    color: $white;
   }
 }
 
@@ -171,8 +174,6 @@ header.home {
   vertical-align: top;
 }
 
-
-
 .main-container > div.f {
   flex-direction: column;
 }
@@ -272,6 +273,50 @@ header.home {
   max-width: 1200px;
   margin: 0 auto;
   transform: translateX(-48px);
+}
+
+footer {
+  color: $white;
+  height: fit-content !important;
+  background: $deepcalm !important;
+  padding: 40px 0 0 !important;
+  
+  h1 {
+    left: 37px;
+  }
+
+  .content {
+    max-width: 1172px;
+    margin: 0 auto 118px;
+  }
+  .main, .links {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    vertical-align: top;
+
+  }
+  .main {
+    line-height: 23px;
+    margin-right: 25%;
+    max-width: 25%;
+  }
+  .links {
+    line-height: 41px;
+    max-width: 15%;
+    margin-right: 20px;
+  }
+  ul {
+    list-style: none;
+  }
+  p, li, a {
+    margin: 0 !important;
+    opacity: 0.6;
+    padding: 0 !important;
+  }
+  a, a:visited {
+    color: $white;
+  }
 }
 
 .Join {

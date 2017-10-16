@@ -10,7 +10,8 @@ export const PROJECTS = {
   'luma.gl': 'https://uber.github.io/luma.gl',
   'react-map-gl': 'https://uber.github.io/react-map-gl',
   'react-vis': 'https://uber.github.io/react-vis',
-}
+  'Vis Academy': 'http://vis.academy'
+};
 
 export const HOME_HEADING = 'THE UBER VISUALIZATION FRAMEWORK SUITE.'
 
