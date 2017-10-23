@@ -267,8 +267,8 @@ header.home h1, footer h1 {
 .frame {
   border-radius: 6px;
   overflow: hidden;
-
 }
+
 .browser-bar {
   background: $softgrey;
   height: 23px;
@@ -299,7 +299,13 @@ header.home h1, footer h1 {
 .modules {
   max-width: 1200px;
   margin: 0 auto;
+  padding-bottom: 100px;
   transform: translateX(-48px);
+}
+
+.main-container > div:not(.toc):after {
+  height: 0 !important;
+  margin: 0 !important;
 }
 
 footer {
@@ -307,9 +313,11 @@ footer {
   height: fit-content !important;
   background: $deepcalm !important;
   padding: 40px 0 0 !important;
-  
+  position: static !important;
+
   h1 {
     left: 37px;
+    padding-left: 10px;
   }
 
   .content {
@@ -332,6 +340,7 @@ footer {
     line-height: 41px;
     max-width: 15%;
     margin-right: 20px;
+    width: 100%;
   }
   ul {
     list-style: none;
@@ -400,6 +409,7 @@ footer {
 #news {
   background: $lightestgrey;
   margin-top: 110px;
+  padding-bottom: 100px;
   padding-top: 109px;
 }
 

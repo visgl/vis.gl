@@ -1,12 +1,14 @@
 import React from 'react'
 
+import Footer from './Footer';
 import LinkWithArrow from './LinkWithArrow';
 
 function About() {
-  return <div id="About">
+  return (<div id="About">
     <Intro />
     <News />
-    </div>
+    <Footer />
+  </div>);
 }
 
 const news = [{
