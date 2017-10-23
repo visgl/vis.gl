@@ -2,11 +2,12 @@
 
 import React, {Component} from 'react';
 import Header from './Header';
+import Waypoint from 'react-waypoint';
 
 import {GL, AnimationLoop, Matrix4, radians, setParameters, pickModels,
   Cube, picking, dirlight} from 'luma.gl';
 
-const SIDE = 256;
+const SIDE = 64;
 
 const animationLoop = new AnimationLoop({
   createFramebuffer: true,
@@ -23,7 +24,6 @@ const animationLoop = new AnimationLoop({
     };
   },
   onFinalize({gl, cube}) {
-    gl.canvas.removeEventListener('mousemove', mousemove);
     cube.delete();
   },
   onRender({gl, tick, aspect, cube, framebuffer}) {
@@ -37,7 +37,7 @@ const animationLoop = new AnimationLoop({
         eye: [
           0,
           Math.sin(tick * 0.006) * SIDE / 2,
-          128
+          32
         ]
       }),
       uLightDirection: [
@@ -135,21 +135,35 @@ void main(void) {
 }
 
 class Hero extends Component {
-  componentDidMount() {
-     animationLoop.start({canvas: 'lumagl-canvas'});
+  componentWillUnmount() {
+    this._animationStop();
   }
+
+  _animationStart() {
+    animationLoop.start({canvas: 'lumagl-canvas'});
+  }
+
+  _animationStop() {
+    animationLoop.stop({canvas: 'lumagl-canvas'});
+  }
+
   render() {
     return (<div id="hero">
-      <canvas
-        id="lumagl-canvas"
-        style={{
-          position: 'absolute',
-          height: '690px',
-          top: 0,
-          width: '100vw',
-          zIndex: -1
-        }}
-      />
+      <Waypoint
+        onEnter={this._animationStart}
+        onLeave={this._animationStop}
+      >
+        <canvas
+          id="lumagl-canvas"
+          style={{
+            position: 'absolute',
+            height: '690px',
+            top: 0,
+            width: '100vw',
+            zIndex: -1
+          }}
+        />
+      </Waypoint>
       <div className="main">
         {'Cutting edge '}
         <em>technology</em>
