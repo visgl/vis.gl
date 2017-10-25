@@ -105,6 +105,11 @@ header.home h1, footer h1 {
   max-width: 1172px;
   height: 623px;
   margin-bottom: 158px;
+  &.big .Repo-desc {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
   &.small {
     border: 1px solid #EDEDED;
     border-radius: 2px;
@@ -116,6 +121,7 @@ header.home h1, footer h1 {
     margin-bottom: 21px;
     padding: 24px 33px;
     transition: box-shadow 0.5s;
+    vertical-align: top;
     &:hover {
       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.16);
     }
@@ -135,10 +141,7 @@ header.home h1, footer h1 {
 }
 
 .Repo-github {
-  display: inline-block;
-  margin-right: 125px;
   position: relative;
-  width: 169px;
   h1 {
     font-size: 21px;
     font-weight: 500;
@@ -175,12 +178,14 @@ header.home h1, footer h1 {
     border-bottom: 1px solid $lightgrey;
     margin-bottom: 10px;
     padding-bottom: 12px;
+    width: 169px;
   }
   .Stars {
     bottom: 0;
     color: $gold;
+    left: 169px;
     position: absolute;
-    right: 0;
+    transform: translate(-100%);
     .odometer {
       color: $black;
       font-family: inherit;
@@ -195,6 +200,7 @@ header.home h1, footer h1 {
   font-weight: 100;
   line-height: 49px;
   max-width: 878px;
+  width: 100%;
   vertical-align: top;
 }
 
@@ -262,6 +268,11 @@ header.home h1, footer h1 {
   display: inline-block;
   width: 590px;
   margin-right: 31px;
+}
+
+.case-image {
+  background: $deepcalm top left / cover no-repeat;
+  height: 369px;
 }
 
 .frame {
@@ -466,3 +477,69 @@ a.news--item--read, a.news--item--read:visited {
     height: 10rem;
   }
 }
+
+@media only screen and (max-width: 1300px) {
+  header.home, header.about {
+    h1 {
+      margin-left: 77px;
+    }
+  }
+  #home .secondary {
+    margin: 0 auto;
+    max-width: 67%;
+  }
+
+  .section-title {
+    max-width: calc(100% - 118px);
+    padding: 47px 0 0 64px;
+  }
+
+  .Repo.big {
+    max-width: calc(100% - 118px);
+    margin-bottom: 130px;
+    .Repo-desc {
+      font-size: 22px;
+      line-height: 1.5;
+      max-width: calc(100% - 195px);
+    }
+  }
+
+  .cases {
+    max-width: calc(100% - 118px);
+    transform: none;
+  }
+
+  .case {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .case-image {
+    background-size: contain;
+    width: calc(100vw - 118px);
+    height: calc((100vw - 118px) / 1.5);
+  }
+
+  #showcase {
+    padding-bottom: 59px;
+    .description {
+      margin-bottom: 33px;
+    }
+    .link-with-arrow {
+      margin-bottom: 65px;
+    }
+  }
+
+  .modules {
+    max-width: calc(100% - 106px);
+    transform: translate(-12px);
+    .Repo.small {
+      width: calc(50vw - 65px);
+      margin-right: 12px;
+    }
+  }
+  footer .content {
+    max-width: calc(100vw - 118px);
+  }
+}
+
