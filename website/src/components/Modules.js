@@ -44,8 +44,8 @@ class Modules extends Component {
     return (
       <div id="modules">
         <div className="section-title section-title--no-logo">
-          <h2>Our Frameworks</h2>
-          <p>A suite of open-source visualization frameworks</p>
+          <h2>Our Components</h2>
+          <p>Smaller projects that have been created to solve everyday tasks.</p>
         </div>
         <div className="modules">
         	{modules.map((d, i) => <Repo key={i} {...d} />)}

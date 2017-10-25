@@ -93,6 +93,7 @@ class Repo extends Component {
             className="badge"
             key={badge}
           >{badge}</div>)}
+          <div className="Repo-desc">{desc}</div>
           <div className="Repo-get-started Repo-label">Get Started</div>
           <div className="Repo-label">Github</div>
           <div className="Stars"
@@ -102,7 +103,7 @@ class Repo extends Component {
             <Odometer value={stars} options={{ format: '' }} />
           </div>
         </div>
-        <div className="Repo-desc">{desc}</div>
+        
       </div> );
     }
     return (<div className="Repo-github Repo small">

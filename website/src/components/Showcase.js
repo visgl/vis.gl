@@ -42,7 +42,9 @@ function Case({
         <div className="browser-bar-button" />
         <div className="browser-bar-button" />
       </div>
-      <img src={image} alt={description} />
+      <div className="case-image" style={
+          {backgroundImage: `url(${image})`}
+        }/>
     </div>
     <h1>{name}</h1>
     <p className="description">{description}</p>
