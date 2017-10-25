@@ -543,3 +543,51 @@ a.news--item--read, a.news--item--read:visited {
   }
 }
 
+
+@media only screen and (max-width: 400px) {
+  #hero {
+    padding-top: 139px;
+    .main {
+      font-size: 34px;
+      margin: 0 auto 61px;
+      max-width: calc(100% - 71px);
+      text-align: left;
+    }
+    .secondary {
+      font-size: 16px;
+      margin: 0 auto;
+      max-width: calc(100% - 71px);
+      text-align: left;
+    }
+  }
+  .section-title {
+    background-size: 178px 145px;
+    max-width: calc(100% - 71px);
+    padding: 47px 0 0px;
+    h2 {
+      font-size: 16px;
+      line-height: 3;
+    }
+    p {
+      font-size: 26px;
+    }
+  }
+
+  .Repo.big {
+    max-width: 100%;
+    height: auto;
+    .Repo-github {
+      max-width: calc(100% - 71px);
+      margin: 0 auto;
+      .Repo-desc {
+        position: static;
+        margin-bottom: 21px;
+        max-width: 100%;
+      }
+    }
+  }
+  .modules .Repo.small {
+    width: calc(100vw - 71px);
+    margin-right: 0;
+  }
+}
