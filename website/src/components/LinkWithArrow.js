@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function LinkWithArrow({label, url, className}) {
   return (<a className={'link-with-arrow' + (className ? ` ${className}` : '')} href={url} target="_blank">
-    {label}
+    <span className='label'>{label}</span>
     <Arrow />
   </a>);
 }

@@ -35,7 +35,7 @@ const repos = [{
   url: 'uber/react-vis',
   page: 'https://uber.github.io/react-vis/',
   big: true,
-  desc: 'A composable charting library',
+  desc: 'A composable, deeply customizable charting library',
   badges: ['react only']
 }]
 

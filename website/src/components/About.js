@@ -49,29 +49,33 @@ function Intro() {
   return (<div id="intro">
     <div className="section-title">
       <h3>About us</h3>
-      <p style={{maxWidth: 1000}}>We’re a team of software engineers, information designers, and computer graphics specialists at Uber.</p>
+      <p>We’re a team of software engineers, information designers, and computer graphics specialists at Uber.</p>
     </div>
     <div className="about--intro--pictures">
       <div className="about--intro--pictures--main">
-        <img src="./images/team/dinner.png" alt="Dinner at Shan's"/>
+        <div className="about--pic" style={{backgroundImage: "url('./images/team/dinner.png')"}}/>
         <p>{'Dinner at Shan\'s'}</p>
       </div>
     </div>
-    <div className="section-title section-title--no-logo">
+    <div className="section-title section-title--no-logo mission">
       <h3>Our mission</h3>
       <p>Enhance people’s ability to understand and communicate data through interactive systems for data visualization and analysis.</p>
     </div>
     <div className="about--intro--pictures">
       <div className="about--intro--pictures--small">
-        <img src="./images/team/bowling.png" alt="Bowling night"/>
+        <div className="about--pic" style={{backgroundImage: "url('./images/team/bowling.png')"}}/>
         <p>{'Bowling night'}</p>
       </div>
       <div className="about--intro--pictures--small">
-        <img src="./images/team/hiking.png" alt="Hiking Mt Tam"/>
+        <div className="about--pic" style={{backgroundImage: "url('./images/team/hiking.png')"}}/>
         <p>{'Hiking Mt Tam'}</p>
       </div>
       <div className="about--intro--pictures--main">
-        <img src="./images/team/museum.png" alt="Family photo"/>
+        <div className="about--pic" style={{
+          backgroundImage: 'url("./images/team/museum.png")',
+          height: 'calc((100vw - 71px) / 3.34)',
+          maxHeight: 350
+        }}/>
         <p>{'Family photo at the California Academy of Science'}</p>
       </div>
     </div>
@@ -93,9 +97,9 @@ function News() {
       >
         <h3>{d.publication}</h3>
         <p className="news--item--date">{d.date}</p>
+        <img className="news--item--image" src={d.image} width="470" height="279" alt={d.title} />
         <p className="news--item--title">{d.title}</p>
         <LinkWithArrow className="news--item--read" label="Read Article" url={d.url} />
-        <img className="news--item--image" src={d.image} width="470" height="279" alt={d.title} />
       </div>))}
     </div>
   </div>);

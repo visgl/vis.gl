@@ -19,7 +19,7 @@ const showCase = [
 export default function Showcase() {
   return (<div id="showcase">
     <div className="section-title section-title--no-logo">
-      <h2>Application Showcase</h2>
+      <h3>Application Showcase</h3>
       <p>Our frameworks work together to enable world-class user experiences.</p>
     </div>
     <div className="cases">

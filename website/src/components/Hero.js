@@ -115,7 +115,7 @@ precision highp float;
 varying vec3 color;
 
 void main(void) {
-  gl_FragColor = vec4(color, 1.);
+  gl_FragColor = vec4(color, 0.9);
   gl_FragColor = dirlight_filterColor(gl_FragColor);
 }
 `
@@ -157,7 +157,7 @@ class Hero extends Component {
           id="lumagl-canvas"
           style={{
             position: 'absolute',
-            height: '690px',
+            height: '100%',
             top: 0,
             width: '100vw',
             zIndex: -1

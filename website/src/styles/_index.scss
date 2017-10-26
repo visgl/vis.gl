@@ -1,13 +1,17 @@
 @import '~odometer/themes/odometer-theme-default.css';
 @import '~placeloader/main';
-
 @import 'overrides';
 
-header.home, header.about {
+header.home, header.about { 
   color: white;
   max-height: 100% !important;
   padding-top: 40px;
   position: absolute !important;
+
+  .container {
+    max-width: calc(100% - 118px);
+    position: relative;
+  }
 
   h1 {
     font-size: 18px;
@@ -28,15 +32,24 @@ header.home, header.about {
       color: $white;
     }
   }
-  .links a {
-    font-size: 14px;
-    font-weight: 400;
-    margin-left: 48px !important;
-    text-transform: capitalize !important;
-    transition: color 0.5s;
-    &:hover, &.active {
-      border-top-color: transparent !important;
-      color: $white !important;
+  .links {
+    left: auto;
+    margin-top: 0;
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: fit-content;
+    a {
+      font-size: 14px;
+      font-weight: 400;
+      margin-left: 48px !important;
+      text-transform: capitalize !important;
+      transition: color 0.5s;
+      &:hover, &.active {
+        border-top-color: transparent !important;
+        color: $white !important;
+      }
     }
   }
 
@@ -52,6 +65,7 @@ header.about {
   color: $white;
   height: 690px;
   padding-top: 232px;
+  position: relative;
   width: 100vw;
 
   .main {
@@ -101,6 +115,7 @@ header.home h1, footer h1 {
 }
 
 .Repo {
+  cursor: pointer;
   margin: 0 auto;
   max-width: 1172px;
   height: 623px;
@@ -126,6 +141,7 @@ header.home h1, footer h1 {
       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.16);
     }
     .Repo-desc {
+      color: $darkgrey;
       font-size: 16px;
       line-height: 25px;
     }
@@ -138,13 +154,50 @@ header.home h1, footer h1 {
   background-size: cover;
   background-color: $deepcalm;
   margin-bottom: 63px;
+  position: relative;
+  transition: box-shadow 0.2s;
+  &:after {
+    background: $filter;
+    content: "";
+    mix-blend-mode: color;
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity 200ms linear;
+  }
+
+  &:hover {
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.20);    
+  }
+  &:hover:after {
+    opacity: 0;
+  }
 }
+
+.link {
+  border-bottom: 0 solid transparent;
+  color: $linkblue;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: -1px;
+  padding-bottom: 1px;
+  transition: all 350ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+  width: fit-content;
+  &:hover {
+    border-bottom: 2px solid currentColor;
+    margin-bottom: -3px;
+  }
+}
+
 
 .Repo-github {
   position: relative;
   h1 {
     font-size: 21px;
-    font-weight: 500;
+    font-weight: 600;
     color: $black;
     margin-bottom: 10px;
   }
@@ -167,25 +220,20 @@ header.home h1, footer h1 {
       color: $white !important;
     }
   }
-  .Repo-label {
-    color: $linkblue;
-    font-weight: 500;
-    text-transform: capitalize;
-    font-size: 14px;
-    line-height: 18px;
-  }
-  .Repo-get-started {
-    border-bottom: 1px solid $lightgrey;
-    margin-bottom: 10px;
-    padding-bottom: 12px;
+
+
+  .Repo-border {
+    border-top: 1px solid $lightgrey;
+    margin-top: 10px;
+    padding-top: 12px;
+    position: relative;  
     width: 169px;
   }
   .Stars {
-    bottom: 0;
     color: $gold;
-    left: 169px;
     position: absolute;
-    transform: translate(-100%);
+    right: 0;
+    top: 10px;
     .odometer {
       color: $black;
       font-family: inherit;
@@ -197,7 +245,7 @@ header.home h1, footer h1 {
 .Repo-desc {
   display: inline-block;
   font-size: 32px;
-  font-weight: 100;
+  font-weight: 400;
   line-height: 49px;
   max-width: 878px;
   width: 100%;
@@ -218,7 +266,7 @@ header.home h1, footer h1 {
   width: 100%;
 
   h3 {
-    font-size: 24px;
+    font-size: 21px;
     font-weight: 500;
     margin-bottom: 18px;
   }
@@ -226,6 +274,7 @@ header.home h1, footer h1 {
   p {
     font-size: 48px;
     font-weight: 100;
+    letter-spacing: -0.25px;
     line-height: 1.5em;
     max-width: 600px;
   }
@@ -234,7 +283,7 @@ header.home h1, footer h1 {
 .section-title--no-logo {
   background: none;
   p {
-    max-width: 1000px;
+    max-width: calc(100% - 100px);
   }
 }
 
@@ -246,11 +295,13 @@ header.home h1, footer h1 {
   h1 {
     font-weight: 500;
     line-height: 34px;
+    margin-top: 34px;
   }
   .description {
     font-weight: 200;
     line-height: 24px;
     margin-bottom: 27px;
+    max-width: 500px;
     opacity: 0.6;
   }
   a, a:visited {
@@ -260,14 +311,25 @@ header.home h1, footer h1 {
 
 .cases {
   max-width: 1242px;
+  width: calc(100vw - 58px);
   margin: 0 auto;
-  transform: translate(-50px)
 }
 
 .case {
   display: inline-block;
-  width: 590px;
+  max-width: 590px;
+  width: calc(50vw - 60px);
   margin-right: 31px;
+  padding-left: 21px;
+  vertical-align: top;
+}
+
+.case-image {
+  background: #100A29 top left/contain no-repeat;
+  height: calc((50vw - 60px) / 1.6);
+  width: calc((50vw - 60px));
+  max-height: 369px;
+  max-width: 590px;
 }
 
 .case-image {
@@ -278,6 +340,7 @@ header.home h1, footer h1 {
 .frame {
   border-radius: 6px;
   overflow: hidden;
+  transform: translate(-21px);
 }
 
 .browser-bar {
@@ -297,11 +360,23 @@ header.home h1, footer h1 {
 }
 
 .link-with-arrow {
+  .label {
+    border-bottom: 0 solid transparent;
+    margin-bottom: -1px;
+    padding-bottom: 1px;
+    width: fit-content;
+    transition: all 350ms cubic-bezier(0.230, 1.000, 0.320, 1.000);  
+  }
+
   .arrow {
     margin-left: 10px;
     transition: margin 0.5s;
   }
 
+  &:hover .label {
+    margin-bottom: -3px;
+    border-bottom: 2px solid currentColor;
+  }
   &:hover .arrow {
     margin-left: 20px;
   }
@@ -368,7 +443,7 @@ footer {
 
 .Join {
   background: $deepcalm;
-  border-radius: calc(0.3 * 55px);
+  border-radius: calc(0.5 * 55px);
   height: 55px;
   margin: 0 auto;
   font-size: 16px;
@@ -377,7 +452,10 @@ footer {
   max-width: 366px;
   padding: 10px 36px;
   text-align: center;
-  width: 30%;
+  width: calc(100vw - 20px);
+  .label {
+    margin-right: 120px;
+  }
   a, a:visited {
     color: $white;
   }
@@ -398,19 +476,43 @@ footer {
   max-width: 1172px;
 }
 
+.mission p {
+  font-size: 22px;
+  max-width: calc(100% - 105px);
+}
+
 .about--intro--pictures {
   color: $grey;
   font-size: 10px;
   margin: 100px auto;
+  max-width: calc(100vw - 71px);
   width: 100%;
   p {
     margin-top: 12px;
   }
 }
 
+.about--pic {
+  background: $white top left / contain no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.about--intro--pictures--main {
+  width: calc(100vw - 71px);
+  height: calc((100vw - 71px) / 2.05);
+  max-width: 1170px;
+  max-height: 571px;
+}
+
 .about--intro--pictures--small {
-  max-width: calc(50% - 30px);
   display: inline-block;
+  margin-bottom: 30px;
+  width: 100%;
+  height: calc((50vw - 51px) / 1.62);
+  max-width: calc(50vw - 51px);
+  max-height: 350px;
+  vertical-align: top;
   margin-bottom: 30px;
   &:first-child {
     margin-right: 30px;
@@ -426,7 +528,7 @@ footer {
 
 .news-items {
   margin: 0px auto;
-  max-width: 1170px;
+  max-width: calc(100vw - 151px);
   width: 100%;
 }
 
@@ -457,8 +559,8 @@ footer {
   font-size: 10px;
 }
 .news--item--title {
-  font-size: 32px;
-  font-weight: 100;
+  font-size: 21px;
+  font-weight: 400;
   margin: 11px 0 38px;
   max-width: calc(100% - 550px);
 }
@@ -478,7 +580,7 @@ a.news--item--read, a.news--item--read:visited {
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1000px) {
   header.home, header.about {
     h1 {
       margin-left: 77px;
@@ -533,6 +635,7 @@ a.news--item--read, a.news--item--read:visited {
   .modules {
     max-width: calc(100% - 106px);
     transform: translate(-12px);
+    min-height: 300px;
     .Repo.small {
       width: calc(50vw - 65px);
       margin-right: 12px;
@@ -541,6 +644,65 @@ a.news--item--read, a.news--item--read:visited {
   footer .content {
     max-width: calc(100vw - 118px);
   }
+}
+
+@media only screen and (max-width: 800px) {
+  .modules .Repo.small {
+    min-height: 400px;
+  }
+  #hero {
+    .main {
+      font-size: 40px;
+    }
+    .secondary {
+      font-size: 20px;
+    }
+  }
+
+  .news--item--image {
+    height: auto;
+    position: static;
+    margin: 24px 0;
+    max-width: 100%;
+  }
+  .news--item--title {
+    max-width: 100%;
+  }
+
+  .section-title {
+    p {
+      font-size: 32px;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  header.home .container, header.about .container {
+    max-width: calc(100% - 71px);
+  }
+
+  .modules .Repo.small {
+    width: calc(100vw - 71px);
+    margin-right: 0;
+    height: auto;
+    min-height: auto;
+  }
+  footer .content {
+    max-width: calc(100vw - 71px);
+    .main {
+      max-width: 100%;
+      width: 100%;
+      font-weight: 400;
+    } 
+    .links {
+      max-width: calc(0.5 * (100% - 20px));
+      margin-right: 20px;
+    }
+    .links:last-child {
+      margin-right: 0
+    }
+  }  
 }
 
 
