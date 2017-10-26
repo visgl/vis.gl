@@ -103,6 +103,7 @@ class Repo extends Component {
               <Star />
               <Odometer value={stars} options={{ format: '' }} />
             </div>
+
           </div>
         </div>
         

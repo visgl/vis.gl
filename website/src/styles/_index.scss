@@ -221,6 +221,7 @@ header.home h1, footer h1 {
     }
   }
 
+
   .Repo-border {
     border-top: 1px solid $lightgrey;
     margin-top: 10px;
@@ -229,7 +230,6 @@ header.home h1, footer h1 {
     width: 169px;
   }
   .Stars {
-    bottom: 0;
     color: $gold;
     position: absolute;
     right: 0;
@@ -330,6 +330,11 @@ header.home h1, footer h1 {
   width: calc((50vw - 60px));
   max-height: 369px;
   max-width: 590px;
+}
+
+.case-image {
+  background: $deepcalm top left / cover no-repeat;
+  height: 369px;
 }
 
 .frame {
@@ -700,8 +705,8 @@ a.news--item--read, a.news--item--read:visited {
   }  
 }
 
+
 @media only screen and (max-width: 400px) {
- 
   #hero {
     padding-top: 139px;
     .main {
@@ -743,5 +748,8 @@ a.news--item--read, a.news--item--read:visited {
       }
     }
   }
-
+  .modules .Repo.small {
+    width: calc(100vw - 71px);
+    margin-right: 0;
+  }
 }
