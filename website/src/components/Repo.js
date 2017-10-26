@@ -94,13 +94,15 @@ class Repo extends Component {
             key={badge}
           >{badge}</div>)}
           <div className="Repo-desc">{desc}</div>
-          <div className="Repo-get-started Repo-label">Get Started</div>
-          <div className="Repo-label">Github</div>
-          <div className="Stars"
-            onClick={() => this.open()}
-          >
-            <Star />
-            <Odometer value={stars} options={{ format: '' }} />
+          <div className="Repo-get-started link">Get Started</div>
+          <div className="Repo-border">
+            <div className="link">Github</div>
+            <div className="Stars"
+              onClick={() => this.open()}
+            >
+              <Star />
+              <Odometer value={stars} options={{ format: '' }} />
+            </div>
           </div>
         </div>
         

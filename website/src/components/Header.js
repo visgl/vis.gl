@@ -6,7 +6,8 @@ import slug from 'slug';
 
 import { toggleMenu } from 'reducers/ui'
 
-const links = ['/docs', '/blog', '/about']
+// const links = ['/docs', '/blog', '/about']
+const links = ['/about']
 
 @connect(
   ({ ui: { isMenuOpen }, router: { location: { pathname } } }) => ({

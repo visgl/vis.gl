@@ -11,7 +11,7 @@ const links = [
   items: [
     {label: 'Home', url: '/home'},
     {label: 'About', url: '/about'},
-    {label: 'Blog', url: '/blog'}
+    // {label: 'Blog', url: '/blog'}
   ]
 }]
 
