@@ -1,17 +1,17 @@
 CACHE MANIFEST
-#ver:10/25/2017, 8:14:40 PM
+#ver:10/26/2017, 1:40:01 PM
 #plugin:4.8.3
 
 CACHE:
-../bundle-f9e105bd44a150e74b48.js
-../styles-f9e105bd44a150e74b48.css
+../bundle-723767faa4d51000a916.js
+../styles-723767faa4d51000a916.css
 ../
-../fonts/uber.svg
 ../favicon.ico
-../fonts/uber.woff
 ../fonts/uber.ttf
 ../images/footer-pattern.gif
+../fonts/uber.svg
 ../images/icon-custom.svg
+../fonts/uber.woff
 ../images/icon-chart.svg
 ../images/icon-high-precision.svg
 ../images/icon-react.svg
@@ -21,10 +21,10 @@ CACHE:
 ../images/hero.jpg
 ../images/atg.png
 ../images/bg.png
-../images/bg2.jpg
 ../images/bg4.jpg
-../images/bg3.jpg
 ../images/chrome.svg
+../images/bg2.jpg
+../images/bg3.jpg
 ../images/bg5.jpg
 ../images/javascript.svg
 ../images/logo-small.png
@@ -32,22 +32,23 @@ CACHE:
 ../images/deck.png
 ../images/framework-suite.png
 ../images/movement.png
-../images/news/deckgl.png
+
 ../images/news/eclipse.png
 ../images/news/movement.png
-../images/news/nicotalk.png
+../images/news/deckgl.png
 ../images/luma.png
+../images/news/nicotalk.png
 ../images/news/ocslite.png
 ../images/react.svg
-../images/react-vis.png
 ../images/team/bowling.png
+../images/react-vis.png
 ../images/react-map-gl.png
-../images/team/hiking.png
 ../images/team/dinner.png
 ../images/team1.jpg
+../images/team/hiking.png
 ../images/team/museum.png
-../images/team3.jpg
 ../images/vis-logo.png
+../images/team3.jpg
 ../images/team2.jpg
 ../images/team4.png
 
