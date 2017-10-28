@@ -186,6 +186,9 @@ header.home h1, footer h1 {
   padding-bottom: 1px;
   transition: all 350ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
   width: fit-content;
+  &:visited {
+    color: $linkblue;
+  }
   &:hover {
     border-bottom: 2px solid currentColor;
     margin-bottom: -3px;
@@ -265,7 +268,7 @@ header.home h1, footer h1 {
   padding: 47px 0 0 213px;
   width: 100%;
 
-  h3 {
+  h2 {
     font-size: 21px;
     font-weight: 500;
     margin-bottom: 18px;
@@ -508,9 +511,9 @@ footer {
 .about--intro--pictures--small {
   display: inline-block;
   margin-bottom: 30px;
-  width: 100%;
+  width: calc((50vw - 51px));
   height: calc((50vw - 51px) / 1.62);
-  max-width: calc(50vw - 51px);
+  max-width: 571px;
   max-height: 350px;
   vertical-align: top;
   margin-bottom: 30px;

@@ -82,11 +82,13 @@ class Repo extends Component {
     if (big) {
       return (<div
         className={cx('Repo', { big, opaque: activeRepo && activeRepo !== name })}
-        onClick={() => this.open(this.props.page)}
+       
       >
         <div className="Repo-img" style={
-          {background: `url(${img}) top left / cover no-repeat`}
-        }/>
+          {background: `url(${img}) top center / cover no-repeat`}
+        }
+        onClick={() => this.open(this.props.page)}
+        />
         <div className="Repo-github">
           <h1>{name}</h1>
           {this.props.badges.map(badge => <div
@@ -94,9 +96,11 @@ class Repo extends Component {
             key={badge}
           >{badge}</div>)}
           <div className="Repo-desc">{desc}</div>
-          <div className="Repo-get-started link">Get Started</div>
+          <div className="Repo-get-started">
+            <a href={this.props.page} target="_blank" className="link">Get Started</a>
+          </div>
           <div className="Repo-border">
-            <div className="link">Github</div>
+            <a href={`https://github.com/${this.props.url}`} target="_blank" className="link">Github</a>
             <div className="Stars"
               onClick={() => this.open()}
             >

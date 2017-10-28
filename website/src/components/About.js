@@ -48,7 +48,7 @@ export default About;
 function Intro() {
   return (<div id="intro">
     <div className="section-title">
-      <h3>About us</h3>
+      <h2>About us</h2>
       <p>We’re a team of software engineers, information designers, and computer graphics specialists at Uber.</p>
     </div>
     <div className="about--intro--pictures">
@@ -58,7 +58,7 @@ function Intro() {
       </div>
     </div>
     <div className="section-title section-title--no-logo mission">
-      <h3>Our mission</h3>
+      <h2>Our mission</h2>
       <p>Enhance people’s ability to understand and communicate data through interactive systems for data visualization and analysis.</p>
     </div>
     <div className="about--intro--pictures">
@@ -88,7 +88,7 @@ function Intro() {
 function News() {
   return (<div id="news">
     <div className="section-title">
-      <h3>News & Events</h3>
+      <h2>News & Events</h2>
       <p>Learn more about how our work is creating impact</p>
     </div>
     <div className="news-items">
