@@ -119,12 +119,13 @@ header.home h1, footer h1 {
   margin: 0 auto;
   max-width: 1172px;
   height: 623px;
-  margin-bottom: 158px;
+
   &.big .Repo-desc {
     position: absolute;
     top: 0;
     right: 0;
   }
+
   &.small {
     border: 1px solid #EDEDED;
     border-radius: 2px;
@@ -198,24 +199,26 @@ header.home h1, footer h1 {
 
 .Repo-github {
   position: relative;
+
   h1 {
     font-size: 21px;
     font-weight: 600;
     color: $black;
     margin-bottom: 10px;
   }
+
   h1:first-letter {
     text-transform: capitalize;
   }
+
   .badge {
     background: $white;
     border: 1px solid $grey;
     border-radius: 4px;
-    display: inline-block;
+    display: inline-flex;
     font-size: 10px;
     padding: 0 5px;
     margin: 0 0 21px;
-    line-height: 24px;
     text-transform: uppercase;
     transition: color 0.5s, border-color 0.5s, background 0.5s;
     &:hover {
@@ -224,14 +227,14 @@ header.home h1, footer h1 {
     }
   }
 
-
   .Repo-border {
     border-top: 1px solid $lightgrey;
     margin-top: 10px;
     padding-top: 12px;
-    position: relative;  
+    position: relative;
     width: 169px;
   }
+
   .Stars {
     color: $gold;
     position: absolute;
@@ -261,7 +264,6 @@ header.home h1, footer h1 {
 
 .section-title {
   background: url("/images/vis-logo.png") no-repeat;
-  margin-top: 67px;
   max-width: 1172px;
   margin: 67px auto 57px;
   min-height: 296px;
@@ -316,6 +318,9 @@ header.home h1, footer h1 {
   max-width: 1242px;
   width: calc(100vw - 58px);
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .case {
@@ -506,6 +511,7 @@ footer {
   height: calc((100vw - 71px) / 2.05);
   max-width: 1170px;
   max-height: 571px;
+  margin-top: 1rem;
 }
 
 .about--intro--pictures--small {
@@ -537,18 +543,24 @@ footer {
 
 .news--item {
   border-top: 1px solid $lightgrey;
-  box-shadow: 0 0 0 rgba(0,0,0,0.16);
+  box-shadow: 0 0 0 rgba(black, 0.16);
   color: $black;
   cursor: pointer;
   margin: 0 -40px;
   min-height: 359px;
   padding: 40px 40px;
   position: relative;
-  transition: box-shadow 0.5s;
-  &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.16);
-  }
   width: calc(100% + 80px);
+  transition: box-shadow 0.5s;
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(black, 0.16);
+  }
+
+  & + .news--item {
+    margin-top: 1rem;
+  }
+
   h3 {
     font-size: 16px;
     font-weight: 500;
@@ -601,7 +613,6 @@ a.news--item--read, a.news--item--read:visited {
 
   .Repo.big {
     max-width: calc(100% - 118px);
-    margin-bottom: 130px;
     .Repo-desc {
       font-size: 22px;
       line-height: 1.5;
@@ -697,7 +708,7 @@ a.news--item--read, a.news--item--read:visited {
       max-width: 100%;
       width: 100%;
       font-weight: 400;
-    } 
+    }
     .links {
       max-width: calc(0.5 * (100% - 20px));
       margin-right: 20px;
@@ -705,7 +716,7 @@ a.news--item--read, a.news--item--read:visited {
     .links:last-child {
       margin-right: 0
     }
-  }  
+  }
 }
 
 

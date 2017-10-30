@@ -14,7 +14,7 @@ import { getRandom } from 'colors'
 @connect(
   ({ github, home: { activeRepo } }, { url }) => {
     if (!url) {
-      return {};
+      return {}
     }
     const [org, name] = url.split('/')
     const project = github[name]
@@ -43,16 +43,13 @@ class Repo extends Component {
   }
 
   static propTypes = {
-    url: PropTypes.string
+    url: PropTypes.string,
   }
 
-  open = (page) => {
+  open = page => {
     const { org, name, url, useGithub } = this.props
-      
-     window.open(
-       page || `https://github.com/${url}`,
-       '_blank',
-     )
+
+    window.open(page || `https://github.com/${url}`, '_blank')
   }
 
   stopPropa = e => {
@@ -78,55 +75,57 @@ class Repo extends Component {
       big,
     } = this.props
 
-
     if (big) {
-      return (<div
-        className={cx('Repo', { big, opaque: activeRepo && activeRepo !== name })}
-       
-      >
-        <div className="Repo-img" style={
-          {background: `url(${img}) top center / cover no-repeat`}
-        }
-        onClick={() => this.open(this.props.page)}
-        />
-        <div className="Repo-github">
-          <h1>{name}</h1>
-          {this.props.badges.map(badge => <div
-            className="badge"
-            key={badge}
-          >{badge}</div>)}
-          <div className="Repo-desc">{desc}</div>
-          <div className="Repo-get-started">
-            <a href={this.props.page} target="_blank" className="link">Get Started</a>
-          </div>
-          <div className="Repo-border">
-            <a href={`https://github.com/${this.props.url}`} target="_blank" className="link">Github</a>
-            <div className="Stars"
-              onClick={() => this.open()}
-            >
-              <Star />
-              <Odometer value={stars} options={{ format: '' }} />
+      return (
+        <div className={cx('Repo', { big, opaque: activeRepo && activeRepo !== name })}>
+          <div
+            className="Repo-img"
+            style={{ background: `url(${img}) top center / cover no-repeat` }}
+            onClick={() => this.open(this.props.page)}
+          />
+          <div className="Repo-github">
+            <h1>{name}</h1>
+            {this.props.badges.map(badge => (
+              <div className="badge" key={badge}>
+                {badge}
+              </div>
+            ))}
+            <div className="Repo-desc">{desc}</div>
+            <div className="Repo-get-started">
+              <a href={this.props.page} target="_blank" className="link">
+                {'Get Started'}
+              </a>
             </div>
-
+            <div className="Repo-border">
+              <a href={`https://github.com/${this.props.url}`} target="_blank" className="link">
+                {'Github'}
+              </a>
+              <div className="Stars" onClick={() => this.open()}>
+                <Star />
+                <Odometer value={stars} options={{ format: '' }} />
+              </div>
+            </div>
           </div>
         </div>
-        
-      </div> );
+      )
     }
-    return (<div className="Repo-github Repo small">
-      <h1>{this.props.displayname || name}</h1>
-        {this.props.badges.map(badge => <div
-          className="badge"
-          key={badge}
-        >{badge}</div>)}
-        {stars ? <div className="Stars"
-          onClick={() => this.open()}
-        >
-          <Star />
-          <Odometer value={stars} options={{ format: '' }} />
-        </div> : null}
+    return (
+      <div className="Repo-github Repo small">
+        <h1>{this.props.displayname || name}</h1>
+        {this.props.badges.map(badge => (
+          <div className="badge" key={badge}>
+            {badge}
+          </div>
+        ))}
+        {stars ? (
+          <div className="Stars" onClick={() => this.open()}>
+            <Star />
+            <Odometer value={stars} options={{ format: '' }} />
+          </div>
+        ) : null}
         <div className="Repo-desc">{desc}</div>
-      </div>);
+      </div>
+    )
   }
 }
 
