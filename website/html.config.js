@@ -9,4 +9,6 @@ module.exports = {
       content: "Uber's Visualization Frameworks",
     },
   ],
+
+  scripts: ['https://uber.github.io/react-vis/redirect.js'],
 }
