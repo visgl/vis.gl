@@ -3,7 +3,9 @@
   "main": "index.js",
   "scripts": {
     "start": "ocular start open",
-    "build": "ocular build"
+    "build": "ocular build",
+    "clean": "rm -rf ../docs/*{.js,.css,index.html,appcache,fonts,images}",
+    "publish": "npm run clean && npm run build && mv dist/* ../docs"
   },
   "keywords": [],
   "author": "",
