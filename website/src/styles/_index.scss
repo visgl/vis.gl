@@ -449,14 +449,13 @@ footer {
   }
 }
 
-.Join {
+.big-link {
   background: $deepcalm;
   border-radius: calc(0.5 * 55px);
   height: 55px;
   margin: 0 auto;
   font-size: 16px;
   line-height: 34px;
-  margin: 0 auto;
   max-width: 366px;
   padding: 10px 36px;
   text-align: center;
@@ -545,7 +544,6 @@ footer {
   border-top: 1px solid $lightgrey;
   box-shadow: 0 0 0 rgba(black, 0.16);
   color: $black;
-  cursor: pointer;
   margin: 0 -40px;
   min-height: 359px;
   padding: 40px 40px;

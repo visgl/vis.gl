@@ -108,7 +108,7 @@ function Intro() {
           <p>{'Family photo at the California Academy of Science'}</p>
         </div>
       </div>
-      <div className="Join">
+      <div className="big-link">
         <LinkWithArrow label="Join our team!" url="https://www.uber.com/careers/list/20242/" />
       </div>
     </div>
@@ -119,12 +119,12 @@ function News() {
   return (
     <div id="news">
       <div className="section-title">
-        <h2>News & Events</h2>
-        <p>Learn more about how our work is creating impact</p>
+        <h2>{'News & Events'}</h2>
+        <p>{'Learn more about how our work is creating impact'}</p>
       </div>
       <div className="news-items">
         {news.map((d, i) => (
-          <div key={i} className="news--item" onClick={() => window.open(d.url, '_blank')}>
+          <div key={i} className="news--item">
             <h3>{d.publication}</h3>
             <p className="news--item--date">{d.date}</p>
             <img

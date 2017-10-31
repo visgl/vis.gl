@@ -1,14 +1,17 @@
 import React from 'react'
 
+import LinkWithArrow from 'components/LinkWithArrow'
+
 export default function Academy() {
   return (
     <div id="academy">
       <div className="section-title">
         <h2>Vis Academy</h2>
-        <p>Learn from the experts and get started quickly.</p>
-        <a href="http://vis.academy" style={{ transform: 'translateY(80px)' }}>
-          <span className="link">Get started</span>
-        </a>
+        <p style={{ marginBottom: '3rem' }}>Learn from the experts and get started quickly.</p>
+
+        <div className="big-link" style={{ margin: 0 }}>
+          <LinkWithArrow label="Get started!" url="http://vis.academy" />
+        </div>
       </div>
     </div>
   )
