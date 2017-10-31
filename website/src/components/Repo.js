@@ -75,12 +75,12 @@ class Repo extends Component {
             ))}
             <div className="Repo-desc">{desc}</div>
             <div className="Repo-get-started">
-              <a href={this.props.page} target="_blank" className="link">
+              <a href={this.props.page} className="link">
                 {'Get Started'}
               </a>
             </div>
             <div className="Repo-border">
-              <a href={`https://github.com/${this.props.url}`} target="_blank" className="link">
+              <a href={`https://github.com/${this.props.url}`} className="link">
                 {'Github'}
               </a>
               <div className="Stars" onClick={() => this.open()}>
@@ -94,18 +94,20 @@ class Repo extends Component {
     }
     return (
       <div className="Repo-github Repo small">
-        <h1>{this.props.displayname || name}</h1>
+        <h1>{this.props.displayName || name}</h1>
+
         {this.props.badges.map(badge => (
           <div className="badge" key={badge}>
             {badge}
           </div>
         ))}
-        {stars ? (
-          <div className="Stars" onClick={() => this.open()}>
+
+        {stars && (
+          <div className="Stars">
             <Star />
             <Odometer value={stars} options={{ format: '' }} />
           </div>
-        ) : null}
+        )}
         <div className="Repo-desc">{desc}</div>
       </div>
     )

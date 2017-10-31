@@ -2,7 +2,7 @@
 @import '~placeloader/main';
 @import 'overrides';
 
-header.home, header.about { 
+header.home, header.about {
   color: white;
   max-height: 100% !important;
   padding-top: 40px;
@@ -61,6 +61,10 @@ header.about {
    padding-top: 0;
 }
 
+.menu-toggle {
+  display: none !important;
+}
+
 #hero {
   color: $white;
   height: 690px;
@@ -115,7 +119,6 @@ header.home h1, footer h1 {
 }
 
 .Repo {
-  cursor: pointer;
   margin: 0 auto;
   max-width: 1172px;
   height: 623px;
@@ -154,8 +157,9 @@ header.home h1, footer h1 {
   height: 360px;
   background-size: cover;
   background-color: $deepcalm;
-  margin-bottom: 63px;
+  margin-bottom: 2rem;
   position: relative;
+  cursor: pointer;
   transition: box-shadow 0.2s;
   &:after {
     background: $filter;
@@ -169,7 +173,7 @@ header.home h1, footer h1 {
   }
 
   &:hover {
-    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.20);    
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.20);
   }
   &:hover:after {
     opacity: 0;
@@ -196,9 +200,9 @@ header.home h1, footer h1 {
   }
 }
 
-
 .Repo-github {
   position: relative;
+  padding: 1rem;
 
   h1 {
     font-size: 21px;
@@ -406,7 +410,7 @@ footer {
   color: $white;
   height: fit-content !important;
   background: $deepcalm !important;
-  padding: 40px 0 0 !important;
+  padding: 2rem 4rem 8rem 4rem !important;
   position: static !important;
 
   h1 {
@@ -416,7 +420,6 @@ footer {
 
   .content {
     max-width: 1172px;
-    margin: 0 auto 118px;
   }
   .main, .links {
     display: inline-block;
@@ -459,9 +462,10 @@ footer {
   max-width: 366px;
   padding: 10px 36px;
   text-align: center;
-  width: calc(100vw - 20px);
-  .label {
-    margin-right: 120px;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   a, a:visited {
     color: $white;
@@ -594,11 +598,6 @@ a.news--item--read, a.news--item--read:visited {
 }
 
 @media only screen and (max-width: 1000px) {
-  header.home, header.about {
-    h1 {
-      margin-left: 77px;
-    }
-  }
   #home .secondary {
     margin: 0 auto;
     max-width: 67%;
@@ -751,7 +750,6 @@ a.news--item--read, a.news--item--read:visited {
     max-width: 100%;
     height: auto;
     .Repo-github {
-      max-width: calc(100% - 71px);
       margin: 0 auto;
       .Repo-desc {
         position: static;

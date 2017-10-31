@@ -23,7 +23,7 @@ const modules = [
   },
   {
     url: 'https://github.com/uber-common/viewport-mercator-project',
-    displayname: 'viewport-mercator-project',
+    displayName: 'viewport-mercator-project',
     page: 'https://github.com/uber-common/viewport-mercator-project',
     desc: 'A library that collects 3D enabled web mercator projection math and tests.',
     badges: ['javascript'],
