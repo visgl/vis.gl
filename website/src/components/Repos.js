@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import Repo from 'components/Repo'
-import colors from 'colors'
 import { fetchRepos } from 'actions/github'
 
 const repos = [

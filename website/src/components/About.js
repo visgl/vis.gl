@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Footer from './Footer'
-import LinkWithArrow from './LinkWithArrow'
+import Footer from 'components/Footer'
+import LinkWithArrow from 'components/LinkWithArrow'
 
 function About() {
   return (
@@ -27,7 +27,7 @@ const news = [
     date: 'Aug 29, 2017',
     title: "Uber shows off its autonomous driving program's snazzy visualization tools",
     url:
-      'https://techcrunch.com/2017/08/28/uber-shows-off-its-autonomous-driving-programs-snazzy-visualization-tools/',
+      'https://techcrunch.com/2017/08/28/uber-shows-off-its-autonomous-driving-programs-snazzy-visualization-tools',
     image: './images/news/ocslite.png',
   },
   {

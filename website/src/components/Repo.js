@@ -3,13 +3,9 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import cx from 'classnames'
 import Odometer from 'react-odometerjs'
-import PlaceLoader from 'placeloader'
-
 import Star from 'react-icons/lib/go/star'
 
 import { setActive } from 'reducers/home'
-
-import { getRandom } from 'colors'
 
 @connect(
   ({ github, home: { activeRepo } }, { url }) => {
@@ -47,8 +43,7 @@ class Repo extends Component {
   }
 
   open = page => {
-    const { org, name, url, useGithub } = this.props
-
+    const { url } = this.props
     window.open(page || `https://github.com/${url}`, '_blank')
   }
 
@@ -61,19 +56,7 @@ class Repo extends Component {
   onLeave = () => this.props.setActive(null)
 
   render() {
-    const {
-      activeRepo,
-      img,
-      key,
-      desc,
-      url,
-      name,
-      contentStyle,
-      stars,
-      contribs,
-      color,
-      big,
-    } = this.props
+    const { activeRepo, img, desc, name, stars, big } = this.props
 
     if (big) {
       return (

@@ -2,11 +2,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import cx from 'classnames'
-import slug from 'slug';
 
 import { toggleMenu } from 'reducers/ui'
 
-// const links = ['/docs', '/blog', '/about']
 const links = ['/about']
 
 @connect(
@@ -28,18 +26,19 @@ class Header extends Component {
 
   render() {
     const { pathname, isMenuOpen } = this.props
+
     return (
-      <header className={cx({ open: isMenuOpen, [pathname.slice(1) || "home"]: true})}>
+      <header className={cx({ open: isMenuOpen, [pathname.slice(1) || 'home']: true })}>
         <div className="f container ph2">
           <h1 className="fg">
             <Link to="/">{'VIS.GL'}</Link>
           </h1>
           <div className="links f">
-            {links.map(link => {
-              return (<Link to={link} className={cx({ active: pathname.includes(link) })} key={link}>
+            {links.map(link => (
+              <Link to={link} className={cx({ active: pathname.includes(link) })} key={link}>
                 {link.substr(1)}
-              </Link>)
-            })}
+              </Link>
+            ))}
           </div>
           <div className="menu-toggle" onClick={() => this.props.toggleMenu(!isMenuOpen)}>
             <i className={`icon icon-${isMenuOpen ? 'close' : 'menu'}`} />

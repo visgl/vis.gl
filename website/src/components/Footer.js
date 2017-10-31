@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { PROJECTS } from '../config'
+import { PROJECTS } from 'config'
+
 const links = [
   {
     label: 'Frameworks',

@@ -6,7 +6,6 @@ import whatsNew from '../../docs/whats-new.md'
 export default [
   {
     name: 'Documentation',
-    path: '/documentation',
     path: '/docs',
     data: [
       {
