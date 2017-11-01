@@ -67,27 +67,30 @@ class Repo extends Component {
             onClick={() => this.open(this.props.page)}
           />
           <div className="Repo-github">
-            <h1>{name}</h1>
-            {this.props.badges.map(badge => (
-              <div className="badge" key={badge}>
-                {badge}
+            <div>
+              <h1>{name}</h1>
+              {this.props.badges.map(badge => (
+                <div className="badge" key={badge}>
+                  {badge}
+                </div>
+              ))}
+              <div className="Repo-get-started">
+                <a href={this.props.page} className="link">
+                  {'Get Started'}
+                </a>
               </div>
-            ))}
+              <div className="Repo-border">
+                <a href={`https://github.com/${this.props.url}`} className="link">
+                  {'Github'}
+                </a>
+                <div className="Stars" onClick={() => this.open()}>
+                  <Star />
+                  <Odometer value={stars} options={{ format: '' }} />
+                </div>
+              </div>
+            </div>
+
             <div className="Repo-desc">{desc}</div>
-            <div className="Repo-get-started">
-              <a href={this.props.page} className="link">
-                {'Get Started'}
-              </a>
-            </div>
-            <div className="Repo-border">
-              <a href={`https://github.com/${this.props.url}`} className="link">
-                {'Github'}
-              </a>
-              <div className="Stars" onClick={() => this.open()}>
-                <Star />
-                <Odometer value={stars} options={{ format: '' }} />
-              </div>
-            </div>
           </div>
         </div>
       )

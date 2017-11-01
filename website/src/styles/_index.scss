@@ -121,13 +121,6 @@ header.home h1, footer h1 {
 .Repo {
   margin: 0 auto;
   max-width: 1172px;
-  height: 623px;
-
-  &.big .Repo-desc {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
 
   &.small {
     border: 1px solid #EDEDED;
@@ -201,8 +194,21 @@ header.home h1, footer h1 {
 }
 
 .Repo-github {
-  position: relative;
-  padding: 1rem;
+  padding: 1rem 1rem 3rem 1rem;
+  display: flex;
+
+  .Repo-desc {
+    margin-left: 2rem;
+  }
+
+  @media only screen and (max-width: 660px) {
+    flex-direction: column;
+
+    .Repo-desc {
+      margin-top: 2rem;
+      margin-left: 0;
+    }
+  }
 
   h1 {
     font-size: 21px;
@@ -257,8 +263,6 @@ header.home h1, footer h1 {
   font-size: 32px;
   font-weight: 400;
   line-height: 49px;
-  max-width: 878px;
-  width: 100%;
   vertical-align: top;
 }
 
@@ -604,7 +608,6 @@ a.news--item--read, a.news--item--read:visited {
   }
 
   .section-title {
-    max-width: calc(100% - 118px);
     padding: 47px 0 0 64px;
   }
 
@@ -613,7 +616,6 @@ a.news--item--read, a.news--item--read:visited {
     .Repo-desc {
       font-size: 22px;
       line-height: 1.5;
-      max-width: calc(100% - 195px);
     }
   }
 
@@ -635,6 +637,7 @@ a.news--item--read, a.news--item--read:visited {
 
   #showcase {
     padding-bottom: 59px;
+    padding-top: 0;
     .description {
       margin-bottom: 33px;
     }
@@ -754,7 +757,6 @@ a.news--item--read, a.news--item--read:visited {
       .Repo-desc {
         position: static;
         margin-bottom: 21px;
-        max-width: 100%;
       }
     }
   }
