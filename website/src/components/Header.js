@@ -5,7 +5,7 @@ import cx from 'classnames'
 
 import { toggleMenu } from 'reducers/ui'
 
-const links = ['/about']
+const links = ['/blog', '/about']
 
 @connect(
   ({ ui: { isMenuOpen }, router: { location: { pathname } } }) => ({

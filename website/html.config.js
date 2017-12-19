@@ -1,7 +1,7 @@
 module.exports = {
   title: "Uber's Visualization Frameworks",
 
-  baseHref: '',
+  baseHref: '/',
 
   meta: [
     {
