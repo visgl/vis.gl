@@ -15,6 +15,7 @@
     "ocular": "^0.2.13",
     "placeloader": "^0.1.0",
     "prop-types": "^15.5.10",
+    "react-helmet": "^5.2.0",
     "react-icons": "^2.2.5",
     "react-odometerjs": "^1.0.1",
     "react-waypoint": "^7.3.1"
