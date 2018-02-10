@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Helmet from 'react-helmet'
 
 import { PROJECTS } from 'config'
 
@@ -21,6 +22,15 @@ const links = [
 export default function Footer() {
   return (
     <footer id="Footer">
+      <Helmet>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64694404-17" />
+        <script>
+          {`window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-64694404-17');`}
+        </script>
+      </Helmet>
       <div className="content">
         <div className="main">
           <h1>
