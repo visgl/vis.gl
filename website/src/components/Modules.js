@@ -6,41 +6,47 @@ import { fetchRepos } from 'actions/github'
 
 const modules = [
   {
-    name: 'ocular',
-    desc:
-      'A framework for the frameworks. This is the tool that generates the beautiful websites used by the frameworks in this suite.',
-    badges: ['javascript'],
-  },
-  {
     name: 'math.gl',
     desc: 'A compact, modern, and well documented library targeting the needs of 3D graphics.',
     badges: ['react-first'],
+    page: 'https://uber-web.github.io/math.gl/#/',
+    url: 'uber-web/math.gl',
   },
   {
     name: 'mjolnir.js',
     desc: 'Management of browser events and gestures in a portable, modern way.',
     badges: ['javascript'],
+    page: 'https://uber-web.github.io/mjolnir.js/#/',
+    url: 'uber-web/mjolnir.js',
   },
   {
-    url: 'https://github.com/uber-common/viewport-mercator-project',
     displayName: 'viewport-mercator-project',
-    page: 'https://github.com/uber-common/viewport-mercator-project',
+    page: 'https://uber-common.github.io/viewport-mercator-project/#/',
     desc: 'A library that collects 3D enabled web mercator projection math and tests.',
     badges: ['javascript'],
+    url: 'uber-common/viewport-mercator-project',
   },
   {
-    name: 'monochrome',
-    desc:
-      'A set of React components focusing on the needs of visualization applications (the "chrome" around a visualization)',
-    badges: ['react'],
-  },
-  {
-    name: 'sub-redux',
-    desc:
-      'A small system addingthings like watchers, pluggable sub-stores and test utilities to redux.',
-    badges: ['react'],
-  },
-]
+    name: 'probe.gl',
+    desc: 'JavaScript console instrumentation and benchmarking for browser and node.js',
+    badges: ['javascript'],
+    page: 'https://uber-web.github.io/probe.gl/#/',
+    url: 'uber-web/probe.gl'
+  }
+];
+
+// {
+//   name: 'ocular',
+//   desc:
+//     'A framework for the frameworks. This is the tool that generates the beautiful websites used by the frameworks in this suite.',
+//   badges: ['javascript'],
+// },
+// {
+//   name: 'sub-redux',
+//   desc:
+//     'A small system addingthings like watchers, pluggable sub-stores and test utilities to redux.',
+//   badges: ['react'],
+// },
 
 @connect(null, { fetchRepos })
 class Modules extends Component {

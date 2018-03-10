@@ -5,7 +5,10 @@ import cx from 'classnames'
 
 import { toggleMenu } from 'reducers/ui'
 
-const links = ['/about']
+const links = [
+  {url: '/About', label: 'About'},
+  {url: 'https://medium.com/@vis.gl', external: 'true', label: 'Blog'}
+];
 
 @connect(
   ({ ui: { isMenuOpen }, router: { location: { pathname } } }) => ({
@@ -35,8 +38,10 @@ class Header extends Component {
           </h1>
           <div className="links f">
             {links.map(link => (
-              <Link to={link} className={cx({ active: pathname.includes(link) })} key={link}>
-                {link.substr(1)}
+              link.external ?
+              <a href={link.url} key={link.url}>{link.label}</a> : 
+              <Link to={link.url} className={cx({ active: pathname.includes(link.url) })} key={link.url}>
+                {link.label}
               </Link>
             ))}
           </div>

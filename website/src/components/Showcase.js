@@ -4,6 +4,14 @@ import LinkWithArrow from './LinkWithArrow'
 const showCase = [
   {
     description:
+      'Kepler.gl is a powerful web-based geospatial data analysis tool. Built on a high performance rendering engine and designed for large-scale data sets.',
+    image: '/images/kepler-gl-contours.png',
+    label: 'Visit Site',
+    name: 'Kepler.gl',
+    url: 'http://kepler.gl'
+  },
+  {
+    description:
       'A free tool that shares dynamic insights about traffic and mobility in cities where Uber operates.',
     image: '/images/movement.png',
     label: 'Visit Site',
