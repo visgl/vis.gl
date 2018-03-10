@@ -6,7 +6,7 @@ import cx from 'classnames'
 import { toggleMenu } from 'reducers/ui'
 
 const links = [
-  {url: '/About', label: 'About'},
+  {url: '/about', label: 'About'},
   {url: 'https://medium.com/@vis.gl', external: 'true', label: 'Blog'}
 ];
 
