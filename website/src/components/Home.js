@@ -13,7 +13,7 @@ function Home() {
     <Repos />
     <Showcase />
     <Academy />
-    {null && <Modules />}
+    <Modules />
     <Footer />
   </div>
 }

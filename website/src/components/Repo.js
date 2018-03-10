@@ -98,20 +98,17 @@ class Repo extends Component {
     return (
       <div className="Repo-github Repo small">
         <h1>{this.props.displayName || name}</h1>
-
         {this.props.badges.map(badge => (
           <div className="badge" key={badge}>
             {badge}
           </div>
         ))}
-
-        {stars && (
-          <div className="Stars">
-            <Star />
-            <Odometer value={stars} options={{ format: '' }} />
-          </div>
-        )}
         <div className="Repo-desc">{desc}</div>
+        <div className="Repo-get-started">
+          <a href={this.props.page} className="link">
+            {'Get Started'}
+          </a>
+        </div>
       </div>
     )
   }
