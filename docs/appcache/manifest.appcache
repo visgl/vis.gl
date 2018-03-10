@@ -13,9 +13,10 @@ CACHE:
 ../images/icon-chart.svg
 ../images/footer-pattern.gif
 ../images/icon-custom.svg
-../images/icon-high-precision.svg
+../images/icon-chart.svg
 ../images/icon-layers.svg
 ../images/logo.svg
+../images/icon-react.svg
 ../images/uber-logo.png
 ../images/hero.jpg
 ../images/icon-react.svg
@@ -51,6 +52,7 @@ CACHE:
 ../images/team2.jpg
 ../images/team3.jpg
 ../images/team4.png
+../images/vis-logo.png
 
 NETWORK:
 *
