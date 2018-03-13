@@ -31,9 +31,16 @@ const modules = [
     desc: 'JavaScript console instrumentation and benchmarking for browser and node.js',
     badges: ['javascript'],
     page: 'https://uber-web.github.io/probe.gl/#/',
-    url: 'uber-web/probe.gl'
-  }
-];
+    url: 'uber-web/probe.gl',
+  },
+  {
+    name: 'h3',
+    desc: 'A hexagonal hierarchical geospatial indexing system',
+    badges: ['javascript'],
+    page: 'https://uber.github.io/h3/#/',
+    url: 'uber/h3',
+  },
+]
 
 // {
 //   name: 'ocular',

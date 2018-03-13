@@ -10,6 +10,8 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
+  "name": "vis.gl",
+  "version": "0.0.1",
   "dependencies": {
     "luma.gl": "^4.0.5",
     "ocular": "^0.2.13",
