@@ -1,29 +1,33 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Helmet from 'react-helmet'
+import React from "react";
+import { Link } from "react-router-dom";
+import Helmet from "react-helmet";
 
-import { PROJECTS } from 'config'
+import { PROJECTS } from "config";
 
 const links = [
   {
-    label: 'Frameworks',
-    items: Object.entries(PROJECTS).map(d => ({ label: d[0], url: d[1] })),
+    label: "Frameworks",
+    items: Object.entries(PROJECTS).map(d => ({ label: d[0], url: d[1] }))
   },
   {
-    label: 'Navigation',
+    label: "Navigation",
     items: [
-      { label: 'Home', url: '/' },
-      { label: 'About', url: '/about' },
+      { label: "Home", url: "/" },
+      { label: "About", url: "/about" },
+      { label: "In The News", url: "/inthenews" }
       // {label: 'Blog', url: '/blog'}
-    ],
-  },
-]
+    ]
+  }
+];
 
 export default function Footer() {
   return (
     <footer id="Footer">
       <Helmet>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64694404-17" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-64694404-17"
+        />
         <script>
           {`window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -34,11 +38,12 @@ export default function Footer() {
       <div className="content">
         <div className="main">
           <h1>
-            <Link to="/">{'VIS.GL'}</Link>
+            <Link to="/">{"VIS.GL"}</Link>
           </h1>
           <p>
-            The Visualization Suite is brought to you by the Uber Visualization team. We re always
-            looking for talent to do great work, so do not hesitate to get in touch!
+            The Visualization Suite is brought to you by the Uber Visualization
+            team. We re always looking for talent to do great work, so do not
+            hesitate to get in touch!
           </p>
         </div>
         {links.map(d => (
@@ -47,7 +52,7 @@ export default function Footer() {
             <ul>
               {d.items.map(i => (
                 <li key={i.label}>
-                  {d.label === 'Navigation' ? (
+                  {d.label === "Navigation" ? (
                     <Link to={i.url}>{i.label}</Link>
                   ) : (
                     <a href={i.url}>{i.label}</a>
@@ -59,5 +64,5 @@ export default function Footer() {
         ))}
       </div>
     </footer>
-  )
+  );
 }
