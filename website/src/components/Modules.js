@@ -36,7 +36,7 @@ const modules = [
   {
     name: 'h3',
     desc: 'A hexagonal hierarchical geospatial indexing system',
-    badges: ['javascript'],
+    badges: ['C'],
     page: 'https://uber.github.io/h3/#/',
     url: 'uber/h3',
   },
