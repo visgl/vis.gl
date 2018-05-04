@@ -1,9 +1,9 @@
 $primary: #00ADE6;
 $secondary: #05E3D5;
-$black: #000;
+$black: #041725;
 $black-20: #213746;
 $black-40: #5A666D;
-$white: #FFF;
+$white: #EDEDED;
 $white-40: #8D9BA3;
 
 $darkgrey: #333;
@@ -16,6 +16,12 @@ $deepcalm: #100A29;
 $linkblue: #0070C9;
 $red: #D0021B;
 $gold: #FFB401;
+
+
+$font-family: 'ff-clan-web-pro';
+
+$gradient-1: linear-gradient(to right, $primary 0%, $secondary 100%);
+$gradient-2: linear-gradient(to bottom, $primary 0%, $secondary 100%);
 
 $footer-height: 13rem;
 $topbar-height: 4rem;
