@@ -7,8 +7,8 @@ import { fetchRepos } from 'actions/github'
 const modules = [
   {
     name: 'math.gl',
-    desc: 'A compact, modern, and well documented library targeting the needs of 3D graphics.',
-    badges: ['react-first'],
+    desc: 'A compact, modern, and well documented math library targeting the needs of 3D graphics.',
+    badges: ['javascript'],
     page: 'https://uber-web.github.io/math.gl/#/',
     url: 'uber-web/math.gl',
   },

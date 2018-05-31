@@ -13,7 +13,7 @@ const repos = [
     big: true,
     desc:
       'A high-performance WebGL 2 rendering framework for big data visualizations that integrates perfectly with reactive applications.',
-    badges: ['react first'],
+    badges: ['javascript + react'],
   },
   {
     img: 'images/luma.png',
@@ -23,7 +23,7 @@ const repos = [
     big: true,
     desc:
       'A comprehensive set of WebGL 2 components targeting high-performance rendering and GPGPU computing.',
-    badges: ['pure javascript'],
+    badges: ['javascript'],
   },
   {
     img: 'images/react-map-gl.png',
@@ -32,7 +32,7 @@ const repos = [
     url: 'uber/react-map-gl',
     big: true,
     desc:
-      'A comprehensive React wrapper for mapbox-gl. Designed to work seamlessly as a basemap for geospatial visualizations.',
+      'A React wrapper for mapbox-gl. Works seamlessly as a basemap for geospatial visualizations.',
     badges: ['react only'],
   },
   {
