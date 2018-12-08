@@ -40,6 +40,21 @@ const modules = [
     page: 'https://uber.github.io/h3/#/',
     url: 'uber/h3',
   },
+  {
+    name: 'nebula.gl',
+    desc: 'A suite of 3D-enabled data editing overlays, suitable for deck.gl',
+    badges: ['javascript'],
+    page: 'https://neb.gl/#/',
+    url: 'uber/nebula.gl',
+  },
+  {
+    name: 'loaders.gl',
+    desc:
+      'A suite of framework-independent loaders (i.e. parsers) for 3D geometries and assets, as well as geospatial formats.',
+    badges: ['javascript'],
+    page: 'https://uber-web.github.io/loaders.gl/#/',
+    url: 'uber-web/loaders.gl',
+  },
 ]
 
 // {
@@ -55,7 +70,10 @@ const modules = [
 //   badges: ['react'],
 // },
 
-@connect(null, { fetchRepos })
+@connect(
+  null,
+  { fetchRepos },
+)
 class Modules extends Component {
   componentWillMount() {
     this.props.fetchRepos(['uber-common/viewport-mercator-project'])
@@ -68,7 +86,11 @@ class Modules extends Component {
           <h2>Our Components</h2>
           <p>Smaller projects that have been created to solve everyday tasks.</p>
         </div>
-        <div className="modules">{modules.map((d, i) => <Repo key={i} {...d} />)}</div>
+        <div className="modules">
+          {modules.map((d, i) => (
+            <Repo key={i} {...d} />
+          ))}
+        </div>
       </div>
     )
   }
