@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+// import { connect } from 'react-redux'
 
-import Repo from 'components/Repo'
-import { fetchRepos } from 'actions/github'
+import Repo from './Repo';
+// import { fetchRepos } from 'actions/github'
 
 const modules = [
   {
@@ -40,7 +40,7 @@ const modules = [
     page: 'https://uber.github.io/h3/#/',
     url: 'uber/h3',
   },
-]
+];
 
 // {
 //   name: 'ocular',
@@ -55,10 +55,9 @@ const modules = [
 //   badges: ['react'],
 // },
 
-@connect(null, { fetchRepos })
 class Modules extends Component {
   componentWillMount() {
-    this.props.fetchRepos(['uber-common/viewport-mercator-project'])
+    // this.props.fetchRepos(['uber-common/viewport-mercator-project'])
   }
 
   render() {
@@ -70,7 +69,7 @@ class Modules extends Component {
         </div>
         <div className="modules">{modules.map((d, i) => <Repo key={i} {...d} />)}</div>
       </div>
-    )
+    );
   }
 }
 

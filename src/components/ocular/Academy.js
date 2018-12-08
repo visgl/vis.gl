@@ -1,6 +1,6 @@
 import React from 'react'
 
-import LinkWithArrow from 'components/LinkWithArrow'
+import LinkWithArrow from './LinkWithArrow'
 
 export default function Academy() {
   return (
