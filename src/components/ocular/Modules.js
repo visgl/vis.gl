@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+// import { connect } from 'react-redux'
 
-import Repo from 'components/Repo'
-import { fetchRepos } from 'actions/github'
+import Repo from './Repo';
+// import { fetchRepos } from 'actions/github'
 
 const modules = [
   {
@@ -70,13 +70,9 @@ const modules = [
 //   badges: ['react'],
 // },
 
-@connect(
-  null,
-  { fetchRepos },
-)
 class Modules extends Component {
   componentWillMount() {
-    this.props.fetchRepos(['uber-common/viewport-mercator-project'])
+    // this.props.fetchRepos(['uber-common/viewport-mercator-project'])
   }
 
   render() {
@@ -92,7 +88,7 @@ class Modules extends Component {
           ))}
         </div>
       </div>
-    )
+    );
   }
 }
 

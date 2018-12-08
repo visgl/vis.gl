@@ -1,34 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import cx from 'classnames'
+import classNames from 'classnames'
 import Odometer from 'react-odometerjs'
-import Star from 'react-icons/lib/go/star'
+import { GoStar } from 'react-icons/go'
 
-import { setActive } from 'reducers/home'
-
-@connect(
-  ({ github, home: { activeRepo } }, { url }) => {
-    if (!url) {
-      return {}
-    }
-    const [org, name] = url.split('/')
-    const project = github[name]
-    if (!project) {
-      return { org, name, activeRepo }
-    }
-
-    return {
-      org,
-      activeRepo,
-      description: project.description,
-      stars: project.stargazers_count,
-    }
-  },
-  {
-    setActive,
-  },
-)
 class Repo extends Component {
   static defaultProps = {
     img: null,
@@ -60,7 +36,12 @@ class Repo extends Component {
 
     if (big) {
       return (
-        <div className={cx('Repo', { big, opaque: activeRepo && activeRepo !== name })}>
+        <div
+          className={classNames('Repo', {
+            big,
+            opaque: activeRepo && activeRepo !== name,
+          })}
+        >
           <div
             className="Repo-img"
             style={{ background: `url(${img}) top center / cover no-repeat` }}
@@ -80,11 +61,14 @@ class Repo extends Component {
                 </a>
               </div>
               <div className="Repo-border">
-                <a href={`https://github.com/${this.props.url}`} className="link">
+                <a
+                  href={`https://github.com/${this.props.url}`}
+                  className="link"
+                >
                   {'Github'}
                 </a>
                 <div className="Stars" onClick={() => this.open()}>
-                  <Star />
+                  <GoStar />
                   <Odometer value={stars} options={{ format: '' }} />
                 </div>
               </div>

@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import Repo from 'components/Repo'
-import { fetchRepos } from 'actions/github'
+import Repo from './Repo'
+// import { fetchRepos } from '../../reducers/actions'
+
+const mapStateToProps = () => {}
+const mapDispatchToProps = {
+  // fetchRepos,
+}
 
 const repos = [
   {
@@ -44,18 +49,17 @@ const repos = [
     desc: 'A composable, deeply customizable charting library',
     badges: ['react only'],
   },
-]
+];
 
-@connect(null, { fetchRepos })
 class Repos extends Component {
   componentWillMount() {
-    this.props.fetchRepos([
-      'uber/deck.gl',
-      'uber/luma.gl',
-      'uber/react-map-gl',
-      'uber/react-vis',
-      'uber-common/viewport-mercator-project',
-    ])
+    // this.props.fetchRepos([
+    //   'uber/deck.gl',
+    //   'uber/luma.gl',
+    //   'uber/react-map-gl',
+    //   'uber/react-vis',
+    //   'uber-common/viewport-mercator-project',
+    // ]);
   }
 
   render() {
@@ -65,10 +69,15 @@ class Repos extends Component {
           <h2>Our Frameworks</h2>
           <p>A suite of open-source visualization frameworks</p>
         </div>
-        {repos.map((d, i) => <Repo key={i} {...d} />)}
+        {repos.map((d, i) => (
+          <Repo key={i} {...d} />
+        ))}
       </div>
     )
   }
 }
 
-export default Repos
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Repos);

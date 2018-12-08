@@ -1,9 +1,9 @@
 import React from 'react'
-import cx from 'classnames'
+import classNames from 'classnames'
 
 export default function LinkWithArrow({ label, url, className }) {
   return (
-    <a className={cx('link-with-arrow', className)} href={url}>
+    <a className={classNames('link-with-arrow', className)} href={url}>
       <span className="label">{label}</span>
       <Arrow />
     </a>

@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "gatsby";
 import Helmet from "react-helmet";
 
-import { PROJECTS } from "config";
+const PROJECTS = [];
 
 const links = [
   {

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Footer from 'components/Footer'
-import LinkWithArrow from 'components/LinkWithArrow'
+import Footer from './Footer'
+import LinkWithArrow from './LinkWithArrow'
 
 function About() {
   return (
@@ -20,8 +20,8 @@ function Intro() {
       <div className="section-title">
         <h2>About us</h2>
         <p>
-          We’re a team of software engineers, information designers, and computer graphics
-          specialists at Uber.
+          We’re a team of software engineers, information designers, and
+          computer graphics specialists at Uber.
         </p>
       </div>
       <div className="about--intro--pictures">
@@ -36,8 +36,8 @@ function Intro() {
       <div className="section-title section-title--no-logo mission">
         <h2>Our mission</h2>
         <p>
-          Enhance people’s ability to understand and communicate data through interactive systems
-          for data visualization and analysis.
+          Enhance people’s ability to understand and communicate data through
+          interactive systems for data visualization and analysis.
         </p>
       </div>
       <div className="about--intro--pictures">
@@ -68,7 +68,10 @@ function Intro() {
         </div>
       </div>
       <div className="big-link">
-        <LinkWithArrow label="Join our team!" url="https://www.uber.com/careers/list/13203/" />
+        <LinkWithArrow
+          label="Join our team!"
+          url="https://www.uber.com/careers/list/13203/"
+        />
       </div>
     </div>
   )

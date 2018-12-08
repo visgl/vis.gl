@@ -1,7 +1,7 @@
 import React from "react";
 
-import Footer from "components/Footer";
-import LinkWithArrow from "components/LinkWithArrow";
+import Footer from "./Footer";
+import LinkWithArrow from "./LinkWithArrow";
 
 export default function InTheNews() {
   return (

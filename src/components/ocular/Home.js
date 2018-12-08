@@ -1,5 +1,6 @@
 import React from 'react'
-import Hero from './Hero';
+import Header from './header';
+// import Hero from './Hero';
 import Repos from './Repos';
 import Showcase from './Showcase';
 import Academy from './Academy';
@@ -9,7 +10,8 @@ import Footer from './Footer';
 
 function Home() {
   return <div id="home">
-    <Hero />
+    <Header />
+    {/* <Hero /> */}
     <Repos />
     <Showcase />
     <Academy />
