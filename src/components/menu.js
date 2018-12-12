@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
 
 export default ({ data, isMenuOpen, toggleMenu, items }) => {
   // const title = data.site.siteMetadata.title

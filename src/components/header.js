@@ -37,7 +37,6 @@ export default class Header extends Component {
           }
         `}
         render={data => {
-          console.log(data);
           const { isMenuOpen } = this.state;
           return (
             <header

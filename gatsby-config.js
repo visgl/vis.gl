@@ -1,9 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Vis.Gl',
+    siteUrl: 'http://vis.gl',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,7 +27,6 @@ module.exports = {
       },
     },
     'gatsby-transformer-sharp',
-
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-manifest`,

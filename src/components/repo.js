@@ -6,7 +6,7 @@ import { GoStar } from 'react-icons/go';
 
 let Odometer = ({ value }) => <span>{value}</span>;
 if (typeof window !== `undefined`) {
-  Odomoter = require('react-odometerjs');
+  Odometer = require('react-odometerjs').default;
 }
 
 export default class Repo extends Component {
@@ -20,21 +20,18 @@ export default class Repo extends Component {
   static propTypes = {
     url: PropTypes.string,
   };
+  componentDidMount() {
+    this.setState({stars: this.props.stars});
+  }
   state = {
     active: false,
+    stars: 0,
   };
+  
   open = page => {
     const { url } = this.props;
     window.open(page || `https://github.com/${url}`, '_blank');
   };
-
-  stopPropa = e => {
-    e.stopPropagation();
-  };
-
-  onEnter = () => this.props.setActive(this.props.name);
-
-  onLeave = () => this.props.setActive(null);
 
   render() {
     const {
@@ -43,20 +40,13 @@ export default class Repo extends Component {
       image,
       name,
       page,
-      stars,
       type,
       url,
     } = this.props;
-    const { active } = this.state;
-
+    const { stars } = this.state;
     if (type === 'FRAMEWORK') {
       return (
-        <div
-          className={classNames('Repo', {
-            big: true,
-            opaque: !active,
-          })}
-        >
+        <div className={classNames('Repo', 'big', 'opaque')}>
           <div
             className="Repo-img"
             style={{ background: `url(${image}) top center / cover no-repeat` }}
