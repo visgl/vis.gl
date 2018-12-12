@@ -11,7 +11,21 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-64694404-17',
+        head: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: './src/images/favicon.png',
+      },
+    },
     'gatsby-transformer-sharp',
+
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-manifest`,
@@ -26,36 +40,19 @@ module.exports = {
       },
     },
     {
-      resolve: '@dschau/gatsby-source-github',
+      resolve: 'gatsby-source-graphql',
       options: {
+        typeName: 'GitHub',
+        fieldName: 'github',
+        // Url to query from
+        url: 'https://api.github.com/graphql',
+        // HTTP headers
         headers: {
-          Authorization: `Bearer 3a39da38d3c9e5b9757f7900cd551e5ef9c0bf6a`, // https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+          // Learn about environment variables: https://gatsby.app/env-vars
+          Authorization: `bearer 3a39da38d3c9e5b9757f7900cd551e5ef9c0bf6a`,
         },
-        queries: [
-          `query { 
-            nodes(ids: [
-              "MDEwOlJlcG9zaXRvcnk5NzA0MTgxOA==", 
-              "MDEwOlJlcG9zaXRvcnk1MDM0MDkyOA==",
-              "MDEwOlJlcG9zaXRvcnk0MzkwMzg4Mg==",
-              "MDEwOlJlcG9zaXRvcnk1MjMwNDM2Mg=="
-            ]) {
-              ...on Repository {
-                owner {
-                  ...on Organization {
-                    name
-                  }
-                }
-                description
-                name
-                url
-                homepageUrl
-                stargazers {
-                  totalCount
-                }
-              }
-            }
-          }`,
-        ],
+        // Additional options to pass to node-fetch
+        fetchOptions: {},
       },
     },
     `gatsby-transformer-yaml`,
@@ -69,4 +66,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};
