@@ -434,7 +434,7 @@ header.home h1 {
 footer h1:before,
 header.home h1:before {
   content: '';
-  background: url('/images/logo-small.png') no-repeat;
+  background: url(../images/logo-small.png) no-repeat;
   background-size: cover;
   height: 38px;
   width: 47px;
@@ -606,7 +606,7 @@ header.home h1 a:visited {
 }
 
 .section-title {
-  background: url('/images/vis-logo.png') no-repeat;
+  background: url('../images/vis-logo.png') no-repeat;
   max-width: 1172px;
   margin: 67px auto 57px;
   min-height: 296px;
