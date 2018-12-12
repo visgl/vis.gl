@@ -1,42 +1,90 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Component } from 'react';
+import classNames from 'classnames';
+import { StaticQuery, graphql } from 'gatsby';
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
+import Menu from './menu';
+import Links from './links';
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+export default class Header extends Component {
+  state = {
+    isMenuOpen: false,
+  };
+  toggleMenu = menuState => {
+    this.setState({ isMenuOpen: menuState });
+  };
+  render() {
+    return (
+      <StaticQuery
+        query={graphql`
+          query {
+            allLinksYaml {
+              edges {
+                node {
+                  navigation {
+                    type
+                    items {
+                      item {
+                        active
+                        label
+                        url
+                        route
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `}
+        render={data => {
+          console.log(data);
+          const { isMenuOpen } = this.state;
+          return (
+            <header
+              className={classNames({
+                open: isMenuOpen,
+                [this.props.page]: true,
+              })}
+            >
+              <div className="f container ph2">
+                {data.allLinksYaml.edges.map(
+                  (
+                    {
+                      node: {
+                        navigation: { type, items },
+                      },
+                    },
+                    idx
+                  ) => {
+                    switch (type) {
+                      case 'MENU':
+                        return (
+                          <Menu
+                            key={idx}
+                            isMenuOpen={isMenuOpen}
+                            items={items}
+                            page={this.props.page}
+                            toggleMenu={this.toggleMenu}
+                          />
+                        );
+                      case 'LINKS':
+                        return (
+                          <Links
+                            key={idx}
+                            items={items}
+                            page={this.props.page}
+                          />
+                        );
+                      default:
+                        return null;
+                    }
+                  }
+                )}
+              </div>
+            </header>
+          );
+        }}
+      />
+    );
+  }
 }
-
-Header.defaultProps = {
-  siteTitle: '',
-}
-
-export default Header

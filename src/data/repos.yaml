@@ -1,0 +1,108 @@
+- repo:
+  name: deck.gl
+  owner: uber
+  ID: MDEwOlJlcG9zaXRvcnk0ODAzMDIwNA==
+  img: deck.png
+  url: uber/deck.gl
+  page: http://uber.github.io/deck.gl/#/
+  description: A high-performance WebGL 2 rendering framework for big data visualizations that integrates perfectly with reactive applications.
+  badges:
+    - badge: react first
+  type: FRAMEWORK
+- repo:
+  ID: MDEwOlJlcG9zaXRvcnk1MDM0MDkyOA==
+  img: luma.png
+  name: luma.gl
+  owner: uber
+  page: http://uber.github.io/luma.gl/#/
+  url: uber/luma.gl
+  type: FRAMEWORK
+  description: A comprehensive set of WebGL 2 components targeting high-performance rendering and GPGPU computing.
+  badges:
+    - badge: pure javascript
+- repo:
+  ID: MDEwOlJlcG9zaXRvcnk0MzkwMzg4Mg==
+  img: react-map-gl.png
+  name: react-map-gl
+  owner: uber
+  page: https://uber.github.io/react-map-gl/#/
+  url: uber/react-map-gl
+  description: A comprehensive React wrapper for mapbox-gl. Designed to work seamlessly as a basemap for geospatial visualizations.
+  badges:
+    - badge: react only
+  type: FRAMEWORK
+- repo:
+  ID: MDEwOlJlcG9zaXRvcnk1MjMwNDM2Mg==
+  img: react-vis.png
+  name: react-vis
+  owner: uber
+  url: uber/react-vis
+  page: https://uber.github.io/react-vis/
+  description: A composable, deeply customizable charting library
+  badges:
+    - badge: react only
+  type: FRAMEWORK
+- repo:
+  ID: MDEwOlJlcG9zaXRvcnkxMDQ1MDMxNjI=
+  name: math.gl
+  description: A compact, modern, and well documented library targeting the needs of 3D graphics.
+  badges:
+    - badge: react-first
+  type: MODULE
+  page: https://uber-web.github.io/math.gl/#/
+  url: uber-web/math.gl
+- repo:
+  id: MDEwOlJlcG9zaXRvcnkxMDQ1MDMyMjA=
+  name: mjolnir.js
+  description: Management of browser events and gestures in a portable, modern way.
+  badges:
+    - badge: javascript
+  page: https://uber-web.github.io/mjolnir.js/#/
+  type: MODULE
+  url: uber-web/mjolnir.js
+- repo:
+  ID: MDEwOlJlcG9zaXRvcnk0MjUzODYyNQ==
+  name: viewport-mercator-project
+  page: https://uber-common.github.io/viewport-mercator-project/#/
+  description: A library that collects 3D enabled web mercator projection math and tests.
+  badges:
+    - badge: javascript
+  url: uber-common/viewport-mercator-project
+  type: MODULE
+- repo:
+  ID: MDEwOlJlcG9zaXRvcnkxMDQ1MDMzMzE=
+  name: probe.gl
+  description: JavaScript console instrumentation and benchmarking for browser and node.js
+  badges:
+    - badge: javascript
+  page: https://uber-web.github.io/probe.gl/#/
+  url: uber-web/probe.gl
+  type: MODULE
+- repoo:
+  ID: MDEwOlJlcG9zaXRvcnkxMTQ5NDg4MTY=
+  name: h3
+  description: A hexagonal hierarchical geospatial indexing system
+  badges:
+    - badge: c
+    - badge: javascript
+  page: https://uber.github.io/h3/#/
+  url: uber/h3
+  type: MODULE
+- repo:
+  name: nebula.gl
+  ID: MDEwOlJlcG9zaXRvcnkxMjE2NjQwMTM=
+  description: A suite of 3D-enabled data editing overlays, suitable for deck.gl
+  badges:
+    - badge: javascript
+  page: https://neb.gl/#/
+  url: uber/nebula.gl
+  type: MODULE
+- repo:
+  name: loaders.gl
+  badges:
+    - badge: javascript
+  ID: MDEwOlJlcG9zaXRvcnkxNDc4NzM5Njc=
+  description: A suite of framework-independent loaders (i.e. parsers) for 3D geometries and assets, as well as geospatial formats.
+  page: https://uber-web.github.io/loaders.gl/#/
+  url: uber-web/loaders.gl
+  type: MODULE

@@ -1,5 +1,6 @@
 - navigation:
     type: MENU
+    title: Frameworks
     items:
     - item:
         active: true
@@ -19,6 +20,7 @@
         url: https://uber.github.io/react-vis/
 - navigation:
     type: LINKS
+    title: Navigation
     items:
         - item:
             label: Home
@@ -32,4 +34,3 @@
         - item:
             label: In the News
             route: /inthenews
-        
