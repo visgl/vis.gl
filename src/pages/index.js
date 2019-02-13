@@ -3,12 +3,21 @@ import Layout from '../components/layout';
 import { graphql } from 'gatsby';
 import Home from '../components/home.js';
 
-const IndexPage = ({data}) => {
-  const imageResolver = data.allFile.edges.reduce((prev, curr) => {prev[curr.node.relativePath] = curr.node.publicURL; return prev;}, {});
-  const starResolver = data.github.nodes.reduce((prev, curr) => {prev[curr.id] = curr.stargazers.totalCount; return prev;}, {});
+const IndexPage = ({ data }) => {
+  const imageResolver = data.allFile.edges.reduce((prev, curr) => {
+    prev[curr.node.relativePath] = curr.node.publicURL;
+    return prev;
+  }, {});
+  const starResolver = (data.github || { nodes: [] }).nodes.reduce(
+    (prev, curr) => {
+      prev[curr.id] = curr.stargazers.totalCount;
+      return prev;
+    },
+    {}
+  );
   return (
     <Layout page="home">
-      <Home imageResolver={imageResolver} starResolver={starResolver}/>
+      <Home imageResolver={imageResolver} starResolver={starResolver} />
     </Layout>
   );
 };
@@ -25,7 +34,10 @@ export const query = graphql`
         }
       }
     }
-    github {
+  }
+`;
+/*
+github {
       nodes(
         ids: [
           "MDEwOlJlcG9zaXRvcnk0ODAzMDIwNA=="
@@ -42,5 +54,4 @@ export const query = graphql`
         }
       }
     }
-  }
-`;
+    */

@@ -40,22 +40,22 @@ module.exports = {
         icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: 'gatsby-source-graphql',
-      options: {
-        typeName: 'GitHub',
-        fieldName: 'github',
-        // Url to query from
-        url: 'https://api.github.com/graphql',
-        // HTTP headers
-        headers: {
-          // Learn about environment variables: https://gatsby.app/env-vars
-          Authorization: `bearer 3a39da38d3c9e5b9757f7900cd551e5ef9c0bf6a`,
-        },
-        // Additional options to pass to node-fetch
-        fetchOptions: {},
-      },
-    },
+    // {
+    //   resolve: 'gatsby-source-graphql',
+    //   options: {
+    //     typeName: 'GitHub',
+    //     fieldName: 'github',
+    //     // Url to query from
+    //     url: 'https://api.github.com/graphql',
+    //     // HTTP headers
+    //     headers: {
+    //       // Learn about environment variables: https://gatsby.app/env-vars
+    //       Authorization: `bearer 3a39da38d3c9e5b9757f7900cd551e5ef9c0bf6a`,
+    //     },
+    //     // Additional options to pass to node-fetch
+    //     fetchOptions: {},
+    //   },
+    // },
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -63,6 +63,15 @@ module.exports = {
         path: `./src/data/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'markdown',
+        path: `./`,
+        ext: '.md',
+      },
+    },
+    `gatsby-transformer-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

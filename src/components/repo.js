@@ -69,10 +69,10 @@ export default class Repo extends Component {
                 <a href={`https://github.com/${url}`} className="link">
                   {'Github'}
                 </a>
-                <div className="Stars" onClick={() => this.open()}>
+                {stars ? <div className="Stars" onClick={() => this.open()}>
                   <GoStar />
                   <Odometer value={stars} options={{ format: '' }} />
-                </div>
+                </div> : null}
               </div>
             </div>
 

@@ -17,6 +17,7 @@
     "gatsby-plugin-sitemap": "^2.0.3",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-source-graphql": "^2.0.7",
+    "gatsby-transformer-remark": "^2.1.17",
     "gatsby-transformer-sharp": "^2.1.8",
     "luma.gl": "^6.3.0",
     "react": "^16.6.3",
