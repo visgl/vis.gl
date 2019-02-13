@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf .cache &&
 gatsby build &&
 rm -rf /tmp/dist-vis-gl &&
 mv public /tmp/dist-vis-gl &&
