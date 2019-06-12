@@ -1,0 +1,36 @@
+- navigation:
+    type: MENU
+    title: Frameworks
+    items:
+    - item:
+        active: true
+        label: Vis.gl
+        url: http://vis.gl
+    - item:
+        label: Deck.gl
+        url: http://decl.gl
+    - item:
+        label: Luma.gl
+        url: http://luma.gl
+    - item:
+        label: React-Map-Gl
+        url: https://uber.github.io/react-map-gl/
+    - item:
+        label: React-Vis
+        url: https://uber.github.io/react-vis/
+- navigation:
+    type: LINKS
+    title: Navigation
+    items:
+        - item:
+            label: Home
+            route: /
+        - item:
+            label: Blog
+            url: https://medium.com/@vis.gl
+        - item:
+            label: About
+            route: /about
+        - item:
+            label: In the News
+            route: /inthenews
