@@ -45,22 +45,32 @@
       </td>        
     </tr>
     <tr>  
-      Seer
-      <a href="https://travis-ci.org/uber-web/Seer">
-        <img src="https://img.shields.io/travis/uber-web/Seer.svg?style=flat-square">
-      </a>
-      <a href="https://www.npmjs.com/package/seer">
-        <img src="https://img.shields.io/npm/v/seer.svg?style=flat-square">
-      </a>
-      <a href="https://chrome.google.com/webstore/detail/seer/eogckabefmgphfgngjdmmlfbddmonfdh">
-        <img src="https://img.shields.io/chrome-web-store/v/eogckabefmgphfgngjdmmlfbddmonfdh.svg?style=flat-square">
-      </a>
-      <a href="https://github.com/SIGSEV/minus">
-        <img src="https://img.shields.io/badge/scaffold-minus-blue.svg?style=flat-square">
-      </a>
-      <a href="https://coveralls.io/github/uber-web/Seer">
-        <img src="https://img.shields.io/coveralls/uber-web/Seer.svg?style=flat-square">
-      </a>
-    </td>
+      <td>
+        <a href="https://travis-ci.org/uber-web/Seer">
+          Seer
+         </a>
+      </td>
+      <td>
+         <a href="https://www.npmjs.com/package/seer">
+           <img src="https://img.shields.io/npm/v/seer.svg?style=flat-square">
+         </a>
+      </td>
+      <td>
+         <img src="https://img.shields.io/travis/uber-web/Seer.svg?style=flat-square">
+         <a href="https://github.com/SIGSEV/minus">
+           <img src="https://img.shields.io/badge/scaffold-minus-blue.svg?style=flat-square">
+         </a>
+      </td>
+      <td>
+         <a href="https://chrome.google.com/webstore/detail/seer/eogckabefmgphfgngjdmmlfbddmonfdh">
+           <img src="https://img.shields.io/chrome-web-store/v/eogckabefmgphfgngjdmmlfbddmonfdh.svg?style=flat-square">
+         </a>
+      </td>
+      <td>
+         <a href="https://coveralls.io/github/uber-web/Seer">
+           <img src="https://img.shields.io/coveralls/uber-web/Seer.svg?style=flat-square">
+         </a>
+       </td>
+     </tr>
   </tbody>
 </table>
