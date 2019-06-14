@@ -4,18 +4,36 @@
    <thead>
       <tr> 
         <th> Framework </th>
+        <th> Core Module </th>
         <th> Version </th>
         <th> Stats </th>
       </tr>
   </thead>
   <tbody>
     <tr>
+      <td>
+        <a href='https://coveralls.io/github/uber-web/loaders.gl'> loaders.gl </a>
+      </td>
+      <td>
+         <a href="https://npmjs.org/package/@loaders.gl/core">  @loaders.gl/core </a>
+      </td>
+       <td>
+          <img src="https://img.shields.io/npm/v/@loaders.gl/core.svg?style=flat-square" alt="version" />
+          <img src="https://api.travis-ci.com/uber-web/loaders.gl.svg?branch=master" alt="build" />
+      </td>
+      <td>
+         <img src="https://img.shields.io/npm/dm/loaders.gl.svg?style=flat-square" alt="downloads" />
+         <img src='https://coveralls.io/repos/github/uber-web/loaders.gl/badge.svg' alt='Coverage Status' />
+      </td>
+    </tr>
+
+    <tr>
       <td> math.gl </td>
       <td>
         <a href="https://npmjs.org/package/@math.gl/core">
           <img src="https://img.shields.io/npm/v/@math.gl/core.svg?style=flat-square" alt="version" />
         </a>
-        <a href="https://travis-ci.com/uber-web/math.gl">
+        
           <img src="https://api.travis-ci.com/uber-web/math.gl.svg?branch=master" alt="build" />
         </a>
       </td>
@@ -29,22 +47,6 @@
       </td>        
     </tr>
     
-    <tr>
-      <td>
-       loaders.gl
-        </a>
-          <img src="https://img.shields.io/npm/v/@loaders.gl/core.svg?style=flat-square" alt="version" />
-        <a href="https://npmjs.org/package/math.gl">
-          <img src="https://img.shields.io/npm/dm/math.gl.svg?style=flat-square" alt="downloads" />
-        </a>
-        <a href="https://travis-ci.com/uber-web/loaders.gl">
-          <img src="https://api.travis-ci.com/uber-web/loaders.gl.svg?branch=master" alt="build" />
-        </a>
-        <a href='https://coveralls.io/github/uber-web/loaders.gl'>
-          <img src='https://coveralls.io/repos/github/uber-web/loaders.gl/badge.svg' alt='Coverage Status' />
-        </a>
-      </td>
-    </tr>
   
     <tr>  
       Seer
@@ -66,4 +68,3 @@
     </td>
   </tbody>
 </table>
-</span>
