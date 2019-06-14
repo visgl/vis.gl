@@ -26,14 +26,12 @@
          <img src='https://coveralls.io/repos/github/uber-web/loaders.gl/badge.svg' alt='Coverage Status' />
       </td>
     </tr>
-
     <tr>
       <td> math.gl </td>
       <td>
         <a href="https://npmjs.org/package/@math.gl/core">
           <img src="https://img.shields.io/npm/v/@math.gl/core.svg?style=flat-square" alt="version" />
         </a>
-        
           <img src="https://api.travis-ci.com/uber-web/math.gl.svg?branch=master" alt="build" />
         </a>
       </td>
@@ -46,8 +44,6 @@
         </a>
       </td>        
     </tr>
-    
-  
     <tr>  
       Seer
       <a href="https://travis-ci.org/uber-web/Seer">
