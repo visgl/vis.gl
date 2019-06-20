@@ -87,7 +87,7 @@
         </a>
       </td>
       <td>
-        <a href='https://coveralls.io/github/uber-web/math.gl'>
+        <a href='https://coveralls.io/github/uber/deck.gl'>
           <img src='https://coveralls.io/repos/github/uber/deck.gl/badge.svg' alt='Coverage Status' />
         </a>
       </td>        
