@@ -67,7 +67,7 @@
       </td>
       <td>
         <a href='https://coveralls.io/github/uber/luma.gl'>
-          <img src='https://coveralls.io/repos/github/uber/luma.gl/badge.svg' alt='Coverage Status' />
+          <img src='https://coveralls.io/repos/github/uber/luma.gl/badge.svg?branch=master' alt='Coverage Status' />
         </a>
       </td>        
     </tr>
@@ -88,7 +88,7 @@
       </td>
       <td>
         <a href='https://coveralls.io/github/uber/deck.gl'>
-          <img src='https://coveralls.io/repos/github/uber/deck.gl/badge.svg' alt='Coverage Status' />
+          <img src='https://coveralls.io/repos/github/uber/deck.gl/badge.svg?branch=master' alt='Coverage Status' />
         </a>
       </td>        
     </tr>
