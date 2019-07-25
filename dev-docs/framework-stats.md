@@ -13,10 +13,10 @@
   <tbody>
     <tr>
       <td>
-        <a href='https://coveralls.io/github/uber-web/loaders.gl'> loaders.gl </a>
+        <a href='https://github.com/uber-web/loaders.gl'> loaders.gl </a>
       </td>
       <td>
-         <a href="https://npmjs.org/package/@loaders.gl/core">  @loaders.gl/core </a>
+         <a href="https://npmjs.org/package/@loaders.gl/core"> @loaders.gl/core </a>
       </td>
        <td>
           <img src="https://img.shields.io/npm/v/@loaders.gl/core.svg?style=flat-square" alt="version" />
@@ -32,9 +32,11 @@
       </td>
     </tr>
     <tr>
-      <td> math.gl </td>
       <td>
-         <a href="https://npmjs.org/package/math.gl">  math.gl </a>
+        <a href='https://github.com/uber-web/math.gl'> math.gl </a>
+      </td>
+      <td>
+         <a href="https://npmjs.org/package/math.gl"> math.gl </a>
       </td>
       <td>
          <img src="https://img.shields.io/npm/v/math.gl.svg?style=flat-square" alt="version" />
@@ -53,9 +55,11 @@
       </td>
     </tr>
     <tr>
-      <td> luma.gl </td>
       <td>
-         <a href="https://npmjs.org/package/@luma.gl/core">  @luma.gl/core </a>
+        <a href='https://github.com/uber/luma.gl'> luma.gl </a>
+      </td>
+      <td>
+         <a href="https://npmjs.org/package/@luma.gl/core"> @luma.gl/core </a>
       </td>
       <td>
          <img src="https://img.shields.io/npm/v/@luma.gl/core.svg?style=flat-square" alt="version" />
@@ -74,9 +78,11 @@
       </td>
     </tr>
     <tr>
-      <td> deck.gl </td>
       <td>
-         <a href="https://npmjs.org/package/@deck.gl/core">  @deck.gl/core </a>
+        <a href='https://github.com/uber/deck.gl'> deck.gl </a>
+      </td>
+      <td>
+         <a href="https://npmjs.org/package/@deck.gl/core"> @deck.gl/core </a>
       </td>
       <td>
          <img src="https://img.shields.io/npm/v/@deck.gl/core.svg?style=flat-square" alt="version" />
@@ -95,9 +101,11 @@
       </td>
     </tr>
     <tr>
-      <td> react-map-gl </td>
       <td>
-         <a href="https://npmjs.org/package/react-map-gl">  react-map-gl </a>
+        <a href='https://github.com/uber/react-map-gl'> react-map-gl </a>
+      </td>
+      <td>
+         <a href="https://npmjs.org/package/react-map-gl"> react-map-gl </a>
       </td>
       <td>
          <img src="https://img.shields.io/npm/v/react-map-gl.svg?style=flat-square" alt="version" />
@@ -116,9 +124,11 @@
       </td>
     </tr>
     <tr>
-      <td> streetscape.gl </td>
       <td>
-         <a href="https://npmjs.org/package/streetscape.gl">  streetscape.gl </a>
+        <a href='https://github.com/uber/streetscape.gl'> streetscape.gl </a>
+      </td>
+      <td>
+         <a href="https://npmjs.org/package/streetscape.gl"> streetscape.gl </a>
       </td>
       <td>
          <img src="https://img.shields.io/npm/v/streetscape.gl.svg?style=flat-square" alt="version" />
@@ -137,9 +147,11 @@
       </td>
     </tr>
     <tr>
-      <td> XVIZ </td>
       <td>
-         <a href="https://npmjs.org/package/@xviz/parser">  @xviz/parser </a>
+        <a href='https://github.com/uber/xviz'> XVIZ </a>
+      </td>
+      <td>
+         <a href="https://npmjs.org/package/@xviz/parser"> @xviz/parser </a>
       </td>
       <td>
          <img src="https://img.shields.io/npm/v/@xviz/parser.svg?style=flat-square" alt="version" />
@@ -158,9 +170,11 @@
       </td>
     </tr>
     <tr>
-      <td> probe.gl </td>
       <td>
-         <a href="https://npmjs.org/package/probe.gl">  probe.gl </a>
+        <a href='https://github.com/uber-web/probe.gl'> probe.gl </a>
+      </td>
+      <td>
+         <a href="https://npmjs.org/package/probe.gl"> probe.gl </a>
       </td>
       <td>
          <img src="https://img.shields.io/npm/v/probe.gl.svg?style=flat-square" alt="version" />
@@ -179,9 +193,11 @@
       </td>
     </tr>
     <tr>
-      <td> mjolnir.js </td>
       <td>
-         <a href="https://npmjs.org/package/mjolnir.js">  mjolnir.js </a>
+        <a href='https://github.com/uber-web/mjolnir.js'> mjolnir.js </a>
+      </td>
+      <td>
+         <a href="https://npmjs.org/package/mjolnir.js"> mjolnir.js </a>
       </td>
       <td>
          <img src="https://img.shields.io/npm/v/mjolnir.js.svg?style=flat-square" alt="version" />
@@ -197,9 +213,11 @@
       </td>
     </tr>
     <tr>
-      <td> viewport-mercator-project </td>
       <td>
-         <a href="https://npmjs.org/package/viewport-mercator-project">  viewport-mercator-project </a>
+        <a href='https://github.com/uber-common/viewport-mercator-project'> viewport-mercator-project </a>
+      </td>
+      <td>
+         <a href="https://npmjs.org/package/viewport-mercator-project"> viewport-mercator-project </a>
       </td>
       <td>
          <img src="https://img.shields.io/npm/v/viewport-mercator-project.svg?style=flat-square" alt="version" />
@@ -215,9 +233,11 @@
       </td>
     </tr>
     <tr>
-      <td> nebula.gl </td>
       <td>
-         <a href="https://npmjs.org/package/nebula.gl">  nebula.gl </a>
+        <a href='https://github.com/uber/nebula.gl'> nebula.gl </a>
+      </td>
+      <td>
+         <a href="https://npmjs.org/package/nebula.gl"> nebula.gl </a>
       </td>
       <td>
          <img src="https://img.shields.io/npm/v/nebula.gl.svg?style=flat-square" alt="version" />
@@ -236,9 +256,11 @@
       </td>
     </tr>
     <tr>
-      <td> H3 </td>
       <td>
-         <a href="https://npmjs.org/package/h3-js">  h3-js </a>
+        <a href='https://github.com/uber/h3-js'> h3-js </a>
+      </td>
+      <td>
+         <a href="https://npmjs.org/package/h3-js"> h3-js </a>
       </td>
       <td>
          <img src="https://img.shields.io/npm/v/h3-js.svg?style=flat-square" alt="version" />
@@ -256,33 +278,5 @@
         </a>
       </td>
     </tr>
-    <tr>
-      <td>
-        <a href="https://travis-ci.org/uber-web/Seer">
-          Seer
-         </a>
-      </td>
-      <td>
-      </td>
-      <td>
-         <a href="https://www.npmjs.com/package/seer">
-           <img src="https://img.shields.io/npm/v/seer.svg?style=flat-square">
-         </a>
-         <img src="https://img.shields.io/travis/uber-web/Seer.svg?style=flat-square">
-         <a href="https://github.com/SIGSEV/minus">
-           <img src="https://img.shields.io/badge/scaffold-minus-blue.svg?style=flat-square">
-         </a>
-         <a href="https://chrome.google.com/webstore/detail/seer/eogckabefmgphfgngjdmmlfbddmonfdh">
-           <img src="https://img.shields.io/chrome-web-store/v/eogckabefmgphfgngjdmmlfbddmonfdh.svg?style=flat-square">
-         </a>
-      </td>
-      </td>
-      <td>
-      <td>
-         <a href="https://coveralls.io/github/uber-web/Seer">
-           <img src="https://img.shields.io/coveralls/uber-web/Seer.svg?style=flat-square">
-         </a>
-       </td>
-     </tr>
   </tbody>
 </table>
