@@ -205,6 +205,7 @@
         <img src="https://api.travis-ci.com/uber-web/mjolnir.js.svg?branch=master" alt="build" />
       </td>
       <td>
+         <img src="https://coveralls.io/github/uber-web/mjolnir.js?branch=master" alt="coverage" />
       </td>
     </tr>
     <tr>
