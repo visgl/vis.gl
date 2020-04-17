@@ -58,7 +58,7 @@
     </tr>
     <tr>
       <td>
-        <a href='https://github.com/uber/luma.gl'> luma.gl </a>
+        <a href='https://github.com/visgl/luma.gl'> luma.gl </a>
       </td>
       <td>
         <a href="https://npmjs.org/package/@luma.gl/core"> @luma.gl/core </a>
@@ -80,7 +80,7 @@
     </tr>
     <tr>
       <td>
-        <a href='https://github.com/uber/deck.gl'> deck.gl </a>
+        <a href='https://github.com/visgl/deck.gl'> deck.gl </a>
       </td>
       <td>
         <a href="https://npmjs.org/package/@deck.gl/core"> @deck.gl/core </a>
@@ -102,7 +102,7 @@
     </tr>
     <tr>
       <td>
-        <a href='https://github.com/uber/react-map-gl'> react-map-gl </a>
+        <a href='https://github.com/visgl/react-map-gl'> react-map-gl </a>
       </td>
       <td>
         <a href="https://npmjs.org/package/react-map-gl"> react-map-gl </a>
