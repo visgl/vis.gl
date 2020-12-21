@@ -26,11 +26,17 @@
             label: Home
             route: /
         - item:
-            label: Blog
-            url: https://medium.com/@vis.gl
+            label: Frameworks
+            route: /frameworks
         - item:
-            label: About
-            route: /about
+            label: Showcases
+            route: /showcases
         - item:
             label: In the News
             route: /inthenews
+        - item:
+            label: Blog
+            url: /blog
+        - item:
+            label: Medium
+            url: https://medium.com/@vis.gl

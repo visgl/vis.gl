@@ -18,7 +18,7 @@ function Intro({ imageResolver}) {
       <div className="section-title">
         <h2>About us</h2>
         <p>
-          We’re a team of software engineers, information designers, and
+          We are a team of software engineers, information designers, and
           computer graphics specialists at Uber.
         </p>
       </div>

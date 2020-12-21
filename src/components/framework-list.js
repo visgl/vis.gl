@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import Repo from './repo';
-const Repos = ({ starResolver, imageResolver }) => (
+import FrameworkPane from './framework-pane';
+const FrameworkList = ({ starResolver, imageResolver }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -27,11 +27,11 @@ const Repos = ({ starResolver, imageResolver }) => (
       return (
         <div id="repos">
           <div className="section-title">
-            <h2>Our Frameworks</h2>
+            <h2>The Frameworks</h2>
             <p>A suite of open-source visualization frameworks</p>
           </div>
           {data.allReposYaml.edges.map(({ node }, i) => (
-            <Repo
+            <FrameworkPane
               key={i}
               {...node}
               image={imageResolver[node.img]}
@@ -44,4 +44,4 @@ const Repos = ({ starResolver, imageResolver }) => (
   />
 );
 
-export default Repos;
+export default FrameworkList;

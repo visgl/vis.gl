@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import Hero from '../components/hero';
-import Manifesto from '../components/manifesto';
+import Showcase from '../components/showcase';
+import Academy from '../components/academy';
 
 const IndexPage = ({data}) => {
   const imageResolver = data.allFile.edges.reduce((prev, curr) => {prev[curr.node.relativePath] = curr.node.publicURL; return prev;}, {});
@@ -10,8 +10,8 @@ const IndexPage = ({data}) => {
   return (
     <Layout page="home">
       <div id="home">
-        <Hero />
-        <Manifesto />
+        <Showcase imageResolver={imageResolver}/>
+        <Academy />
       </div>
     </Layout>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import Repo from './repo';
+import FrameworkPane from './framework-pane';
 
 const Modules = () => (
   <StaticQuery
@@ -35,7 +35,7 @@ const Modules = () => (
           </div>
           <div className="modules">
             {data.allReposYaml.edges.map(({ node }, i) => (
-              <Repo key={i} {...node} />
+              <FrameworkPane key={i} {...node} />
             ))}
           </div>
         </div>

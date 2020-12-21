@@ -162,7 +162,7 @@ class Hero extends Component {
               id="lumagl-canvas"
               style={{
                 position: 'absolute',
-                height: '100%',
+                height: '500px',
                 top: 0,
                 width: '100vw',
                 zIndex: -1,
@@ -171,13 +171,12 @@ class Hero extends Component {
           </Waypoint>
         ) : null}
         <div className="main">
-          {'Cutting edge '}
-          <em>technology</em>
-          {' meets beautiful '}
-          <em>data visualization.</em>
+          {'Large scale '}
+          <em>geospatial</em>
+          {' data visualization'}
         </div>
         <div className="secondary">
-          Industrial-grade frameworks to supercharge your next big idea.
+          Promoting Industry Collaboration through Open Source and Open Governance
         </div>
       </div>
     );
