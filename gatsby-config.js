@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Vis.Gl',
+    title: 'vis.gl',
     siteUrl: 'http://vis.gl',
   },
   plugins: [
@@ -40,6 +40,7 @@ module.exports = {
         icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
       },
     },
+    /*
     {
       resolve: 'gatsby-source-graphql',
       options: {
@@ -56,6 +57,7 @@ module.exports = {
         fetchOptions: {},
       },
     },
+    */
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,

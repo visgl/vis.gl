@@ -1,11 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import InternalPageRenderer from "./page-renderer"
 import loader from "./loader"
+import InternalPageRenderer from "./page-renderer"
 
 const ProdPageRenderer = ({ location }) => {
-  const pageResources = loader.getResourcesForPathnameSync(location.pathname)
+  const pageResources = loader.loadPageSync(location.pathname)
+  if (!pageResources) {
+    return null
+  }
   return React.createElement(InternalPageRenderer, {
     location,
     pageResources,

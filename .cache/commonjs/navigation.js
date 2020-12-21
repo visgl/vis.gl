@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 exports.__esModule = true;
@@ -7,11 +9,13 @@ exports.init = init;
 exports.shouldUpdateScroll = shouldUpdateScroll;
 exports.RouteUpdates = void 0;
 
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _loader = _interopRequireDefault(require("./loader"));
+var _loader = _interopRequireWildcard(require("./loader"));
 
 var _redirects = _interopRequireDefault(require("./redirects.json"));
 
@@ -19,9 +23,13 @@ var _apiRunnerBrowser = require("./api-runner-browser");
 
 var _emitter = _interopRequireDefault(require("./emitter"));
 
+var _routeAnnouncerProps = require("./route-announcer-props");
+
 var _router = require("@reach/router");
 
-var _parsePath2 = _interopRequireDefault(require("./parse-path"));
+var _history = require("@reach/router/lib/history");
+
+var _gatsbyLink = require("gatsby-link");
 
 // Convert to a map for faster lookup in maybeRedirect()
 const redirectMap = _redirects.default.reduce((map, redirect) => {
@@ -34,9 +42,7 @@ function maybeRedirect(pathname) {
 
   if (redirect != null) {
     if (process.env.NODE_ENV !== `production`) {
-      const pageResources = _loader.default.getResourcesForPathnameSync(pathname);
-
-      if (pageResources != null) {
+      if (!_loader.default.isPageNotFound(pathname)) {
         console.error(`The route "${pathname}" matches both a page and a redirect; this is probably not intentional.`);
       }
     }
@@ -49,48 +55,55 @@ function maybeRedirect(pathname) {
   }
 }
 
-const onPreRouteUpdate = location => {
+const onPreRouteUpdate = (location, prevLocation) => {
   if (!maybeRedirect(location.pathname)) {
     (0, _apiRunnerBrowser.apiRunner)(`onPreRouteUpdate`, {
-      location
+      location,
+      prevLocation
     });
   }
 };
 
-const onRouteUpdate = location => {
+const onRouteUpdate = (location, prevLocation) => {
   if (!maybeRedirect(location.pathname)) {
     (0, _apiRunnerBrowser.apiRunner)(`onRouteUpdate`, {
-      location
-    }); // Temp hack while awaiting https://github.com/reach/router/issues/119
+      location,
+      prevLocation
+    });
 
-    window.__navigatingToLink = false;
+    if (process.env.GATSBY_EXPERIMENTAL_QUERY_ON_DEMAND && process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`) {
+      _emitter.default.emit(`onRouteUpdate`, {
+        location,
+        prevLocation
+      });
+    }
   }
 };
 
 const navigate = (to, options = {}) => {
-  // Temp hack while awaiting https://github.com/reach/router/issues/119
-  if (!options.replace) {
-    window.__navigatingToLink = true;
+  // Support forward/backward navigation with numbers
+  // navigate(-2) (jumps back 2 history steps)
+  // navigate(2)  (jumps forward 2 history steps)
+  if (typeof to === `number`) {
+    _history.globalHistory.navigate(to);
+
+    return;
   }
 
-  let _parsePath = (0, _parsePath2.default)(to),
-      pathname = _parsePath.pathname;
-
+  let {
+    pathname
+  } = (0, _gatsbyLink.parsePath)(to);
   const redirect = redirectMap[pathname]; // If we're redirecting, just replace the passed in pathname
   // to the one we want to redirect to.
 
   if (redirect) {
     to = redirect.toPath;
-    pathname = (0, _parsePath2.default)(to).pathname;
+    pathname = (0, _gatsbyLink.parsePath)(to).pathname;
   } // If we had a service worker update, no matter the path, reload window and
   // reset the pathname whitelist
 
 
-  if (window.GATSBY_SW_UPDATED) {
-    const controller = navigator.serviceWorker.controller;
-    controller.postMessage({
-      gatsbyApi: `resetWhitelist`
-    });
+  if (window.___swUpdated) {
     window.location = pathname;
     return;
   } // Start a timer to wait for a second before transitioning and showing a
@@ -107,7 +120,35 @@ const navigate = (to, options = {}) => {
     });
   }, 1000);
 
-  _loader.default.getResourcesForPathname(pathname).then(pageResources => {
+  _loader.default.loadPage(pathname).then(pageResources => {
+    // If no page resources, then refresh the page
+    // Do this, rather than simply `window.location.reload()`, so that
+    // pressing the back/forward buttons work - otherwise when pressing
+    // back, the browser will just change the URL and expect JS to handle
+    // the change, which won't always work since it might not be a Gatsby
+    // page.
+    if (!pageResources || pageResources.status === _loader.PageResourceStatus.Error) {
+      window.history.replaceState({}, ``, location.href);
+      window.location = pathname;
+      clearTimeout(timeoutId);
+      return;
+    } // If the loaded page has a different compilation hash to the
+    // window, then a rebuild has occurred on the server. Reload.
+
+
+    if (process.env.NODE_ENV === `production` && pageResources) {
+      if (pageResources.page.webpackCompilationHash !== window.___webpackCompilationHash) {
+        // Purge plugin-offline cache
+        if (`serviceWorker` in navigator && navigator.serviceWorker.controller !== null && navigator.serviceWorker.controller.state === `activated`) {
+          navigator.serviceWorker.controller.postMessage({
+            gatsbyApi: `clearPathResources`
+          });
+        }
+
+        window.location = pathname;
+      }
+    }
+
     (0, _router.navigate)(to, options);
     clearTimeout(timeoutId);
   });
@@ -116,8 +157,10 @@ const navigate = (to, options = {}) => {
 function shouldUpdateScroll(prevRouterProps, {
   location
 }) {
-  const pathname = location.pathname,
-        hash = location.hash;
+  const {
+    pathname,
+    hash
+  } = location;
   const results = (0, _apiRunnerBrowser.apiRunner)(`shouldUpdateScroll`, {
     prevRouterProps,
     // `pathname` for backwards compatibility
@@ -125,20 +168,26 @@ function shouldUpdateScroll(prevRouterProps, {
     routerProps: {
       location
     },
-    getSavedScrollPosition: args => this._stateStorage.read(args)
+    getSavedScrollPosition: args => [0, this._stateStorage.read(args, args.key)]
   });
 
   if (results.length > 0) {
-    return results[0];
+    // Use the latest registered shouldUpdateScroll result, this allows users to override plugin's configuration
+    // @see https://github.com/gatsbyjs/gatsby/issues/12038
+    return results[results.length - 1];
   }
 
   if (prevRouterProps) {
-    const oldPathname = prevRouterProps.location.pathname;
+    const {
+      location: {
+        pathname: oldPathname
+      }
+    } = prevRouterProps;
 
     if (oldPathname === pathname) {
       // Scroll to element if it exists, if it doesn't, or no hash is provided,
       // scroll to top.
-      return hash ? hash.slice(1) : [0, 0];
+      return hash ? decodeURI(hash.slice(1)) : [0, 0];
     }
   }
 
@@ -146,9 +195,11 @@ function shouldUpdateScroll(prevRouterProps, {
 }
 
 function init() {
-  // Temp hack while awaiting https://github.com/reach/router/issues/119
-  window.__navigatingToLink = false;
-  window.___loader = _loader.default;
+  // The "scroll-behavior" package expects the "action" to be on the location
+  // object so let's copy it over.
+  _history.globalHistory.listen(args => {
+    args.location.action = args.action;
+  });
 
   window.___push = to => navigate(to, {
     replace: false
@@ -162,36 +213,92 @@ function init() {
 
 
   maybeRedirect(window.location.pathname);
-} // Fire on(Pre)RouteUpdate APIs
+}
+
+class RouteAnnouncer extends _react.default.Component {
+  constructor(props) {
+    super(props);
+    this.announcementRef = /*#__PURE__*/_react.default.createRef();
+  }
+
+  componentDidUpdate(prevProps, nextProps) {
+    requestAnimationFrame(() => {
+      let pageName = `new page at ${this.props.location.pathname}`;
+
+      if (document.title) {
+        pageName = document.title;
+      }
+
+      const pageHeadings = document.querySelectorAll(`#gatsby-focus-wrapper h1`);
+
+      if (pageHeadings && pageHeadings.length) {
+        pageName = pageHeadings[0].textContent;
+      }
+
+      const newAnnouncement = `Navigated to ${pageName}`;
+
+      if (this.announcementRef.current) {
+        const oldAnnouncement = this.announcementRef.current.innerText;
+
+        if (oldAnnouncement !== newAnnouncement) {
+          this.announcementRef.current.innerText = newAnnouncement;
+        }
+      }
+    });
+  }
+
+  render() {
+    return /*#__PURE__*/_react.default.createElement("div", (0, _extends2.default)({}, _routeAnnouncerProps.RouteAnnouncerProps, {
+      ref: this.announcementRef
+    }));
+  }
+
+}
+
+const compareLocationProps = (prevLocation, nextLocation) => {
+  var _prevLocation$state, _nextLocation$state;
+
+  if (prevLocation.href !== nextLocation.href) {
+    return true;
+  }
+
+  if ((prevLocation === null || prevLocation === void 0 ? void 0 : (_prevLocation$state = prevLocation.state) === null || _prevLocation$state === void 0 ? void 0 : _prevLocation$state.key) !== (nextLocation === null || nextLocation === void 0 ? void 0 : (_nextLocation$state = nextLocation.state) === null || _nextLocation$state === void 0 ? void 0 : _nextLocation$state.key)) {
+    return true;
+  }
+
+  return false;
+}; // Fire on(Pre)RouteUpdate APIs
 
 
 class RouteUpdates extends _react.default.Component {
   constructor(props) {
     super(props);
-    onPreRouteUpdate(props.location);
+    onPreRouteUpdate(props.location, null);
   }
 
   componentDidMount() {
-    onRouteUpdate(this.props.location);
+    onRouteUpdate(this.props.location, null);
   }
 
-  componentDidUpdate(prevProps, prevState, shouldFireRouteUpdate) {
-    if (shouldFireRouteUpdate) {
-      onRouteUpdate(this.props.location);
-    }
-  }
-
-  getSnapshotBeforeUpdate(prevProps) {
-    if (this.props.location.pathname !== prevProps.location.pathname) {
-      onPreRouteUpdate(this.props.location);
+  shouldComponentUpdate(prevProps) {
+    if (compareLocationProps(prevProps.location, this.props.location)) {
+      onPreRouteUpdate(this.props.location, prevProps.location);
       return true;
     }
 
     return false;
   }
 
+  componentDidUpdate(prevProps) {
+    if (compareLocationProps(prevProps.location, this.props.location)) {
+      onRouteUpdate(this.props.location, prevProps.location);
+    }
+  }
+
   render() {
-    return this.props.children;
+    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, this.props.children, /*#__PURE__*/_react.default.createElement(RouteAnnouncer, {
+      location: location
+    }));
   }
 
 }

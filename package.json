@@ -1,8 +1,16 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "visgl-home",
+  "description": "vis.gl home page",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "private": true,
+  "keywords": [
+    "vis.gl"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visgl/vis.gl"
+  },
   "dependencies": {
     "@dschau/gatsby-source-github": "^0.0.1",
     "baseui": "^5.2.1",
@@ -30,25 +38,18 @@
     "redux-actions": "^2.6.4",
     "styletron-react": "^4.3.6"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ghpages": "./publish-to-gh-pages.sh"
+    "deploy": "NODE_DEBUG=gh-pages gh-pages -d public"
   },
   "devDependencies": {
     "classnames": "^2.2.6",
     "gatsby-transformer-yaml": "^2.1.6",
-    "prettier": "^1.15.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "prettier": "^1.15.2",
+    "gh-pages": "^2.1.0"
   }
 }

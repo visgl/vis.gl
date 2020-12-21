@@ -5,7 +5,7 @@ var _apiRunnerBrowser = require("./api-runner-browser");
 if (window.location.protocol !== `https:` && window.location.hostname !== `localhost`) {
   console.error(`Service workers can only be used over HTTPS, or on localhost for development`);
 } else if (`serviceWorker` in navigator) {
-  navigator.serviceWorker.register(`${__PATH_PREFIX__}/sw.js`).then(function (reg) {
+  navigator.serviceWorker.register(`${__BASE_PATH__}/sw.js`).then(function (reg) {
     reg.addEventListener(`updatefound`, () => {
       (0, _apiRunnerBrowser.apiRunner)(`onServiceWorkerUpdateFound`, {
         serviceWorker: reg
@@ -21,7 +21,16 @@ if (window.location.protocol !== `https:` && window.location.hostname !== `local
               // At this point, the old content will have been purged and the fresh content will
               // have been added to the cache.
               // We set a flag so Gatsby Link knows to refresh the page on next navigation attempt
-              window.GATSBY_SW_UPDATED = true;
+              window.___swUpdated = true; // We call the onServiceWorkerUpdateReady API so users can show update prompts.
+
+              (0, _apiRunnerBrowser.apiRunner)(`onServiceWorkerUpdateReady`, {
+                serviceWorker: reg
+              }); // If resources failed for the current page, reload.
+
+              if (window.___failedResources) {
+                console.log(`resources failed, SW updated - reloading`);
+                window.location.reload();
+              }
             } else {
               // At this point, everything has been precached.
               // It's the perfect time to display a "Content is cached for offline use." message.

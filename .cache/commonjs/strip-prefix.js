@@ -1,15 +1,24 @@
 "use strict";
 
 exports.__esModule = true;
-exports.default = void 0;
+exports.default = stripPrefix;
 
 /**
  * Remove a prefix from a string. Return the input string if the given prefix
  * isn't found.
  */
-var _default = (str, prefix = ``) => {
-  if (str.substr(0, prefix.length) === prefix) return str.slice(prefix.length);
-  return str;
-};
+function stripPrefix(str, prefix = ``) {
+  if (!prefix) {
+    return str;
+  }
 
-exports.default = _default;
+  if (str === prefix) {
+    return `/`;
+  }
+
+  if (str.startsWith(`${prefix}/`)) {
+    return str.slice(prefix.length);
+  }
+
+  return str;
+}

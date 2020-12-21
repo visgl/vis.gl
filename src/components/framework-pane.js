@@ -9,7 +9,7 @@ if (typeof window !== `undefined`) {
   Odometer = require('react-odometerjs').default;
 }
 
-export default class Repo extends Component {
+export default class FrameworkPane extends Component {
   static defaultProps = {
     img: null,
     contentStyle: { bottom: '1rem', left: '1rem', right: '1rem' },

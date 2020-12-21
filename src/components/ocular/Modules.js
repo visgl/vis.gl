@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux'
 
-import Repo from './Repo';
+import FrameworkPane from './framework-pane';
 // import { fetchRepos } from 'actions/github'
 
 const modules = [
@@ -84,7 +84,7 @@ class Modules extends Component {
         </div>
         <div className="modules">
           {modules.map((d, i) => (
-            <Repo key={i} {...d} />
+            <FrameworkPane key={i} {...d} />
           ))}
         </div>
       </div>

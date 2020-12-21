@@ -1,11 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
-import loader from "./loader"
+import loader, { PageResourceStatus } from "./loader"
 import redirects from "./redirects.json"
 import { apiRunner } from "./api-runner-browser"
 import emitter from "./emitter"
+import { RouteAnnouncerProps } from "./route-announcer-props"
 import { navigate as reachNavigate } from "@reach/router"
-import parsePath from "./parse-path"
+import { globalHistory } from "@reach/router/lib/history"
+import { parsePath } from "gatsby-link"
 
 // Convert to a map for faster lookup in maybeRedirect()
 const redirectMap = redirects.reduce((map, redirect) => {
@@ -18,9 +20,7 @@ function maybeRedirect(pathname) {
 
   if (redirect != null) {
     if (process.env.NODE_ENV !== `production`) {
-      const pageResources = loader.getResourcesForPathnameSync(pathname)
-
-      if (pageResources != null) {
+      if (!loader.isPageNotFound(pathname)) {
         console.error(
           `The route "${pathname}" matches both a page and a redirect; this is probably not intentional.`
         )
@@ -34,25 +34,31 @@ function maybeRedirect(pathname) {
   }
 }
 
-const onPreRouteUpdate = location => {
+const onPreRouteUpdate = (location, prevLocation) => {
   if (!maybeRedirect(location.pathname)) {
-    apiRunner(`onPreRouteUpdate`, { location })
+    apiRunner(`onPreRouteUpdate`, { location, prevLocation })
   }
 }
 
-const onRouteUpdate = location => {
+const onRouteUpdate = (location, prevLocation) => {
   if (!maybeRedirect(location.pathname)) {
-    apiRunner(`onRouteUpdate`, { location })
-
-    // Temp hack while awaiting https://github.com/reach/router/issues/119
-    window.__navigatingToLink = false
+    apiRunner(`onRouteUpdate`, { location, prevLocation })
+    if (
+      process.env.GATSBY_EXPERIMENTAL_QUERY_ON_DEMAND &&
+      process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`
+    ) {
+      emitter.emit(`onRouteUpdate`, { location, prevLocation })
+    }
   }
 }
 
 const navigate = (to, options = {}) => {
-  // Temp hack while awaiting https://github.com/reach/router/issues/119
-  if (!options.replace) {
-    window.__navigatingToLink = true
+  // Support forward/backward navigation with numbers
+  // navigate(-2) (jumps back 2 history steps)
+  // navigate(2)  (jumps forward 2 history steps)
+  if (typeof to === `number`) {
+    globalHistory.navigate(to)
+    return
   }
 
   let { pathname } = parsePath(to)
@@ -67,10 +73,7 @@ const navigate = (to, options = {}) => {
 
   // If we had a service worker update, no matter the path, reload window and
   // reset the pathname whitelist
-  if (window.GATSBY_SW_UPDATED) {
-    const { controller } = navigator.serviceWorker
-    controller.postMessage({ gatsbyApi: `resetWhitelist` })
-
+  if (window.___swUpdated) {
     window.location = pathname
     return
   }
@@ -84,7 +87,41 @@ const navigate = (to, options = {}) => {
     })
   }, 1000)
 
-  loader.getResourcesForPathname(pathname).then(pageResources => {
+  loader.loadPage(pathname).then(pageResources => {
+    // If no page resources, then refresh the page
+    // Do this, rather than simply `window.location.reload()`, so that
+    // pressing the back/forward buttons work - otherwise when pressing
+    // back, the browser will just change the URL and expect JS to handle
+    // the change, which won't always work since it might not be a Gatsby
+    // page.
+    if (!pageResources || pageResources.status === PageResourceStatus.Error) {
+      window.history.replaceState({}, ``, location.href)
+      window.location = pathname
+      clearTimeout(timeoutId)
+      return
+    }
+
+    // If the loaded page has a different compilation hash to the
+    // window, then a rebuild has occurred on the server. Reload.
+    if (process.env.NODE_ENV === `production` && pageResources) {
+      if (
+        pageResources.page.webpackCompilationHash !==
+        window.___webpackCompilationHash
+      ) {
+        // Purge plugin-offline cache
+        if (
+          `serviceWorker` in navigator &&
+          navigator.serviceWorker.controller !== null &&
+          navigator.serviceWorker.controller.state === `activated`
+        ) {
+          navigator.serviceWorker.controller.postMessage({
+            gatsbyApi: `clearPathResources`,
+          })
+        }
+
+        window.location = pathname
+      }
+    }
     reachNavigate(to, options)
     clearTimeout(timeoutId)
   })
@@ -97,10 +134,15 @@ function shouldUpdateScroll(prevRouterProps, { location }) {
     // `pathname` for backwards compatibility
     pathname,
     routerProps: { location },
-    getSavedScrollPosition: args => this._stateStorage.read(args),
+    getSavedScrollPosition: args => [
+      0,
+      this._stateStorage.read(args, args.key),
+    ],
   })
   if (results.length > 0) {
-    return results[0]
+    // Use the latest registered shouldUpdateScroll result, this allows users to override plugin's configuration
+    // @see https://github.com/gatsbyjs/gatsby/issues/12038
+    return results[results.length - 1]
   }
 
   if (prevRouterProps) {
@@ -110,17 +152,19 @@ function shouldUpdateScroll(prevRouterProps, { location }) {
     if (oldPathname === pathname) {
       // Scroll to element if it exists, if it doesn't, or no hash is provided,
       // scroll to top.
-      return hash ? hash.slice(1) : [0, 0]
+      return hash ? decodeURI(hash.slice(1)) : [0, 0]
     }
   }
   return true
 }
 
 function init() {
-  // Temp hack while awaiting https://github.com/reach/router/issues/119
-  window.__navigatingToLink = false
+  // The "scroll-behavior" package expects the "action" to be on the location
+  // object so let's copy it over.
+  globalHistory.listen(args => {
+    args.location.action = args.action
+  })
 
-  window.___loader = loader
   window.___push = to => navigate(to, { replace: false })
   window.___replace = to => navigate(to, { replace: true })
   window.___navigate = (to, options) => navigate(to, options)
@@ -129,34 +173,81 @@ function init() {
   maybeRedirect(window.location.pathname)
 }
 
+class RouteAnnouncer extends React.Component {
+  constructor(props) {
+    super(props)
+    this.announcementRef = React.createRef()
+  }
+
+  componentDidUpdate(prevProps, nextProps) {
+    requestAnimationFrame(() => {
+      let pageName = `new page at ${this.props.location.pathname}`
+      if (document.title) {
+        pageName = document.title
+      }
+      const pageHeadings = document.querySelectorAll(`#gatsby-focus-wrapper h1`)
+      if (pageHeadings && pageHeadings.length) {
+        pageName = pageHeadings[0].textContent
+      }
+      const newAnnouncement = `Navigated to ${pageName}`
+      if (this.announcementRef.current) {
+        const oldAnnouncement = this.announcementRef.current.innerText
+        if (oldAnnouncement !== newAnnouncement) {
+          this.announcementRef.current.innerText = newAnnouncement
+        }
+      }
+    })
+  }
+
+  render() {
+    return <div {...RouteAnnouncerProps} ref={this.announcementRef}></div>
+  }
+}
+
+const compareLocationProps = (prevLocation, nextLocation) => {
+  if (prevLocation.href !== nextLocation.href) {
+    return true
+  }
+
+  if (prevLocation?.state?.key !== nextLocation?.state?.key) {
+    return true
+  }
+
+  return false
+}
+
 // Fire on(Pre)RouteUpdate APIs
 class RouteUpdates extends React.Component {
   constructor(props) {
     super(props)
-    onPreRouteUpdate(props.location)
+    onPreRouteUpdate(props.location, null)
   }
 
   componentDidMount() {
-    onRouteUpdate(this.props.location)
+    onRouteUpdate(this.props.location, null)
   }
 
-  componentDidUpdate(prevProps, prevState, shouldFireRouteUpdate) {
-    if (shouldFireRouteUpdate) {
-      onRouteUpdate(this.props.location)
-    }
-  }
-
-  getSnapshotBeforeUpdate(prevProps) {
-    if (this.props.location.pathname !== prevProps.location.pathname) {
-      onPreRouteUpdate(this.props.location)
+  shouldComponentUpdate(prevProps) {
+    if (compareLocationProps(prevProps.location, this.props.location)) {
+      onPreRouteUpdate(this.props.location, prevProps.location)
       return true
     }
-
     return false
   }
 
+  componentDidUpdate(prevProps) {
+    if (compareLocationProps(prevProps.location, this.props.location)) {
+      onRouteUpdate(this.props.location, prevProps.location)
+    }
+  }
+
   render() {
-    return this.props.children
+    return (
+      <React.Fragment>
+        {this.props.children}
+        <RouteAnnouncer location={location} />
+      </React.Fragment>
+    )
   }
 }
 
