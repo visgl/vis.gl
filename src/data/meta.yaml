@@ -1,30 +1,30 @@
 - metadata:
   page: home
-  title: Vis.gl - Uber Vis Team
+  title: vis.gl - Urban Computing Foundation
   meta:
     - item:
       name: description
       content: Cutting edge technology meets beautiful data visualization.
     - item:
       name: keywords
-      content: visualization, data visualization, webGL, uber
+      content: visualization, data visualization, webGL, UCF
 - metadata:
   page: about
-  title: About Uber Vis Team
+  title: About vis.gl
   meta:
     - item:
       name: description
-      content: We’re a team of software engineers, information designers, and computer graphics specialists at Uber.
+      content: Join an open team of software engineers, information designers, and computer graphics specialists.
     - item:
       name: keywords
-      content: uber, visualization, engineering, careers 
+      content: UCF, visualization, engineering 
 - metadata:
   page: inthenews
-  title: Uber Vis Team in the news
+  title: vis.gl in the news
   meta:
     - item:
       name: description
       content: Learn more about how our work is creating impact
     - item:
       name: keywords
-      content: uber, visualization, engineering, events, meetups, articles
+      content: UCF, visualization, engineering, events, meetups, articles

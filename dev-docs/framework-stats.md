@@ -14,7 +14,7 @@
   <tbody>
     <tr>
       <td>
-        <a href='https://github.com/uber-web/loaders.gl'> loaders.gl </a>
+        <a href='https://github.com/visgl/loaders.gl'> loaders.gl </a>
       </td>
       <td>
         <a href="https://npmjs.org/package/@loaders.gl/core"> @loaders.gl/core </a>
@@ -26,11 +26,11 @@
         <img src="https://img.shields.io/npm/dm/@loaders.gl/core.svg?style=flat-square" alt="downloads" />
       </td>
       <td>
-        <img src="https://api.travis-ci.com/uber-web/loaders.gl.svg?branch=master" alt="build" />
+        <img src="https://api.travis-ci.com/visgl/loaders.gl.svg?branch=master" alt="build" />
       </td>
       <td>
-        <a href='https://coveralls.io/github/uber-web/loaders.gl'>
-          <img src='https://coveralls.io/repos/github/uber-web/loaders.gl/badge.svg' alt='Coverage Status' />
+        <a href='https://coveralls.io/github/visgl/loaders.gl'>
+          <img src='https://coveralls.io/repos/github/visgl/loaders.gl/badge.svg' alt='Coverage Status' />
         </a>
       </td>
     </tr>
@@ -70,11 +70,11 @@
         <img src="https://img.shields.io/npm/dm/@luma.gl/core.svg?style=flat-square" alt="downloads" />
       </td>
       <td>
-        <img src="https://api.travis-ci.com/uber/luma.gl.svg?branch=master" alt="build" />
+        <img src="https://api.travis-ci.com/visgl/luma.gl.svg?branch=master" alt="build" />
       </td>
       <td>
-        <a href='https://coveralls.io/github/uber/luma.gl'>
-          <img src='https://coveralls.io/repos/github/uber/luma.gl/badge.svg?branch=master' alt='Coverage Status' />
+        <a href='https://coveralls.io/github/visgl/luma.gl'>
+          <img src='https://coveralls.io/repos/github/visgl/luma.gl/badge.svg?branch=master' alt='Coverage Status' />
         </a>
       </td>
     </tr>
@@ -92,11 +92,11 @@
         <img src="https://img.shields.io/npm/dm/@deck.gl/core.svg?style=flat-square" alt="downloads" />
       </td>
       <td>
-        <img src="https://api.travis-ci.com/uber/deck.gl.svg?branch=master" alt="build" />
+        <img src="https://api.travis-ci.com/visgl/deck.gl.svg?branch=master" alt="build" />
       </td>
       <td>
-        <a href='https://coveralls.io/github/uber/deck.gl'>
-          <img src='https://coveralls.io/repos/github/uber/deck.gl/badge.svg?branch=master' alt='Coverage Status' />
+        <a href='https://coveralls.io/github/visgl/deck.gl'>
+          <img src='https://coveralls.io/repos/github/visgl/deck.gl/badge.svg?branch=master' alt='Coverage Status' />
         </a>
       </td>
     </tr>
@@ -114,11 +114,11 @@
         <img src="https://img.shields.io/npm/dm/react-map-gl.svg?style=flat-square" alt="downloads" />
       </td>
       <td>
-        <img src="https://api.travis-ci.com/uber/react-map-gl.svg?branch=master" alt="build" />
+        <img src="https://api.travis-ci.com/visgl/react-map-gl.svg?branch=master" alt="build" />
       </td>
       <td>
-        <a href='https://coveralls.io/github/uber/react-map-gl'>
-          <img src='https://coveralls.io/repos/github/uber/react-map-gl/badge.svg?branch=master' alt='Coverage Status' />
+        <a href='https://coveralls.io/github/visgl/react-map-gl'>
+          <img src='https://coveralls.io/repos/github/visgl/react-map-gl/badge.svg?branch=master' alt='Coverage Status' />
         </a>
       </td>
     </tr>
@@ -206,25 +206,6 @@
       </td>
       <td>
          <img src="https://coveralls.io/repos/github/uber-web/mjolnir.js/badge.svg?branch=master" alt="Coverage Status" />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a href='https://github.com/uber-common/viewport-mercator-project'> viewport-mercator-project </a>
-      </td>
-      <td>
-        <a href="https://npmjs.org/package/viewport-mercator-project"> viewport-mercator-project </a>
-      </td>
-      <td>
-        <img src="https://img.shields.io/npm/v/viewport-mercator-project.svg?style=flat-square" alt="version" />
-      </td>
-      <td>
-        <img src="https://img.shields.io/npm/dm/viewport-mercator-project.svg?style=flat-square" alt="downloads" />
-      </td>
-      <td>
-        <img src="https://api.travis-ci.com/uber-common/viewport-mercator-project.svg?branch=master" alt="build" />
-      </td>
-      <td>
       </td>
     </tr>
     <tr>

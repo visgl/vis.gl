@@ -15,6 +15,7 @@ const FrameworkList = ({ starResolver, imageResolver }) => (
               ID
               img
               name
+              owner
               page
               type
               url

@@ -552,7 +552,7 @@ header.home h1 a:visited {
 }
 
 .Repo-github h1:first-letter {
-  text-transform: capitalize;
+  text-transform: lowercase;
 }
 
 .Repo-github .badge {
