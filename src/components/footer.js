@@ -36,8 +36,9 @@ export default function Footer() {
                   <Link to="/">{'VIS.GL'}</Link>
                 </h1>
                 <p>
-                  The Visualization Suite is brought to you by the Uber
-                  Visualization team. We re always looking for talent to do
+                  The vis.gl framework suite is an open governance collaboration 
+                  under the auspices of the UCF and Linux Foundation. 
+                  We are always looking for talent to help us do
                   great work, so do not hesitate to get in touch!
                 </p>
               </div>
