@@ -2,16 +2,14 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Hero from '../components/hero';
-import Manifesto from '../components/manifesto';
+import ManifestoSection from '../components/manifesto-section';
 
 const IndexPage = ({data}) => {
-  const imageResolver = data.allFile.edges.reduce((prev, curr) => {prev[curr.node.relativePath] = curr.node.publicURL; return prev;}, {});
-  const starResolver = {}; // data.github.nodes.reduce((prev, curr) => {prev[curr.id] = curr.stargazers.totalCount; return prev;}, {});
   return (
     <Layout page="home">
       <div id="home">
         <Hero />
-        <Manifesto />
+        <ManifestoSection />
       </div>
     </Layout>
   );
@@ -32,16 +30,3 @@ export const query = graphql`
     }
   }
 `;
-
-/*
-    github {
-      nodes(
-        ids: [
-          "MDEwOlJlcG9zaXRvcnk0ODAzMDIwNA=="
-          "MDEwOlJlcG9zaXRvcnk1MDM0MDkyOA=="
-          "MDEwOlJlcG9zaXRvcnk0MzkwMzg4Mg=="
-          "MDEwOlJlcG9zaXRvcnk1MjMwNDM2Mg=="
-        ]
-      )
-    }
-*/

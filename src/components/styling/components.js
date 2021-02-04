@@ -1,7 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
 import {breakpointsMediaQueries} from './style';
-import classnames from 'classnames';
 
 // New components
 export const ContainerLg = styled.div.attrs({
@@ -42,6 +40,7 @@ export const H1 = styled(Headline).attrs({
   line-height: ${props => props.theme.lineHeightH1};
   color: ${props => props.theme.darkBlue};
   letter-spacing: ${props => props.theme.letterSpacingH1};
+  margin: 4px 0 24px;
 `;
 
 export const H2 = styled(Headline).attrs({
@@ -50,6 +49,7 @@ export const H2 = styled(Headline).attrs({
   font-size: ${props => props.theme.fontSizeH2};
   line-height: ${props => props.theme.lineHeightH2};
   font-family: ${props => props.theme.fontFamilyMedium};
+  margin: 24px 0 16px;
 `;
 
 export const H3 = styled(Headline).attrs({
@@ -69,14 +69,35 @@ export const H4 = styled(H3).attrs({
   line-height: ${props => props.theme.lineHeightH4};
 `;
 
-export const Paragraph = styled.div.attrs({
+export const Paragraph = styled.p.attrs({
   className: 'content-paragraph'
 })`
   font-family: ${props => props.theme.fontFamily};
   font-size: ${props => props.theme.fontSizeP1};
   line-height: ${props => props.theme.lineHeightP1};
-  margin-top: 32px;
+  margin: 0 0 16px;
 `;
+
+export const List = styled.ul`
+  margin: 0 0 12px;
+`;
+
+export const ListItem = styled.li`
+  margin-bottom: 4px;
+`;
+
+export const InlineCode = styled.code`
+  background-color: #F7F7F7;
+  border-radius: 4px;
+  padding: 0 5px;
+  font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  margin: 1px 0;
+  line-height: calc(1.5em / 0.9 - 2px);
+  display: inline-block;
+  vertical-align: top;
+`;
+
 
 /*
 // paragraph on dark background
