@@ -5,6 +5,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-source-filesystem`,
@@ -37,27 +38,24 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/vis-logo.png', // This path is relative to the root of the site.
       },
     },
-    /*
     {
-      resolve: 'gatsby-source-graphql',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        typeName: 'GitHub',
-        fieldName: 'github',
-        // Url to query from
-        url: 'https://api.github.com/graphql',
-        // HTTP headers
-        headers: {
-          // Learn about environment variables: https://gatsby.app/env-vars
-          Authorization: `bearer 3a39da38d3c9e5b9757f7900cd551e5ef9c0bf6a`,
-        },
-        // Additional options to pass to node-fetch
-        fetchOptions: {},
+        name: `pages`,
+        path: `${__dirname}/content/`,
       },
     },
-    */
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          `gatsby-remark-prismjs`
+        ]
+      }
+    },
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -6,7 +6,6 @@ import Academy from '../components/academy';
 
 const IndexPage = ({data}) => {
   const imageResolver = data.allFile.edges.reduce((prev, curr) => {prev[curr.node.relativePath] = curr.node.publicURL; return prev;}, {});
-  const starResolver = {}; // data.github.nodes.reduce((prev, curr) => {prev[curr.id] = curr.stargazers.totalCount; return prev;}, {});
   return (
     <Layout page="home">
       <div id="home">
