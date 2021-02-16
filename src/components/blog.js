@@ -7,7 +7,7 @@ const Blog = ({ imageResolver }) => (
   <StaticQuery
     query={graphql`
       query {
-        blogYaml {
+        allBlogYaml {
           edges {
             node {
               date
@@ -28,8 +28,8 @@ const Blog = ({ imageResolver }) => (
           <p>{'Applications of and deep dives into the vis.gl frameworks.'}</p>
         </div>
 
-        <div className="news-items">
-          {data.blogYaml.edges.map(({ node }) => (
+        <div className="blog-items">
+          {data.allBlogYaml.edges.map(({ node }) => (
             <BlogPost key={node.name} {...node} image={imageResolver[node.image]} />
           ))}
         </div>
@@ -40,22 +40,26 @@ const Blog = ({ imageResolver }) => (
 
 function BlogPost({ publication, date, image, title, url }) {
   return (
-    <div className="news--item">
-      <h3>{title}</h3>
-      <p className="news--item--date">{date}</p>
-      <img
-        className="news--item--image"
-        src={image}
-        width="470"
-        height="279"
-        alt={title}
-      />
-      <p className="news--item--title">{title}</p>
-      <LinkWithArrow
-        className="news--item--read"
-        label="Read Article"
-        url={url}
-      />
+    <div className="blog--item">
+      <span>
+        <img
+          className="blog--item--image"
+          src={image}
+          width="240"
+          height="143"
+          alt={title}
+        />
+        <div className="blog--item--textbox">
+          <p className="blog--item--date">{date}</p>
+          <p className="blog--item--title">{title}</p>
+          <h3>Another riveting post from the vis.gl community!</h3>
+          <LinkWithArrow
+            className="blog--item--read"
+            label="Read Article"
+            url={url}
+          />
+        </div>
+      </span>
     </div>
   );
 }
