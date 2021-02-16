@@ -11,6 +11,15 @@
     "type": "git",
     "url": "https://github.com/visgl/vis.gl"
   },
+  "scripts": {
+    "clean": "rm -fr .cache public",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "format": "prettier --write \"src/**/*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "NODE_DEBUG=gh-pages gh-pages -d public"
+  },
   "dependencies": {
     "@dschau/gatsby-source-github": "^0.0.1",
     "@mdx-js/mdx": "^1.6.22",
@@ -44,14 +53,6 @@
     "redux-actions": "^2.6.4",
     "sharp": "0.27.0",
     "styled-components": "^4.1.3"
-  },
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "NODE_DEBUG=gh-pages gh-pages -d public"
   },
   "devDependencies": {
     "classnames": "^2.2.6",

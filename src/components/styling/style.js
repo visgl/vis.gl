@@ -160,7 +160,7 @@ export const GlobalStyle = createGlobalStyle`
 
   li {
     margin: 0;
-    list-style-type: none;
+    /* list-style-type: none; */
   }
 
   a {

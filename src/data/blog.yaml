@@ -1,90 +1,125 @@
-- news:
-  publication: Meetup
-  date: Apr 3, 2018
-  title: "Form and Content: Constructing Meaningful Visualizations"
-  url: https://www.meetup.com/UberEvents/events/248973146/
-  image: news/meetup.png
-- news:
-  publication: Meetup
-  date: Oct 26, 2017
-  title: Hello data! How to design visualizations for humans
-  url: https://www.meetup.com/Uber-Engineering-Events-New-York/events/244112935/
-  image: news/meetup.png
-- news:
-  publication: Techcrunch
-  date: Aug 30, 2017
-  title: Uber Movement traffic data finally makes it out of beta
-  url: https://techcrunch.com/2017/08/30/uber-movement-traffic-data-finally-makes-it-out-of-beta/
-  image: news/movement.png
-- news:
-  publication: Techcrunch
-  date: Aug 28, 2017
-  title: Uber shows off its autonomous driving program’s snazzy visualization tools
-  url: https://techcrunch.com/2017/08/28/uber-shows-off-its-autonomous-driving-programs-snazzy-visualization-tools/
-  image: news/ocslite.png
-- news:
-  publication: Uber Engineering Blog
-  date: Aug 28, 2017
-  title: Engineering Uber’s Self-Driving Car Visualization Platform for the Web
-  url: https://eng.uber.com/atg-dataviz/
-  image: news/atgdataviz.png
-- news:
-  publication: Meetup
-  date: Aug 31, 2017
-  title: A Journey Through Space and Time
-  url: https://www.meetup.com/Uber-Engineering-Events-Seattle/events/242258284/
-  image: news/meetup.png
-- news:
-  publication: Techcrunch
-  date: Apr 6, 2017
-  title: Uber’s open source data visualization tool now goes beyond maps
-  url: https://techcrunch.com/2017/04/06/ubers-open-source-data-visualization-tool-now-goes-beyond-maps/
-  image: news/opensource.png
-- news:
-  publication: Techcrunch
-  date: Jan 29, 2017
-  title: Uber crosses the 5 billion trip milestone amid ongoing issues
-  url: https://techcrunch.com/2017/06/29/uber-crosses-the-5-billion-trip-milestone-amid-ongoing-issues/
-  image: news/5billion.png
-- news:
-  publication: YouTube
-  date: Jan 20, 2017
-  title: Visualizing Data with deck.gl - Nicolas Garcia Belmonte
-  url: https://www.youtube.com/watch?v=HU1K7Vhfe-A
-  image: news/nicotalk.png
-- news:
-  publication: Meetup
-  date: Jun 20, 2017
-  title: Building Applications to Explore Geospatial Data
-  url: https://www.meetup.com/UberEvents/events/240669911/
-  image: news/meetup.png
-- news:
-  publication: Business Insider
-  date: Jan 8, 2017
-  title: Uber is finally giving cities a slice of data they've been clamoring for
-  url: http://www.businessinsider.com/uber-releases-trip-data-to-public-with-movement-2017-1
-  image: news/movementdebut.png
-- news:
-  publication: YouTube
-  date: Dec 29, 2016
-  title: "Uber Engineering: Data Visualization at Uber"
-  url: https://www.youtube.com/watch?v=nLy3OQYsXWA&t=409s
-  image: news/uberengtalk.png
-- news:
-  publication: Uber Engineering Blog
-  date: Nov 10, 2016
-  title: Visualize Data Sets on the Web with Uber Engineering’s deck.gl Framework
-  url: https://eng.uber.com/deck-gl-framework/
-  image: news/deckglframework.png
-- news:
-  publication: Scale Conference
-  date: Sep 2, 2016
-  title: Uber’s data visualization stack
-  url: https://atscaleconference.com/videos/ubers-data-visualization-stack/
-  image: news/scale.png
-- news:
-  publication: Uber Engineering Blog
-  date: May 3, 2016
-  title: Engineering Intelligence Through Data Visualization at Uber
-  url: https://eng.uber.com/data-viz-intel/
-  image: news/datavizintel.png
+- blog:
+  date: Apr 7, 2020
+  title: "deck.gl 8.2 moves to Open Governance"
+  url: https://medium.com/vis-gl/deck-gl-8-2-moves-to-open-governance-379f147c15bb
+  image: blog/2020-04-deck-open-governance.png
+- blog:
+  date: Oct 15, 2019
+  title: 'pydeck: Unlocking deck.gl for use in Python'
+  url: https://medium.com/vis-gl/pydeck-unlocking-deck-gl-for-use-in-python-ce891532f986
+  image: blog/2019-10-introducing-pydeck.png
+- blog:
+  date: Aug 26, 2019
+  title: Exploring Geospatial Data with kepler.gl
+  url: https://medium.com/vis-gl/exploring-geospatial-data-with-kepler-gl-cf655839628f
+  image: blog/2019-08-exploring-with-kepler.png
+- blog:
+  date: Jul 23, 2019
+  title: Vis Hackathon 2019
+  url: https://medium.com/vis-gl/vis-hackathon-2019-56096209dce2
+  image: blog/2019-07-vis-hackathon.png
+- blog:
+  date: Jul 22, 2019
+  title: 'Kepler.gl: Export Map'
+  url: https://medium.com/vis-gl/kepler-gl-export-map-c3c0804e55b8
+  image: blog/2019-07-kepler-export-map.png
+- blog:
+  date: Jun 25, 2019
+  title: Introducing kepler.gl for Jupyter
+  url: https://medium.com/vis-gl/introducing-kepler-gl-for-jupyter-f72d41659fbf
+  image: blog/2019-06-kepler-jupyter.png
+- blog:
+  date: Jun 18, 2019
+  title: Uber’s vis.gl brings glTF to geospatial data visualization
+  url: https://medium.com/vis-gl/ubers-vis-gl-brings-gltf-to-geospatial-data-visualization-86208ddec91d
+  image: blog/2019-06-gltf-in-geospatial-visualization.png
+- blog:
+  date: May 7, 2019
+  title: Using deck.gl with Google Maps
+  url: https://medium.com/vis-gl/using-deck-gl-with-google-maps-9c868d18e3cd
+  image: blog/deck-with-google-maps.png
+- blog:
+  date: Apr 26, 2019
+  title: Introducing deck.gl v7.0
+  url: https://medium.com/vis-gl/introducing-deck-gl-v7-0-c18bcb717457
+  image: blog/2019-04-introducing-deck-v7.png
+- blog:
+  date: Apr 22, 2019
+  title: Kepler.gl + Dropbox = Map Save & Share
+  url: https://medium.com/vis-gl/kepler-gl-dropbox-map-save-share-b4a41a75715b
+  image: blog/2019-04-kepler-dropbox-save.png
+- blog:
+  date: Oct 29, 2018
+  title: How (sometimes) assuming the Earth is “flat” helps speed up rendering in deck.gl
+  url: https://medium.com/vis-gl/how-sometimes-assuming-the-earth-is-flat-helps-speed-up-rendering-in-deck-gl-c43b72fd6db4
+  image: blog/2018-10-earth-is-flat.png
+- blog:
+  date: Oct 16, 2018
+  title: GPU Accelerated Aggregation in deck.gl
+  url: https://medium.com/vis-gl/gpu-accelerated-aggregation-in-deck-gl-7e2c7d701fb0
+  image: blog/2018-10-gpu-accelerated-aggregation.png
+- blog: 
+  date: Oct 15, 2018
+  title: 'deck.gl and Mapbox GL JS: Better Together'
+  url: https://medium.com/vis-gl/deckgl-and-mapbox-better-together-47b29d6d4fb1
+  image: blog/2018-10-deckgl-and-mapbox.png
+- blog:
+  date: May 29, 2018
+  title: Mapping the Parisian trees
+  url: https://medium.com/vis-gl/mapping-the-parisian-trees-6dc30f6aabc7
+  image: blog/2018-05-parisian-trees.png
+- blog:
+  date: May 29, 2018
+  title: Visualizing Unemployment for U.S. Counties with kepler.gl
+  url: https://medium.com/vis-gl/visualizing-u-s-county-unemployment-with-kepler-gl-c5f2ed31c71
+  image: blog/2018-05-visualizing-unemployment-with-kepler.png
+- blog:
+  date: May 29, 2018
+  title: Using Kepler.gl and Movement to Visualize Traffic Effects of a Rainstorm
+  url: https://medium.com/vis-gl/movement-in-kepler-d00e843f464d
+  image: blog/2018-05-movement-in-kepler.png
+- blog:
+  date: May 19, 2018
+  title: Animating 40 years of California Earthquakes
+  url: https://medium.com/vis-gl/animating-40-years-of-california-earthquakes-e4ffcdd4a289
+  image: blog/2018-05-california-earthquakes.png
+- blog:
+  date: Apr 24, 2018
+  title: Start Scripting with deck.gl
+  url: https://medium.com/vis-gl/start-scripting-with-deck-gl-c9036d7a6011
+  image: blog/2018-04-scripting-with-deck.png
+- blog:
+  date: Mar 26, 2018
+  title: Automatic, GPU-based object highlighting in deck.gl Layers
+  url: https://medium.com/vis-gl/automatic-gpu-based-object-highlighting-in-deck-gl-layers-7fe3def44c89
+  image: blog/2018-03-gpu-based-object-highlighting.png
+- blog:
+  date: Feb 27, 2018
+  title: 'Unfolding the Earth: Myriahedral Projections In WebGL'
+  url: https://medium.com/vis-gl/unfolding-the-earth-myriahedral-projections-in-webgl-6b2bcfd00a30
+  image: blog/2018-02-unfolding-the-earth.png
+- blog:
+  date: Jul 24, 2017
+  title: Introducing luma.gl v4.0
+  url: https://medium.com/vis-gl/introducing-luma-gl-v4-0-54f4d87a08c8
+  image: blog/2017-07-introducing-luma-v4.png
+- blog:
+  date: Apr 16, 2017
+  title: Wind Map
+  url: https://medium.com/vis-gl/wind-map-a58575f87fe3
+  image: blog/2017-06-wind-map.png
+- blog:
+  date: Apr 11, 2017
+  title: Rendering A Minecraft World With deck.gl
+  url: https://medium.com/vis-gl/rendering-a-minecraft-world-with-deck-gl-927b52c5c6db
+  image: blog/2017-04-minecraft-with-deck.png
+- blog:
+  date: Jul 24, 2017
+  title: The Birth of a Visualization Framework Suite
+  url: https://medium.com/vis-gl/the-birth-of-a-visualization-framework-suite-958049647e89
+  image: blog/2017-07-birth-of-a-vis-framework-suite.png
+- blog:
+  date: Apr 2, 2017
+  title: Introducing deck.gl v4.0
+  url: https://medium.com/vis-gl/introducing-deck-gl-v4-0-3ead9106eb7e
+  image: blog/2017-04-introducing-deck-v4.png
