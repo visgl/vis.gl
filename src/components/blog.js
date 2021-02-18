@@ -12,6 +12,7 @@ const Blog = ({ imageResolver }) => (
             node {
               date
               title
+              blurb
               url
               image
             }
@@ -38,7 +39,7 @@ const Blog = ({ imageResolver }) => (
   />
 );
 
-function BlogPost({ publication, date, image, title, url }) {
+function BlogPost({ publication, date, image, title, blurb, url }) {
   return (
     <div className="blog--item">
       <span>
@@ -52,7 +53,7 @@ function BlogPost({ publication, date, image, title, url }) {
         <div className="blog--item--textbox">
           <p className="blog--item--date">{date}</p>
           <p className="blog--item--title">{title}</p>
-          <h3>Another riveting post from the vis.gl community!</h3>
+          <h3>{blurb}</h3>
           <LinkWithArrow
             className="blog--item--read"
             label="Read Article"
