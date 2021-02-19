@@ -12,7 +12,7 @@ const ManifestoSection = ({data}) => {
   const {mdx} = useStaticQuery(
     graphql`
       query ManifestoSectionQuery {
-        mdx(fileAbsolutePath: { regex: "/content/manifesto.mdx/" }) {
+        mdx(fileAbsolutePath: { regex: "/src/content/manifesto.mdx/" }) {
           body
         }
       }

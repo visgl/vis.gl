@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import LinkWithArrow from './link-with-arrow';
 
-const InTheNews = ({ imageResolver }) => (
+const News = ({ imageResolver }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -26,12 +26,12 @@ const InTheNews = ({ imageResolver }) => (
       <div id="news">
         <div className="section-title">
           <h2>{'News & Events'}</h2>
-          <p>{'Learn more about how our work is creating impact'}</p>
+          <p>{'Learn about how vis.gl is creating impact'}</p>
         </div>
 
         <div className="news-items">
           {data.allNewsYaml.edges.map(({ node }) => (
-            <News key={node.name} {...node} image={imageResolver[node.image]} />
+            <NewsEntry key={node.name} {...node} image={imageResolver[node.image]} />
           ))}
         </div>
       </div>)
@@ -39,7 +39,7 @@ const InTheNews = ({ imageResolver }) => (
   />
 );
 
-function News({ publication, date, image, title, url }) {
+function NewsEntry({ publication, date, image, title, url }) {
   return (
     <div className="news--item">
       <h3>{publication}</h3>
@@ -47,8 +47,8 @@ function News({ publication, date, image, title, url }) {
       <img
         className="news--item--image"
         src={image}
-        width="470"
-        height="279"
+        width="240"
+        height="143"
         alt={title}
       />
       <p className="news--item--title">{title}</p>
@@ -61,4 +61,4 @@ function News({ publication, date, image, title, url }) {
   );
 }
 
-export default InTheNews;
+export default News;

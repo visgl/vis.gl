@@ -32,11 +32,8 @@
             label: Showcases
             route: /showcases
         - item:
-            label: In the News
-            route: /inthenews
+            label: News
+            route: /news
         - item:
             label: Blog
             url: /blog
-        - item:
-            label: Medium
-            url: https://medium.com/@vis.gl
