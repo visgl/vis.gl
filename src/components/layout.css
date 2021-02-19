@@ -304,7 +304,7 @@ header .links a.active {
 
 header.about,
 header.home,
-header.inthenews {
+header.news {
   color: #fff;
   max-height: 100% !important;
   padding-top: 40px;
@@ -313,14 +313,14 @@ header.inthenews {
 
 header.about .container,
 header.home .container,
-header.inthenews .container {
+header.news .container {
   max-width: calc(100% - 118px);
   position: relative;
 }
 
 header.about h1,
 header.home h1,
-header.inthenews h1 {
+header.news h1 {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 4px;
@@ -329,7 +329,7 @@ header.inthenews h1 {
 
 header.about h1:before,
 header.home h1:before,
-header.inthenews h1:before {
+header.news h1:before {
   content: '';
   background: url(../images/logo-small.png) no-repeat;
   background-size: cover;
@@ -342,13 +342,13 @@ header.inthenews h1:before {
 
 header.about h1 a:visited,
 header.home h1 a:visited,
-header.inthenews h1 a:visited {
+header.news h1 a:visited {
   color: #ededed;
 }
 
 header.about .links,
 header.home .links,
-header.inthenews .links {
+header.news .links {
   left: auto;
   margin-top: 0;
   overflow: visible;
@@ -360,7 +360,7 @@ header.inthenews .links {
 
 header.about .links a,
 header.home .links a,
-header.inthenews .links a {
+header.news .links a {
   font-size: 14px;
   font-weight: 400;
   margin-left: 48px !important;
@@ -372,20 +372,20 @@ header.about .links a.active,
 header.about .links a:hover,
 header.home .links a.active,
 header.home .links a:hover,
-header.inthenews .links a.active,
-header.inthenews .links a:hover {
+header.news .links a.active,
+header.news .links a:hover {
   border-top-color: transparent !important;
   color: #ededed !important;
 }
 
 header.about a,
 header.home a,
-header.inthenews a {
+header.news a {
   padding: 0 1rem;
 }
 
 header.about,
-header.inthenews {
+header.news {
   background: url(../images/header-background.png) no-repeat #100a29;
   padding-top: 0;
 }
@@ -606,7 +606,7 @@ header.home h1 a:visited {
 }
 
 .section-title {
-  background: url('../images/vis-logo.png') no-repeat;
+  background: url('../images/logos/vis-logo.png') no-repeat;
   max-width: 1172px;
   margin: 67px auto 57px;
   min-height: 296px;
@@ -625,7 +625,7 @@ header.home h1 a:visited {
   font-weight: 100;
   letter-spacing: -0.25px;
   line-height: 1.5em;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .section-title--no-logo {
@@ -634,6 +634,13 @@ header.home h1 a:visited {
 
 .section-title--no-logo p {
   max-width: calc(100% - 100px);
+}
+
+.section-text {
+  max-width: 1172px;
+  margin: 67px auto;
+  padding: 0 0 0 136px;
+  width: 100%;
 }
 
 #showcase {
@@ -903,8 +910,8 @@ footer a:visited {
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.16);
   color: #041725;
   margin: 0 -40px;
-  min-height: 359px;
-  padding: 40px;
+  min-height: 200px;
+  padding: 20px;
   position: relative;
   width: calc(100% + 80px);
   transition: box-shadow 0.5s;
@@ -934,12 +941,14 @@ footer a:visited {
   font-size: 21px;
   font-weight: 400;
   margin: 11px 0 38px;
-  max-width: calc(100% - 550px);
+  max-width: calc(100% - 250px);
 }
 
 .news--item--image {
-  position: absolute;
-  right: 40px;
+  display: inline;
+  float: left;
+  clear: left;
+  left: 40px;
   top: 40px;
 }
 
@@ -1000,6 +1009,7 @@ a.news--item--read:visited {
   font-weight: 500;
   margin-top: 17px;
   margin-bottom: 0;
+  line-height: 24px;
 }
 
 .blog--item--date {
@@ -1010,8 +1020,12 @@ a.news--item--read:visited {
 .blog--item--title {
   font-size: 21px;
   font-weight: 400;
-  margin: 11px 0 11px;
-  max-width: calc(100% - 550px);
+  margin: 0px 0 0px;
+  max-width: calc(100%);
+}
+
+.blog--item--read {
+  margin-top: 10px;
 }
 
 header {
@@ -2519,7 +2533,7 @@ footer img {
 }
 @media only screen and (max-width: 700px) {
   header.about,
-  header.inthenews {
+  header.news {
     height: 256px;
     background: #100a29;
   }
@@ -2595,7 +2609,7 @@ footer img {
 @media only screen and (max-width: 600px) {
   header.about .container,
   header.home .container,
-  header.inthenews .container {
+  header.news .container {
     max-width: calc(100% - 71px);
   }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/layout.js';
 import { graphql } from 'gatsby';
 
-import BlogPost from '../components/in-the-news';
+import News from '../components/news';
 
 const IndexPage = ({ data }) => {
   const imageResolver = data.allFile.edges.reduce((prev, curr) => {
@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
   }, {});
   return (
     <Layout page="blog">
-      <BlogPost imageResolver={imageResolver}/>
+      <News imageResolver={imageResolver}/>
     </Layout>
   );
 };
