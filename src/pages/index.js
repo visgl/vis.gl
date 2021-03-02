@@ -5,11 +5,15 @@ import Hero from '../components/hero';
 import ManifestoSection from '../components/manifesto-section';
 
 const IndexPage = ({data}) => {
+  const imageResolver = data.allFile.edges.reduce((prev, curr) => {
+    prev[curr.node.relativePath] = curr.node.publicURL;
+    return prev;
+  }, {});
   return (
     <Layout page="home">
       <div id="home">
         <Hero />
-        <ManifestoSection />
+        <ManifestoSection imageResolver={imageResolver} />
       </div>
     </Layout>
   );
