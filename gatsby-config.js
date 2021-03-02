@@ -41,6 +41,7 @@ module.exports = {
         icon: 'src/images/logos/vis-logo.png', // This path is relative to the root of the site.
       },
     },
+    /*
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -56,6 +57,7 @@ module.exports = {
         ]
       }
     },
+    */
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
