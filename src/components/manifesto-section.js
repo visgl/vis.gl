@@ -18,54 +18,7 @@ import {
 #### vis.gl 8.4-8.5 Community Planning
 #### vis.gl 8.2-8.3 Community Planning
 
-# Releases
-
-## vis.gl 8.4
-
-Release Date: Jan 31, 2021
-
- brings a 
-
-**deck.gl 8.4 Highlights** ([Release Notes](https://deck.gl/docs/whats-new))
-
-`luma.gl` 8.4, `react-map-gl`
-
-Fixes only: `loaders.gl` 2.3 
-
-- BaseMaps
-  - `react-map-gl` now supports Mapbox GL JS v2, Mapbox GL JS v1, and MapLibre renderers.
-  - `bing` maps??? 
-
-- TypeScript 
-  - `luma.gl` all modules now p
-  - `react-map-gl` - is now written in typescript
-
-- `deck.gl` 8.4
-  - 
-
-- `luma.gl` 8.4
-  - TypeScript typings
-
-- `math.gl` 3.4
-  - `@math.gl/geoid` - New module for working with Earth Gravity Models (micro-adjustments of ellipsoid)
-  - `@math.gl/polygon` - Improved support for binary polygons
-
-#### vis.gl 8.3 Highlights
-
-Release Date: ?
-
-Updated: `deck.gl` 8.3, `luma.gl` 8.3 `loaders.gl` 2.3
-
-#### vis.gl 8.2 Highlights
-
-Release Date: ?
-
-Updated: `deck.gl` 8.2, `luma.gl` 8.2 `loaders.gl` 2.2
-
-# Early History
-
-
- */
+*/
 
 function ManifestoSection({ imageResolver }) {
   console.log(imageResolver);
@@ -149,6 +102,48 @@ function ManifestoSection({ imageResolver }) {
 
         <H2>The vis.gl frameworks</H2>
         {renderTable(imageResolver)}
+
+        <H2>Recent Releases</H2>
+
+        <H3>vis.gl 8.4</H3> 
+        <Paragraph>
+        Release Date: Jan 31, 2021
+
+        **deck.gl 8.4** ([Release Notes](https://deck.gl/docs/whats-new))
+        <List>
+          <ListItem>
+            TBA
+          </ListItem>
+        </List>
+
+        **luma.gl 8.4** ([Release Notes](https://luma.gl/docs/whats-new))
+        <List>
+          <ListItem>
+            TypeScript
+          </ListItem>
+        </List>
+
+        **react-map-gl**
+        <List>
+          <ListItem>
+            `react-map-gl` now supports Mapbox GL JS v2, Mapbox GL JS v1, and MapLibre renderers.
+          </ListItem>
+          <ListItem>
+            TypeScript
+          </ListItem>
+        </List>
+
+        **math.gl 3.4**
+        <List>
+          <ListItem>
+            `@math.gl/geoid` - New module for working with Earth Gravity Models (micro-adjustments of ellipsoid)
+          </ListItem>
+          <ListItem>
+            `@math.gl/polygon` - Improved support for binary polygons
+          </ListItem>
+        </List>
+
+        </Paragraph>
 
         <H2>History</H2>
 
