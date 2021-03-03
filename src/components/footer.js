@@ -38,9 +38,31 @@ export default function Footer() {
                 <p>
                   The vis.gl framework suite is an open governance collaboration 
                   under the auspices of the UCF and Linux Foundation. 
-                  We are always looking for talent to help us do
-                  great work, so do not hesitate to get in touch!
                 </p>
+              </div>
+            </div>
+          </footer>
+        );
+      }}
+    />
+  );
+}
+
+/*
+              {
+            /*
+              <div className="links">
+                <a href="https://www.linuxfoundation.org//">
+                  <img
+                    height="40"
+                    src={imageResolver['logos/linux-foundation.svg']}
+                  />
+                </a>
+              </div>
+              <div className="links">
+                <a href="https://uc.foundation/">
+                  <img height="40" src={imageResolver['logos/ucf-color-hztl.svg']} />
+                </a>
               </div>
               {data.allLinksYaml.edges.map(({node: {navigation}}) => (
                 <div className="links" key={navigation.title}>
@@ -58,10 +80,5 @@ export default function Footer() {
                   </ul>
                 </div>
               ))}
-            </div>
-          </footer>
-        );
-      }}
-    />
-  );
-}
+              */
+            

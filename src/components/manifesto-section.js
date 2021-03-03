@@ -20,24 +20,29 @@ import {
 
 */
 
-function ManifestoSection({ imageResolver }) {
+export default function ManifestoSection({ imageResolver }) {
   console.log(imageResolver);
   return (
     <div>
+      {/*
       <div className="section-title">
         <Paragraph>vis.gl</Paragraph>
-        <Paragraph>A suite of GPU powered geospatial frameworks</Paragraph>
+        <Paragraph>GPU powered geospatial frameworks</Paragraph>
+        <Paragraph>Promoting Industry Collaboration via Open Governance</Paragraph>
       </div>
+      */}
       <div className="section-text">
 
+      <H2>About</H2>
+        <Paragraph>
+          vis.gl is a suite of composable, interoperable open source 
+          geospatial visualization frameworks
+          centered around the <a href="https://deck.gl">deck.gl</a> geospatial rendering
+          framework.
+        </Paragraph>
+
         <center>
-          <H2>Created By</H2>
-          <a href="https://uber.com/">
-            <img height="60" src={imageResolver['logos/uber-logo-black.jpg']} />
-          </a>
-        </center>
-        <center>
-          <H2>Core Contributors</H2>
+          <H2>Lead Contributors</H2>
           <a href="https://unfolded.ai">
             <img height="40" src={imageResolver['logos/unfolded-logo.png']} />
           </a>
@@ -49,8 +54,16 @@ function ManifestoSection({ imageResolver }) {
             />
           </a>
         </center>
+
+        <center>
+          <H2>Created By</H2>
+          <a href="https://uber.com/">
+            <img height="60" src={imageResolver['logos/uber-logo-black.jpg']} />
+          </a>
+        </center>
         <br />
 
+        {/*
         <center>
           <H2>Sponsored By</H2>
           <a href="https://uber.com/">
@@ -70,13 +83,7 @@ function ManifestoSection({ imageResolver }) {
           </a>
         </center>
         <br />
-
-        <H2>About</H2>
-        <Paragraph>
-          vis.gl is a suite of open source geospatial visualization frameworks
-          centered around the [deck.gl](https://deck.gl) geospatial rendering
-          framework.
-        </Paragraph>
+        */}
 
         <H2>Open Governance</H2>
         <Paragraph>
@@ -100,8 +107,10 @@ function ManifestoSection({ imageResolver }) {
         </center>
         <br />
 
-        <H2>The vis.gl frameworks</H2>
-        {renderTable(imageResolver)}
+        <H2>The Frameworks</H2>
+
+        The <a href="/frameworks">vis.gl Framework Catalog</a> provides an overview
+        of the various frameworks in the vis.gl framework suite.
 
         <H2>Recent Releases</H2>
 
@@ -185,167 +194,3 @@ function ManifestoSection({ imageResolver }) {
     </div>
   );
 }
-
-function renderTable(imageResolver) {
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>
-            <H3></H3>
-          </th>
-          <th>
-            <H3></H3>
-          </th>
-          <th>
-            <H3></H3>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <img
-              height="60"
-              alt="kepler.gl"
-              title="kepler.gl"
-              src={imageResolver['frameworks/kepler.png']}
-            />
-          </td>
-          <td>
-            <a href="https://kepler.gl/">
-              <code>kepler.gl</code>
-            </a>
-          </td>
-          <td>
-            Application for client-side visualization of data using deck.gl.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              height="60"
-              alt="deck.gl"
-              title="deck.gl"
-              src={imageResolver['frameworks/deck.png']}
-            />
-          </td>
-          <td>
-            <a href="https://deck.gl/">
-              <code>deck.gl</code>
-            </a>
-          </td>
-          <td>Visualization layers for large scale geospatial data.</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              height="60"
-              alt="loaders.gl"
-              title="loaders.gl"
-              src={imageResolver['frameworks/loaders.png']}
-            />
-          </td>
-          <td>
-            <a href="https://loaders.gl/">
-              <code>loaders.gl</code>
-            </a>
-          </td>
-          <td>
-            Framework-independent loaders for file formats for point clouds, 3D
-            geometries, images, geospatial formats as well as tabular data.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              height="60"
-              alt="nebula.gl"
-              title="nebula.gl"
-              src={imageResolver['frameworks/nebula.png']}
-            />
-          </td>
-          <td>
-            <a href="https://nebula.gl/">
-              <code>nebula.gl</code>
-            </a>
-          </td>
-          <td>A high-performance feature editing framework for deck.gl.</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              height="60"
-              alt="luma.gl"
-              title="luma.gl"
-              src={imageResolver['frameworks/luma.png']}
-            />
-          </td>
-          <td>
-            <a href="https://luma.gl/">
-              <code>luma.gl</code>
-            </a>
-          </td>
-          <td>
-            A high-performance WebGL library for high-performance visualization
-            and GPU computation.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              height="60"
-              alt="react-map-gl"
-              title="react-map-gl"
-              src={imageResolver['frameworks/react-map-gl.png']}
-            />
-          </td>
-          <td>
-            <a href="http://visgl.github.io/react-map-gl/">
-              <code>react-map-gl</code>
-            </a>
-          </td>
-          <td>
-            A React wrapper for Mapbox GL JS that integrates with deck.gl.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              height="60"
-              alt="math.gl"
-              title="math.gl"
-              src={imageResolver['frameworks/math.png']}
-            />
-          </td>
-          <td>
-            <a href="https://math.gl/">
-              <code>math.gl</code>
-            </a>
-          </td>
-          <td>Math library focusing on 3D and geospatial math.</td>
-        </tr>
-        {/* Related but unfortunately not part of vis.gl
-        <tr>
-          <td>
-            <img
-              height="60"
-              alt="H3"
-              title="H3"
-              src={imageResolver['frameworks/h3.png']}
-            />
-          </td>
-          <td>
-            <a href="https://h3geo.org">
-              <code>H3</code>
-            </a>
-          </td>
-          <td>Hexagon based discrete global grid system.</td>
-        </tr>
-        */}
-      </tbody>
-    </table>
-  );
-}
-
-export default ManifestoSection;
