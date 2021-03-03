@@ -1,4 +1,15 @@
 import React, { Component } from 'react';
+import {
+  ContainerLg,
+  H1,
+  H2,
+  H3,
+  H4,
+  Paragraph,
+  List,
+  ListItem,
+  InlineCode,
+} from './styling/components';
 
 import Waypoint from 'react-waypoint';
 
@@ -8,6 +19,8 @@ import { Matrix4, radians } from 'math.gl';
 const isBrowser = typeof window !== `undefined`;
 
 const SIDE = 64;
+
+let projectionMatrix = new Matrix4();
 
 const animationLoop = new AnimationLoop({
   createFramebuffer: true,
@@ -27,15 +40,20 @@ const animationLoop = new AnimationLoop({
     cube.delete();
   },
   onRender({ gl, tick, aspect, cube, framebuffer }) {
-    cube.setUniforms({
-      uTime: tick * 0.1,
-      // Basic projection matrix
-      uProjection: new Matrix4().perspective({
+    try {
+      projectionMatrix = new Matrix4().perspective({
         fov: radians(60),
         aspect,
         near: 1,
         far: 2048.0,
-      }),
+      });
+    } catch (error) {
+    }
+    
+    cube.setUniforms({
+      uTime: tick * 0.1,
+      // Basic projection matrix
+      uProjection: projectionMatrix,
       // Move the eye around the plane
       uView: new Matrix4().lookAt({
         center: [0, 0, 0],
