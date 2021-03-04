@@ -33,7 +33,7 @@ export default function Footer() {
             <div className="content">
               <div className="main">
                 <h1>
-                  <Link to="/">{'VIS.GL'}</Link>
+                  <Link className="logo" to="/">{'VIS.GL'}</Link>
                 </h1>
                 <p>
                   The vis.gl framework suite is an open governance collaboration 

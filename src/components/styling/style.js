@@ -18,7 +18,7 @@ export const COLORS = {
   darkGreyBackground: '#121621',
   darkBackground: '#09101d',
   lightGreyBackground: '#f7f8fa',
-  lightBtnBgd: '#ECECF3',
+  lightBtnBgd: '#ECECEC',
   lightBlack: '#0e111a',
   green: '#4BB34B'
 };
@@ -73,9 +73,10 @@ export const theme = {
   darkBlue: COLORS.darkBlue,
   darkSectionBackground: COLORS.darkBackground,
   paragraphColor: COLORS.offBlack,
-  fontFamily: 'Helvetica, Arial, Sans-Serif',
-  fontFamilySemiBold: 'Helvetica, Arial, Sans-Serif',
-  fontFamilyMedium: 'Helvetica, Arial, Sans-Serif',
+  fontFamily: '"Graphik Web"',
+  fontFamilySemiBold: '"Graphik Web Semibold"',
+  fontFamilyMedium: '"Graphik Web Medium"',
+  fontFamilyLight: '"Graphik Web Light"',
   containerMaxWidth: breakPoints.xl,
   containerMinWidth: 375,
   violetBtn: COLORS.violetButton,
@@ -135,7 +136,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: 'Graphik Web';
+  font-family: 'Graphik Web';
     font-weight: 400;
     font-size: 0.875em;
     line-height: 1.71429;

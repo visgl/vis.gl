@@ -1,15 +1,6 @@
 import React from 'react';
-import {
-  ContainerLg,
-  H1,
-  H2,
-  H3,
-  H4,
-  Paragraph,
-  List,
-  ListItem,
-  InlineCode,
-} from './styling/components';
+import styled from 'styled-components';
+import { ContainerSm, H1, H3, Paragraph, List } from './styling/components';
 
 /*
 
@@ -20,6 +11,89 @@ import {
 
 */
 
+const TitleSection = styled(H1)`
+  font-family: ${props => props.theme.fontFamilyLight};
+  line-height: 150%;
+  background: url(${props => props.backgroundImg}) no-repeat;
+  min-height: 300px;
+  padding-left: 200px;
+  margin-top: 50px;
+  padding-top: 50px;
+`;
+
+const ContributorContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+`;
+
+const OpenGovContainer = styled.div`
+  .image {
+    margin-top: 50px;
+  }
+`;
+const ContributorSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  .logo-title {
+    font-size: 14px;
+    line-height: 110%;
+    color: ${props => props.theme.gray};
+    font-family: ${props => props.theme.fontFamilyLight};
+  }
+
+  .logo {
+    margin-top: 30px;
+
+    a {
+      margin-right: 100px;
+    }
+  }
+
+  .logo.tall {
+    margin-top: 20px;
+    margin-left: -18px;
+  }
+
+  :not(:first-child) {
+    border-left: 1px solid ${props => props.theme.gray};
+    padding-left: 40px;
+  }
+`;
+
+const SectionContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const SectionTitle = styled.div`
+  width: 264px;
+  margin-right: 20px;
+  font-size: 18px;
+  line-height: 20px;
+  font-family: ${props => props.theme.fontFamilyMedium};
+  flex-shrink: 0;
+`;
+
+const SectionContent = styled.div`
+  flex-grow: 1;
+`;
+
+const ListTitle = styled.div`
+  font-size: 16px;
+  margin-top: 18px;
+  font-family: ${props => props.theme.fontFamilyMedium};
+
+  :first-child {
+    margin-top: 0;
+  }
+`;
+
+const ListItem = styled.div`
+  font-size: 16px;
+  color: ${props => props.theme.gray};
+`;
 export default function ManifestoSection({ imageResolver }) {
   console.log(imageResolver);
   return (
@@ -31,39 +105,51 @@ export default function ManifestoSection({ imageResolver }) {
         <Paragraph>Promoting Industry Collaboration via Open Governance</Paragraph>
       </div>
       */}
-      <div className="section-text">
-
-      <H2>About</H2>
-        <Paragraph>
-          vis.gl is a suite of composable, interoperable open source 
-          geospatial visualization frameworks
-          centered around the <a href="https://deck.gl">deck.gl</a> geospatial rendering
-          framework.
-        </Paragraph>
-
-        <center>
-          <H2>Lead Contributors</H2>
-          <a href="https://unfolded.ai">
-            <img height="40" src={imageResolver['logos/unfolded-logo.png']} />
-          </a>
-          <span style={{ padding: 10 }} />
-          <a href="https://carto.com">
-            <img
-              height="40"
-              src={imageResolver['logos/CARTO-logo-positive.png']}
-            />
-          </a>
-        </center>
-
-        <center>
-          <H2>Created By</H2>
-          <a href="https://uber.com/">
-            <img height="60" src={imageResolver['logos/uber-logo-black.jpg']} />
-          </a>
-        </center>
-        <br />
-
-        {/*
+      <ContainerSm>
+        <TitleSection backgroundImg={imageResolver['logos/vis-logo.png']}>
+          Vis.gl is a suite of composable, interoperable open source geospatial
+          visualization frameworks centered around{' '}
+          <a href="https://deck.gl">deck.gl</a>.
+        </TitleSection>
+      </ContainerSm>
+      <ContainerSm>
+        <SectionContainer>
+          <SectionTitle>Contribution</SectionTitle>
+          <SectionContent>
+            <ContributorContainer>
+              <ContributorSection>
+                <div className="logo-title">Lead Contributors</div>
+                <div className="logo">
+                  <a href="https://unfolded.ai">
+                    <img
+                      height="40"
+                      src={imageResolver['logos/unfolded-logo.png']}
+                    />
+                  </a>
+                  <a href="https://carto.com">
+                    <img
+                      height="40"
+                      src={imageResolver['logos/CARTO-logo-positive.png']}
+                    />
+                  </a>
+                </div>
+              </ContributorSection>
+              <ContributorSection>
+                <div className="logo-title">Created By</div>
+                <div className="logo tall">
+                  <a href="https://uber.com/">
+                    <img
+                      height="60"
+                      src={imageResolver['logos/uber-logo-black.jpg']}
+                    />
+                  </a>
+                </div>
+              </ContributorSection>
+            </ContributorContainer>
+          </SectionContent>
+        </SectionContainer>
+      </ContainerSm>
+      {/*
         <center>
           <H2>Sponsored By</H2>
           <a href="https://uber.com/">
@@ -84,113 +170,149 @@ export default function ManifestoSection({ imageResolver }) {
         </center>
         <br />
         */}
+      <ContainerSm>
+        <SectionContainer>
+          <SectionTitle>Open Governance</SectionTitle>
+          <SectionContent>
+            <OpenGovContainer>
+              <Paragraph>
+                vis.gl is under open governance, and anyone can join the open
+                planning meetings. Contributor status is available and technical
+                steering committee membership is available to major
+                contributors.
+              </Paragraph>
+              <div className="image">
+                <a href="https://www.linuxfoundation.org//">
+                  <img
+                    height="40"
+                    src={imageResolver['logos/linux-foundation.svg']}
+                  />
+                </a>
+                <span style={{ padding: 50 }} />
+                <a href="https://uc.foundation/">
+                  <img
+                    height="40"
+                    src={imageResolver['logos/ucf-color-hztl.svg']}
+                  />
+                </a>
+              </div>
+            </OpenGovContainer>
+          </SectionContent>
+        </SectionContainer>
+      </ContainerSm>
 
-        <H2>Open Governance</H2>
-        <Paragraph>
-          vis.gl is under open governance, and anyone can join the open planning
-          meetings. Contributor status is available and technical steering
-          committee membership is available to major contributors.
-        </Paragraph>
+      <ContainerSm>
+        <SectionContainer>
+          <SectionTitle>Frameworks</SectionTitle>
+          <SectionContent>
+            <OpenGovContainer>
+              <Paragraph>
+                The <a href="/frameworks">vis.gl Framework Catalog</a> provides
+                an overview of the various frameworks in the vis.gl framework
+                suite.
+              </Paragraph>
+              <img src={imageResolver['frameworks.jpg']} width="100%" />
+            </OpenGovContainer>
+          </SectionContent>
+        </SectionContainer>
+      </ContainerSm>
 
-        <br />
-        <center>
-          <a href="https://www.linuxfoundation.org//">
-            <img
-              height="40"
-              src={imageResolver['logos/linux-foundation.svg']}
-            />
-          </a>
-          <span style={{ padding: 50 }} />
-          <a href="https://uc.foundation/">
-            <img height="40" src={imageResolver['logos/ucf-color-hztl.svg']} />
-          </a>
-        </center>
-        <br />
+      <ContainerSm>
+        <SectionContainer>
+          <SectionTitle>Releases</SectionTitle>
+          <SectionContent>
+            <H3>vis.gl 8.4</H3>
+            <Paragraph>
+              <ListTitle>Release Date: Jan 31, 2021</ListTitle>
+              <ListTitle>deck.gl 8.4</ListTitle>
 
-        <H2>The Frameworks</H2>
+              <ListItem>
+                <a href="https://deck.gl/docs/whats-new">Release Notes</a>
+              </ListItem>
 
-        The <a href="/frameworks">vis.gl Framework Catalog</a> provides an overview
-        of the various frameworks in the vis.gl framework suite.
+              <List>
+                <ListItem>TBA</ListItem>
+              </List>
 
-        <H2>Recent Releases</H2>
+              <ListTitle>luma.gl 8.4</ListTitle>
+              <ListItem>
+                <a href="https://luma.gl/docs/whats-new">Release Notes</a>
+              </ListItem>
+              <List>
+                <ListItem>TypeScript</ListItem>
+              </List>
 
-        <H3>vis.gl 8.4</H3> 
-        <Paragraph>
-        Release Date: Jan 31, 2021
+              <ListTitle>react-map-gl</ListTitle>
+              <List>
+                <ListItem>
+                  react-map-gl now supports Mapbox GL JS v2, Mapbox GL JS v1,
+                  and MapLibre renderers.
+                </ListItem>
+                <ListItem>TypeScript</ListItem>
+              </List>
 
-        **deck.gl 8.4** ([Release Notes](https://deck.gl/docs/whats-new))
-        <List>
-          <ListItem>
-            TBA
-          </ListItem>
-        </List>
+              <ListTitle>math.gl 3.4</ListTitle>
+              <List>
+                <ListItem>
+                  @math.gl/geoid - New module for working with Earth Gravity
+                  Models (micro-adjustments of ellipsoid)
+                </ListItem>
+                <ListItem>
+                  @math.gl/polygon - Improved support for binary polygons
+                </ListItem>
+              </List>
+            </Paragraph>
+          </SectionContent>
+        </SectionContainer>
+      </ContainerSm>
 
-        **luma.gl 8.4** ([Release Notes](https://luma.gl/docs/whats-new))
-        <List>
-          <ListItem>
-            TypeScript
-          </ListItem>
-        </List>
-
-        **react-map-gl**
-        <List>
-          <ListItem>
-            `react-map-gl` now supports Mapbox GL JS v2, Mapbox GL JS v1, and MapLibre renderers.
-          </ListItem>
-          <ListItem>
-            TypeScript
-          </ListItem>
-        </List>
-
-        **math.gl 3.4**
-        <List>
-          <ListItem>
-            `@math.gl/geoid` - New module for working with Earth Gravity Models (micro-adjustments of ellipsoid)
-          </ListItem>
-          <ListItem>
-            `@math.gl/polygon` - Improved support for binary polygons
-          </ListItem>
-        </List>
-
-        </Paragraph>
-
-        <H2>History</H2>
-
-        <Paragraph>
-          A brief history of the vis.gl framework suite.
-
-          <br/>
-          <br/>
-
-          <List style={{paddingLeft: 25}}>
-            <ListItem>
-              2020 - vis.gl Open Governance meetings started, under the auspices
-              of the Linux Foundation and the UCF.
-            </ListItem>
-            <ListItem>
-              2020 - Uber transferred a set of core vis.gl frameworks to the
-              UCF.
-            </ListItem>
-            <ListItem>
-              2019 - Uber created the Urban Computing Foundation (a
-              sub-foundation of the Linux Foundation), transferring kepler.gl.
-            </ListItem>
-            <ListItem>2018 - Uber open sourced kepler.gl</ListItem>
-            <ListItem>2018 - loaders.gl and nebula.gl were created.</ListItem>
-            <ListItem>2017 - math.gl was created.</ListItem>
-            <ListItem>2017 - probe.gl was created.</ListItem>
-            <ListItem>2016 - luma.gl was created.</ListItem>
-            <ListItem>
-              2015 - The core deck.gl framework was open sourced by Uber.
-            </ListItem>
-            <ListItem>
-              2015 - The core deck.gl framework was developed by Uber from 2015
-              to support a wide range of geospatial visualization use cases
-              across the company,.
-            </ListItem>
-          </List>
-        </Paragraph>
-      </div>
+      <ContainerSm>
+        <SectionContainer>
+          <SectionTitle>History</SectionTitle>
+          <SectionContent>
+            <ListTitle>2020</ListTitle>
+            <List>
+              <ListItem>
+                vis.gl Open Governance meetings started, under the auspices of
+                the Linux Foundation and the UCF.
+              </ListItem>
+              <ListItem>
+                Uber transferred a set of core vis.gl frameworks to the UCF.
+              </ListItem>
+            </List>
+            <ListTitle>2019</ListTitle>
+            <List>
+              <ListItem>
+                Uber created the Urban Computing Foundation (a sub-foundation of
+                the Linux Foundation), transferring kepler.gl.
+              </ListItem>
+            </List>
+            <ListTitle>2018</ListTitle>
+            <List>
+              <ListItem>Uber open sourced kepler.gl</ListItem>
+              <ListItem>loaders.gl and nebula.gl were created.</ListItem>
+            </List>
+            <ListTitle>2017</ListTitle>
+            <List>
+              <ListItem>math.gl was created.</ListItem>
+              <ListItem>probe.gl was created.</ListItem>
+            </List>
+            <ListTitle>2016</ListTitle>
+            <ListItem>luma.gl was created.</ListItem>
+            <ListTitle>2015</ListTitle>
+            <List>
+              <ListItem>
+                The core deck.gl framework was open sourced by Uber.
+              </ListItem>
+              <ListItem>
+                The core deck.gl framework was developed by Uber to support a
+                wide range of geospatial visualization use cases across the
+                company.
+              </ListItem>
+            </List>
+          </SectionContent>
+        </SectionContainer>
+      </ContainerSm>
     </div>
   );
 }

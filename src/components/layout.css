@@ -444,8 +444,8 @@ header.home h1:before {
 }
 
 footer h1 a:visited,
-header.home h1 a:visited {
-  color: #ededed;
+header.home h1 a:visited:not(.logo) {
+  color: #d0021b;
 }
 
 #repos {
@@ -458,7 +458,7 @@ header.home h1 a:visited {
 }
 
 .Repo.small {
-  border: 1px solid #ededed;
+  border: 1px solid #d0021b;
   border-radius: 2px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
   display: inline-block;
@@ -527,7 +527,7 @@ header.home h1 a:visited {
 
 .link,
 .link:visited {
-  color: #0070c9;
+  color: #d0021b;
 }
 
 .link:hover {
@@ -954,7 +954,7 @@ footer a:visited {
 
 a.news--item--read,
 a.news--item--read:visited {
-  color: #0070c9;
+  color: #d0021b;
   font-size: 16px;
 }
 
@@ -2335,9 +2335,9 @@ a {
   cursor: pointer;
 }
 
-a,
-a:visited {
-  color: #00ade6;
+a:not(.logo),
+a:visited:not(.logo) {
+  color: #d0021b;
 }
 
 h2 {

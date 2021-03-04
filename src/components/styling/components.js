@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import {breakpointsMediaQueries} from './style';
+import { breakpointsMediaQueries } from './style';
 
 // New components
 export const ContainerLg = styled.div.attrs({
-  className: 'container-lg'
+  className: 'container-lg',
 })`
   max-width: ${props => props.theme.containerMaxWidth}px;
   margin: 0 auto;
@@ -22,8 +22,15 @@ export const ContainerLg = styled.div.attrs({
   }
 `;
 
+export const ContainerSm = styled(ContainerLg).attrs({
+  className: 'container-sm',
+})`
+  max-width: 1100px;
+  margin-top: 100px;
+`;
+
 export const Headline = styled.div.attrs({
-  className: 'content-title'
+  className: 'content-title',
 })`
   font-family: ${props => props.theme.fontFamilySemiBold};
   font-size: ${props => props.theme.fontSizeUltraHeading};
@@ -33,7 +40,7 @@ export const Headline = styled.div.attrs({
 `;
 
 export const H1 = styled(Headline).attrs({
-  className: 'content-title h1'
+  className: 'content-title h1',
 })`
   font-size: ${props => props.theme.fontSizeH1};
   font-family: ${props => props.theme.fontFamilyMedium};
@@ -44,7 +51,7 @@ export const H1 = styled(Headline).attrs({
 `;
 
 export const H2 = styled(Headline).attrs({
-  className: 'content-title h2'
+  className: 'content-title h2',
 })`
   font-size: ${props => props.theme.fontSizeH2};
   line-height: ${props => props.theme.lineHeightH2};
@@ -53,7 +60,7 @@ export const H2 = styled(Headline).attrs({
 `;
 
 export const H3 = styled(Headline).attrs({
-  className: 'content-title h3'
+  className: 'content-title h3',
 })`
   font-weight: normal;
   font-family: ${props => props.theme.fontFamily};
@@ -62,7 +69,7 @@ export const H3 = styled(Headline).attrs({
 `;
 
 export const H4 = styled(H3).attrs({
-  className: 'content-title h4'
+  className: 'content-title h4',
 })`
   font-family: ${props => props.theme.fontFamily};
   font-size: ${props => props.theme.fontSizeH4};
@@ -70,7 +77,7 @@ export const H4 = styled(H3).attrs({
 `;
 
 export const Paragraph = styled.p.attrs({
-  className: 'content-paragraph'
+  className: 'content-paragraph',
 })`
   font-family: ${props => props.theme.fontFamily};
   font-size: ${props => props.theme.fontSizeP1};
@@ -87,10 +94,13 @@ export const ListItem = styled.li`
 `;
 
 export const InlineCode = styled.code`
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   border-radius: 4px;
   padding: 0 5px;
-  font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', 'Courier New', Courier, monospace;
+  font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
+    'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+    'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
+    'Courier New', Courier, monospace;
   font-size: 0.9em;
   margin: 1px 0;
   line-height: calc(1.5em / 0.9 - 2px);
@@ -98,7 +108,10 @@ export const InlineCode = styled.code`
   vertical-align: top;
 `;
 
-
+export const SubTitle = styled.div`
+  color: ${props => props.theme.gray};
+  font-size: 14px;
+`;
 /*
 // paragraph on dark background
 export const ParagraphLight = styled(Paragraph)`
