@@ -224,6 +224,30 @@ function renderAuxTable(imageResolver) {
       <tbody>
         <tr>
           <td>
+            <img
+              height="100"
+              alt="hubble.gl"
+              title="hubble.gl"
+              src={imageResolver['frameworks/hubble.png']}
+            />
+          </td>
+          <td>
+            <a href="https://hubble.gl">
+              <code>hubble.gl</code>
+            </a>
+          </td>
+          <td>A powerful deck.gl-based video capture solution.</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              height="100"
+              alt="nebula.gl"
+              title="nebula.gl"
+              src={imageResolver['frameworks/nebula.png']}
+            />
+          </td>
+          <td>
             <a href="https://nebula.gl">
               <code>nebula.gl</code>
             </a>
@@ -264,7 +288,8 @@ function renderAuxTable(imageResolver) {
         </tr>
       </tbody>
     </table>
-  );}
+  );
+}
 
 export default FrameworksPage;
 export const query = graphql`

@@ -10,7 +10,7 @@ const IndexPage = ({data}) => {
     <Layout page="home">
       <div id="home">
         <Showcase imageResolver={imageResolver}/>
-        <Academy />
+        {/* <Academy /> */}
       </div>
     </Layout>
   );

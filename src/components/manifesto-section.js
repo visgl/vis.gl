@@ -229,36 +229,63 @@ export default function ManifestoSection({ imageResolver }) {
               <ListItem>
                 <a href="https://deck.gl/docs/whats-new">Release Notes</a>
               </ListItem>
-
+              <div style={{marginTop: 5}} />
               <List>
-                <ListItem>TBA</ListItem>
+                <ListItem>MVTLayer - 2x performance via binary mode. TileJSON. Query Features.</ListItem>
+                <ListItem>HeatmapLayer - GPU aggregations now include MEAN and SUM</ListItem>
+                <ListItem>BitmapLayer - pixel picking</ListItem>
+                <ListItem>All Layers - performance, rendering edge cases</ListItem>
+                <ListItem>Interaction - mobile improvments, new gesture for 3D interaction, inertia</ListItem>
+                <ListItem>loaders.gl integration - More control of loader autoselection</ListItem>
+                <ListItem>@deck.gl/carto - enables data-driven map visualizations using CARTOColors</ListItem>
+
               </List>
 
               <ListTitle>luma.gl 8.4</ListTitle>
               <ListItem>
                 <a href="https://luma.gl/docs/whats-new">Release Notes</a>
               </ListItem>
+              <div style={{marginTop: 5}} />
               <List>
-                <ListItem>TypeScript</ListItem>
+                <ListItem><b>TypeScript</b> - types are now exported</ListItem>
               </List>
 
-              <ListTitle>react-map-gl</ListTitle>
+              <ListTitle>react-map-gl v6.1</ListTitle>
+              <ListItem>
+                <a href="https://visgl.github.io/react-map-gl/docs/whats-new">Release Notes</a>
+              </ListItem>
+              <div style={{marginTop: 5}} />
               <List>
                 <ListItem>
-                  react-map-gl now supports Mapbox GL JS v2, Mapbox GL JS v1,
-                  and MapLibre renderers.
+                  Choose your mapbox API compatible rendering library:
+                  Mapbox GL JS v2, Mapbox GL JS v1, MapLibre.
                 </ListItem>
-                <ListItem>TypeScript</ListItem>
+                <ListItem><b>TypeScript</b> - types are now exported</ListItem>
               </List>
 
               <ListTitle>math.gl 3.4</ListTitle>
+              <ListItem>
+                <a href="https://math.gl/docs/whats-new">Release Notes</a>
+              </ListItem>
+              <div style={{marginTop: 5}} />
               <List>
                 <ListItem>
                   @math.gl/geoid - New module for working with Earth Gravity
-                  Models (micro-adjustments of ellipsoid)
+                  Models
                 </ListItem>
                 <ListItem>
                   @math.gl/polygon - Improved support for binary polygons
+                </ListItem>
+              </List>
+
+              <ListTitle>loaders.gl 2.3</ListTitle>
+              <ListItem>
+                <a href="https://loaders.gl/docs/whats-new">Release Notes</a>
+              </ListItem>
+              <div style={{marginTop: 5}} />
+              <List>
+                <ListItem>
+                  loaders.gl is still on v2.3. The big 3.0 release is targeting vis.gl 8.5.
                 </ListItem>
               </List>
             </Paragraph>
