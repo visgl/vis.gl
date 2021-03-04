@@ -13,7 +13,8 @@
   },
   "scripts": {
     "clean": "rm -fr .cache public",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
+    "serve": "gatsby serve",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
@@ -57,7 +58,7 @@
   "devDependencies": {
     "classnames": "^2.2.6",
     "gatsby-transformer-yaml": "^2.1.6",
-    "gh-pages": "^2.1.0",
+    "gh-pages": "2.2.0",
     "prettier": "^1.15.2"
   }
 }
