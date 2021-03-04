@@ -27,6 +27,10 @@ export const ContainerSm = styled(ContainerLg).attrs({
 })`
   max-width: 1100px;
   margin-top: 100px;
+
+  :last-child {
+    margin-bottom: 100px
+  }
 `;
 
 export const Headline = styled.div.attrs({
