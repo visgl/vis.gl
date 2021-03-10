@@ -135,8 +135,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-  font-family: 'Graphik Web';
+    font-family: 'Graphik Web';
     font-weight: 400;
     font-size: 0.875em;
     line-height: 1.71429;
