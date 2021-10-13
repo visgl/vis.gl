@@ -5,15 +5,15 @@ import Layout from '../components/layout';
 // import Modules from '../components/modules';
 
 import {
-  ContainerLg,
-  H1,
+  // ContainerLg,
+  // H1,
   H2,
   H3,
-  H4,
+  // H4,
   Paragraph,
-  List,
-  ListItem,
-  InlineCode,
+  // List,
+  // ListItem,
+  // InlineCode,
 } from '../components/styling/components';
 
 const FrameworksPage = ({data}) => {
@@ -22,19 +22,18 @@ const FrameworksPage = ({data}) => {
     <Layout page="home">
       <div className="section-title">
         <Paragraph>vis.gl</Paragraph>
-        <Paragraph>Framework Catalog</Paragraph>
+        <Paragraph>Frameworks</Paragraph>
       </div>
       <div className="section-text">
-        <H2>The vis.gl Framework Catalog</H2>
+        <H2>The vis.gl Framework Suite</H2>
         <Paragraph>
           The vis.gl frameworks are designed for GPU powered geospatial visualization
           and analytics on the web. 
-          The frameworks are designed to be independently usable while following a 
-          common style that makes them work seamlessly together.
+          The frameworks work seamlessly together, but are also independently usable.
         </Paragraph>
         <Paragraph>
           Each framework provides a number of sub-modules that export composable
-          components such as loaders, visualzation layers, and math modules that developers 
+          components such as loaders, visualization layers, and math modules that developers 
           can cherry-pick and combine to achieve desired results. Various 
         </Paragraph>
         <br/>

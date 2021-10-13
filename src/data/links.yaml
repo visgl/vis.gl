@@ -26,6 +26,9 @@
             label: Home
             route: /
         - item:
+            label: Releases
+            route: /releases
+        - item:
             label: Frameworks
             route: /frameworks
         - item:

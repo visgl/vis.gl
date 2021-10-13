@@ -1,15 +1,4 @@
 import React, { Component } from 'react';
-import {
-  ContainerLg,
-  H1,
-  H2,
-  H3,
-  H4,
-  Paragraph,
-  List,
-  ListItem,
-  InlineCode,
-} from './styling/components';
 
 import Waypoint from 'react-waypoint';
 

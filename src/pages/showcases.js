@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Showcase from '../components/showcase';
-import Academy from '../components/academy';
+// import Academy from '../components/academy';
 
 const IndexPage = ({data}) => {
   const imageResolver = data.allFile.edges.reduce((prev, curr) => {prev[curr.node.relativePath] = curr.node.publicURL; return prev;}, {});
