@@ -185,6 +185,22 @@ function renderCoreTable(imageResolver) {
           <td>
             <img
               height="100"
+              alt="hubble.gl"
+              title="hubble.gl"
+              src={imageResolver['frameworks/hubble.png']}
+            />
+          </td>
+          <td>
+            <a href="https://hubble.gl">
+              <code>hubble.gl</code>
+            </a>
+          </td>
+          <td>A powerful deck.gl-based video capture solution.</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              height="100"
               alt="react-map-gl"
               title="react-map-gl"
               src={imageResolver['frameworks/react-map-gl.png']}
@@ -243,22 +259,6 @@ function renderAuxTable(imageResolver) {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>
-            <img
-              height="100"
-              alt="hubble.gl"
-              title="hubble.gl"
-              src={imageResolver['frameworks/hubble.png']}
-            />
-          </td>
-          <td>
-            <a href="https://hubble.gl">
-              <code>hubble.gl</code>
-            </a>
-          </td>
-          <td>A powerful deck.gl-based video capture solution.</td>
-        </tr>
         <tr>
           <td>
             <img
