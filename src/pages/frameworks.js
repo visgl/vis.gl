@@ -195,7 +195,7 @@ function renderCoreTable(imageResolver) {
               <code>hubble.gl</code>
             </a>
           </td>
-          <td>A powerful deck.gl-based video capture solution.</td>
+          <td>A powerful animation and video capture solution for deck.gl and kepler.gl visualizations.</td>
         </tr>
         <tr>
           <td>
