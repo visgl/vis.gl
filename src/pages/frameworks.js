@@ -64,7 +64,7 @@ const FrameworksPage = ({data}) => {
 
 function renderCoreTable(imageResolver) {
   return (
-    <table>
+    <table cellSpacing={20}>
       <thead>
         <tr>
           <th>
@@ -197,6 +197,27 @@ function renderCoreTable(imageResolver) {
           </td>
           <td>
             A React wrapper for Mapbox GL JS that integrates with deck.gl.
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img
+              height="100"
+              alt="FlowmapBlue"
+              title="FlowmapBlue"
+              src={imageResolver['frameworks/FlowmapBlue.jpg']}
+            />
+          </td>
+          <td>
+            <a href="https://flowmap.blue/">
+              <code>FlowmapBlue</code>
+            </a>
+          </td>
+          <td>
+            FlowmapBlue is a tool for visualizing aggregated numbers of movements between geographic locations as flow maps.
+            It is used for representing data on urban mobility, travel, transportation, human and animal migration,
+            material flows, supply chains, waste management and many other topics.
           </td>
         </tr>
 
