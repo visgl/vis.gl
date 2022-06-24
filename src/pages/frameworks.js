@@ -64,7 +64,7 @@ const FrameworksPage = ({data}) => {
 
 function renderCoreTable(imageResolver) {
   return (
-    <table>
+    <table cellSpacing={20}>
       <thead>
         <tr>
           <th>
@@ -185,6 +185,22 @@ function renderCoreTable(imageResolver) {
           <td>
             <img
               height="100"
+              alt="hubble.gl"
+              title="hubble.gl"
+              src={imageResolver['frameworks/hubble.png']}
+            />
+          </td>
+          <td>
+            <a href="https://hubble.gl">
+              <code>hubble.gl</code>
+            </a>
+          </td>
+          <td>A powerful animation and video capture solution for deck.gl and kepler.gl visualizations.</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              height="100"
               alt="react-map-gl"
               title="react-map-gl"
               src={imageResolver['frameworks/react-map-gl.png']}
@@ -197,6 +213,27 @@ function renderCoreTable(imageResolver) {
           </td>
           <td>
             A React wrapper for Mapbox GL JS that integrates with deck.gl.
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img
+              height="100"
+              alt="FlowmapBlue"
+              title="FlowmapBlue"
+              src={imageResolver['frameworks/FlowmapBlue.jpg']}
+            />
+          </td>
+          <td>
+            <a href="https://flowmap.blue/">
+              <code>FlowmapBlue</code>
+            </a>
+          </td>
+          <td>
+            FlowmapBlue is a tool for visualizing aggregated numbers of movements between geographic locations as flow maps.
+            It is used for representing data on urban mobility, travel, transportation, human and animal migration,
+            material flows, supply chains, waste management and many other topics.
           </td>
         </tr>
 
@@ -222,22 +259,6 @@ function renderAuxTable(imageResolver) {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>
-            <img
-              height="100"
-              alt="hubble.gl"
-              title="hubble.gl"
-              src={imageResolver['frameworks/hubble.png']}
-            />
-          </td>
-          <td>
-            <a href="https://hubble.gl">
-              <code>hubble.gl</code>
-            </a>
-          </td>
-          <td>A powerful deck.gl-based video capture solution.</td>
-        </tr>
         <tr>
           <td>
             <img
