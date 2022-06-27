@@ -59,7 +59,7 @@ header a {
 }
 
 header.showcases {
-  background: url(../public/images/header-background.png) no-repeat #100a29;
+  background: url(/images/header-background.png) no-repeat #100a29;
   padding-top: 0;
 }
 
@@ -121,7 +121,7 @@ header h1 {
 footer h1:before,
 header h1:before {
   content: '';
-  background: url(../public/images/logo-small.png) no-repeat;
+  background: url(/images/logo-small.png) no-repeat;
   background-size: cover;
   height: 38px;
   width: 47px;
@@ -293,7 +293,7 @@ header.home h1 a:visited:not(.logo) {
 }
 
 .section-title {
-  background: url('../public/images/logos/vis-logo.png') no-repeat;
+  background: url('/images/logos/vis-logo.png') no-repeat;
   max-width: 1172px;
   margin: 67px auto 57px;
   min-height: 296px;
