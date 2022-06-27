@@ -391,7 +391,7 @@ header.home h1 a:visited:not(.logo) {
 .frame {
   border-radius: 6px;
   overflow: hidden;
-  transform: translate(-21px);
+  /*transform: translate(-21px);*/
 }
 
 .browser-bar {
