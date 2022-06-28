@@ -12,16 +12,18 @@ const News = () => {
         <p>{'Learn about how vis.gl is creating impact'}</p>
       </div>
 
-      <div className="news-items">
-        {newsYaml.map((item, i) => (
-          <NewsEntry key={i} {...item} />
-        ))}
+      <div className="section-text">
+        <div className="news-items">
+          {newsYaml.map((item, i) => (
+            <NewsEntry key={i} {...item} />
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-function NewsEntry({publication, date, image, title, url}) {
+function NewsEntry({ publication, date, image, title, url }) {
   return (
     <div className="news--item">
       <h3>{publication}</h3>
@@ -30,7 +32,11 @@ function NewsEntry({publication, date, image, title, url}) {
         <ImageBox src={image} width={240} height={143} alt={title} />
       </div>
       <p className="news--item--title">{title}</p>
-      <LinkWithArrow className="news--item--read" label="Read Article" url={url} />
+      <LinkWithArrow
+        className="news--item--read"
+        label="Read Article"
+        url={url}
+      />
     </div>
   );
 }

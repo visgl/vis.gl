@@ -12,8 +12,9 @@ const Blog = () => {
       </div>
       <div className="section-text">
         <p>
-          The vis.gl blog introduces new releases, provides in-depth technical expositions and
-          showcases applications of the vis.gl frameworks. Guest posts are welcome!
+          The vis.gl blog introduces new releases, provides in-depth technical
+          expositions and showcases applications of the vis.gl frameworks. Guest
+          posts are welcome!
         </p>
         <br />
         <p>
@@ -22,16 +23,18 @@ const Blog = () => {
         </p>
       </div>
 
-      <div className="blog-items">
-        {blogYaml.map((entry, i) => (
-          <BlogPost key={i} {...entry} image={entry.image} />
-        ))}
+      <div className="section-text">
+        <div className="blog-items">
+          {blogYaml.map((entry, i) => (
+            <BlogPost key={i} {...entry} image={entry.image} />
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-function BlogPost({publication, date, image, title, blurb, url}) {
+function BlogPost({ publication, date, image, title, blurb, url }) {
   return (
     <div className="blog--item">
       <span>
@@ -42,7 +45,11 @@ function BlogPost({publication, date, image, title, blurb, url}) {
           <p className="blog--item--title">{title}</p>
           <p className="blog--item--date">{date}</p>
           <h3>{blurb}</h3>
-          <LinkWithArrow className="blog--item--read" label="Read Article" url={url} />
+          <LinkWithArrow
+            className="blog--item--read"
+            label="Read Article"
+            url={url}
+          />
         </div>
       </span>
     </div>

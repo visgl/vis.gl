@@ -25,8 +25,6 @@ const SupportLogo = ({ name, src, href, width = 200, height = 25 }) => (
       src={src}
       height={height}
       width={width}
-      placeholder="blur"
-      blurDataURL={src}
     />
   </SupportLogoLink>
 );

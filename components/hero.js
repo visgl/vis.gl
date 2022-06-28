@@ -148,7 +148,7 @@ void main(void) {
 }
 
 class Hero extends Component {
-  state = { isMounted: false };
+  state = { isMounted: false, isAnimating: false };
 
   componentDidMount() {
     this.setState({ isMounted: true });
@@ -158,17 +158,22 @@ class Hero extends Component {
     this._animationStop();
   }
 
-  _animationStart() {
+  _animationStart = () => {
+    this.setState({ isAnimating: true });
     this._animationLoop = createAnimationLoop();
     this._animationLoop.start({ canvas: 'lumagl-canvas' });
-  }
+    this.forceUpdate();
+  };
 
-  _animationStop() {
+  _animationStop = () => {
     if (this._animationLoop) {
       this._animationLoop.stop({ canvas: 'lumagl-canvas' });
       this._animationLoop = null;
     }
-  }
+    if (this.state.isAnimating) {
+      this.setState({ isAnimating: false });
+    }
+  };
 
   render() {
     return (
@@ -185,19 +190,31 @@ class Hero extends Component {
                 height: '450px',
                 top: 0,
                 width: '100vw',
-                zIndex: -1,
+                background: this.state.isAnimating ? '#fff' : '#000',
               }}
             />
           </Waypoint>
         ) : null}
-        <div className="main">
-          {'Large scale '}
-          <em>geospatial</em>
-          {' data visualization'}
-        </div>
-        <div className="secondary">
-          Promoting Industry Collaboration through Open Source and Open
-          Governance
+        <div
+          style={{
+            position: 'absolute',
+            height: '450px',
+            top: 0,
+            width: '100vw',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+          }}
+        >
+          <div className="main">
+            {'Large scale '}
+            <em>geospatial</em>
+            {' data visualization'}
+          </div>
+          <div className="secondary">
+            Promoting Industry Collaboration through Open Source and Open
+            Governance
+          </div>
         </div>
       </div>
     );

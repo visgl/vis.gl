@@ -69,10 +69,11 @@ header.showcases {
 
 #hero {
   color: #ededed;
-  height: 400px;
+  height: 450px;
   padding-top: 164px;
   position: relative;
   width: 100vw;
+  background: #000;
 }
 
 #hero .main {
@@ -295,7 +296,7 @@ header.home h1 a:visited:not(.logo) {
 .section-title {
   background: url('/images/logos/vis-logo.png') no-repeat;
   max-width: 1172px;
-  margin: 67px auto 57px;
+  margin: 100px auto 57px;
   min-height: 296px;
   padding: 47px 0 0 213px;
   width: 100%;
@@ -327,7 +328,7 @@ header.home h1 a:visited:not(.logo) {
 .section-text {
   max-width: 1172px;
   margin: 67px auto;
-  padding: 0 0 0 136px;
+  /*padding: 0 0 0 136px;*/
   width: 100%;
 }
 
@@ -521,7 +522,6 @@ footer a:visited {
 }
 
 #academy {
-  background: #fafafa;
   padding: 67px 0;
 }
 
@@ -585,9 +585,7 @@ footer a:visited {
 }
 
 #news {
-  background: #fafafa;
   padding-bottom: 100px;
-  padding-top: 109px;
 }
 
 .news-items {
@@ -600,9 +598,9 @@ footer a:visited {
   border-top: 1px solid #ededed;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.16);
   color: #041725;
-  margin: 0 -40px;
+  /*margin: 0 -40px;*/
   min-height: 200px;
-  padding: 20px;
+  padding: 20px 20px 50px 20px;
   position: relative;
   width: calc(100% + 80px);
   transition: box-shadow 0.5s;
@@ -654,9 +652,7 @@ a.news--item--read:visited {
 }
 
 #blog {
-  background: #fafafa;
   padding-bottom: 100px;
-  padding-top: 109px;
 }
 
 .blog-items {

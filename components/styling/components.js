@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import {breakpointsMediaQueries} from './style';
+import { breakpointsMediaQueries } from './style';
 
 // New components
 export const ContainerLg = styled.div`
@@ -22,7 +22,7 @@ export const ContainerLg = styled.div`
 
 export const ContainerSm = styled(ContainerLg)`
   max-width: 1100px;
-  margin-top: 100px;
+  margin-top: 50px;
   width: 100%;
 
   :last-child {
