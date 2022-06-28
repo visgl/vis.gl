@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import Waypoint from 'react-waypoint';
 
-import {AnimationLoop, Cube, dirlight, setParameters} from 'luma.gl';
-import {Matrix4, radians} from 'math.gl';
+import { AnimationLoop, Cube, dirlight, setParameters } from 'luma.gl';
+import { Matrix4, radians } from 'math.gl';
 
 const isBrowser = typeof window !== `undefined`;
 
@@ -14,7 +14,7 @@ function createAnimationLoop() {
 
   const animationLoop = new AnimationLoop({
     createFramebuffer: true,
-    onInitialize({gl}) {
+    onInitialize({ gl }) {
       setParameters(gl, {
         clearColor: [0, 0, 0, 1],
         clearDepth: 1,
@@ -26,10 +26,10 @@ function createAnimationLoop() {
         cube: makeInstancedCube(gl),
       };
     },
-    onFinalize({gl, cube}) {
+    onFinalize({ gl, cube }) {
       cube.delete();
     },
-    onRender({gl, tick, aspect, cube, framebuffer}) {
+    onRender({ gl, tick, aspect, cube, framebuffer }) {
       try {
         projectionMatrix = new Matrix4().perspective({
           fov: radians(60),
@@ -91,7 +91,7 @@ function makeInstancedCube(gl) {
     (i) => [0.06640625, 0.04296875, 0.1640625][i % 3]
   );
 
-  const {vs, fs} = {
+  const { vs, fs } = {
     vs: `\
 attribute vec3 positions;
 attribute vec3 normals;
@@ -141,17 +141,17 @@ void main(void) {
     isInstanced: 1,
     instanceCount: SIDE * SIDE,
     attributes: {
-      instanceOffsets: {value: offsets, size: 2, instanced: 1},
-      instanceColors: {value: colors, size: 3, instanced: 1},
+      instanceOffsets: { value: offsets, size: 2, instanced: 1 },
+      instanceColors: { value: colors, size: 3, instanced: 1 },
     },
   });
 }
 
 class Hero extends Component {
-  state = {isMounted: false};
+  state = { isMounted: false };
 
   componentDidMount() {
-    this.setState({isMounted: true});
+    this.setState({ isMounted: true });
   }
 
   componentWillUnmount() {
@@ -160,12 +160,12 @@ class Hero extends Component {
 
   _animationStart() {
     this._animationLoop = createAnimationLoop();
-    this._animationLoop.start({canvas: 'lumagl-canvas'});
+    this._animationLoop.start({ canvas: 'lumagl-canvas' });
   }
 
   _animationStop() {
     if (this._animationLoop) {
-      this._animationLoop.stop({canvas: 'lumagl-canvas'});
+      this._animationLoop.stop({ canvas: 'lumagl-canvas' });
       this._animationLoop = null;
     }
   }
@@ -174,12 +174,15 @@ class Hero extends Component {
     return (
       <div id="hero">
         {isBrowser && this.state.isMounted ? (
-          <Waypoint onEnter={this._animationStart} onLeave={this._animationStop}>
+          <Waypoint
+            onEnter={this._animationStart}
+            onLeave={this._animationStop}
+          >
             <canvas
               id="lumagl-canvas"
               style={{
                 position: 'absolute',
-                height: '500px',
+                height: '450px',
                 top: 0,
                 width: '100vw',
                 zIndex: -1,
@@ -193,7 +196,8 @@ class Hero extends Component {
           {' data visualization'}
         </div>
         <div className="secondary">
-          Promoting Industry Collaboration through Open Source and Open Governance
+          Promoting Industry Collaboration through Open Source and Open
+          Governance
         </div>
       </div>
     );
