@@ -41,7 +41,7 @@ html {
 }
 
 header .links a.active {
-  color: #00ade6 !important;
+  color: #d0021b !important;
 }
 
 .markdown {
@@ -793,7 +793,7 @@ header .links a:hover {
 
 header .links a.active {
   color: #ededed;
-  border-top-color: #00ade6;
+  border-top-color: #d0021b;
   border-image-slice: 2;
 }
 
@@ -882,8 +882,8 @@ header .title-link > a {
 }
 
 .Hero .btn {
-  border: 2px solid #00ade6;
-  border-image: linear-gradient(90deg, #00ade6 0, #05e3d5);
+  border: 2px solid #d0021b;
+  border-image: linear-gradient(90deg, #d0021b 0, #05e3d5);
   border-image-slice: 2;
   transition: background-color 0.15s ease-in, color 0.15s ease-in;
   font-size: 20px;
@@ -944,10 +944,10 @@ header .title-link > a {
 }
 
 .toc .link.active {
-  color: #00ade6;
+  color: #d0021b;
   font-weight: 700;
-  border-color: #00ade6;
-  border-image: linear-gradient(180deg, #00ade6 0, #05e3d5);
+  border-color: #d0021b;
+  border-image: linear-gradient(180deg, #d0021b 0, #05e3d5);
   border-image-slice: 2;
 }
 
@@ -2091,7 +2091,7 @@ hr.short {
   margin: 24px 0 0;
   width: 32px;
   height: 2px;
-  background: linear-gradient(90deg, #00ade6 0, #05e3d5);
+  background: linear-gradient(90deg, #d0021b 0, #05e3d5);
 }
 
 footer {
