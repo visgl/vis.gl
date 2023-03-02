@@ -1,0 +1,98 @@
+frameworkGroups:
+
+  - title:
+    description: >
+      The vis.gl frameworks are designed for GPU powered geospatial visualization and analytics on the web. The frameworks are designed to be independently usable while following a common style that makes them work seamlessly together.
+      
+      
+      Each framework provides a number of sub-modules that export composable components such as loaders, visualzation layers, and math modules that developers can cherry-pick and combine to achieve desired results.
+    entries:
+      - name: kepler.gl
+        url: https://kepler.gl
+        image: /images/frameworks/kepler.png
+        description: >
+          The kepler.gl demo application is a widely used geospatial tool for visualization and
+          exploration of geospatial data using deck.gl. It demonstrates the power of the kepler.gl
+          application framework, designed to let users build advanced custom geospatial
+          applications.
+
+      - name: deck.gl
+        url: https://deck.gl
+        image: /images/frameworks/deck.png
+        description: >
+          Providing high-performance, GPU powered visualization layers for 
+          large scale geospatial data.
+          deck.gl is the corner stone of the vis.gl framework suite.
+          A selection of submodules provide layers for various geospatial and 3D 
+          use cases.
+
+      - name: pydeck.gl
+        url: https://pydeck.gl
+        image: /images/frameworks/pydeck.png
+        description: >
+          Python bindings for deck.gl that enable powerful custom geospatial visualizations
+          to be programmed directly in Jupyter Notebooks.
+
+      - name: loaders.gl
+        url: https://loaders.gl
+        image: /images/frameworks/loaders.png
+        description: >
+          A wide range of highly optimized, framework-independent loaders for geospatial, 
+          tabular and 3D file formats. Supports worker based binary data loading.
+          Supported outputs includes geospatial layers, point clouds, 3D geometries, 
+          images, textures and tabular data.
+
+      - name: luma.gl
+        url: https://luma.gl
+        image: /images/frameworks/luma.png
+        description: >
+          A high-performance WebGL library for high-performance visualization
+          and GPU computation.
+
+      - name: hubble.gl
+        url: https://hubble.gl
+        image: /images/frameworks/hubble.png
+        description: >
+          A powerful animation and video capture solution for deck.gl and kepler.gl visualizations.
+
+      - name: react-map-gl
+        url: https://visgl.github.io/react-map-gl
+        image: /images/frameworks/react-map-gl.png
+        description: >
+          A React wrapper for Mapbox GL JS that integrates with deck.gl.
+
+      - name: FlowmapBlue
+        url: https://flowmap.blue/
+        image: /images/frameworks/FlowmapBlue.jpg
+        description: >
+          FlowmapBlue is a tool for visualizing aggregated numbers of movements between geographic locations as flow maps.
+          It is used for representing data on urban mobility, travel, transportation, human and animal migration,
+          material flows, supply chains, waste management and many other topics.
+    
+
+  - title: Related Frameworks
+    description: >
+      In addition to the core frameworks, the vis.gl framework suite integrates with a number of related open source frameworks that are not under open governance.
+
+    entries:
+      - name: nebula.gl
+        url: https://nebula.gl
+        image: /images/frameworks/nebula.png
+        description: >
+          A high-performance feature editing framework for deck.gl.
+
+      - name: math.gl
+        url: https://math.gl
+        image: /images/frameworks/math.png
+        description: >
+          Math library focusing on 3D and geospatial math.
+          
+
+      - name: H3
+        url: https://h3geo.org
+        image: /images/frameworks/h3.png
+        description: >
+          Hexagon-based discrete global grid system.
+          
+    
+    

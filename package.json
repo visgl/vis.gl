@@ -1,64 +1,34 @@
 {
-  "name": "visgl-home",
-  "description": "vis.gl home page",
-  "version": "1.0.0",
+  "name": "vis.gl-next",
+  "version": "0.1.0",
   "private": true,
-  "keywords": [
-    "vis.gl"
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/visgl/vis.gl"
-  },
   "scripts": {
-    "clean": "rm -fr .cache public",
-    "build": "gatsby build --prefix-paths",
-    "serve": "gatsby serve",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "NODE_DEBUG=gh-pages gh-pages -d public"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@dschau/gatsby-source-github": "^0.0.1",
-    "@mdx-js/mdx": "^1.6.22",
-    "@mdx-js/react": "^1.6.22",
-    "baseui": "^5.2.1",
-    "gatsby": "^2.30.1",
-    "gatsby-image": "^2.9.0",
-    "gatsby-plugin-favicon": "^3.1.4",
-    "gatsby-plugin-google-analytics": "^2.9.0",
-    "gatsby-plugin-manifest": "^2.10.0",
-    "gatsby-plugin-mdx": "^1.10.0",
-    "gatsby-plugin-offline": "^2.0.16",
-    "gatsby-plugin-react-helmet": "^3.8.0",
-    "gatsby-plugin-sharp": "^2.10.0",
-    "gatsby-plugin-sitemap": "^2.10.0",
-    "gatsby-plugin-styled-components": "^3.3.2",
-    "gatsby-remark-prismjs": "^3.13.0",
-    "gatsby-source-filesystem": "^2.9.0",
-    "gatsby-source-graphql": "^2.12.0",
-    "gatsby-transformer-sharp": "^2.10.0",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "classnames": "^2.3.1",
     "luma.gl": "^6.3.0",
-    "prismjs": "^1.23.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-helmet": "^5.2.0",
-    "react-icons": "^3.2.2",
-    "react-odometerjs": "^2.1.1",
-    "react-redux": "^5.1.1",
-    "react-waypoint": "^8.1.0",
-    "redux": "^4.0.1",
-    "redux-actions": "^2.6.4",
-    "sharp": "0.27.0",
-    "styled-components": "^4.1.3"
+    "markdown-it": "^13.0.1",
+    "math.gl": "^2.3.0",
+    "next": "12.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-waypoint": "^8.1.0"
   },
   "devDependencies": {
-    "classnames": "^2.2.6",
-    "gatsby-transformer-yaml": "^2.1.6",
-    "gh-pages": "2.2.0",
-    "prettier": "^1.15.2"
+    "@types/markdown-it": "^12.2.3",
+    "@types/node": "18.0.0",
+    "@types/react": "18.0.14",
+    "@types/react-dom": "18.0.5",
+    "eslint": "8.18.0",
+    "eslint-config-next": "12.1.6",
+    "prettier": "^2.7.1",
+    "typescript": "4.7.4",
+    "yaml-loader": "^0.8.0"
   }
 }

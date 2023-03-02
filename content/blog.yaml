@@ -1,0 +1,127 @@
+- date: Apr 7, 2020
+  title: "deck.gl 8.2 moves to Open Governance"
+  blurb: The vis.gl frameworks suite is now under open governance through the Linux Foundation and the Urban Cumputing Foundation.
+  url: https://medium.com/vis-gl/deck-gl-8-2-moves-to-open-governance-379f147c15bb
+  image: /images/blog/blog-2020-04-deck-open-governance.png
+- date: Oct 15, 2019
+  title: 'pydeck: Unlocking deck.gl for use in Python'
+  blurb: The power of deck.gl is now available to Python and Jupyter notebooks.
+  url: https://medium.com/vis-gl/pydeck-unlocking-deck-gl-for-use-in-python-ce891532f986
+  image: /images/blog/blog-2019-10-introducing-pydeck.png
+- date: Aug 26, 2019
+  title: Exploring Geospatial Data with kepler.gl
+  blurb: A showcase of how kepler.gl helps leverage the power of the vis.gl frameworks for geospatial analytics.
+  url: https://medium.com/vis-gl/exploring-geospatial-data-with-kepler-gl-cf655839628f
+  image: /images/blog/blog-2019-08-exploring-with-kepler.png
+- date: Jul 23, 2019
+  title: Vis Hackathon 2019
+  blurb: A range of visualization projects using the vis.gl frameworks and beyond.
+  url: https://medium.com/vis-gl/vis-hackathon-2019-56096209dce2
+  image: /images/blog/blog-2019-07-vis-hackathon.png
+- date: Jul 22, 2019
+  title: 'Kepler.gl: Export Map'
+  blurb: kepler.gl now supports exporting maps for use on the web.
+  url: https://medium.com/vis-gl/kepler-gl-export-map-c3c0804e55b8
+  image: /images/blog/blog-2019-07-kepler-export-map.png
+- date: Jun 25, 2019
+  title: Introducing kepler.gl for Jupyter
+  blurb: kepler.gl can now be controlled from Jupyter notebooks.
+  url: https://medium.com/vis-gl/introducing-kepler-gl-for-jupyter-f72d41659fbf
+  image: /images/blog/blog-2019-06-kepler-jupyter.png
+- date: Jun 18, 2019
+  title: Uber’s vis.gl brings glTF to geospatial data visualization
+  blurb: The Khronos glTF format brings high-quality models and pysically-based rendering to the vis.gl frameworks.
+  url: https://medium.com/vis-gl/ubers-vis-gl-brings-gltf-to-geospatial-data-visualization-86208ddec91d
+  image: /images/blog/blog-2019-06-gltf-in-geospatial-visualization.png
+- date: May 7, 2019
+  title: Using deck.gl with Google Maps
+  blurb: deck.gl now provides a new module enabling deck.gl to be used with Google basemaps.
+  url: https://medium.com/vis-gl/using-deck-gl-with-google-maps-9c868d18e3cd
+  image: /images/blog/blog-2019-05-deck-with-google-maps.png
+- date: Apr 26, 2019
+  title: Introducing deck.gl v7.0
+  blurb: deck.gl v7 brings a slew of new layers, lighting support, binary data support and more.
+  url: https://medium.com/vis-gl/introducing-deck-gl-v7-0-c18bcb717457
+  image: /images/blog/blog-2019-04-introducing-deck-v7.png
+- date: Apr 22, 2019
+  title: Kepler.gl + Dropbox = Map Save & Share
+  blurb: kepler.gl now provides integration with cloud storage enabling maps to be saved.
+  url: https://medium.com/vis-gl/kepler-gl-dropbox-map-save-share-b4a41a75715b
+  image: /images/blog/blog-2019-04-kepler-dropbox-save.png
+- date: Oct 29, 2018
+  title: How (sometimes) assuming the Earth is “flat” helps speed up rendering in deck.gl
+  blurb: An deep-dive into the new optimized geospatial projection engine in deck.gl v6.2
+  url: https://medium.com/vis-gl/how-sometimes-assuming-the-earth-is-flat-helps-speed-up-rendering-in-deck-gl-c43b72fd6db4
+  image: /images/blog/blog-2018-10-earth-is-flat.png
+- date: Oct 16, 2018
+  title: GPU Accelerated Aggregation in deck.gl
+  blurb: deck.gl v6.2 moves aggregation related computation to the GPU.
+  url: https://medium.com/vis-gl/gpu-accelerated-aggregation-in-deck-gl-7e2c7d701fb0
+  image: /images/blog/blog-2018-10-gpu-accelerated-aggregation.png
+- blog: 
+  date: Oct 15, 2018
+  title: 'deck.gl and Mapbox GL JS: Better Together'
+  blurb: The deck.gl and Mapbox teams have collaborated on deep WebGL integration enabling new use cases when using deck.gl with Mapbox basemaps.
+  url: https://medium.com/vis-gl/deckgl-and-mapbox-better-together-47b29d6d4fb1
+  image: /images/blog/blog-2018-10-deckgl-and-mapbox.png
+- date: May 29, 2018
+  title: Mapping the Parisian trees
+  blurb: Showcase of how to work with a dataset in kepler.gl.
+  url: https://medium.com/vis-gl/mapping-the-parisian-trees-6dc30f6aabc7
+  image: /images/blog/blog-2018-05-parisian-trees.png
+- date: May 29, 2018
+  title: Visualizing Unemployment for U.S. Counties with kepler.gl
+  blurb: Showcase of how to work with a specific dataset in kepler.gl.
+  url: https://medium.com/vis-gl/visualizing-u-s-county-unemployment-with-kepler-gl-c5f2ed31c71
+  image: /images/blog/blog-2018-05-visualizing-unemployment-with-kepler.png
+- blog: 
+  date: May 29, 2018
+  title: Using Kepler.gl and Movement to Visualize Traffic Effects of a Rainstorm
+  blurb: Showcase of how to work with a specific dataset in kepler.gl.
+  url: https://medium.com/vis-gl/movement-in-kepler-d00e843f464d
+  image: /images/blog/blog-2018-05-movement-in-kepler.png
+- date: May 19, 2018
+  title: Animating 40 years of California Earthquakes
+  blurb: Showcase of how to work with a specific dataset in kepler.gl.
+  url: https://medium.com/vis-gl/animating-40-years-of-california-earthquakes-e4ffcdd4a289
+  image: /images/blog/blog-2018-05-california-earthquakes.png
+- date: Apr 24, 2018
+  title: Start Scripting with deck.gl
+  blurb: deck.gl can now be used directly from HTML scripts without the use of npm packages.
+  url: https://medium.com/vis-gl/start-scripting-with-deck-gl-c9036d7a6011
+  image: /images/blog/blog-2018-04-scripting-with-deck.png
+- date: Mar 26, 2018
+  title: Automatic, GPU-based object highlighting in deck.gl Layers
+  blurb: Highligting the selected object in a layer is now handled by deck.gl directly on the GPU.
+  url: https://medium.com/vis-gl/automatic-gpu-based-object-highlighting-in-deck-gl-layers-7fe3def44c89
+  image: /images/blog/blog-2018-03-gpu-based-object-highlighting.png
+- date: Feb 27, 2018
+  title: 'Unfolding the Earth: Myriahedral Projections In WebGL'
+  blurb: A visual exploration of alternaive mathematical approaches to flatten the Earth sphere.
+  url: https://medium.com/vis-gl/unfolding-the-earth-myriahedral-projections-in-webgl-6b2bcfd00a30
+  image: /images/blog/blog-2018-02-unfolding-the-earth.png
+- date: Jul 24, 2017
+  title: Introducing luma.gl v4.0
+  blurb: A summary of luma.gl improvements and early roadmaps.
+  url: https://medium.com/vis-gl/introducing-luma-gl-v4-0-54f4d87a08c8
+  image: /images/blog/blog-2017-07-introducing-luma-v4.png
+- date: Apr 16, 2017
+  title: Wind Map
+  blurb: A showcase of using deck.gl for particle animations and vector field visualizations.
+  url: https://medium.com/vis-gl/wind-map-a58575f87fe3
+  image: /images/blog/blog-2017-06-wind-map.png
+- date: Apr 11, 2017
+  title: Rendering A Minecraft World With deck.gl
+  blurb: An alternate use case for deck.gl.
+  url: https://medium.com/vis-gl/rendering-a-minecraft-world-with-deck-gl-927b52c5c6db
+  image: /images/blog/blog-2017-04-minecraft-with-deck.png
+- date: Jul 24, 2017
+  title: The Birth of a Visualization Framework Suite
+  blurb: vis.gl is a new suite of frameworks centered around deck.gl focused on big geospatial data visualization.
+  url: https://medium.com/vis-gl/the-birth-of-a-visualization-framework-suite-958049647e89
+  image: /images/blog/blog-2017-07-birth-of-a-vis-framework-suite.png
+- date: Apr 2, 2017
+  title: Introducing deck.gl v4.0
+  blurb: The second major public release of deck.gl brings a wide range of improvements.
+  url: https://medium.com/vis-gl/introducing-deck-gl-v4-0-3ead9106eb7e
+  image: /images/blog/blog-2017-04-introducing-deck-v4.png
