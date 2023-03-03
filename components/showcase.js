@@ -27,7 +27,7 @@ function Case({ description, image, label, name, url }) {
           <div className="browser-bar-button" />
           <div className="browser-bar-button" />
         </div>
-        <Image src={image} width={590} height={369} />
+        <Image alt={name} src={image} width={590} height={369} />
       </div>
       <h1>{name}</h1>
       <p className="description">{description}</p>
