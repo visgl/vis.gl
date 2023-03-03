@@ -14,7 +14,7 @@
           url: http://luma.gl
       - item:
           label: React-Map-Gl
-          url: https://uber.github.io/react-map-gl/
+          url: https://visgl.github.io/react-map-gl/
       - item:
           label: React-Vis
           url: https://uber.github.io/react-vis/
