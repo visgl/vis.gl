@@ -4,9 +4,7 @@
 
 Using `tape`.
 
-
 ## Node tests
-
 
 Idea behind `test/node.js` and `test/node-dist.js`
 
@@ -29,9 +27,9 @@ That said, for quick iteration of tests during development, it will be frustrati
       ...
    }
 
-   ```
-PS - We could possibly relax the pre-commit testing just a little if found too time consuming, but there is no reason to reduce the CI or prepublish testing.
+```
 
+PS - We could possibly relax the pre-commit testing just a little if found too time consuming, but there is no reason to reduce the CI or prepublish testing.
 
 ## npm run test-browser
 

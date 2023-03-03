@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import classNames from 'classnames';
 
 import Menu from './menu';
@@ -7,23 +7,23 @@ import links from '../content/links.yaml';
 
 export default class Header extends Component {
   state = {
-    isMenuOpen: false,
+    isMenuOpen: false
   };
-  toggleMenu = (menuState) => {
-    this.setState({ isMenuOpen: menuState });
+  toggleMenu = menuState => {
+    this.setState({isMenuOpen: menuState});
   };
 
   render() {
-    const { isMenuOpen } = this.state;
+    const {isMenuOpen} = this.state;
     return (
       <header
         className={classNames({
           open: isMenuOpen,
-          [this.props.page]: true,
+          [this.props.page]: true
         })}
       >
         <div className="f container ph2">
-          {links.map(({ navigation: { type, items } }, idx) => {
+          {links.map(({navigation: {type, items}}, idx) => {
             switch (type) {
               case 'MENU':
                 return (

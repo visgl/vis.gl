@@ -14,9 +14,9 @@ import ImageBox from './image-box';
 */
 
 const TitleSection = styled(H1)`
-  font-family: ${(props) => props.theme.fontFamilyLight};
+  font-family: ${props => props.theme.fontFamilyLight};
   line-height: 150%;
-  background: url(${(props) => props.backgroundImg}) no-repeat;
+  background: url(${props => props.backgroundImg}) no-repeat;
   min-height: 300px;
   padding-left: 200px;
   margin-top: 50px;
@@ -36,8 +36,8 @@ const ContributorSection = styled.div`
   .logo-title {
     font-size: 14px;
     line-height: 110%;
-    color: ${(props) => props.theme.gray};
-    font-family: ${(props) => props.theme.fontFamilyLight};
+    color: ${props => props.theme.gray};
+    font-family: ${props => props.theme.fontFamilyLight};
   }
 
   .logo {
@@ -59,7 +59,7 @@ const ContributorSection = styled.div`
     padding-right: 40px;
   }
   :not(:first-child) {
-    border-left: 1px solid ${(props) => props.theme.gray};
+    border-left: 1px solid ${props => props.theme.gray};
     padding-left: 40px;
   }
 `;
@@ -83,7 +83,7 @@ const SectionTitle = styled.div`
   margin-right: 20px;
   font-size: 18px;
   line-height: 20px;
-  font-family: ${(props) => props.theme.fontFamilyMedium};
+  font-family: ${props => props.theme.fontFamilyMedium};
   flex-shrink: 0;
 `;
 
@@ -94,7 +94,7 @@ const SectionContent = styled.div`
 const ListTitle = styled.div`
   font-size: 16px;
   margin-top: 18px;
-  font-family: ${(props) => props.theme.fontFamilyMedium};
+  font-family: ${props => props.theme.fontFamilyMedium};
 
   :first-child {
     margin-top: 0;
@@ -103,7 +103,7 @@ const ListTitle = styled.div`
 
 const ListItem = styled.div`
   font-size: 16px;
-  color: ${(props) => props.theme.gray};
+  color: ${props => props.theme.gray};
 `;
 
 export default function ManifestoSection() {

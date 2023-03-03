@@ -2,9 +2,7 @@ frameworkGroups:
   - title:
     description: >
       The vis.gl frameworks are designed for GPU powered geospatial visualization and analytics on the web. The frameworks are designed to be independently usable while following a common style that makes them work seamlessly together.
-
-
-      Each framework provides a number of sub-modules that export composable components such as loaders, visualzation layers, and math modules that developers can cherry-pick and combine to achieve desired results.
+      Each framework provides a number of sub-modules that export composable components such as loaders, visualization layers, and math modules that developers can cherry-pick and combine to achieve desired results.
     entries:
       - name: kepler.gl
         url: https://kepler.gl

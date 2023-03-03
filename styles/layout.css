@@ -53,7 +53,6 @@ header {
   padding-left: 40px;
 }
 
-
 header a {
   padding: 0 1rem;
 }
@@ -306,12 +305,13 @@ header.home h1 a:visited:not(.logo) {
   font-size: 21px;
   font-weight: 500;
   margin-bottom: 18px;
-  font-family: "Graphik Web Medium";
+  font-family: 'Graphik Web Medium';
 }
 
-.section-title div, .section-title p {
+.section-title div,
+.section-title p {
   font-size: 48px;
-  font-family: "Graphik Web Light";
+  font-family: 'Graphik Web Light';
   letter-spacing: -0.25px;
   line-height: 1.5em;
   max-width: 800px;
@@ -358,8 +358,6 @@ header.home h1 a:visited:not(.logo) {
 #showcase a:visited {
   color: #ededed;
 }
-
-
 
 .cases {
   max-width: 1242px;
@@ -606,7 +604,7 @@ footer a:visited {
   transition: box-shadow 0.5s;
 }
 
-.news--item > *+*{
+.news--item > * + * {
   margin-right: 30px;
 }
 
@@ -620,7 +618,7 @@ footer a:visited {
 
 .news--item h3 {
   font-size: 16px;
-  font-family: "Graphik Web Medium";
+  font-family: 'Graphik Web Medium';
   margin-top: 17px;
   margin-bottom: 0;
 }
@@ -2017,7 +2015,6 @@ html {
   margin-top: 4rem;
 }
 
-
 /*a:not(.logo),*/
 /*a:visited:not(.logo) {*/
 /*  color: #d0021b;*/
@@ -2120,6 +2117,10 @@ footer h4 {
 
 footer img {
   display: inline-block;
+}
+
+#home {
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -2235,7 +2236,6 @@ footer img {
     max-height: 16rem;
   }
 
-
   header .links {
     display: block;
     height: 16rem;
@@ -2258,7 +2258,6 @@ footer img {
   header.open .bg {
     opacity: 1 !important;
   }
-
 
   #intro {
     padding-top: 125px;

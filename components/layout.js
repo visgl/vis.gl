@@ -5,7 +5,7 @@ import Header from './header';
 import Footer from './footer';
 import metaYaml from '../content/meta.yaml';
 
-const findPageMeta = (path) => metaYaml.find((d) => d.path === path);
+const findPageMeta = path => metaYaml.find(d => d.path === path);
 
 const Layout = ({children}) => {
   const router = useRouter();

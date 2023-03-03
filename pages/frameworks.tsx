@@ -58,7 +58,11 @@ const FrameworksPage = () => {
           <div key={i}>
             {group.title ? <H2>{group.title}</H2> : null}
             {group.description ? (
-              <div dangerouslySetInnerHTML={{__html: markdownToHtml(group.description)}} />
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: markdownToHtml(group.description)
+                }}
+              />
             ) : null}
             <FrameworksTable group={group} />
           </div>

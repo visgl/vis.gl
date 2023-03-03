@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 
-const Links = (props) => {
+const Links = props => {
   const router = useRouter();
   const {items, page} = props;
   return (

@@ -21,7 +21,7 @@ export const COLORS = {
   lightGreyBackground: '#f7f8fa',
   lightBtnBgd: '#ECECEC',
   lightBlack: '#0e111a',
-  green: '#4BB34B',
+  green: '#4BB34B'
 };
 
 const FontSizes = {
@@ -31,7 +31,7 @@ const FontSizes = {
   h3: '18px',
   h4: '16px',
   btnText: '16px',
-  p1: '16px',
+  p1: '16px'
 };
 
 const LineHeights = {
@@ -41,30 +41,30 @@ const LineHeights = {
   h3: '110%',
   h4: '110%',
   btnText: '110%',
-  p1: '180%',
+  p1: '180%'
 };
 
 const FontWeight = {
-  ultraHeading: 400,
+  ultraHeading: 400
 };
 
 const LetterSpacing = {
   ultraHeading: '0.5px',
-  h1: '0.5px',
+  h1: '0.5px'
 };
 
 export const breakPoints = {
   xl: 1300,
   lg: 1000,
   md: 750,
-  sm: 500,
+  sm: 500
 };
 
 export const breakpointsMediaQueries = {
   xl: `@media (max-width: ${breakPoints.xl}px)`,
   lg: `@media (max-width: ${breakPoints.lg}px)`,
   md: `@media (max-width: ${breakPoints.md}px)`,
-  sm: `@media (max-width: ${breakPoints.sm}px)`,
+  sm: `@media (max-width: ${breakPoints.sm}px)`
 };
 
 export const theme = {
@@ -130,7 +130,7 @@ export const theme = {
   // blogs and new
   tileBoxShadow: '0px 2px 2px rgba(0, 0, 0, 0.04)',
   tileBackground: COLORS.white,
-  subtitleColor: 'rgba(0, 0, 0, 0.6);',
+  subtitleColor: 'rgba(0, 0, 0, 0.6);'
 };
 
 export const globalStyle = css`
