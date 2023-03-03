@@ -1,5 +1,5 @@
 - date: Apr 7, 2020
-  title: "deck.gl 8.2 moves to Open Governance"
+  title: 'deck.gl 8.2 moves to Open Governance'
   blurb: The vis.gl frameworks suite is now under open governance through the Linux Foundation and the Urban Cumputing Foundation.
   url: https://medium.com/vis-gl/deck-gl-8-2-moves-to-open-governance-379f147c15bb
   image: /images/blog/blog-2020-04-deck-open-governance.png
@@ -58,7 +58,7 @@
   blurb: deck.gl v6.2 moves aggregation related computation to the GPU.
   url: https://medium.com/vis-gl/gpu-accelerated-aggregation-in-deck-gl-7e2c7d701fb0
   image: /images/blog/blog-2018-10-gpu-accelerated-aggregation.png
-- blog: 
+- blog:
   date: Oct 15, 2018
   title: 'deck.gl and Mapbox GL JS: Better Together'
   blurb: The deck.gl and Mapbox teams have collaborated on deep WebGL integration enabling new use cases when using deck.gl with Mapbox basemaps.
@@ -74,7 +74,7 @@
   blurb: Showcase of how to work with a specific dataset in kepler.gl.
   url: https://medium.com/vis-gl/visualizing-u-s-county-unemployment-with-kepler-gl-c5f2ed31c71
   image: /images/blog/blog-2018-05-visualizing-unemployment-with-kepler.png
-- blog: 
+- blog:
   date: May 29, 2018
   title: Using Kepler.gl and Movement to Visualize Traffic Effects of a Rainstorm
   blurb: Showcase of how to work with a specific dataset in kepler.gl.

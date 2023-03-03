@@ -1,10 +1,9 @@
 frameworkGroups:
-
   - title:
     description: >
       The vis.gl frameworks are designed for GPU powered geospatial visualization and analytics on the web. The frameworks are designed to be independently usable while following a common style that makes them work seamlessly together.
-      
-      
+
+
       Each framework provides a number of sub-modules that export composable components such as loaders, visualzation layers, and math modules that developers can cherry-pick and combine to achieve desired results.
     entries:
       - name: kepler.gl
@@ -68,7 +67,6 @@ frameworkGroups:
           FlowmapBlue is a tool for visualizing aggregated numbers of movements between geographic locations as flow maps.
           It is used for representing data on urban mobility, travel, transportation, human and animal migration,
           material flows, supply chains, waste management and many other topics.
-    
 
   - title: Related Frameworks
     description: >
@@ -86,13 +84,9 @@ frameworkGroups:
         image: /images/frameworks/math.png
         description: >
           Math library focusing on 3D and geospatial math.
-          
 
       - name: H3
         url: https://h3geo.org
         image: /images/frameworks/h3.png
         description: >
           Hexagon-based discrete global grid system.
-          
-    
-    

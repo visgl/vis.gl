@@ -1,6 +1,6 @@
 - publication: Meetup
   date: Apr 3, 2018
-  title: "Form and Content: Constructing Meaningful Visualizations"
+  title: 'Form and Content: Constructing Meaningful Visualizations'
   url: https://www.meetup.com/UberEvents/events/248973146/
   image: /images/news/meetup.png
 - publication: Meetup
@@ -55,7 +55,7 @@
   image: /images/news/movementdebut.png
 - publication: YouTube
   date: Dec 29, 2016
-  title: "Uber Engineering: Data Visualization at Uber"
+  title: 'Uber Engineering: Data Visualization at Uber'
   url: https://www.youtube.com/watch?v=nLy3OQYsXWA&t=409s
   image: /images/news/uberengtalk.png
 - publication: Uber Engineering Blog

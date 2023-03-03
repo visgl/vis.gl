@@ -1,9 +1,9 @@
 # RFC Review Guidelines
 
-* Use cases - is the proposal generic enough
+- Use cases - is the proposal generic enough
 
-* Backwards compatibility
+- Backwards compatibility
 
-* Complexity - does it add much complexity?
+- Complexity - does it add much complexity?
 
-* Does it consider all angles (rendering/picking/event handling/...).
+- Does it consider all angles (rendering/picking/event handling/...).

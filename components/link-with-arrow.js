@@ -1,5 +1,5 @@
-import React from 'react'
-import classNames from 'classnames'
+import React from 'react';
+import classNames from 'classnames';
 
 export default function LinkWithArrow({ label, url, className }) {
   return (
@@ -7,7 +7,7 @@ export default function LinkWithArrow({ label, url, className }) {
       <span className="label">{label}</span>
       <Arrow />
     </a>
-  )
+  );
 }
 
 function Arrow() {
@@ -25,5 +25,5 @@ function Arrow() {
         fillRule="evenodd"
       />
     </svg>
-  )
+  );
 }

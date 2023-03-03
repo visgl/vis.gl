@@ -12,7 +12,7 @@ function About({ imageResolver = {} }) {
 
 export default About;
 
-function Intro({ imageResolver}) {
+function Intro({ imageResolver }) {
   return (
     <div id="intro">
       <div className="section-title">

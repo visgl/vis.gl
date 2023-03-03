@@ -17,7 +17,7 @@
       content: Join an open team of software engineers, information designers, and computer graphics specialists.
     - item:
       name: keywords
-      content: UCF, visualization, engineering 
+      content: UCF, visualization, engineering
 - page: news
   path: /news
   title: vis.gl in the news
