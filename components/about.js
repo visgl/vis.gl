@@ -18,8 +18,8 @@ function Intro({imageResolver}) {
       <div className="section-title">
         <h2>About us</h2>
         <p>
-          We are a team of software engineers, information designers, and computer graphics
-          specialists at Uber.
+          We are a global team of software engineers, information designers, and computer graphics
+          specialists.
         </p>
       </div>
       <div className="about--intro--pictures">
@@ -70,9 +70,6 @@ function Intro({imageResolver}) {
           />
           <p>{'Family photo at the California Academy of Science'}</p>
         </div>
-      </div>
-      <div className="big-link">
-        <LinkWithArrow label="Join our team!" url="https://www.uber.com/careers/list/13203/" />
       </div>
     </div>
   );

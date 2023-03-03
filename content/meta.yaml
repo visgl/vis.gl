@@ -1,13 +1,13 @@
 - page: home
   path: /
-  title: vis.gl - Urban Computing Foundation
+  title: vis.gl - OpenJS Foundation
   meta:
     - item:
       name: description
       content: Cutting edge technology meets beautiful data visualization.
     - item:
       name: keywords
-      content: visualization, data visualization, webGL, UCF
+      content: visualization, data visualization, webGL, OpenJS
 - page: about
   path: /about
   title: About vis.gl
@@ -17,7 +17,7 @@
       content: Join an open team of software engineers, information designers, and computer graphics specialists.
     - item:
       name: keywords
-      content: UCF, visualization, engineering
+      content: OpenJS, visualization, engineering
 - page: news
   path: /news
   title: vis.gl in the news
@@ -27,7 +27,7 @@
       content: Learn more about how our work is creating impact
     - item:
       name: keywords
-      content: UCF, visualization, engineering, events, meetups, articles
+      content: OpenJS, visualization, engineering, events, meetups, articles
 - page: showcases
   path: /showcases
   title: vis.gl showcase

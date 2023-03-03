@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import {ContainerSm, H1, H3, Paragraph, List} from './styling/components';
-import Image from 'next/image';
 import ImageBox from './image-box';
 
 /*
@@ -160,11 +159,11 @@ export default function ManifestoSection() {
                   available to major contributors.
                 </Paragraph>
                 <div className="logo">
-                  <a href="https://www.linuxfoundation.org//">
-                    <ImageBox width={200} height={40} src={'/images/logos/linux-foundation.svg'} />
+                  <a href="https://www.openjsf.org/">
+                    <ImageBox width={200} height={60} src={'/images/logos/openjsf-color-textg.png'} />
                   </a>
-                  <a href="https://uc.foundation/">
-                    <ImageBox width={250} height={40} src={'/images/logos/ucf-color-hztl.svg'} />
+                  <a href="https://openvisualization.org/">
+                    <ImageBox width={250} height={60} src={'/images/logos/openvis-logo.png'} />
                   </a>
                 </div>
               </ContributorSection>
@@ -276,6 +275,16 @@ export default function ManifestoSection() {
         <SectionContainer>
           <SectionTitle>History</SectionTitle>
           <SectionContent>
+            <ListTitle>2022</ListTitle>
+            <List>
+              <ListItem>
+                flowmap.gl joined the vis.gl project.
+              </ListItem>
+              <ListItem>
+                vis.gl and kepler.gl joined the OpenJS Foundation.
+              </ListItem>
+              <ListItem>Urban Computing Foundation merged with the OpenJS Foundation, and formed the Open Visualization Collaboration Group.</ListItem>
+            </List>
             <ListTitle>2020</ListTitle>
             <List>
               <ListItem>
@@ -283,6 +292,7 @@ export default function ManifestoSection() {
                 and the UCF.
               </ListItem>
               <ListItem>Uber transferred a set of core vis.gl frameworks to the UCF.</ListItem>
+              <ListItem>hubble.gl was created.</ListItem>
             </List>
             <ListTitle>2019</ListTitle>
             <List>
