@@ -2119,6 +2119,10 @@ footer img {
   display: inline-block;
 }
 
+#home {
+  overflow: hidden;
+}
+
 @media only screen and (max-width: 1000px) {
   #home .secondary {
     margin: 0 auto;
