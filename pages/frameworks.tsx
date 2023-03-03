@@ -1,5 +1,5 @@
 import React from 'react';
-import {H2, Paragraph} from '../components/styling/components';
+import { H2, Paragraph } from '../components/styling/components';
 import ImageBox from '../components/image-box';
 import frameworksYaml from '../content/frameworks.yaml';
 import markdownToHtml from '../lib/markdownToHtml';
@@ -20,11 +20,11 @@ declare module '../content/frameworks.yaml' {
   export const frameworkGroups: FrameworksGroup[];
 }
 
-const FrameworksTable = ({group}: {group: FrameworksGroup}) => {
+const FrameworksTable = ({ group }: { group: FrameworksGroup }) => {
   return (
     <table cellSpacing={20}>
       <tbody>
-        {group.entries.map(({name, alt, image, url, description}) => (
+        {group.entries.map(({ name, alt, image, url, description }) => (
           <tr key={name}>
             <td>
               <a href={url} target="_blank" rel="noopener noreferrer">
@@ -58,7 +58,11 @@ const FrameworksPage = () => {
           <div key={i}>
             {group.title ? <H2>{group.title}</H2> : null}
             {group.description ? (
-              <div dangerouslySetInnerHTML={{__html: markdownToHtml(group.description)}} />
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: markdownToHtml(group.description),
+                }}
+              />
             ) : null}
             <FrameworksTable group={group} />
           </div>
