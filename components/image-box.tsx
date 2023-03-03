@@ -8,8 +8,8 @@ export type Props = {
   alt: string;
 };
 
-const ImageBox = ({ src, alt, width, height }: Props) => (
-  <div style={{ position: 'relative', display: 'block', width, height }}>
+const ImageBox = ({src, alt, width, height}: Props) => (
+  <div style={{position: 'relative', display: 'block', width, height}}>
     <Image layout="fill" objectFit="contain" alt={alt} src={src} />
   </div>
 );

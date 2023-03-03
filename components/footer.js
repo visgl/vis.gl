@@ -18,14 +18,9 @@ const SupportLogoLink = styled.a`
   }
 `;
 
-const SupportLogo = ({ name, src, href, width = 200, height = 25 }) => (
+const SupportLogo = ({name, src, href, width = 200, height = 25}) => (
   <SupportLogoLink href={href} target="_blank" rel="noopener noreferrer">
-    <Image
-      alt={`Supported by ${name}`}
-      src={src}
-      height={height}
-      width={width}
-    />
+    <Image alt={`Supported by ${name}`} src={src} height={height} width={width} />
   </SupportLogoLink>
 );
 
@@ -40,10 +35,10 @@ export default function Footer() {
             </Link>
           </h1>
           <p>
-            The vis.gl framework suite is an open governance collaboration under
-            the auspices of the UCF and Linux Foundation.
+            The vis.gl framework suite is an open governance collaboration under the auspices of the
+            UCF and Linux Foundation.
           </p>
-          <div style={{ position: 'absolute', right: 50 }}>
+          <div style={{position: 'absolute', right: 50}}>
             <SupportLogo
               width={100}
               height={55}
