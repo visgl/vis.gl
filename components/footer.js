@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Netlify from '../public/images/netlify-dark.svg';
+import OpenJS from '../public/images/logos/openjsf-color-textw.svg';
 import styled from '@emotion/styled';
 
 const SupportLogoLink = styled.a`
@@ -20,7 +21,7 @@ const SupportLogoLink = styled.a`
 
 const SupportLogo = ({name, src, href, width = 200, height = 25}) => (
   <SupportLogoLink href={href} target="_blank" rel="noopener noreferrer">
-    <Image alt={`Supported by ${name}`} src={src} height={height} width={width} />
+    <Image alt={name} src={src} height={height} width={width} objectFit="contain" />
   </SupportLogoLink>
 );
 
@@ -36,9 +37,16 @@ export default function Footer() {
           </h1>
           <p>
             The vis.gl framework suite is an open governance collaboration under the auspices of the
-            UCF and Linux Foundation.
+            OpenJS Foundation.
           </p>
-          <div style={{position: 'absolute', right: 50}}>
+          <div style={{position: 'absolute', right: 50, display: 'flex', gap: '12px'}}>
+            <SupportLogo
+              width={100}
+              height={55}
+              name="Supported by OpenJS"
+              href="https://www.openjsf.org"
+              src={OpenJS}
+            />
             <SupportLogo
               width={100}
               height={55}

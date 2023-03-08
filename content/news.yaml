@@ -1,3 +1,13 @@
+- publication: OpenJS Blog
+  date: Sep 1, 2022
+  title: 'OpenJS Open Visualization Collaborator Summit - Madrid'
+  url: https://openjsf.org/blog/2022/09/01/openjs-open-visualization-collaborator-summit-join-us-in-madrid-virtual-september-22-23/
+  image: /images/news/madrid-summit-2022.png
+- publication: OpenJS Blog
+  date: Jun 7, 2022
+  title: 'OpenJS World 2022: OpenJS Foundation Welcomes Urban Computing Foundation, vis.gl and kepler.gl'
+  url: https://openjsf.org/blog/2022/06/07/openjs-world-2022-openjs-foundation-welcomes-urban-computing-foundation-vis-gl-and-kepler-gl/
+  image: /images/news/opevis-openjs-keynote.jpeg
 - publication: Meetup
   date: Apr 3, 2018
   title: 'Form and Content: Constructing Meaningful Visualizations'
