@@ -1,0 +1,21 @@
+/* pages/404.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.homeLink {
+  color: #0070f3;
+  text-decoration: none;
+  border-bottom: 1px solid #0070f3;
+  transition: all 0.2s ease;
+}
+
+.homeLink:hover {
+  color: #0366d6;
+  border-bottom-color: #0366d6;
+}
