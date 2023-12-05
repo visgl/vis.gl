@@ -76,7 +76,7 @@ frameworkGroups:
           A high-performance feature editing framework for deck.gl.
 
       - name: math.gl
-        url: https://math.gl
+        url: https://visgl.github.io/math.gl
         image: /images/frameworks/math.png
         description: >
           Math library focusing on 3D and geospatial math.
