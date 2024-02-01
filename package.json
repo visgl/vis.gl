@@ -5,7 +5,8 @@
   "repository": "git@github.com:visgl/vis.gl.git",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
+    "export": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },

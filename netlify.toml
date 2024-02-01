@@ -1,4 +1,4 @@
 [build]
-  publish = ".next/"
-  command = "yarn build"
+  publish = "out/"
+  command = "yarn export"
 [[plugins]]
