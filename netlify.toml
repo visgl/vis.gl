@@ -2,5 +2,5 @@
   publish = "out/"
   command = "yarn export"
 
-[context.production.environment]
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+[build.environment]
+NETLIFY_NEXT_PLUGIN_SKIP = "true"
