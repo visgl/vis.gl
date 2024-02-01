@@ -1,6 +1,5 @@
+NETLIFY_NEXT_PLUGIN_SKIP = true
+
 [build]
   publish = "out/"
   command = "yarn export"
-
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
