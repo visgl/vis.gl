@@ -179,7 +179,7 @@ export default function ManifestoSection() {
             <ContributorContainer>
               <ContributorSection>
                 <Paragraph>
-                  The <a href="/frameworks.tsx">vis.gl Framework Catalog</a> provides an overview of
+                  The <a href="/frameworks">vis.gl Framework Catalog</a> provides an overview of
                   the various frameworks in the vis.gl framework suite.
                 </Paragraph>
                 <ImageBox src={'/images/frameworks.jpg'} width={600} height={400} />
