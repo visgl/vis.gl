@@ -10,6 +10,16 @@ const nextConfig = {
       use: 'yaml-loader'
     });
     return configuration;
+  },
+  async redirects() {
+    return ['react-google-maps', 'react-map-gl', 'math.gl', 'deck.gl-community'].map(project => (
+      {
+        source: `/${project}`,
+        destination: `https://visgl.github.io/${project}/`,
+        permanent: false,
+        basePath: false
+      }
+    ))
   }
 };
 
