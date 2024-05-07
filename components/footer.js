@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Netlify from '../public/images/netlify-dark.svg';
 import OpenJS from '../public/images/logos/openjsf-color-textw.svg';
 import styled from '@emotion/styled';
+import {breakPoints, breakpointsMediaQueries} from './styling/style';
 
 const SupportLogoLink = styled.a`
   position: relative;
@@ -19,6 +20,34 @@ const SupportLogoLink = styled.a`
   }
 `;
 
+const Content = styled.div`
+  display: flex;
+  line-height: 23px;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 20px;
+
+  ${breakpointsMediaQueries.lg} {
+    flex-direction: column;
+  }
+`
+
+const ContentItem = styled.div`
+  flex: 1;
+  max-width: ${breakPoints.sm}px;
+`
+
+const Logos = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  ${breakpointsMediaQueries.lg} {
+    justify-content: flex-start;
+  }
+`
+
 const SupportLogo = ({name, src, href, width = 200, height = 25}) => (
   <SupportLogoLink href={href} target="_blank" rel="noopener noreferrer">
     <Image alt={name} src={src} height={height} width={width} objectFit="contain" />
@@ -28,35 +57,37 @@ const SupportLogo = ({name, src, href, width = 200, height = 25}) => (
 export default function Footer() {
   return (
     <footer id="Footer">
-      <div className="content">
-        <div className="main">
-          <h1>
-            <Link href="/">
-              <a className="logo">VIS.GL</a>
-            </Link>
-          </h1>
-          <p>
-            The vis.gl framework suite is an open governance collaboration under the auspices of the
-            OpenJS Foundation.
-          </p>
-          <div style={{position: 'absolute', right: 50, display: 'flex', gap: '12px'}}>
-            <SupportLogo
-              width={100}
-              height={55}
-              name="Supported by OpenJS"
-              href="https://www.openjsf.org"
-              src={OpenJS}
-            />
-            <SupportLogo
-              width={100}
-              height={55}
-              name="Deploys by Netlify"
-              href="https://www.netlify.com"
-              src={Netlify}
-            />
-          </div>
-        </div>
-      </div>
+        <Content>
+          <ContentItem>
+            <h1>
+              <Link href="/">
+                <a className="logo">VIS.GL</a>
+              </Link>
+            </h1>
+            <p>
+              The vis.gl framework suite is an open governance collaboration under the auspices of the
+              OpenJS Foundation.
+            </p>
+          </ContentItem>
+          <ContentItem>
+            <Logos>
+              <SupportLogo
+                width={100}
+                height={55}
+                name="Supported by OpenJS"
+                href="https://www.openjsf.org"
+                src={OpenJS}
+              />
+              <SupportLogo
+                width={100}
+                height={55}
+                name="Deploys by Netlify"
+                href="https://www.netlify.com"
+                src={Netlify}
+              />
+            </Logos>
+          </ContentItem>
+        </Content>
     </footer>
   );
 }

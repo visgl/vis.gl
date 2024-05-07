@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import {ContainerSm, H1, H3, Paragraph, List} from './styling/components';
 import ImageBox from './image-box';
 import Link from 'next/link';
+import {breakpointsMediaQueries} from './styling/style';
+import Image from 'next/image';
 
 /*
 
@@ -21,6 +23,10 @@ const TitleSection = styled(H1)`
   padding-left: 200px;
   margin-top: 50px;
   padding-top: 50px;
+
+  ${breakpointsMediaQueries.lg} {
+    padding-left: 0px;
+  }
 `;
 
 const ContributorContainer = styled.div`
@@ -47,6 +53,17 @@ const ContributorSection = styled.div`
     margin-top: 30px;
     & > * + * {
       margin-left: 30px;
+      margin-top: 0px;
+    }
+
+    flex-direction: row;
+    ${breakpointsMediaQueries.lg} {
+      flex-direction: column;
+
+      & > * + * {
+        margin-left: 0px;
+        margin-top: 10px;
+      }
     }
   }
 
@@ -76,6 +93,10 @@ const SectionContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  ${breakpointsMediaQueries.lg} {
+    flex-direction: column;
+  }
 `;
 
 const SectionTitle = styled.div`
@@ -85,6 +106,10 @@ const SectionTitle = styled.div`
   line-height: 20px;
   font-family: ${props => props.theme.fontFamilyMedium};
   flex-shrink: 0;
+
+  ${breakpointsMediaQueries.lg} {
+    margin-bottom: 20px;
+  }
 `;
 
 const SectionContent = styled.div`
@@ -105,6 +130,27 @@ const ListItem = styled.div`
   font-size: 16px;
   color: ${props => props.theme.gray};
 `;
+
+const GovernanceLogos = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 30px;
+  & > * + * {
+    margin-left: 30px;
+    margin-top: 0px;
+  }
+
+  flex-direction: row;
+  ${breakpointsMediaQueries.lg} {
+    flex-direction: column;
+
+    & > * + * {
+      margin-left: 0px;
+      margin-top: 30px;
+    }
+  }
+`
 
 export default function ManifestoSection() {
   return (
@@ -152,23 +198,19 @@ export default function ManifestoSection() {
         <SectionContainer>
           <SectionTitle>Open Governance</SectionTitle>
           <SectionContent>
-            <ContributorContainer>
-              <ContributorSection>
-                <Paragraph>
-                  vis.gl is under open governance, and anyone can join the open planning meetings.
-                  Contributor status is available and technical steering committee membership is
-                  available to major contributors.
-                </Paragraph>
-                <div className="logo">
-                  <a href="https://www.openjsf.org/">
-                    <ImageBox width={200} height={60} src={'/images/logos/openjsf-color-textg.png'} />
-                  </a>
-                  <a href="https://openvisualization.org/">
-                    <ImageBox width={250} height={60} src={'/images/logos/openvis-logo.png'} />
-                  </a>
-                </div>
-              </ContributorSection>
-            </ContributorContainer>
+            <Paragraph>
+              vis.gl is under open governance, and anyone can join the open planning meetings.
+              Contributor status is available and technical steering committee membership is
+              available to major contributors.
+            </Paragraph>
+            <GovernanceLogos>
+              <a href="https://www.openjsf.org/">
+                <ImageBox width={200} height={60} src={'/images/logos/openjsf-color-textg.png'} />
+              </a>
+              <a href="https://openvisualization.org/">
+                <ImageBox width={250} height={60} src={'/images/logos/openvis-logo.png'} />
+              </a>
+            </GovernanceLogos>
           </SectionContent>
         </SectionContainer>
       </ContainerSm>
@@ -177,14 +219,10 @@ export default function ManifestoSection() {
         <SectionContainer>
           <SectionTitle>Frameworks</SectionTitle>
           <SectionContent>
-            <ContributorContainer>
-              <ContributorSection>
-                <Paragraph>
-                  The <Link href="/frameworks"><a>vis.gl Framework Catalog</a></Link> provides an overview of the various frameworks in the vis.gl framework suite.
-                </Paragraph>
-                <ImageBox src={'/images/frameworks.jpg'} width={600} height={400} />
-              </ContributorSection>
-            </ContributorContainer>
+            <Paragraph>
+              The <Link href="/frameworks"><a>vis.gl Framework Catalog</a></Link> provides an overview of the various frameworks in the vis.gl framework suite.
+            </Paragraph>
+            <Image layout="responsive" objectFit="cover" src={'/images/frameworks.jpg'} height={720} width={1080} alt=""/>
           </SectionContent>
         </SectionContainer>
       </ContainerSm>
