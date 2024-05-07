@@ -830,7 +830,6 @@ header.open {
 
 .site-links .site-link {
   width: 100%;
-  text-transform: capitalize;
 }
 
 header .title-link > a {
