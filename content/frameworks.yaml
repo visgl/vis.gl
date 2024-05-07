@@ -58,11 +58,23 @@ frameworkGroups:
         description: >
           A React wrapper for Mapbox GL JS that integrates with deck.gl.
 
+      - name: react-google-maps
+        url: https://visgl.github.io/react-google-maps/
+        image: /images/frameworks/react-google-maps.jpeg
+        description: >
+          A React wrapper for the Google Maps JavaScript API that integrates with deck.gl.
+
       - name: flowmap.gl
         url: https://flowmap.gl/
         image: /images/frameworks/FlowmapBlue.jpg
         description: >
           Flowmap.gl is a flow map drawing layer for deck.gl. It can be used for visualization of geographic movement: mobility, transportation, migration, etc.
+
+      - name: math.gl
+        url: https://visgl.github.io/math.gl
+        image: /images/frameworks/math.png
+        description: >
+          Math library focusing on 3D and geospatial math.
 
   - title: Related Frameworks
     description: >
@@ -74,12 +86,6 @@ frameworkGroups:
         image: /images/frameworks/nebula.png
         description: >
           A high-performance feature editing framework for deck.gl.
-
-      - name: math.gl
-        url: https://visgl.github.io/math.gl
-        image: /images/frameworks/math.png
-        description: >
-          Math library focusing on 3D and geospatial math.
 
       - name: H3
         url: https://h3geo.org
