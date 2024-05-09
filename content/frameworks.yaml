@@ -76,17 +76,23 @@ frameworkGroups:
         description: >
           Math library focusing on 3D and geospatial math.
 
+      - name: probe.gl
+        url: https://visgl.github.io/probe.gl
+        image: /images/frameworks/probe.png
+        description: >
+          JavaScript Console Logging, Instrumentation, Benchmarking and Test Utilities.
+
+      - name: deck.gl-community
+        url: https://visgl.github.io/deck.gl-community
+        image: /images/frameworks/deck.gl-community.png
+        description: >
+          Unofficial layers, basemaps, add-on modules for deck.gl including high-performance feature editing layers for deck.gl.
+
   - title: Related Frameworks
     description: >
       In addition to the core frameworks, the vis.gl framework suite integrates with a number of related open source frameworks that are not under open governance.
 
     entries:
-      - name: nebula.gl
-        url: https://nebula.gl
-        image: /images/frameworks/nebula.png
-        description: >
-          A high-performance feature editing framework for deck.gl.
-
       - name: H3
         url: https://h3geo.org
         image: /images/frameworks/h3.png
