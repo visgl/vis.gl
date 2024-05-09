@@ -1,4 +1,19 @@
 - publication: OpenJS Blog
+  date: Mar 27, 2024
+  title: 'Open Source Data Visualization Project deck.gl v9 Released'
+  url: https://openjsf.org/blog/deckgl-v9
+  image: https://images.prismic.io/openjsf/ZgMlr8cYqOFdyGUl_BlogPostImagesOpenJS-3-.jpg?auto=format,compress
+- publication: OpenJS Blog
+  date: Dec 21, 2023
+  title: 'Introducing kepler.gl 3.0'
+  url: https://openjsf.org/blog/whats-new-in-the-keplergl-30-application
+  image: https://images.prismic.io/openjsf/658345b4531ac2845a26d4f3_BlogPostImagesOpenJS.png?auto=format,compress
+- publication: OpenJS Blog
+  date: Jul 10, 2023
+  title: 'Visualizing Success: Year One of the OpenVis Collaboration Space'
+  url: https://openjsf.org/blog/visualizing-success-year-one-openvis
+  image: https://images.prismic.io/openjsf/6568d42d531ac2845a2596af_3.png?auto=format,compress
+- publication: OpenJS Blog
   date: Sep 1, 2022
   title: 'OpenJS Open Visualization Collaborator Summit - Madrid'
   url: https://openjsf.org/blog/2022/09/01/openjs-open-visualization-collaborator-summit-join-us-in-madrid-virtual-september-22-23/

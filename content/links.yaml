@@ -4,20 +4,20 @@
     items:
       - item:
           active: true
-          label: Vis.gl
+          label: vis.gl
           url: http://vis.gl
       - item:
-          label: Deck.gl
+          label: deck.gl
           url: http://deck.gl
       - item:
-          label: Luma.gl
+          label: luma.gl
           url: http://luma.gl
       - item:
-          label: React-Map-Gl
+          label: react-map-gl
           url: https://visgl.github.io/react-map-gl/
       - item:
-          label: React-Vis
-          url: https://uber.github.io/react-vis/
+          label: react-google-maps
+          url: https://visgl.github.io/react-google-maps/
 - navigation:
     type: LINKS
     title: Navigation

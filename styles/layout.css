@@ -445,7 +445,7 @@ header.home h1 a:visited:not(.logo) {
 footer {
   height: fit-content !important;
   background: #100a29 !important;
-  padding: 2rem 4rem 8rem !important;
+  padding: 2rem 4rem !important;
   position: static !important;
 }
 
@@ -454,22 +454,11 @@ footer h1 {
   padding-left: 10px;
 }
 
-footer .content {
-  max-width: 1172px;
-}
-
-footer .links,
-footer .main {
+footer .links {
   display: inline-block;
   font-size: 14px;
   font-weight: 500;
   vertical-align: top;
-}
-
-footer .main {
-  line-height: 23px;
-  margin-right: 25%;
-  max-width: 25%;
 }
 
 footer .links {
@@ -830,7 +819,6 @@ header.open {
 
 .site-links .site-link {
   width: 100%;
-  text-transform: capitalize;
 }
 
 header .title-link > a {
@@ -2301,25 +2289,6 @@ footer img {
     height: auto;
     min-height: auto;
   }
-
-  footer .content {
-    max-width: calc(100vw - 71px);
-  }
-
-  footer .content .main {
-    max-width: 100%;
-    width: 100%;
-    font-weight: 400;
-  }
-
-  footer .content .links {
-    max-width: calc(0.5 * (100% - 20px));
-    margin-right: 20px;
-  }
-
-  footer .content .links:last-child {
-    margin-right: 0;
-  }
 }
 
 @media screen and (max-width: 576px) {
@@ -2418,6 +2387,7 @@ footer img {
     background-size: 178px 145px;
     max-width: calc(100% - 71px);
     padding: 47px 0 0;
+    min-height: 0px;
   }
 
   .section-title h2 {

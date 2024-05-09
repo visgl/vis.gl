@@ -2,6 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 import {ContainerSm, H1, H3, Paragraph, List} from './styling/components';
 import ImageBox from './image-box';
+import Link from 'next/link';
+import {breakpointsMediaQueries} from './styling/style';
+import Image from 'next/image';
 
 /*
 
@@ -20,6 +23,10 @@ const TitleSection = styled(H1)`
   padding-left: 200px;
   margin-top: 50px;
   padding-top: 50px;
+
+  ${breakpointsMediaQueries.lg} {
+    padding-left: 0px;
+  }
 `;
 
 const ContributorContainer = styled.div`
@@ -46,6 +53,17 @@ const ContributorSection = styled.div`
     margin-top: 30px;
     & > * + * {
       margin-left: 30px;
+      margin-top: 0px;
+    }
+
+    flex-direction: row;
+    ${breakpointsMediaQueries.lg} {
+      flex-direction: column;
+
+      & > * + * {
+        margin-left: 0px;
+        margin-top: 10px;
+      }
     }
   }
 
@@ -75,6 +93,10 @@ const SectionContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  ${breakpointsMediaQueries.lg} {
+    flex-direction: column;
+  }
 `;
 
 const SectionTitle = styled.div`
@@ -84,6 +106,10 @@ const SectionTitle = styled.div`
   line-height: 20px;
   font-family: ${props => props.theme.fontFamilyMedium};
   flex-shrink: 0;
+
+  ${breakpointsMediaQueries.lg} {
+    margin-bottom: 20px;
+  }
 `;
 
 const SectionContent = styled.div`
@@ -104,6 +130,27 @@ const ListItem = styled.div`
   font-size: 16px;
   color: ${props => props.theme.gray};
 `;
+
+const GovernanceLogos = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 30px;
+  & > * + * {
+    margin-left: 30px;
+    margin-top: 0px;
+  }
+
+  flex-direction: row;
+  ${breakpointsMediaQueries.lg} {
+    flex-direction: column;
+
+    & > * + * {
+      margin-left: 0px;
+      margin-top: 30px;
+    }
+  }
+`
 
 export default function ManifestoSection() {
   return (
@@ -151,23 +198,19 @@ export default function ManifestoSection() {
         <SectionContainer>
           <SectionTitle>Open Governance</SectionTitle>
           <SectionContent>
-            <ContributorContainer>
-              <ContributorSection>
-                <Paragraph>
-                  vis.gl is under open governance, and anyone can join the open planning meetings.
-                  Contributor status is available and technical steering committee membership is
-                  available to major contributors.
-                </Paragraph>
-                <div className="logo">
-                  <a href="https://www.openjsf.org/">
-                    <ImageBox width={200} height={60} src={'/images/logos/openjsf-color-textg.png'} />
-                  </a>
-                  <a href="https://openvisualization.org/">
-                    <ImageBox width={250} height={60} src={'/images/logos/openvis-logo.png'} />
-                  </a>
-                </div>
-              </ContributorSection>
-            </ContributorContainer>
+            <Paragraph>
+              vis.gl is under open governance, and anyone can join the open planning meetings.
+              Contributor status is available and technical steering committee membership is
+              available to major contributors.
+            </Paragraph>
+            <GovernanceLogos>
+              <a href="https://www.openjsf.org/">
+                <ImageBox width={200} height={60} src={'/images/logos/openjsf-color-textg.png'} />
+              </a>
+              <a href="https://openvisualization.org/">
+                <ImageBox width={250} height={60} src={'/images/logos/openvis-logo.png'} />
+              </a>
+            </GovernanceLogos>
           </SectionContent>
         </SectionContainer>
       </ContainerSm>
@@ -176,15 +219,10 @@ export default function ManifestoSection() {
         <SectionContainer>
           <SectionTitle>Frameworks</SectionTitle>
           <SectionContent>
-            <ContributorContainer>
-              <ContributorSection>
-                <Paragraph>
-                  The <a href="/frameworks.tsx">vis.gl Framework Catalog</a> provides an overview of
-                  the various frameworks in the vis.gl framework suite.
-                </Paragraph>
-                <ImageBox src={'/images/frameworks.jpg'} width={600} height={400} />
-              </ContributorSection>
-            </ContributorContainer>
+            <Paragraph>
+              The <Link href="/frameworks"><a>vis.gl Framework Catalog</a></Link> provides an overview of the various frameworks in the vis.gl framework suite.
+            </Paragraph>
+            <Image layout="responsive" objectFit="cover" src={'/images/frameworks.jpg'} height={720} width={1080} alt=""/>
           </SectionContent>
         </SectionContainer>
       </ContainerSm>
@@ -193,79 +231,40 @@ export default function ManifestoSection() {
         <SectionContainer>
           <SectionTitle>Releases</SectionTitle>
           <SectionContent>
-            <H3>vis.gl 8.4</H3>
+            <H3>vis.gl 9.0</H3>
             <Paragraph>
-              <ListTitle>Release Date: Jan 31, 2021</ListTitle>
-              <ListTitle>deck.gl 8.4</ListTitle>
+              <ListTitle>Release Date: Mar 21, 2024</ListTitle>
+              <ListTitle>deck.gl 9.0</ListTitle>
 
               <ListItem>
                 <a href="https://deck.gl/docs/whats-new">Release Notes</a>
               </ListItem>
               <div style={{marginTop: 5}} />
-              <List>
-                <ListItem>
-                  MVTLayer - 2x performance via binary mode. TileJSON. Query Features.
-                </ListItem>
-                <ListItem>HeatmapLayer - GPU aggregations now include MEAN and SUM</ListItem>
-                <ListItem>BitmapLayer - pixel picking</ListItem>
-                <ListItem>All Layers - performance, rendering edge cases</ListItem>
-                <ListItem>
-                  Interaction - mobile improvments, new gesture for 3D interaction, inertia
-                </ListItem>
-                <ListItem>loaders.gl integration - More control of loader autoselection</ListItem>
-                <ListItem>
-                  @deck.gl/carto - enables data-driven map visualizations using CARTOColors
-                </ListItem>
-              </List>
 
-              <ListTitle>luma.gl 8.4</ListTitle>
+              <ListTitle>luma.gl 9.0</ListTitle>
               <ListItem>
                 <a href="https://luma.gl/docs/whats-new">Release Notes</a>
               </ListItem>
               <div style={{marginTop: 5}} />
-              <List>
-                <ListItem>
-                  <b>TypeScript</b> - types are now exported
-                </ListItem>
-              </List>
 
-              <ListTitle>react-map-gl v6.1</ListTitle>
+              <ListTitle>math.gl 4.0</ListTitle>
               <ListItem>
-                <a href="https://visgl.github.io/react-map-gl/docs/whats-new">Release Notes</a>
+                <a href="https://visgl.github.io/math.gl/docs/whats-new">Release Notes</a>
               </ListItem>
               <div style={{marginTop: 5}} />
-              <List>
-                <ListItem>
-                  Choose your mapbox API compatible rendering library: Mapbox GL JS v2, Mapbox GL JS
-                  v1, MapLibre.
-                </ListItem>
-                <ListItem>
-                  <b>TypeScript</b> - types are now exported
-                </ListItem>
-              </List>
 
-              <ListTitle>math.gl 3.4</ListTitle>
-              <ListItem>
-                <a href="https://math.gl/docs/whats-new">Release Notes</a>
-              </ListItem>
-              <div style={{marginTop: 5}} />
-              <List>
-                <ListItem>
-                  @math.gl/geoid - New module for working with Earth Gravity Models
-                </ListItem>
-                <ListItem>@math.gl/polygon - Improved support for binary polygons</ListItem>
-              </List>
-
-              <ListTitle>loaders.gl 2.3</ListTitle>
+              <ListTitle>loaders.gl 4.2</ListTitle>
               <ListItem>
                 <a href="https://loaders.gl/docs/whats-new">Release Notes</a>
               </ListItem>
               <div style={{marginTop: 5}} />
-              <List>
-                <ListItem>
-                  loaders.gl is still on v2.3. The big 3.0 release is targeting vis.gl 8.5.
-                </ListItem>
-              </List>
+            </Paragraph>
+            <H3>react-map-gl 7.1</H3>
+            <Paragraph>
+              <ListTitle>Release Date: Jun 30, 2023</ListTitle>
+              <ListItem>
+                <a href="https://visgl.github.io/react-map-gl/docs/whats-new">Release Notes</a>
+              </ListItem>
             </Paragraph>
           </SectionContent>
         </SectionContainer>
@@ -275,15 +274,24 @@ export default function ManifestoSection() {
         <SectionContainer>
           <SectionTitle>History</SectionTitle>
           <SectionContent>
+            <ListTitle>2024</ListTitle>
+            <List>
+              <ListItem>react-google-maps was created.</ListItem>
+            </List>
+            <ListTitle>2023</ListTitle>
+            <List>
+              <ListItem><a href="https://deck.gl/events/new-york-summit-2023/">Open Visualization Collaborator Summit</a> hosted in New York</ListItem>
+            </List>
             <ListTitle>2022</ListTitle>
             <List>
+              <ListItem>First annual <a href="https://deck.gl/events/madrid-summit-2022/">Open Visualization Collaborator Summit</a> hosted in Madrid</ListItem>
               <ListItem>
                 flowmap.gl joined the vis.gl project.
               </ListItem>
               <ListItem>
-                vis.gl and kepler.gl joined the OpenJS Foundation.
+                vis.gl and kepler.gl joined the <a href="https://openjsf.org/">OpenJS Foundation</a>.
               </ListItem>
-              <ListItem>Urban Computing Foundation merged with the OpenJS Foundation, and formed the Open Visualization Collaboration Group.</ListItem>
+              <ListItem>Urban Computing Foundation merged with the OpenJS Foundation, and formed the <a href="https://www.openvisualization.org/">Open Visualization Collaboration Group</a>.</ListItem>
             </List>
             <ListTitle>2020</ListTitle>
             <List>
