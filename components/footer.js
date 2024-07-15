@@ -65,7 +65,7 @@ export default function Footer() {
               </Link>
             </h1>
             <p>
-              Copyright <a href="https://openjsf.org">OpenJS Foundation</a> and Vis.gl contributors. 
+              Copyright <a href="https://openjsf.org">OpenJS Foundation</a> and vis.gl contributors. 
               All rights reserved. The <a href="https://openjsf.org">OpenJS Foundation</a> has registered trademarks 
               and uses trademarks.  For a list of trademarks of the <a href="https://openjsf.org">OpenJS Foundation</a>, 
               please see our <a href="https://trademark-policy.openjsf.org">Trademark Policy</a> and 
