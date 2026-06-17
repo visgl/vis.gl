@@ -90,7 +90,7 @@ frameworkGroups:
 
       - name: SQLRooms
         url: https://sqlrooms.org
-        image: https://sqlrooms.org/media/overview/collage.webp
+        image: /images/frameworks/sqlrooms.webp
         description: >
           An open source React toolkit for building human and agent collaborative
           analytics apps with DuckDB, modular UI components, and integrations for
