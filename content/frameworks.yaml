@@ -88,6 +88,14 @@ frameworkGroups:
         description: >
           Unofficial layers, basemaps, add-on modules for deck.gl including high-performance feature editing layers for deck.gl.
 
+      - name: SQLRooms
+        url: https://sqlrooms.org
+        image: https://sqlrooms.org/media/overview/collage.webp
+        description: >
+          An open source React toolkit for building human and agent collaborative
+          analytics apps with DuckDB, modular UI components, and integrations for
+          popular data visualization libraries.
+
   - title: Related Frameworks
     description: >
       In addition to the core frameworks, the vis.gl framework suite integrates with a number of related open source frameworks that are not under open governance.
