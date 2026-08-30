@@ -72,7 +72,7 @@ header.showcases {
   padding-top: 164px;
   position: relative;
   width: 100vw;
-  background: #000;
+  background: url(/images/header-background.png) center / cover no-repeat #100a29;
 }
 
 #hero .main {

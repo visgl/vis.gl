@@ -301,60 +301,52 @@ export default function ManifestoSection() {
         <SectionContainer>
           <SectionTitle>History</SectionTitle>
           <SectionContent>
+            <ListTitle>2026</ListTitle>
+            <List>
+              <ListItem>math.gl 5.0 entered prerelease development.</ListItem>
+              <ListItem>math.gl documentation moved to vis.gl/math.gl.</ListItem>
+            </List>
             <ListTitle>2024</ListTitle>
             <List>
               <ListItem>react-google-maps was created.</ListItem>
             </List>
             <ListTitle>2023</ListTitle>
             <List>
-              <ListItem><a href="https://deck.gl/events/new-york-summit-2023/">Open Visualization Collaborator Summit</a> hosted in New York</ListItem>
+              <ListItem><a href="https://deck.gl/events/new-york-summit-2023/">Open Visualization Collaborator Summit</a> held in New York.</ListItem>
             </List>
             <ListTitle>2022</ListTitle>
             <List>
-              <ListItem>First annual <a href="https://deck.gl/events/madrid-summit-2022/">Open Visualization Collaborator Summit</a> hosted in Madrid</ListItem>
-              <ListItem>
-                flowmap.gl joined the vis.gl project.
-              </ListItem>
-              <ListItem>
-                vis.gl and kepler.gl joined the <a href="https://openjsf.org/">OpenJS Foundation</a>.
-              </ListItem>
-              <ListItem>Urban Computing Foundation merged with the OpenJS Foundation, and formed the <a href="https://www.openvisualization.org/">Open Visualization Collaboration Group</a>.</ListItem>
+              <ListItem>First annual <a href="https://deck.gl/events/madrid-summit-2022/">Open Visualization Collaborator Summit</a> held in Madrid.</ListItem>
+              <ListItem>flowmap.gl joined the vis.gl project.</ListItem>
+              <ListItem>vis.gl and kepler.gl joined the <a href="https://openjsf.org/">OpenJS Foundation</a>.</ListItem>
+              <ListItem>Urban Computing Foundation merged with the OpenJS Foundation.</ListItem>
+              <ListItem>The <a href="https://www.openvisualization.org/">Open Visualization Collaboration Group</a> formed.</ListItem>
             </List>
             <ListTitle>2020</ListTitle>
             <List>
-              <ListItem>
-                vis.gl Open Governance meetings started, under the auspices of the Linux Foundation
-                and the UCF.
-              </ListItem>
+              <ListItem>vis.gl Open Governance meetings began under the Linux Foundation and UCF.</ListItem>
               <ListItem>Uber transferred a set of core vis.gl frameworks to the UCF.</ListItem>
               <ListItem>hubble.gl was created.</ListItem>
             </List>
             <ListTitle>2019</ListTitle>
             <List>
-              <ListItem>
-                Uber created the Urban Computing Foundation (a sub-foundation of the Linux
-                Foundation), transferring kepler.gl.
-              </ListItem>
+              <ListItem>Uber created the Urban Computing Foundation and transferred kepler.gl.</ListItem>
             </List>
             <ListTitle>2018</ListTitle>
             <List>
-              <ListItem>Uber open sourced kepler.gl</ListItem>
+              <ListItem>Uber open sourced kepler.gl.</ListItem>
               <ListItem>loaders.gl and nebula.gl were created.</ListItem>
             </List>
             <ListTitle>2017</ListTitle>
             <List>
-              <ListItem>math.gl was created.</ListItem>
-              <ListItem>probe.gl was created.</ListItem>
+              <ListItem>math.gl and probe.gl were created.</ListItem>
             </List>
             <ListTitle>2016</ListTitle>
-            <ListItem>luma.gl was created.</ListItem>
+            <List><ListItem>luma.gl was created.</ListItem></List>
             <ListTitle>2015</ListTitle>
             <List>
-              <ListItem>The core deck.gl framework was open sourced by Uber.</ListItem>
-              <ListItem>
-                The core deck.gl framework was developed by Uber to support a wide range of
-                geospatial visualization use cases across the company.
-              </ListItem>
+              <ListItem>Uber open sourced the core deck.gl framework.</ListItem>
+              <ListItem>Uber developed deck.gl for geospatial visualization.</ListItem>
             </List>
           </SectionContent>
         </SectionContainer>
