@@ -220,12 +220,12 @@ class Hero extends Component {
           }}
         >
           <div className="main">
-            {'Large scale '}
+            {'Open source tools for '}
             <em>geospatial</em>
-            {' data visualization'}
+            {' visualization'}
           </div>
           <div className="secondary">
-            Promoting Industry Collaboration through Open Source and Open Governance
+            Composable frameworks for maps, graphics, and data.
           </div>
         </div>
       </div>

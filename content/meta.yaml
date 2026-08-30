@@ -4,10 +4,12 @@
   meta:
     - item:
       name: description
-      content: Cutting edge technology meets beautiful data visualization.
+      content: >
+        Open source tools for geospatial visualization: composable frameworks for maps, graphics,
+        and data.
     - item:
       name: keywords
-      content: visualization, data visualization, webGL, OpenJS
+      content: geospatial visualization, deck.gl, luma.gl, math.gl, OpenJS
 - page: about
   path: /about
   title: About vis.gl
