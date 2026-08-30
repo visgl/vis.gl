@@ -1,3 +1,6 @@
 [submodule "projects/math.gl"]
 	path = projects/math.gl
 	url = https://github.com/visgl/math.gl.git
+[submodule "projects/probe.gl"]
+	path = projects/probe.gl
+	url = https://github.com/visgl/probe.gl.git
