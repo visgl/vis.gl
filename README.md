@@ -33,21 +33,33 @@ The static export can also host documentation built by another vis.gl project. E
 `project-sites.json` may optionally build a project, then copy its static output into a path under
 `out/`.
 
-For example, after adding the math.gl repository at `projects/math.gl`, its configuration would
-look like this:
+math.gl is included as a pinned Git submodule at `projects/math.gl`. Its configuration installs
+the submodule dependencies, builds the Docusaurus website with the canonical vis.gl URL, and
+mounts the result at `/math.gl`:
 
 ```json
 {
   "sites": [
     {
       "name": "math.gl",
-      "mountPath": "/math",
+      "mountPath": "/math.gl",
       "source": "projects/math.gl/website/build",
-      "build": {
-        "cwd": "projects/math.gl",
-        "command": "yarn",
-        "args": ["workspace", "project-website", "build"]
-      }
+      "build": [
+        {
+          "command": "git",
+          "args": ["submodule", "update", "--init", "--recursive", "--", "projects/math.gl"]
+        },
+        {
+          "cwd": "projects/math.gl",
+          "command": "yarn",
+          "args": ["install", "--immutable"]
+        },
+        {
+          "cwd": "projects/math.gl/website",
+          "command": "yarn",
+          "args": ["docusaurus", "build", "--config", "../../../project-site-configs/math.gl.mjs"]
+        }
+      ]
     }
   ]
 }
@@ -55,3 +67,4 @@ look like this:
 
 Project builds must generate URLs and assets for their configured mount path. Sources, build
 directories, and mount paths are constrained to this repository and its `out/` directory.
+`/math` permanently redirects to the canonical `/math.gl/` path.
