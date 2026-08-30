@@ -3,5 +3,7 @@
 /math /math.gl/ 301
 /math/ /math.gl/ 301
 /math/* /math.gl/:splat 301
+/probe /probe.gl/ 301
+/probe/ /probe.gl/ 301
+/probe/* /probe.gl/:splat 301
 /deck.gl-community https://visgl.github.io/deck.gl-community/
-/probe.gl https://visgl.github.io/probe.gl/

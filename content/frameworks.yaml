@@ -77,7 +77,7 @@ frameworkGroups:
           Math library focusing on 3D and geospatial math.
 
       - name: probe.gl
-        url: https://visgl.github.io/probe.gl
+        url: https://vis.gl/probe.gl
         image: /images/frameworks/probe.png
         description: >
           JavaScript Console Logging, Instrumentation, Benchmarking and Test Utilities.
