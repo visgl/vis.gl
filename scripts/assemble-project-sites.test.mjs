@@ -65,6 +65,42 @@ writeFileSync('generated-site/index.html', '<h1>generated</h1>');`
   );
 });
 
+test('runs project build steps in order', async t => {
+  const rootDirectory = await createFixture(t);
+  await writeFile(
+    path.join(rootDirectory, 'prepare-project.mjs'),
+    `import {writeFileSync} from 'node:fs';
+writeFileSync('prepared.txt', 'ready');`
+  );
+  await writeFile(
+    path.join(rootDirectory, 'build-prepared-project.mjs'),
+    `import {mkdirSync, readFileSync, writeFileSync} from 'node:fs';
+const prepared = readFileSync('prepared.txt', 'utf8');
+mkdirSync('generated-site');
+writeFileSync('generated-site/index.html', \`<h1>\${prepared}</h1>\`);`
+  );
+
+  await assembleProjectSites({
+    rootDirectory,
+    sites: [
+      {
+        name: 'generated',
+        mountPath: '/generated',
+        source: 'generated-site',
+        build: [
+          {command: process.execPath, args: ['prepare-project.mjs']},
+          {command: process.execPath, args: ['build-prepared-project.mjs']}
+        ]
+      }
+    ]
+  });
+
+  assert.equal(
+    await readFile(path.join(rootDirectory, 'out', 'generated', 'index.html'), 'utf8'),
+    '<h1>ready</h1>'
+  );
+});
+
 test('rejects mount paths that escape the static output', async t => {
   const rootDirectory = await createFixture(t);
 

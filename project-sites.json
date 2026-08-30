@@ -1,3 +1,30 @@
 {
-  "sites": []
+  "sites": [
+    {
+      "name": "math.gl",
+      "mountPath": "/math.gl",
+      "source": "projects/math.gl/website/build",
+      "build": [
+        {
+          "command": "git",
+          "args": ["submodule", "update", "--init", "--recursive", "--", "projects/math.gl"]
+        },
+        {
+          "cwd": "projects/math.gl",
+          "command": "yarn",
+          "args": ["install", "--immutable"]
+        },
+        {
+          "cwd": "projects/math.gl/website",
+          "command": "yarn",
+          "args": [
+            "docusaurus",
+            "build",
+            "--config",
+            "../../../project-site-configs/math.gl.mjs"
+          ]
+        }
+      ]
+    }
+  ]
 }

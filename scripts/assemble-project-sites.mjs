@@ -31,28 +31,32 @@ function normalizeMountPath(mountPath) {
   return mountPath.slice(1);
 }
 
-async function runBuild(rootDirectory, name, build) {
-  if (!build) {
+async function runBuild(rootDirectory, name, buildConfig) {
+  if (!buildConfig) {
     return;
   }
 
-  if (!build.command || !Array.isArray(build.args)) {
-    throw new Error(`${name} must provide a build command and argument array`);
-  }
+  const buildSteps = Array.isArray(buildConfig) ? buildConfig : [buildConfig];
 
-  const cwd = resolveInside(rootDirectory, build.cwd ?? '.', `${name} build directory`);
+  for (const [index, build] of buildSteps.entries()) {
+    if (!build.command || !Array.isArray(build.args)) {
+      throw new Error(`${name} build step ${index + 1} must provide a command and argument array`);
+    }
 
-  await new Promise((resolve, reject) => {
-    const child = spawn(build.command, build.args, {cwd, stdio: 'inherit', shell: false});
-    child.once('error', reject);
-    child.once('exit', code => {
-      if (code === 0) {
-        resolve();
-      } else {
-        reject(new Error(`${name} build exited with code ${code}`));
-      }
+    const cwd = resolveInside(rootDirectory, build.cwd ?? '.', `${name} build directory`);
+
+    await new Promise((resolve, reject) => {
+      const child = spawn(build.command, build.args, {cwd, stdio: 'inherit', shell: false});
+      child.once('error', reject);
+      child.once('exit', code => {
+        if (code === 0) {
+          resolve();
+        } else {
+          reject(new Error(`${name} build step ${index + 1} exited with code ${code}`));
+        }
+      });
     });
-  });
+  }
 }
 
 export async function assembleProjectSites({rootDirectory = repositoryRoot, sites}) {
