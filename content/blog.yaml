@@ -1,6 +1,6 @@
 - date: Apr 7, 2020
   title: 'deck.gl 8.2 moves to Open Governance'
-  blurb: The vis.gl frameworks suite is now under open governance through the Linux Foundation and the Urban Cumputing Foundation.
+  blurb: The vis.gl frameworks suite is now under open governance through the Linux Foundation and the Urban Computing Foundation.
   url: https://medium.com/vis-gl/deck-gl-8-2-moves-to-open-governance-379f147c15bb
   image: /images/blog/blog-2020-04-deck-open-governance.png
 - date: Oct 15, 2019
@@ -30,7 +30,7 @@
   image: /images/blog/blog-2019-06-kepler-jupyter.png
 - date: Jun 18, 2019
   title: Uber’s vis.gl brings glTF to geospatial data visualization
-  blurb: The Khronos glTF format brings high-quality models and pysically-based rendering to the vis.gl frameworks.
+  blurb: The Khronos glTF format brings high-quality models and physically based rendering to the vis.gl frameworks.
   url: https://medium.com/vis-gl/ubers-vis-gl-brings-gltf-to-geospatial-data-visualization-86208ddec91d
   image: /images/blog/blog-2019-06-gltf-in-geospatial-visualization.png
 - date: May 7, 2019
@@ -50,7 +50,7 @@
   image: /images/blog/blog-2019-04-kepler-dropbox-save.png
 - date: Oct 29, 2018
   title: How (sometimes) assuming the Earth is “flat” helps speed up rendering in deck.gl
-  blurb: An deep-dive into the new optimized geospatial projection engine in deck.gl v6.2
+  blurb: A deep dive into the new optimized geospatial projection engine in deck.gl v6.2
   url: https://medium.com/vis-gl/how-sometimes-assuming-the-earth-is-flat-helps-speed-up-rendering-in-deck-gl-c43b72fd6db4
   image: /images/blog/blog-2018-10-earth-is-flat.png
 - date: Oct 16, 2018
@@ -92,12 +92,12 @@
   image: /images/blog/blog-2018-04-scripting-with-deck.png
 - date: Mar 26, 2018
   title: Automatic, GPU-based object highlighting in deck.gl Layers
-  blurb: Highligting the selected object in a layer is now handled by deck.gl directly on the GPU.
+  blurb: Highlighting the selected object in a layer is now handled by deck.gl directly on the GPU.
   url: https://medium.com/vis-gl/automatic-gpu-based-object-highlighting-in-deck-gl-layers-7fe3def44c89
   image: /images/blog/blog-2018-03-gpu-based-object-highlighting.png
 - date: Feb 27, 2018
   title: 'Unfolding the Earth: Myriahedral Projections In WebGL'
-  blurb: A visual exploration of alternaive mathematical approaches to flatten the Earth sphere.
+  blurb: A visual exploration of alternative mathematical approaches to flatten the Earth sphere.
   url: https://medium.com/vis-gl/unfolding-the-earth-myriahedral-projections-in-webgl-6b2bcfd00a30
   image: /images/blog/blog-2018-02-unfolding-the-earth.png
 - date: Jul 24, 2017

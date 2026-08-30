@@ -157,14 +157,18 @@ export default function ManifestoSection() {
     <Sections>
       <ContainerSm>
         <TitleSection backgroundImg={'/images/logos/vis-logo.png'}>
-          Vis.gl is a suite of composable, interoperable open source geospatial visualization
-          frameworks centered around <a href="https://deck.gl">deck.gl</a>.
+          vis.gl is an open source suite of composable frameworks for geospatial visualization,
+          with projects that work independently or together around <a href="https://deck.gl">deck.gl</a>.
         </TitleSection>
       </ContainerSm>
       <ContainerSm>
         <SectionContainer>
           <SectionTitle>Contribution</SectionTitle>
           <SectionContent>
+            <Paragraph>
+              vis.gl is built in the open. Contributions are welcome from individuals, companies,
+              and research teams.
+            </Paragraph>
             <ContributorContainer>
               <ContributorSection>
                 <div className="logo-title">Lead Contributors</div>
@@ -210,9 +214,8 @@ export default function ManifestoSection() {
           <SectionTitle>Open Governance</SectionTitle>
           <SectionContent>
             <Paragraph>
-              vis.gl is under open governance, and anyone can join the open planning meetings.
-              Contributor status is available and technical steering committee membership is
-              available to major contributors.
+              vis.gl projects are developed in the open. Join planning meetings, contribute code,
+              or help shape the technical roadmap.
             </Paragraph>
             <GovernanceLogos>
               <a href="https://www.openjsf.org/">
@@ -241,7 +244,8 @@ export default function ManifestoSection() {
           <SectionTitle>Frameworks</SectionTitle>
           <SectionContent>
             <Paragraph>
-              The <Link href="/frameworks">vis.gl Framework Catalog</Link> provides an overview of the various frameworks in the vis.gl framework suite.
+              Browse the <Link href="/frameworks">vis.gl Framework Catalog</Link> to find the
+              right tools for your project. Use each framework on its own or combine them.
             </Paragraph>
             <Image
               style={{width: '100%', height: 'auto', objectFit: 'cover'}}
@@ -258,6 +262,15 @@ export default function ManifestoSection() {
         <SectionContainer>
           <SectionTitle>Releases</SectionTitle>
           <SectionContent>
+            <H3>In development</H3>
+            <Paragraph>
+              <ListTitle>math.gl 5.0</ListTitle>
+              <ListItem>
+                Prerelease development is underway. See the{' '}
+                <a href="/math.gl/docs/whats-new">release notes</a>.
+              </ListItem>
+            </Paragraph>
+            <H3>Latest stable releases</H3>
             <H3>vis.gl 9.0</H3>
             <Paragraph>
               <ListTitle>Release Date: Mar 21, 2024</ListTitle>
@@ -276,7 +289,7 @@ export default function ManifestoSection() {
 
               <ListTitle>math.gl 4.0</ListTitle>
               <ListItem>
-                <a href="https://visgl.github.io/math.gl/docs/whats-new">Release Notes</a>
+                <a href="/math.gl/docs/whats-new">Release Notes</a>
               </ListItem>
               <div style={{marginTop: 5}} />
 

@@ -17,8 +17,8 @@ const Blog = () => {
         </p>
         <br />
         <p>
-          Note that vis.gl blog posts can also be browser directly on{' '}
-          <a href="https://medium.com/@vis.gl">Medium</a>.
+          You can also browse vis.gl blog posts directly on{' '}
+          <a href="https://medium.com/vis-gl">Medium</a>.
         </p>
       </div>
 

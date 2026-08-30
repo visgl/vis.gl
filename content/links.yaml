@@ -5,13 +5,19 @@
       - item:
           active: true
           label: vis.gl
-          url: http://vis.gl
+          url: https://vis.gl
       - item:
           label: deck.gl
-          url: http://deck.gl
+          url: https://deck.gl
       - item:
           label: luma.gl
-          url: http://luma.gl
+          url: https://luma.gl
+      - item:
+          label: loaders.gl
+          url: https://loaders.gl
+      - item:
+          label: math.gl
+          url: https://vis.gl/math.gl/
       - item:
           label: react-map-gl
           url: https://visgl.github.io/react-map-gl/

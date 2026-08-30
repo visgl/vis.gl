@@ -1,8 +1,8 @@
 frameworkGroups:
   - title:
     description: >
-      The vis.gl frameworks are designed for GPU powered geospatial visualization and analytics on the web. The frameworks are designed to be independently usable while following a common style that makes them work seamlessly together.
-      Each framework provides a number of sub-modules that export composable components such as loaders, visualization layers, and math modules that developers can cherry-pick and combine to achieve desired results.
+      The vis.gl frameworks support GPU-powered geospatial visualization and analytics on the web. Each framework can be used independently or combined through shared conventions.
+      Frameworks provide composable modules such as loaders, visualization layers, and math utilities that developers can cherry-pick and combine for their applications.
     entries:
       - name: kepler.gl
         url: https://kepler.gl
@@ -17,9 +17,9 @@ frameworkGroups:
         url: https://deck.gl
         image: /images/frameworks/deck.png
         description: >
-          Providing high-performance, GPU powered visualization layers for 
+          Providing high-performance, GPU-powered visualization layers for
           large scale geospatial data.
-          deck.gl is the corner stone of the vis.gl framework suite.
+          deck.gl is the cornerstone of the vis.gl framework suite.
           A selection of submodules provide layers for various geospatial and 3D 
           use cases.
 
@@ -35,8 +35,8 @@ frameworkGroups:
         image: /images/frameworks/loaders.png
         description: >
           A wide range of highly optimized, framework-independent loaders for geospatial, 
-          tabular and 3D file formats. Supports worker based binary data loading.
-          Supported outputs includes geospatial layers, point clouds, 3D geometries, 
+          tabular and 3D file formats. Supports worker-based binary data loading.
+          Supported outputs include geospatial layers, point clouds, 3D geometries,
           images, textures and tabular data.
 
       - name: luma.gl
@@ -71,7 +71,7 @@ frameworkGroups:
           Flowmap.gl is a flow map drawing layer for deck.gl. It can be used for visualization of geographic movement: mobility, transportation, migration, etc.
 
       - name: math.gl
-        url: https://visgl.github.io/math.gl
+        url: https://vis.gl/math.gl
         image: /images/frameworks/math.png
         description: >
           Math library focusing on 3D and geospatial math.
