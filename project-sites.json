@@ -25,6 +25,37 @@
           ]
         }
       ]
+    },
+    {
+      "name": "probe.gl",
+      "mountPath": "/probe.gl",
+      "source": "projects/probe.gl/website/build",
+      "build": [
+        {
+          "command": "git",
+          "args": ["submodule", "update", "--init", "--recursive", "--", "projects/probe.gl"]
+        },
+        {
+          "cwd": "projects/probe.gl",
+          "command": "yarn",
+          "args": ["install", "--immutable"]
+        },
+        {
+          "cwd": "projects/probe.gl/website",
+          "command": "yarn",
+          "args": ["install", "--immutable"]
+        },
+        {
+          "cwd": "projects/probe.gl/website",
+          "command": "yarn",
+          "args": [
+            "docusaurus",
+            "build",
+            "--config",
+            "../../../project-site-configs/probe.gl.mjs"
+          ]
+        }
+      ]
     }
   ]
 }
