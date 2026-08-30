@@ -11,8 +11,8 @@ const Menu = ({toggleMenu, items}) => {
       </h1>
       <div className="site-links">
         <div className="site-link">
-          <Link href="/">
-            <a className="logo">{title}</a>
+          <Link href="/" className="logo">
+            {title}
           </Link>
         </div>
         <div>

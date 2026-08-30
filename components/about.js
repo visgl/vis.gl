@@ -1,7 +1,5 @@
 import React from 'react';
 
-import LinkWithArrow from './link-with-arrow';
-
 function About({imageResolver = {}}) {
   return (
     <div id="About">

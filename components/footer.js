@@ -50,7 +50,7 @@ const Logos = styled.div`
 
 const SupportLogo = ({name, src, href, width = 200, height = 25}) => (
   <SupportLogoLink href={href} target="_blank" rel="noopener noreferrer">
-    <Image alt={name} src={src} height={height} width={width} objectFit="contain" />
+    <Image alt={name} src={src} height={height} width={width} style={{objectFit: 'contain'}} />
   </SupportLogoLink>
 );
 
@@ -60,9 +60,7 @@ export default function Footer() {
         <Content>
           <ContentItem>
             <h1>
-              <Link href="/">
-                <a className="logo">VIS.GL</a>
-              </Link>
+              <Link href="/" className="logo">VIS.GL</Link>
             </h1>
             <p>
               Copyright <a href="https://openjsf.org">OpenJS Foundation</a> and vis.gl contributors. 

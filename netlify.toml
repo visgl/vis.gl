@@ -1,6 +1,7 @@
 [build]
   publish = "out/"
-  command = "yarn export"
+  command = "yarn build"
 
 [build.environment]
 NETLIFY_NEXT_PLUGIN_SKIP = "true"
+NODE_VERSION = "22.22.1"

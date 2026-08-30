@@ -33,7 +33,7 @@ const Blog = () => {
   );
 };
 
-function BlogPost({publication, date, image, title, blurb, url}) {
+function BlogPost({date, image, title, blurb, url}) {
   return (
     <div className="blog--item">
       <span>

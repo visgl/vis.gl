@@ -3,37 +3,43 @@
   "version": "0.1.0",
   "private": true,
   "repository": "git@github.com:visgl/vis.gl.git",
+  "engines": {
+    "node": ">=22.22.1"
+  },
+  "packageManager": "yarn@4.18.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "export": "next build && next export",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "next build && node scripts/assemble-project-sites.mjs",
+    "check": "yarn lint && yarn typecheck && yarn test && yarn build",
+    "lint": "eslint .",
+    "prepare": "husky",
+    "test": "node --test scripts/*.test.mjs",
+    "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/react": "^11.9.3",
-    "@emotion/styled": "^11.9.3",
-    "classnames": "^2.3.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "classnames": "^2.5.1",
     "luma.gl": "^6.3.0",
-    "markdown-it": "^13.0.1",
+    "markdown-it": "^15.0.1",
     "math.gl": "^2.3.0",
-    "next": "12.3.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-waypoint": "^8.1.0"
+    "next": "16.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "@types/markdown-it": "^12.2.3",
-    "@types/node": "18.0.0",
-    "@types/react": "18.0.14",
-    "@types/react-dom": "18.0.5",
-    "eslint": "8.18.0",
-    "eslint-config-next": "12.1.6",
-    "eslint-config-prettier": "^8.6.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.1.2",
-    "prettier": "^2.7.1",
-    "typescript": "4.7.4",
-    "yaml-loader": "^0.8.0"
+    "@babel/core": "^8.0.1",
+    "@types/markdown-it": "^14.2.0",
+    "@types/node": "^22.20.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.3.3",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.4.1",
+    "prettier": "^3.9.6",
+    "typescript": "^5.9.3",
+    "yaml-loader": "^0.9.0"
   }
 }
