@@ -14,7 +14,7 @@ function createAnimationLoop() {
     createFramebuffer: true,
     onInitialize({gl}) {
       setParameters(gl, {
-        clearColor: [0, 0, 0, 1],
+        clearColor: [0, 0, 0, 0],
         clearDepth: 1,
         depthTest: true,
         depthFunc: gl.LEQUAL
@@ -199,12 +199,12 @@ class Hero extends Component {
           <canvas
             ref={this._canvas}
             id="lumagl-canvas"
-            style={{
+              style={{
               position: 'absolute',
               height: '450px',
               top: 0,
               width: '100vw',
-              background: this.state.isAnimating ? '#fff' : '#000'
+              background: 'transparent'
             }}
           />
         ) : null}
