@@ -10,7 +10,7 @@ export type Props = {
 
 const ImageBox = ({src, alt, width, height}: Props) => (
   <div style={{position: 'relative', display: 'block', width, height}}>
-    <Image layout="fill" objectFit="contain" alt={alt} src={src} />
+    <Image fill style={{objectFit: 'contain'}} alt={alt} src={src} />
   </div>
 );
 

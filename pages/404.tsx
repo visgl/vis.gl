@@ -11,8 +11,8 @@ const Custom404: React.FC = () => {
         The page you are looking for might have been removed, had its name changed, or is
         temporarily unavailable.
       </p>
-      <Link href="/">
-        <a className={styles.homeLink}>Go to Home</a>
+      <Link href="/" className={styles.homeLink}>
+        Go to Home
       </Link>
     </div>
   );

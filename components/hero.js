@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 
-import Waypoint from 'react-waypoint';
-
 import {AnimationLoop, Cube, dirlight, setParameters} from 'luma.gl';
 import {Matrix4, radians} from 'math.gl';
 
@@ -26,10 +24,10 @@ function createAnimationLoop() {
         cube: makeInstancedCube(gl)
       };
     },
-    onFinalize({gl, cube}) {
+    onFinalize({cube}) {
       cube.delete();
     },
-    onRender({gl, tick, aspect, cube, framebuffer}) {
+    onRender({gl, tick, aspect, cube}) {
       try {
         projectionMatrix = new Matrix4().perspective({
           fov: radians(60),
@@ -37,7 +35,7 @@ function createAnimationLoop() {
           near: 1,
           far: 2048.0
         });
-      } catch (error) {}
+      } catch {}
 
       cube.setUniforms({
         uTime: tick * 0.1,
@@ -149,16 +147,35 @@ void main(void) {
 
 class Hero extends Component {
   state = {isMounted: false, isAnimating: false};
+  _canvas = React.createRef();
+  _observer = null;
 
   componentDidMount() {
-    this.setState({isMounted: true});
+    this.setState({isMounted: true}, () => {
+      if ('IntersectionObserver' in window && this._canvas.current) {
+        this._observer = new IntersectionObserver(([entry]) => {
+          if (entry.isIntersecting) {
+            this._animationStart();
+          } else {
+            this._animationStop();
+          }
+        });
+        this._observer.observe(this._canvas.current);
+      } else {
+        this._animationStart();
+      }
+    });
   }
 
   componentWillUnmount() {
+    this._observer?.disconnect();
     this._animationStop();
   }
 
   _animationStart = () => {
+    if (this._animationLoop) {
+      return;
+    }
     this.setState({isAnimating: true});
     this._animationLoop = createAnimationLoop();
     this._animationLoop.start({canvas: 'lumagl-canvas'});
@@ -179,18 +196,17 @@ class Hero extends Component {
     return (
       <div id="hero">
         {isBrowser && this.state.isMounted ? (
-          <Waypoint onEnter={this._animationStart} onLeave={this._animationStop}>
-            <canvas
-              id="lumagl-canvas"
-              style={{
-                position: 'absolute',
-                height: '450px',
-                top: 0,
-                width: '100vw',
-                background: this.state.isAnimating ? '#fff' : '#000'
-              }}
-            />
-          </Waypoint>
+          <canvas
+            ref={this._canvas}
+            id="lumagl-canvas"
+            style={{
+              position: 'absolute',
+              height: '450px',
+              top: 0,
+              width: '100vw',
+              background: this.state.isAnimating ? '#fff' : '#000'
+            }}
+          />
         ) : null}
         <div
           style={{

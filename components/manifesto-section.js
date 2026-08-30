@@ -170,13 +170,19 @@ export default function ManifestoSection() {
                 <div className="logo-title">Lead Contributors</div>
                 <div className="logo">
                   <a href="https://unfolded.ai">
-                    <ImageBox width={150} height={60} src={'/images/logos/unfolded-logo.png'} />
+                    <ImageBox
+                      width={150}
+                      height={60}
+                      src={'/images/logos/unfolded-logo.png'}
+                      alt="Unfolded"
+                    />
                   </a>
                   <a href="https://carto.com">
                     <ImageBox
                       width={100}
                       height={40}
                       src={'/images/logos/CARTO-logo-positive.png'}
+                      alt="CARTO"
                     />
                   </a>
                 </div>
@@ -185,7 +191,12 @@ export default function ManifestoSection() {
                 <div className="logo-title">Created By</div>
                 <div className="logo tall">
                   <a href="https://uber.com/">
-                    <ImageBox width={100} height={60} src={'/images/logos/uber-logo-black.jpg'} />
+                    <ImageBox
+                      width={100}
+                      height={60}
+                      src={'/images/logos/uber-logo-black.jpg'}
+                      alt="Uber"
+                    />
                   </a>
                 </div>
               </ContributorSection>
@@ -205,10 +216,20 @@ export default function ManifestoSection() {
             </Paragraph>
             <GovernanceLogos>
               <a href="https://www.openjsf.org/">
-                <ImageBox width={200} height={60} src={'/images/logos/openjsf-color-textg.png'} />
+                <ImageBox
+                  width={200}
+                  height={60}
+                  src={'/images/logos/openjsf-color-textg.png'}
+                  alt="OpenJS Foundation"
+                />
               </a>
               <a href="https://openvisualization.org/">
-                <ImageBox width={250} height={60} src={'/images/logos/openvis-logo.png'} />
+                <ImageBox
+                  width={250}
+                  height={60}
+                  src={'/images/logos/openvis-logo.png'}
+                  alt="Open Visualization"
+                />
               </a>
             </GovernanceLogos>
           </SectionContent>
@@ -220,9 +241,15 @@ export default function ManifestoSection() {
           <SectionTitle>Frameworks</SectionTitle>
           <SectionContent>
             <Paragraph>
-              The <Link href="/frameworks"><a>vis.gl Framework Catalog</a></Link> provides an overview of the various frameworks in the vis.gl framework suite.
+              The <Link href="/frameworks">vis.gl Framework Catalog</Link> provides an overview of the various frameworks in the vis.gl framework suite.
             </Paragraph>
-            <Image layout="responsive" objectFit="cover" src={'/images/frameworks.jpg'} height={720} width={1080} alt=""/>
+            <Image
+              style={{width: '100%', height: 'auto', objectFit: 'cover'}}
+              src={'/images/frameworks.jpg'}
+              height={720}
+              width={1080}
+              alt=""
+            />
           </SectionContent>
         </SectionContainer>
       </ContainerSm>

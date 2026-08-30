@@ -1,15 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   reactStrictMode: true,
   images: {
     unoptimized: true
   },
-  webpack: configuration => {
-    configuration.module.rules.push({
-      test: /\.ya?ml$/,
-      use: 'yaml-loader'
-    });
-    return configuration;
+  turbopack: {
+    rules: {
+      '*.yaml': {
+        loaders: ['yaml-loader'],
+        as: '*.js'
+      },
+      '*.yml': {
+        loaders: ['yaml-loader'],
+        as: '*.js'
+      }
+    }
   }
 };
 
