@@ -71,6 +71,11 @@ before building it, since the probe.gl monorepo keeps the website lockfile separ
 The `deck.gl-community` entry follows the same pattern as `probe.gl`: the monorepo and its website
 have separate lockfiles, and the website is built with a mount-specific Docusaurus configuration.
 
+The root `robots.txt` allows indexing of vis.gl while disallowing the `/math.gl/`, `/probe.gl/`,
+and `/deck.gl-community/` mirror trees. Each mounted project site also includes a matching
+`robots.txt` for direct access, although crawlers use the host-level file as the authoritative
+policy.
+
 Project builds must generate URLs and assets for their configured mount path. Sources, build
 directories, and mount paths are constrained to this repository and its `out/` directory.
 `/math`, `/probe`, and `/deck.gl-community` permanently redirect to their canonical project-site
