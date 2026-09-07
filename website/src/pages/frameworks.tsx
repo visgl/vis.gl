@@ -1,4 +1,5 @@
 import React from 'react';
+import Layout from '@theme/Layout';
 import {ContainerSm, H2, Paragraph} from '../../../components/styling/components';
 import ImageBox from '../../../components/image-box';
 import frameworksYaml from '../../../content/frameworks.yaml';
@@ -20,7 +21,8 @@ const FrameworkTitle = styled.div`
 `;
 
 export default function FrameworksPage() {
-  return <>
+  return <Layout title="Frameworks | vis.gl">
+    <>
     <div className="section-title"><Paragraph>vis.gl</Paragraph><Paragraph>Framework Catalog</Paragraph></div>
     <ContainerSm className="section-text">
       <H2>The vis.gl Framework Catalog</H2>
@@ -34,5 +36,6 @@ export default function FrameworksPage() {
         </FrameworkRow>)}</div>
       </div>)}
     </ContainerSm>
-  </>;
+    </>
+  </Layout>;
 }

@@ -1,9 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
 import Link from '@docusaurus/Link';
+import {useLocation} from '@docusaurus/router';
 
 const Links = props => {
-  const currentPath = typeof window === 'undefined' ? '/' : window.location.pathname;
+  const {pathname} = useLocation();
+  const currentPath = pathname.replace(/\/+$/, '') || '/';
   const {items} = props;
   return (
     <div className="links f">
