@@ -33,9 +33,9 @@ The static export can also host documentation built by another vis.gl project. E
 `project-sites.json` may optionally build a project, then copy its static output into a path under
 `out/`.
 
-math.gl and probe.gl are included as pinned Git submodules at `projects/math.gl` and
-`projects/probe.gl`. Each project installs its own dependencies, builds its Docusaurus website
-with a canonical vis.gl URL, and mounts the result under `/math.gl` or `/probe.gl`.
+math.gl, probe.gl, and deck.gl-community are included as pinned Git submodules under `projects/`.
+Each project installs its own dependencies, builds its Docusaurus website with a canonical vis.gl
+URL, and mounts the result under `/math.gl`, `/probe.gl`, or `/deck.gl-community`.
 
 ```json
 {
@@ -68,6 +68,10 @@ with a canonical vis.gl URL, and mounts the result under `/math.gl` or `/probe.g
 The `probe.gl` entry follows the same pattern and additionally installs the website workspace
 before building it, since the probe.gl monorepo keeps the website lockfile separate.
 
+The `deck.gl-community` entry follows the same pattern as `probe.gl`: the monorepo and its website
+have separate lockfiles, and the website is built with a mount-specific Docusaurus configuration.
+
 Project builds must generate URLs and assets for their configured mount path. Sources, build
 directories, and mount paths are constrained to this repository and its `out/` directory.
-`/math` and `/probe` permanently redirect to their canonical `/math.gl/` and `/probe.gl/` paths.
+`/math`, `/probe`, and `/deck.gl-community` permanently redirect to their canonical project-site
+paths.

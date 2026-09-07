@@ -6,4 +6,4 @@
 /probe /probe.gl/ 301
 /probe/ /probe.gl/ 301
 /probe/* /probe.gl/:splat 301
-/deck.gl-community https://visgl.github.io/deck.gl-community/
+/deck.gl-community /deck.gl-community/ 301
