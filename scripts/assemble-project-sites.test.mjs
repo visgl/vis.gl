@@ -65,6 +65,27 @@ writeFileSync('generated-site/index.html', '<h1>generated</h1>');`
   );
 });
 
+test('writes a configured robots.txt at the project mount', async t => {
+  const rootDirectory = await createFixture(t);
+
+  await assembleProjectSites({
+    rootDirectory,
+    sites: [
+      {
+        name: 'generated',
+        mountPath: '/generated',
+        source: 'project-build',
+        robotsTxt: 'User-agent: *\nDisallow: /\n'
+      }
+    ]
+  });
+
+  assert.equal(
+    await readFile(path.join(rootDirectory, 'out', 'generated', 'robots.txt'), 'utf8'),
+    'User-agent: *\nDisallow: /\n'
+  );
+});
+
 test('runs project build steps in order', async t => {
   const rootDirectory = await createFixture(t);
   await writeFile(

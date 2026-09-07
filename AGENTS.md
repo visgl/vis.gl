@@ -26,8 +26,9 @@ assembled into the main static export by `project-sites.json`.
 - Start from a clean generated output directory (`rm -r out`), then run `yarn check`. This
   installs each pinned project's dependencies, builds each website with its mount configuration,
   and assembles the results under `out/`.
-- Verify `out/math.gl/index.html` and `out/probe.gl/index.html` exist and that generated asset
-  URLs use `/math.gl/` and `/probe.gl/` respectively.
+- Verify each mounted site's `index.html` and `robots.txt` exist, and that generated asset URLs use
+  its configured mount path. The current robots policy disallows all crawlers because these are
+  mirrors of upstream documentation sites.
 - Commit the gitlink update together with any `project-sites.json` or
   `project-site-configs/*.mjs` changes, then open the vis.gl PR. Do not commit build output or
   changes made inside a submodule checkout.

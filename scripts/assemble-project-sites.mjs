@@ -1,5 +1,5 @@
 import {spawn} from 'node:child_process';
-import {cp, readFile, stat} from 'node:fs/promises';
+import {cp, readFile, stat, writeFile} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -94,6 +94,14 @@ export async function assembleProjectSites({rootDirectory = repositoryRoot, site
       force: false,
       errorOnExist: true
     });
+
+    if (site.robotsTxt !== undefined) {
+      if (typeof site.robotsTxt !== 'string') {
+        throw new Error(`${name} robotsTxt must be a string`);
+      }
+      await writeFile(path.join(destinationDirectory, 'robots.txt'), site.robotsTxt);
+    }
+
     console.log(`Mounted ${name} at ${mountPath}`);
   }
 }
