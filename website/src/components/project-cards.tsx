@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from '@docusaurus/Link';
 import styled from '@emotion/styled';
 
 const projects = [
@@ -20,7 +19,7 @@ const Grid = styled.div`
   @media (max-width: 520px) { grid-template-columns: 1fr; }
 `;
 
-const Card = styled(Link)`
+const Card = styled.a`
   display: flex;
   flex-direction: column;
   min-height: 210px;
@@ -36,7 +35,7 @@ const Card = styled(Link)`
 
 export default function ProjectCards() {
   return <Grid aria-label="Project documentation">
-    {projects.map(project => <Card key={project.name} to={project.href}>
+    {projects.map(project => <Card key={project.name} href={project.href}>
       <img src={project.image} alt="" style={{height: 64, width: '100%', objectFit: 'contain', objectPosition: 'left'}} />
       <h3>{project.name}</h3>
       <p>{project.description}</p>
