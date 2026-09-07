@@ -4,6 +4,7 @@
       "name": "math.gl",
       "mountPath": "/math.gl",
       "source": "projects/math.gl/website/build",
+      "robotsTxt": "User-agent: *\nDisallow: /\n",
       "build": [
         {
           "command": "git",
@@ -30,6 +31,7 @@
       "name": "probe.gl",
       "mountPath": "/probe.gl",
       "source": "projects/probe.gl/website/build",
+      "robotsTxt": "User-agent: *\nDisallow: /\n",
       "build": [
         {
           "command": "git",
@@ -61,6 +63,7 @@
       "name": "deck.gl-community",
       "mountPath": "/deck.gl-community",
       "source": "projects/deck.gl-community/website/build",
+      "robotsTxt": "User-agent: *\nDisallow: /\n",
       "build": [
         {
           "command": "git",
