@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from '@docusaurus/Link';
 import Netlify from '../public/images/netlify-dark.svg';
 import OpenJS from '../public/images/logos/openjsf-color-textw.svg';
 import styled from '@emotion/styled';
@@ -50,7 +49,7 @@ const Logos = styled.div`
 
 const SupportLogo = ({name, src, href, width = 200, height = 25}) => (
   <SupportLogoLink href={href} target="_blank" rel="noopener noreferrer">
-    <Image alt={name} src={src} height={height} width={width} style={{objectFit: 'contain'}} />
+        <img alt={name} src={src} height={height} width={width} style={{objectFit: 'contain'}} />
   </SupportLogoLink>
 );
 

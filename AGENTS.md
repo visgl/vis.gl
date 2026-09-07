@@ -1,13 +1,3 @@
-<!-- BEGIN:nextjs-agent-rules -->
-
-# This is NOT the Next.js you know
-
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
-
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
-
-<!-- END:nextjs-agent-rules -->
-
 ## Project site submodules
 
 The generated project documentation sites are pinned Git submodules under `projects/` and
@@ -21,7 +11,7 @@ assembled into the main static export by `project-sites.json`.
   `git -C projects/math.gl fetch origin master` followed by
   `git -C projects/math.gl checkout <commit>`.
 - Stage the gitlink from the vis.gl root with `git add projects/math.gl` (and/or
-  `projects/probe.gl`). The build script runs `git submodule update` from the index, so staging
+  `projects/probe.gl`, `projects/deck.gl-community`, or `projects/tangram.gl`). The build script runs `git submodule update` from the index, so staging
   the new pin before running `yarn build` prevents the build from silently resetting it.
 - Start from a clean generated output directory (`rm -r out`), then run `yarn check`. This
   installs each pinned project's dependencies, builds each website with its mount configuration,

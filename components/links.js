@@ -1,15 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
-import Link from 'next/link';
-import {useRouter} from 'next/router';
+import Link from '@docusaurus/Link';
 
 const Links = props => {
-  const router = useRouter();
+  const currentPath = typeof window === 'undefined' ? '/' : window.location.pathname;
   const {items} = props;
   return (
     <div className="links f">
       {items.map(({item}, idx) => {
-        const isActive = item.route && item.route === router.pathname;
+        const isActive = item.route && item.route === currentPath;
         return item.route ? (
           <Link href={item.route} key={idx} className={classNames({active: isActive})}>
             {item.label}
