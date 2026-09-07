@@ -4,3 +4,6 @@
 [submodule "projects/probe.gl"]
 	path = projects/probe.gl
 	url = https://github.com/visgl/probe.gl.git
+[submodule "projects/deck.gl-community"]
+	path = projects/deck.gl-community
+	url = https://github.com/visgl/deck.gl-community.git

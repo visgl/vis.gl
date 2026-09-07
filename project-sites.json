@@ -56,6 +56,37 @@
           ]
         }
       ]
+    },
+    {
+      "name": "deck.gl-community",
+      "mountPath": "/deck.gl-community",
+      "source": "projects/deck.gl-community/website/build",
+      "build": [
+        {
+          "command": "git",
+          "args": ["submodule", "update", "--init", "--recursive", "--", "projects/deck.gl-community"]
+        },
+        {
+          "cwd": "projects/deck.gl-community",
+          "command": "yarn",
+          "args": ["install", "--immutable"]
+        },
+        {
+          "cwd": "projects/deck.gl-community/website",
+          "command": "yarn",
+          "args": ["install", "--immutable"]
+        },
+        {
+          "cwd": "projects/deck.gl-community/website",
+          "command": "yarn",
+          "args": [
+            "docusaurus",
+            "build",
+            "--config",
+            "../../../project-site-configs/deck.gl-community.mjs"
+          ]
+        }
+      ]
     }
   ]
 }

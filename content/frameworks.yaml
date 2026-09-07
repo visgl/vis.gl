@@ -83,7 +83,7 @@ frameworkGroups:
           JavaScript Console Logging, Instrumentation, Benchmarking and Test Utilities.
 
       - name: deck.gl-community
-        url: https://visgl.github.io/deck.gl-community
+        url: https://vis.gl/deck.gl-community
         image: /images/frameworks/deck.gl-community.png
         description: >
           Unofficial layers, basemaps, add-on modules for deck.gl including high-performance feature editing layers for deck.gl.
