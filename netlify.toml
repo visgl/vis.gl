@@ -4,3 +4,4 @@
 
 [build.environment]
 NODE_VERSION = "24.14.0"
+NETLIFY_NEXT_PLUGIN_SKIP = "true"
