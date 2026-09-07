@@ -1,6 +1,5 @@
 import React from 'react';
 import LinkWithArrow from './link-with-arrow';
-import Image from 'next/image';
 
 const Showcase = ({showcases}) => (
   <div id="showcase">
@@ -25,7 +24,7 @@ function Case({description, image, label, name, url}) {
           <div className="browser-bar-button" />
           <div className="browser-bar-button" />
         </div>
-        <Image alt={name} src={image} width={590} height={369} />
+        <img alt={name} src={image} width={590} height={369} />
       </div>
       <h1>{name}</h1>
       <p className="description">{description}</p>

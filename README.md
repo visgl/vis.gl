@@ -1,7 +1,7 @@
 # vis.gl
 
 This repository contains the [vis.gl](https://vis.gl) website. It is a statically exported
-Next.js site deployed by Netlify.
+Docusaurus 3.10 site deployed by Netlify.
 
 The existing framework catalog, showcases, news, blog, and project history are retained here.
 [Open Visualization](https://www.openvisualization.org/) provides the broader collaboration
@@ -9,7 +9,7 @@ space's current community, governance, and event information.
 
 ## Development
 
-Use Node.js 22.22.1 or later and Yarn 4:
+Use Node.js 24.14.0 or later and Yarn 4:
 
 ```bash
 yarn install --immutable
@@ -33,9 +33,9 @@ The static export can also host documentation built by another vis.gl project. E
 `project-sites.json` may optionally build a project, then copy its static output into a path under
 `out/`.
 
-math.gl, probe.gl, and deck.gl-community are included as pinned Git submodules under `projects/`.
+math.gl, probe.gl, deck.gl-community, and tangram.gl are included as pinned Git submodules under `projects/`.
 Each project installs its own dependencies, builds its Docusaurus website with a canonical vis.gl
-URL, and mounts the result under `/math.gl`, `/probe.gl`, or `/deck.gl-community`.
+URL, and mounts the result under `/math.gl`, `/probe.gl`, `/deck.gl-community`, or `/tangram.gl`.
 
 ```json
 {
@@ -71,8 +71,17 @@ before building it, since the probe.gl monorepo keeps the website lockfile separ
 The `deck.gl-community` entry follows the same pattern as `probe.gl`: the monorepo and its website
 have separate lockfiles, and the website is built with a mount-specific Docusaurus configuration.
 
+The `tangram.gl` entry follows the same pattern and mounts its documentation at `/tangram.gl`.
+
+### Future unified documentation navigation
+
+The framework sites remain standalone builds with stable document IDs and their existing URLs.
+The root site is intentionally not merging their docs into one sidebar yet. A future Docusaurus
+docs-plugin setup can mount each collection under a namespace (`math.gl`, `probe.gl`,
+`deck.gl-community`, and `tangram.gl`) while retaining these standalone paths as aliases.
+
 The root `robots.txt` allows indexing of vis.gl while disallowing the `/math.gl/`, `/probe.gl/`,
-and `/deck.gl-community/` mirror trees. Each mounted project site also includes a matching
+`/deck.gl-community/`, and `/tangram.gl/` mirror trees. Each mounted project site also includes a matching
 `robots.txt` for direct access, although crawlers use the host-level file as the authoritative
 policy.
 

@@ -1,11 +1,16 @@
 import {defineConfig, globalIgnores} from 'eslint/config';
-import nextVitals from 'eslint-config-next/core-web-vitals';
-import nextTypescript from 'eslint-config-next/typescript';
 import prettier from 'eslint-config-prettier/flat';
+import tsParser from '@typescript-eslint/parser';
 
 export default defineConfig([
-  ...nextVitals,
-  ...nextTypescript,
+  {
+    files: ['**/*.{js,jsx}'],
+    languageOptions: {parserOptions: {ecmaVersion: 'latest', sourceType: 'module', ecmaFeatures: {jsx: true}}}
+  },
+  {
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {parser: tsParser, parserOptions: {ecmaVersion: 'latest', sourceType: 'module', ecmaFeatures: {jsx: true}}}
+  },
   prettier,
-  globalIgnores(['.next/**', 'out/**', 'projects/**', 'next-env.d.ts'])
+  globalIgnores(['build/**', 'out/**', 'projects/**'])
 ]);

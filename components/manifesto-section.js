@@ -2,9 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 import {ContainerSm, H1, H3, Paragraph, List} from './styling/components';
 import ImageBox from './image-box';
-import Link from 'next/link';
 import {breakpointsMediaQueries} from './styling/style';
-import Image from 'next/image';
+import Link from '@docusaurus/Link';
 
 /*
 
@@ -247,7 +246,7 @@ export default function ManifestoSection() {
               Browse the <Link href="/frameworks">vis.gl Framework Catalog</Link> to find the
               right tools for your project. Use each framework on its own or combine them.
             </Paragraph>
-            <Image
+            <img
               style={{width: '100%', height: 'auto', objectFit: 'cover'}}
               src={'/images/frameworks.jpg'}
               height={720}

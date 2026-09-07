@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 
 export type Props = {
@@ -10,7 +9,7 @@ export type Props = {
 
 const ImageBox = ({src, alt, width, height}: Props) => (
   <div style={{position: 'relative', display: 'block', width, height}}>
-    <Image fill style={{objectFit: 'contain'}} alt={alt} src={src} />
+    <img style={{objectFit: 'contain', width: '100%', height: '100%'}} alt={alt} src={src} />
   </div>
 );
 

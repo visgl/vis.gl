@@ -1,5 +1,5 @@
 import {spawn} from 'node:child_process';
-import {cp, readFile, stat, writeFile} from 'node:fs/promises';
+import {cp, mkdir, readFile, rm, stat, writeFile} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -59,9 +59,20 @@ async function runBuild(rootDirectory, name, buildConfig) {
   }
 }
 
-export async function assembleProjectSites({rootDirectory = repositoryRoot, sites}) {
+export async function assembleProjectSites({rootDirectory = repositoryRoot, sites, rootSiteSource}) {
   const outputDirectory = resolveInside(rootDirectory, 'out', 'Site output directory');
   const destinations = new Set();
+
+  if (rootSiteSource) {
+    const rootSiteDirectory = resolveInside(rootDirectory, rootSiteSource, 'Root site source directory');
+    const rootSiteStats = await stat(rootSiteDirectory);
+    if (!rootSiteStats.isDirectory()) {
+      throw new Error(`Root site source is not a directory: ${rootSiteSource}`);
+    }
+    await rm(outputDirectory, {recursive: true, force: true});
+    await mkdir(outputDirectory, {recursive: true});
+    await cp(rootSiteDirectory, outputDirectory, {recursive: true});
+  }
 
   const preparedSites = sites.map(site => {
     const {name, mountPath, source} = site;
@@ -113,7 +124,7 @@ async function main() {
     throw new Error('project-sites.json must contain a sites array');
   }
 
-  await assembleProjectSites({sites: config.sites});
+  await assembleProjectSites({sites: config.sites, rootSiteSource: 'website/build'});
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

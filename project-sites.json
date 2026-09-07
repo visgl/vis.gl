@@ -90,6 +90,28 @@
           ]
         }
       ]
+    },
+    {
+      "name": "tangram.gl",
+      "mountPath": "/tangram.gl",
+      "source": "projects/tangram.gl/website/build",
+      "robotsTxt": "User-agent: *\nDisallow: /\n",
+      "build": [
+        {
+          "command": "git",
+          "args": ["submodule", "update", "--init", "--recursive", "--", "projects/tangram.gl"]
+        },
+        {
+          "cwd": "projects/tangram.gl",
+          "command": "yarn",
+          "args": ["install", "--immutable"]
+        },
+        {
+          "cwd": "projects/tangram.gl",
+          "command": "yarn",
+          "args": ["website:build", "--config", "../../../project-site-configs/tangram.gl.mjs"]
+        }
+      ]
     }
   ]
 }

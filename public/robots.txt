@@ -3,3 +3,4 @@ Allow: /
 Disallow: /math.gl/
 Disallow: /probe.gl/
 Disallow: /deck.gl-community/
+Disallow: /tangram.gl/
