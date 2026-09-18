@@ -1,5 +1,4 @@
 /react-google-maps https://visgl.github.io/react-google-maps/
-/react-map-gl https://visgl.github.io/react-map-gl/
 /math /math.gl/ 301
 /math/ /math.gl/ 301
 /math/* /math.gl/:splat 301
@@ -10,3 +9,4 @@
 /tangram /tangram.gl/ 301
 /tangram/ /tangram.gl/ 301
 /tangram/* /tangram.gl/:splat 301
+/react-map-gl /react-map-gl/ 301
