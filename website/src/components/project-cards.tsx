@@ -5,7 +5,8 @@ const projects = [
   {name: 'math.gl', href: '/math.gl/', image: '/images/frameworks/math.png', description: '3D and geospatial math utilities.'},
   {name: 'probe.gl', href: '/probe.gl/', image: '/images/frameworks/probe.png', description: 'Logging, instrumentation, benchmarking and test utilities.'},
   {name: 'deck.gl-community', href: '/deck.gl-community/', image: '/images/frameworks/deck.gl-community.png', description: 'Community layers, basemaps and deck.gl add-ons.'},
-  {name: 'tangram.gl', href: '/tangram.gl/', image: '/images/logos/vis-logo.png', description: 'Tangram rendering and deck.gl basemap integration.'}
+  {name: 'tangram.gl', href: '/tangram.gl/', image: '/images/logos/vis-logo.png', description: 'Tangram rendering and deck.gl basemap integration.'},
+  {name: 'react-map-gl', href: '/react-map-gl/', image: '/images/react-map-gl.png', description: 'React components for Mapbox GL JS and MapLibre GL JS.'}
 ];
 
 const Grid = styled.div`

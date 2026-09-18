@@ -112,6 +112,28 @@
           "args": ["website:build", "--config", "../../../project-site-configs/tangram.gl.mjs"]
         }
       ]
+    },
+    {
+      "name": "react-map-gl",
+      "mountPath": "/react-map-gl",
+      "source": "projects/react-map-gl/website/build",
+      "robotsTxt": "User-agent: *\nDisallow: /\n",
+      "build": [
+        {
+          "command": "git",
+          "args": ["submodule", "update", "--init", "--recursive", "--", "projects/react-map-gl"]
+        },
+        {
+          "cwd": "projects/react-map-gl/website",
+          "command": "yarn",
+          "args": ["install", "--immutable"]
+        },
+        {
+          "cwd": "projects/react-map-gl/website",
+          "command": "yarn",
+          "args": ["docusaurus", "build", "--config", "../../../project-site-configs/react-map-gl.mjs"]
+        }
+      ]
     }
   ]
 }

@@ -10,3 +10,6 @@
 [submodule "projects/tangram.gl"]
 	path = projects/tangram.gl
 	url = https://github.com/visgl/tangram.gl.git
+[submodule "projects/react-map-gl"]
+	path = projects/react-map-gl
+	url = https://github.com/visgl/react-map-gl.git
