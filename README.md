@@ -33,10 +33,10 @@ The static export can also host documentation built by another vis.gl project. E
 `project-sites.json` may optionally build a project, then copy its static output into a path under
 `out/`.
 
-math.gl, probe.gl, deck.gl-community, tangram.gl, and react-google-maps are included as pinned Git submodules under `projects/`.
+math.gl, probe.gl, deck.gl-community, tangram.gl, dev-tools, and react-google-maps are included as pinned Git submodules under `projects/`.
 Each project installs its own dependencies, builds its Docusaurus website with a canonical vis.gl
 URL, and mounts the result under `/math.gl`, `/probe.gl`, `/deck.gl-community`, `/tangram.gl`,
-or `/react-google-maps`.
+`/dev-tools`, or `/react-google-maps`.
 
 ```json
 {
@@ -84,11 +84,11 @@ no key is configured.
 The framework sites remain standalone builds with stable document IDs and their existing URLs.
 The root site is intentionally not merging their docs into one sidebar yet. A future Docusaurus
 docs-plugin setup can mount each collection under a namespace (`math.gl`, `probe.gl`,
-`deck.gl-community`, `tangram.gl`, and `react-google-maps`) while retaining these standalone paths
+`deck.gl-community`, `tangram.gl`, `dev-tools`, and `react-google-maps`) while retaining these standalone paths
 as aliases.
 
 The root `robots.txt` allows indexing of vis.gl while disallowing the `/math.gl/`, `/probe.gl/`,
-`/deck.gl-community/`, `/tangram.gl/`, `/react-map-gl/`, and `/react-google-maps/` mirror trees.
+`/deck.gl-community/`, `/tangram.gl/`, `/react-map-gl/`, `/dev-tools/`, and `/react-google-maps/` mirror trees.
 Each mounted project site also includes a matching
 `robots.txt` for direct access, although crawlers use the host-level file as the authoritative
 policy.
