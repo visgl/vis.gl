@@ -10,6 +10,23 @@ const projects = [
   {name: 'react-map-gl', href: '/react-map-gl/', image: '/images/react-map-gl.png', description: 'React components for Mapbox GL JS and MapLibre GL JS.'}
 ];
 
+const frameworkWebsites = [
+  {name: 'deck.gl', href: 'https://deck.gl', image: '/images/frameworks/deck.png', description: 'High-performance visualization layers for large-scale geospatial data.'},
+  {name: 'luma.gl', href: 'https://luma.gl', image: '/images/frameworks/luma.png', description: 'WebGL and WebGPU tools for data visualization and GPU computing.'},
+  {name: 'loaders.gl', href: 'https://loaders.gl', image: '/images/frameworks/loaders.png', description: 'Loaders and workers for geospatial, 3D, tabular, and imagery data.'}
+];
+
+const Section = styled.section`
+  margin: 40px auto 60px;
+`;
+
+const SectionTitle = styled.h2`
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  padding: 0 24px;
+  text-align: center;
+`;
+
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -36,12 +53,28 @@ const Card = styled.a`
 `;
 
 export default function ProjectCards() {
-  return <Grid aria-label="Project documentation">
-    {projects.map(project => <Card key={project.name} href={project.href}>
-      <img src={project.image} alt="" style={{height: 64, width: '100%', objectFit: 'contain', objectPosition: 'left'}} />
-      <h3>{project.name}</h3>
-      <p>{project.description}</p>
-      <span style={{marginTop: 'auto', fontWeight: 600}}>Explore docs →</span>
-    </Card>)}
-  </Grid>;
+  return <>
+    <Section aria-labelledby="framework-websites-title">
+      <SectionTitle id="framework-websites-title">Frameworks with Websites</SectionTitle>
+      <Grid aria-label="Frameworks with websites">
+        {frameworkWebsites.map(project => <Card key={project.name} href={project.href} target="_blank" rel="noopener noreferrer">
+          <img src={project.image} alt="" style={{height: 64, width: '100%', objectFit: 'contain', objectPosition: 'left'}} />
+          <h3>{project.name}</h3>
+          <p>{project.description}</p>
+          <span style={{marginTop: 'auto', fontWeight: 600}}>Visit site →</span>
+        </Card>)}
+      </Grid>
+    </Section>
+    <Section aria-labelledby="framework-documentation-title">
+      <SectionTitle id="framework-documentation-title">Framework Documentation</SectionTitle>
+      <Grid aria-label="Framework documentation">
+        {projects.map(project => <Card key={project.name} href={project.href}>
+          <img src={project.image} alt="" style={{height: 64, width: '100%', objectFit: 'contain', objectPosition: 'left'}} />
+          <h3>{project.name}</h3>
+          <p>{project.description}</p>
+          <span style={{marginTop: 'auto', fontWeight: 600}}>Explore docs →</span>
+        </Card>)}
+      </Grid>
+    </Section>
+  </>;
 }
