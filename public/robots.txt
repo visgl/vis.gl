@@ -5,3 +5,4 @@ Disallow: /probe.gl/
 Disallow: /deck.gl-community/
 Disallow: /tangram.gl/
 Disallow: /react-map-gl/
+Disallow: /dev-tools/

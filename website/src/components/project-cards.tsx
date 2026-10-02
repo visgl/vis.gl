@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const projects = [
+  {name: 'dev-tools', href: '/dev-tools/', image: '/images/logos/vis-logo.png', description: 'Shared development tools for building, testing, linting, and publishing vis.gl projects.'},
   {name: 'math.gl', href: '/math.gl/', image: '/images/frameworks/math.png', description: '3D and geospatial math utilities.'},
   {name: 'probe.gl', href: '/probe.gl/', image: '/images/frameworks/probe.png', description: 'Logging, instrumentation, benchmarking and test utilities.'},
   {name: 'deck.gl-community', href: '/deck.gl-community/', image: '/images/frameworks/deck.gl-community.png', description: 'Community layers, basemaps and deck.gl add-ons.'},

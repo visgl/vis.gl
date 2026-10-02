@@ -134,6 +134,28 @@
           "args": ["docusaurus", "build", "--config", "../../../project-site-configs/react-map-gl.mjs"]
         }
       ]
+    },
+    {
+      "name": "dev-tools",
+      "mountPath": "/dev-tools",
+      "source": "projects/dev-tools/website/build",
+      "robotsTxt": "User-agent: *\nDisallow: /\n",
+      "build": [
+        {
+          "command": "git",
+          "args": ["submodule", "update", "--init", "--recursive", "--", "projects/dev-tools"]
+        },
+        {
+          "cwd": "projects/dev-tools",
+          "command": "yarn",
+          "args": ["install", "--immutable"]
+        },
+        {
+          "cwd": "projects/dev-tools",
+          "command": "yarn",
+          "args": ["website:build", "--config", "../../../project-site-configs/dev-tools.mjs"]
+        }
+      ]
     }
   ]
 }

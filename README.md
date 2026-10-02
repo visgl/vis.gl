@@ -33,7 +33,7 @@ The static export can also host documentation built by another vis.gl project. E
 `project-sites.json` may optionally build a project, then copy its static output into a path under
 `out/`.
 
-math.gl, probe.gl, deck.gl-community, and tangram.gl are included as pinned Git submodules under `projects/`.
+math.gl, probe.gl, deck.gl-community, tangram.gl, and dev-tools are included as pinned Git submodules under `projects/`.
 Each project installs its own dependencies, builds its Docusaurus website with a canonical vis.gl
 URL, and mounts the result under `/math.gl`, `/probe.gl`, `/deck.gl-community`, or `/tangram.gl`.
 
