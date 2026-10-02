@@ -16,3 +16,6 @@
 [submodule "projects/dev-tools"]
 	path = projects/dev-tools
 	url = https://github.com/visgl/dev-tools.git
+[submodule "projects/react-google-maps"]
+	path = projects/react-google-maps
+	url = https://github.com/visgl/react-google-maps.git

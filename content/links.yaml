@@ -23,7 +23,7 @@
           url: https://visgl.github.io/react-map-gl/
       - item:
           label: react-google-maps
-          url: https://visgl.github.io/react-google-maps/
+          url: https://vis.gl/react-google-maps/
 - navigation:
     type: LINKS
     title: Navigation

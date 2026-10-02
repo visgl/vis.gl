@@ -7,7 +7,8 @@ const projects = [
   {name: 'probe.gl', href: '/probe.gl/', image: '/images/frameworks/probe.png', description: 'Logging, instrumentation, benchmarking and test utilities.'},
   {name: 'deck.gl-community', href: '/deck.gl-community/', image: '/images/frameworks/deck.gl-community.png', description: 'Community layers, basemaps and deck.gl add-ons.'},
   {name: 'tangram.gl', href: '/tangram.gl/', image: '/images/logos/vis-logo.png', description: 'Tangram rendering and deck.gl basemap integration.'},
-  {name: 'react-map-gl', href: '/react-map-gl/', image: '/images/react-map-gl.png', description: 'React components for Mapbox GL JS and MapLibre GL JS.'}
+  {name: 'react-map-gl', href: '/react-map-gl/', image: '/images/react-map-gl.png', description: 'React components for Mapbox GL JS and MapLibre GL JS.'},
+  {name: 'react-google-maps', href: '/react-google-maps/', image: '/images/frameworks/react-google-maps.jpeg', description: 'React components and hooks for the Google Maps JavaScript API.'}
 ];
 
 const frameworkWebsites = [
@@ -15,17 +16,6 @@ const frameworkWebsites = [
   {name: 'luma.gl', href: 'https://luma.gl', image: '/images/frameworks/luma.png', description: 'WebGL and WebGPU tools for data visualization and GPU computing.'},
   {name: 'loaders.gl', href: 'https://loaders.gl', image: '/images/frameworks/loaders.png', description: 'Loaders and workers for geospatial, 3D, tabular, and imagery data.'}
 ];
-
-const Section = styled.section`
-  margin: 40px auto 60px;
-`;
-
-const SectionTitle = styled.h2`
-  max-width: 1100px;
-  margin: 0 auto 24px;
-  padding: 0 24px;
-  text-align: center;
-`;
 
 const Grid = styled.div`
   display: grid;
@@ -36,6 +26,17 @@ const Grid = styled.div`
   padding: 0 24px;
   @media (max-width: 900px) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   @media (max-width: 520px) { grid-template-columns: 1fr; }
+`;
+
+const Section = styled.section`
+  margin: 40px auto 60px;
+`;
+
+const SectionTitle = styled.h2`
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  padding: 0 24px;
+  text-align: center;
 `;
 
 const Card = styled.a`

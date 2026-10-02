@@ -6,3 +6,4 @@ Disallow: /deck.gl-community/
 Disallow: /tangram.gl/
 Disallow: /react-map-gl/
 Disallow: /dev-tools/
+Disallow: /react-google-maps/
