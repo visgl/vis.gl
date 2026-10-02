@@ -59,7 +59,7 @@ frameworkGroups:
           A React wrapper for Mapbox GL JS that integrates with deck.gl.
 
       - name: react-google-maps
-        url: https://visgl.github.io/react-google-maps/
+        url: https://vis.gl/react-google-maps/
         image: /images/frameworks/react-google-maps.jpeg
         description: >
           A React wrapper for the Google Maps JavaScript API that integrates with deck.gl.

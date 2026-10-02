@@ -134,6 +134,35 @@
           "args": ["docusaurus", "build", "--config", "../../../project-site-configs/react-map-gl.mjs"]
         }
       ]
+    },
+    {
+      "name": "react-google-maps",
+      "mountPath": "/react-google-maps",
+      "source": "projects/react-google-maps/website/build",
+      "robotsTxt": "User-agent: *\nDisallow: /\n",
+      "build": [
+        {
+          "command": "git",
+          "args": ["submodule", "update", "--init", "--recursive", "--", "projects/react-google-maps"]
+        },
+        {
+          "cwd": "projects/react-google-maps",
+          "command": "npm",
+          "args": ["ci"]
+        },
+        {
+          "cwd": "projects/react-google-maps/website",
+          "command": "npm",
+          "args": [
+            "run",
+            "docusaurus",
+            "--",
+            "build",
+            "--config",
+            "../../../project-site-configs/react-google-maps.mjs"
+          ]
+        }
+      ]
     }
   ]
 }
