@@ -2,13 +2,16 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const projects = [
-  {name: 'dev-tools', href: '/dev-tools/', image: '/images/logos/vis-logo.png', description: 'Shared development tools for building, testing, linting, and publishing vis.gl projects.'},
   {name: 'math.gl', href: '/math.gl/', image: '/images/frameworks/math.png', description: '3D and geospatial math utilities.'},
   {name: 'probe.gl', href: '/probe.gl/', image: '/images/frameworks/probe.png', description: 'Logging, instrumentation, benchmarking and test utilities.'},
   {name: 'deck.gl-community', href: '/deck.gl-community/', image: '/images/frameworks/deck.gl-community.png', description: 'Community layers, basemaps and deck.gl add-ons.'},
   {name: 'tangram.gl', href: '/tangram.gl/', image: '/images/logos/vis-logo.png', description: 'Tangram rendering and deck.gl basemap integration.'},
   {name: 'react-map-gl', href: '/react-map-gl/', image: '/images/react-map-gl.png', description: 'React components for Mapbox GL JS and MapLibre GL JS.'},
   {name: 'react-google-maps', href: '/react-google-maps/', image: '/images/frameworks/react-google-maps.jpeg', description: 'React components and hooks for the Google Maps JavaScript API.'}
+];
+
+const internalFrameworks = [
+  {name: 'dev-tools', href: '/dev-tools/', image: '/images/logos/vis-logo.png', description: 'Shared development tools for building, testing, linting, and publishing vis.gl projects.'}
 ];
 
 const frameworkWebsites = [
@@ -19,7 +22,7 @@ const frameworkWebsites = [
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   margin: 40px auto 60px;
   max-width: 1100px;
@@ -70,6 +73,17 @@ export default function ProjectCards() {
       <SectionTitle id="framework-documentation-title">Framework Documentation</SectionTitle>
       <Grid aria-label="Framework documentation">
         {projects.map(project => <Card key={project.name} href={project.href}>
+          <img src={project.image} alt="" style={{height: 64, width: '100%', objectFit: 'contain', objectPosition: 'left'}} />
+          <h3>{project.name}</h3>
+          <p>{project.description}</p>
+          <span style={{marginTop: 'auto', fontWeight: 600}}>Explore docs →</span>
+        </Card>)}
+      </Grid>
+    </Section>
+    <Section aria-labelledby="internal-frameworks-title">
+      <SectionTitle id="internal-frameworks-title">Internal Frameworks</SectionTitle>
+      <Grid aria-label="Internal frameworks">
+        {internalFrameworks.map(project => <Card key={project.name} href={project.href}>
           <img src={project.image} alt="" style={{height: 64, width: '100%', objectFit: 'contain', objectPosition: 'left'}} />
           <h3>{project.name}</h3>
           <p>{project.description}</p>
