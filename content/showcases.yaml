@@ -14,3 +14,8 @@ showcases:
     description: A platform that enables engineers and across ATG to quickly inspect, debug, and explore data collected by our self driving cars.
     image: /images/atg.png
     url: https://techcrunch.com/2017/08/28/uber-shows-off-its-autonomous-driving-programs-snazzy-visualization-tool
+  - name: dataHabibi
+    label: Visit Site
+    description: Dubai housing forecasts with building-level prices, yields and Dubai Land Department transactions. Its maps use vis.gl react-maplibre.
+    image: /images/datahabibi.png
+    url: https://datahabibi.ae/
