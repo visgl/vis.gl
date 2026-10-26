@@ -155,18 +155,22 @@ class Hero extends Component {
   }
 
   componentWillUnmount() {
+    this._visible = false;
     this._unmounted = true;
     this._observer?.disconnect();
-    this._animationLoop?.destroy();
-    this._animationLoop = null;
+    if (!this._initializing) {
+      this._animationLoop?.destroy();
+      this._animationLoop = null;
+    }
   }
 
   _animationStart = async () => {
+    if (this._unmounted) return;
     this._visible = true;
     if (this._initializing) return;
+    this._initializing = true;
     try {
       if (!this._animationLoop) {
-        this._initializing = true;
         const loop = await createAnimationLoop(this._canvas.current);
         if (this._unmounted) {
           loop.destroy();
@@ -179,15 +183,21 @@ class Hero extends Component {
       // Keep the homepage readable when WebGL2 is unavailable.
       this._animationLoop?.destroy();
       this._animationLoop = null;
-      console.warn('Homepage animation unavailable:', error);
+      if (!this._unmounted) console.warn('Homepage animation unavailable:', error);
     } finally {
       this._initializing = false;
+      if (this._unmounted) {
+        this._animationLoop?.destroy();
+        this._animationLoop = null;
+      } else if (!this._visible) {
+        this._animationLoop?.stop();
+      }
     }
   };
 
   _animationStop = () => {
     this._visible = false;
-    this._animationLoop?.stop();
+    if (!this._initializing) this._animationLoop?.stop();
   };
 
   render() {

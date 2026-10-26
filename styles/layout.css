@@ -2462,6 +2462,10 @@ header.site-header .links a {
   line-height: 1.4;
 }
 
+header.site-header .project-menu {
+  position: relative;
+}
+
 header.site-header .site-links {
   position: absolute;
   top: 64px;
