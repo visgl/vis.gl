@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {ContainerSm, H1, H3, Paragraph, List} from './styling/components';
+import {ContainerSm, H1, Paragraph, List} from './styling/components';
 import {breakpointsMediaQueries} from './styling/style';
 
 const Sections = styled.div`
@@ -102,6 +102,35 @@ const DECK_RELEASE_HISTORY = [
     'The first release introduced a WebGL overlay suite for maps, with a layer framework and samples.']
 ];
 
+const RELEASE_LINKS = {
+  '9': [
+    ['Release notes', 'https://deck.gl/docs/whats-new#deckgl-v90']
+  ],
+  '8': [
+    ['Release notes', 'https://deck.gl/docs/whats-new#deckgl-v80'],
+    ['Open governance blog post', 'https://medium.com/vis-gl/deck-gl-8-2-moves-to-open-governance-379f147c15bb']
+  ],
+  '7': [
+    ['Release notes', 'https://deck.gl/docs/whats-new#deckgl-v70'],
+    ['Introducing deck.gl v7.0', 'https://medium.com/vis-gl/introducing-deck-gl-v7-0-c18bcb717457']
+  ],
+  '6': [
+    ['Release notes', 'https://deck.gl/docs/whats-new#deckgl-v60'],
+    ['GPU aggregation blog post', 'https://medium.com/vis-gl/gpu-accelerated-aggregation-in-deck-gl-7e2c7d701fb0']
+  ],
+  '5': [['Release notes', 'https://deck.gl/docs/whats-new#deckgl-v5']],
+  '4': [
+    ['Release notes', 'https://deck.gl/docs/whats-new#deckgl-v40'],
+    ['Introducing deck.gl v4.0', 'https://medium.com/vis-gl/introducing-deck-gl-v4-0-3ead9106eb7e']
+  ],
+  '3': [
+    ['Release notes', 'https://deck.gl/docs/whats-new#deckgl-v30'],
+    ['Launch blog post', 'https://www.uber.com/us/en/blog/visualizing-data-sets-deck-gl-framework/']
+  ],
+  '2': [['Release notes', 'https://deck.gl/docs/whats-new#deckgl-v2']],
+  '1': [['Release notes', 'https://deck.gl/docs/whats-new#deckgl-v1']]
+};
+
 export default function History() {
   return (
     <Sections>
@@ -116,22 +145,60 @@ export default function History() {
         <SectionContainer>
           <SectionTitle as="h2">vis.gl milestones</SectionTitle>
           <SectionContent>
+            <ListTitle>2027</ListTitle>
+            <List>
+              <ListItem>
+                The sixth{' '}
+                <a href="https://www.openvisualization.org/summits/chicago-summit-2027">
+                  Open Visualization Collaborator Summit
+                </a>{' '}
+                is planned for Chicago in September 2027.
+              </ListItem>
+            </List>
             <ListTitle>2026</ListTitle>
             <List>
-              <ListItem>math.gl 5.0 entered prerelease development.</ListItem>
+              <ListItem>
+                <a href="https://www.openvisualization.org/summits/zurich-summit-2026">
+                  Open Visualization Collaborator Summit
+                </a>{' '}
+                held at ETH Zürich on September 9–10.
+              </ListItem>
+              <ListItem>
+                vis.gl v10 entered prerelease development.
+              </ListItem>
               <ListItem>math.gl documentation moved to vis.gl/math.gl.</ListItem>
+            </List>
+            <ListTitle>2025</ListTitle>
+            <List>
+              <ListItem>
+                <a href="https://www.openvisualization.org/summits/seattle-summit-2025">
+                  Open Visualization Collaborator Summit
+                </a>{' '}
+                held at Google’s South Lake Union office in Seattle on October 8–9.
+              </ListItem>
             </List>
             <ListTitle>2024</ListTitle>
             <List>
+              <ListItem>
+                <a href="https://www.openvisualization.org/summits/london-summit-2024">
+                  Open Visualization Collaborator Summit
+                </a>{' '}
+                held at Microsoft Reactor in London on September 10–11.
+              </ListItem>
+              <ListItem>
+                vis.gl 9.0 brought major releases of deck.gl and luma.gl.{' '}
+                <a href="https://deck.gl/docs/whats-new#deckgl-v90">deck.gl release notes</a>{' '}and{' '}
+                <a href="https://luma.gl/docs/whats-new">luma.gl release notes</a>.
+              </ListItem>
               <ListItem>react-google-maps was created.</ListItem>
             </List>
             <ListTitle>2023</ListTitle>
             <List>
-              <ListItem><a href="https://deck.gl/events/new-york-summit-2023/">Open Visualization Collaborator Summit</a> held in New York.</ListItem>
+              <ListItem><a href="https://www.openvisualization.org/summits/new-york-summit-2023">Open Visualization Collaborator Summit</a> held at Foursquare in New York on September 6–7.</ListItem>
             </List>
             <ListTitle>2022</ListTitle>
             <List>
-              <ListItem>First annual <a href="https://deck.gl/events/madrid-summit-2022/">Open Visualization Collaborator Summit</a> held in Madrid.</ListItem>
+              <ListItem>First annual <a href="https://www.openvisualization.org/summits/madrid-summit-2022">Open Visualization Collaborator Summit</a> held at CARTO in Madrid on September 22–23.</ListItem>
               <ListItem>flowmap.gl joined the vis.gl project.</ListItem>
               <ListItem>vis.gl and kepler.gl joined the <a href="https://openjsf.org/">OpenJS Foundation</a>.</ListItem>
               <ListItem>Urban Computing Foundation merged with the OpenJS Foundation.</ListItem>
@@ -154,7 +221,12 @@ export default function History() {
             </List>
             <ListTitle>2017</ListTitle>
             <List>
-              <ListItem>math.gl and probe.gl were created.</ListItem>
+              <ListItem>
+                math.gl and probe.gl were created.{' '}
+                <a href="https://medium.com/vis-gl/the-birth-of-a-visualization-framework-suite-958049647e89">
+                  The Birth of a Visualization Framework Suite
+                </a>.
+              </ListItem>
             </List>
             <ListTitle>2016</ListTitle>
             <List><ListItem>luma.gl was created.</ListItem></List>
@@ -182,6 +254,14 @@ export default function History() {
                     <time dateTime={date}>{label}</time>
                   </h3>
                   <Paragraph>{summary}</Paragraph>
+                  <Paragraph>
+                    {RELEASE_LINKS[version].map(([label, href], index) => (
+                      <React.Fragment key={href}>
+                        {index > 0 && ' · '}
+                        <a href={href}>{label}</a>
+                      </React.Fragment>
+                    ))}
+                  </Paragraph>
                 </li>
               ))}
             </ReleaseTimeline>
@@ -195,58 +275,6 @@ export default function History() {
                 Open Visualization Collaborator Summit in Zürich
               </a>. For changes within each release, see the{' '}
               <a href="https://deck.gl/docs/whats-new">deck.gl release notes</a>.
-            </Paragraph>
-          </SectionContent>
-        </SectionContainer>
-      </ContainerSm>
-
-      <ContainerSm>
-        <SectionContainer>
-          <SectionTitle as="h2">Release notes</SectionTitle>
-          <SectionContent>
-            <H3>In development</H3>
-            <Paragraph>
-              <ListTitle>math.gl 5.0</ListTitle>
-              <ListItem>
-                Prerelease development is underway. See the{' '}
-                <a href="/math.gl/docs/whats-new">release notes</a>.
-              </ListItem>
-            </Paragraph>
-            <H3>Selected releases</H3>
-            <H3>vis.gl 9.0</H3>
-            <Paragraph>
-              <ListTitle>Release Date: Mar 21, 2024</ListTitle>
-              <ListTitle>deck.gl 9.0</ListTitle>
-
-              <ListItem>
-                <a href="https://deck.gl/docs/whats-new">Release Notes</a>
-              </ListItem>
-              <div style={{marginTop: 5}} />
-
-              <ListTitle>luma.gl 9.0</ListTitle>
-              <ListItem>
-                <a href="https://luma.gl/docs/whats-new">Release Notes</a>
-              </ListItem>
-              <div style={{marginTop: 5}} />
-
-              <ListTitle>math.gl 4.0</ListTitle>
-              <ListItem>
-                <a href="/math.gl/docs/whats-new">Release Notes</a>
-              </ListItem>
-              <div style={{marginTop: 5}} />
-
-              <ListTitle>loaders.gl 4.2</ListTitle>
-              <ListItem>
-                <a href="https://loaders.gl/docs/whats-new">Release Notes</a>
-              </ListItem>
-              <div style={{marginTop: 5}} />
-            </Paragraph>
-            <H3>react-map-gl 7.1</H3>
-            <Paragraph>
-              <ListTitle>Release Date: Jun 30, 2023</ListTitle>
-              <ListItem>
-                <a href="https://visgl.github.io/react-map-gl/docs/whats-new">Release Notes</a>
-              </ListItem>
             </Paragraph>
           </SectionContent>
         </SectionContainer>
