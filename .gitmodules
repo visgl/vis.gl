@@ -19,3 +19,6 @@
 [submodule "projects/react-google-maps"]
 	path = projects/react-google-maps
 	url = https://github.com/visgl/react-google-maps.git
+[submodule "projects/mjolnir.js"]
+	path = projects/mjolnir.js
+	url = https://github.com/visgl/mjolnir.js.git

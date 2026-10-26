@@ -82,6 +82,12 @@ frameworkGroups:
         description: >
           JavaScript Console Logging, Instrumentation, Benchmarking and Test Utilities.
 
+      - name: mjolnir.js
+        url: https://vis.gl/mjolnir.js/
+        image: /images/frameworks/mjolnir.svg
+        description: >
+          Input handling and gesture recognition for mouse, touch, keyboard, and pointer events.
+
       - name: deck.gl-community
         url: https://vis.gl/deck.gl-community
         image: /images/frameworks/deck.gl-community.png

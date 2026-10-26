@@ -11,6 +11,7 @@ const projects = [
 ];
 
 const internalFrameworks = [
+  {name: 'mjolnir.js', href: '/mjolnir.js/', image: '/images/frameworks/mjolnir.svg', description: 'Input handling and gesture recognition for mouse, touch, keyboard, and pointer events.'},
   {name: 'dev-tools', href: '/dev-tools/', image: '/images/logos/vis-logo.png', description: 'Shared development tools for building, testing, linting, and publishing vis.gl projects.'}
 ];
 

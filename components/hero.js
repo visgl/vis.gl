@@ -1,156 +1,143 @@
 import React, {Component} from 'react';
-
-import {AnimationLoop, Cube, dirlight, setParameters} from 'luma.gl';
+import {luma} from '@luma.gl/core';
+import {AnimationLoop, CubeGeometry, Model} from '@luma.gl/engine';
+import {dirlight} from '@luma.gl/shadertools';
+import {webgl2Adapter} from '@luma.gl/webgl';
 import {Matrix4, radians} from 'math.gl';
 
-const isBrowser = typeof window !== `undefined`;
-
+const isBrowser = typeof window !== 'undefined';
 const SIDE = 64;
 
-function createAnimationLoop() {
-  let projectionMatrix = new Matrix4();
+const heroUniforms = {
+  name: 'hero',
+  uniformTypes: {
+    model: 'mat4x4<f32>',
+    view: 'mat4x4<f32>',
+    projection: 'mat4x4<f32>',
+    time: 'f32'
+  }
+};
 
-  const animationLoop = new AnimationLoop({
-    createFramebuffer: true,
-    onInitialize({gl}) {
-      setParameters(gl, {
-        clearColor: [0, 0, 0, 0],
-        clearDepth: 1,
-        depthTest: true,
-        depthFunc: gl.LEQUAL
-      });
+const vs = `#version 300 es
+in vec3 positions;
+in vec3 normals;
+in vec2 instanceOffsets;
+in vec3 instanceColors;
 
-      return {
-        cube: makeInstancedCube(gl)
-      };
-    },
-    onFinalize({cube}) {
-      cube.delete();
-    },
-    onRender({gl, tick, aspect, cube}) {
-      try {
-        projectionMatrix = new Matrix4().perspective({
-          fov: radians(60),
-          aspect,
-          near: 1,
-          far: 2048.0
-        });
-      } catch {}
+uniform heroUniforms {
+  mat4 model;
+  mat4 view;
+  mat4 projection;
+  float time;
+} hero;
 
-      cube.setUniforms({
-        uTime: tick * 0.1,
-        // Basic projection matrix
-        uProjection: projectionMatrix,
-        // Move the eye around the plane
-        uView: new Matrix4().lookAt({
-          center: [0, 0, 0],
-          eye: [0, (Math.sin(tick * 0.006) * SIDE) / 2, 32]
-        }),
-        uLightDirection: [
-          (Math.cos(tick * 0.001) * SIDE) / 2,
-          (Math.sin(tick * 0.001) * SIDE) / 2,
-          128
-        ],
-        // Rotate all the individual cubes
-        uModel: new Matrix4().rotateX(tick * 0.01).rotateY(tick * 0.013)
-      });
+out vec3 color;
 
-      gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-      cube.render();
-    }
+void main() {
+  color = instanceColors;
+  dirlight_setNormal(vec3(hero.model * vec4(normals, 0.0)));
+  float delta = length(instanceOffsets);
+  vec4 offset = vec4(instanceOffsets, sin((hero.time + delta) * 0.1) * 16.0, 0.0);
+  gl_Position = hero.projection * hero.view * (hero.model * vec4(positions, 1.0) + offset);
+}
+`;
+
+const fs = `#version 300 es
+precision highp float;
+in vec3 color;
+out vec4 fragColor;
+
+void main() {
+  fragColor = dirlight_filterColor(vec4(color, 0.9));
+}
+`;
+
+async function createAnimationLoop(canvas) {
+  const device = await luma.createDevice({
+    adapters: [webgl2Adapter],
+    type: 'webgl',
+    createCanvasContext: {canvas, autoResize: true},
+    webgl: {alpha: true}
   });
 
-  return animationLoop;
-}
-
-// Make a cube with 65K instances and attributes to control offset and color of each instance
-function makeInstancedCube(gl) {
-  let offsets = [];
+  const offsets = new Float32Array(SIDE * SIDE * 2);
+  const colors = new Float32Array(SIDE * SIDE * 3);
   for (let i = 0; i < SIDE; i++) {
-    const x = ((-SIDE + 1) * 3) / 2 + i * 3;
     for (let j = 0; j < SIDE; j++) {
-      const y = ((-SIDE + 1) * 3) / 2 + j * 3;
-      offsets.push(x, y);
+      const index = i * SIDE + j;
+      offsets.set([((-SIDE + 1) * 3) / 2 + i * 3, ((-SIDE + 1) * 3) / 2 + j * 3], index * 2);
+      colors.set([0.06640625, 0.04296875, 0.1640625], index * 3);
     }
   }
-  offsets = new Float32Array(offsets);
-  /*
-     const material = new THREE.MeshPhongMaterial({
-       color: 0x110B2A,
-       specular: 0x8C0112,
-       emissive: 0x100C27,
-       shininess: 30,
-       shading: THREE.FlatShading,
-       side: THREE.DoubleSide,
-     });
-  */
 
-  const colors = new Float32Array(SIDE * SIDE * 3).map(
-    i => [0.06640625, 0.04296875, 0.1640625][i % 3]
-  );
-
-  const {vs, fs} = {
-    vs: `\
-attribute vec3 positions;
-attribute vec3 normals;
-attribute vec2 instanceOffsets;
-attribute vec3 instanceColors;
-
-uniform mat4 uModel;
-uniform mat4 uView;
-uniform mat4 uProjection;
-uniform float uTime;
-
-uniform vec3 uLightDirection;
-
-varying vec3 color;
-
-void main(void) {
-  vec3 normal = vec3(uModel * vec4(normals, 1.0));
-
-  // Set up data for modules
-  color = instanceColors;
-  project_setNormal(normal);
-
-  // Vertex position (z coordinate undulates with time), and model rotates around center
-  float delta = length(instanceOffsets);
-  vec4 offset = vec4(instanceOffsets, sin((uTime + delta) * 0.1) * 16.0, 0);
-  gl_Position = uProjection * uView * (uModel * vec4(positions, 1.0) + offset);
-}
-`,
-    fs: `\
-#ifdef GL_ES
-precision highp float;
-#endif
-
-varying vec3 color;
-
-void main(void) {
-  gl_FragColor = vec4(color, 0.9);
-  gl_FragColor = dirlight_filterColor(gl_FragColor);
-}
-`
-  };
-
-  return new Cube(gl, {
+  const offsetsBuffer = device.createBuffer(offsets);
+  const colorsBuffer = device.createBuffer(colors);
+  const cube = new Model(device, {
+    id: 'homepage-cubes',
     vs,
     fs,
-    modules: [dirlight],
-    isInstanced: 1,
+    modules: [heroUniforms, dirlight],
+    geometry: new CubeGeometry(),
     instanceCount: SIDE * SIDE,
-    attributes: {
-      instanceOffsets: {value: offsets, size: 2, instanced: 1},
-      instanceColors: {value: colors, size: 3, instanced: 1}
+    bufferLayout: [
+      {name: 'instanceOffsets', format: 'float32x2', stepMode: 'instance'},
+      {name: 'instanceColors', format: 'float32x3', stepMode: 'instance'}
+    ],
+    attributes: {instanceOffsets: offsetsBuffer, instanceColors: colorsBuffer},
+    parameters: {depthWriteEnabled: true, depthCompare: 'less-equal'}
+  });
+
+  const loop = new AnimationLoop({
+    device,
+    onRender({tick, aspect}) {
+      cube.shaderInputs.setProps({
+        hero: {
+          time: tick * 0.1,
+          projection: new Matrix4().perspective({fov: radians(60), aspect, near: 1, far: 2048}),
+          view: new Matrix4().lookAt({
+            center: [0, 0, 0],
+            eye: [0, (Math.sin(tick * 0.006) * SIDE) / 2, 32]
+          }),
+          model: new Matrix4().rotateX(tick * 0.01).rotateY(tick * 0.013)
+        },
+        dirlight: {
+          lightDirection: [
+            (Math.cos(tick * 0.001) * SIDE) / 2,
+            (Math.sin(tick * 0.001) * SIDE) / 2,
+            128
+          ]
+        }
+      });
+      const renderPass = device.beginRenderPass({clearColor: [0, 0, 0, 0], clearDepth: 1});
+      cube.draw(renderPass);
+      renderPass.end();
     }
   });
+
+  return {
+    start: () => loop.start(),
+    stop: () => loop.stop(),
+    destroy() {
+      loop.destroy();
+      cube.destroy();
+      offsetsBuffer.destroy();
+      colorsBuffer.destroy();
+      device.destroy();
+    }
+  };
 }
 
 class Hero extends Component {
-  state = {isMounted: false, isAnimating: false};
+  state = {isMounted: false};
   _canvas = React.createRef();
   _observer = null;
+  _animationLoop = null;
+  _initializing = false;
+  _visible = false;
+  _unmounted = false;
 
   componentDidMount() {
+    this._unmounted = false;
     this.setState({isMounted: true}, () => {
       if ('IntersectionObserver' in window && this._canvas.current) {
         this._observer = new IntersectionObserver(([entry]) => {
@@ -168,28 +155,49 @@ class Hero extends Component {
   }
 
   componentWillUnmount() {
+    this._visible = false;
+    this._unmounted = true;
     this._observer?.disconnect();
-    this._animationStop();
+    if (!this._initializing) {
+      this._animationLoop?.destroy();
+      this._animationLoop = null;
+    }
   }
 
-  _animationStart = () => {
-    if (this._animationLoop) {
-      return;
+  _animationStart = async () => {
+    if (this._unmounted) return;
+    this._visible = true;
+    if (this._initializing) return;
+    this._initializing = true;
+    try {
+      if (!this._animationLoop) {
+        const loop = await createAnimationLoop(this._canvas.current);
+        if (this._unmounted) {
+          loop.destroy();
+          return;
+        }
+        this._animationLoop = loop;
+      }
+      if (this._visible) await this._animationLoop.start();
+    } catch (error) {
+      // Keep the homepage readable when WebGL2 is unavailable.
+      this._animationLoop?.destroy();
+      this._animationLoop = null;
+      if (!this._unmounted) console.warn('Homepage animation unavailable:', error);
+    } finally {
+      this._initializing = false;
+      if (this._unmounted) {
+        this._animationLoop?.destroy();
+        this._animationLoop = null;
+      } else if (!this._visible) {
+        this._animationLoop?.stop();
+      }
     }
-    this.setState({isAnimating: true});
-    this._animationLoop = createAnimationLoop();
-    this._animationLoop.start({canvas: 'lumagl-canvas'});
-    this.forceUpdate();
   };
 
   _animationStop = () => {
-    if (this._animationLoop) {
-      this._animationLoop.stop({canvas: 'lumagl-canvas'});
-      this._animationLoop = null;
-    }
-    if (this.state.isAnimating) {
-      this.setState({isAnimating: false});
-    }
+    this._visible = false;
+    if (!this._initializing) this._animationLoop?.stop();
   };
 
   render() {
@@ -199,7 +207,8 @@ class Hero extends Component {
           <canvas
             ref={this._canvas}
             id="lumagl-canvas"
-              style={{
+            aria-hidden="true"
+            style={{
               position: 'absolute',
               height: '450px',
               top: 0,
@@ -221,8 +230,8 @@ class Hero extends Component {
         >
           <div className="main">
             {'Open source tools for '}
-            <em>geospatial</em>
-            {' visualization'}
+            <em>big data</em>
+            {' loading, compute and visualization'}
           </div>
           <div className="secondary">
             Composable frameworks for maps, graphics, and data.

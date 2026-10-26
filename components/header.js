@@ -18,6 +18,7 @@ export default class Header extends Component {
     return (
       <header
         className={classNames({
+          'site-header': true,
           open: isMenuOpen,
           [this.props.page]: true
         })}

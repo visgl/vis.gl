@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {ContainerSm, H1, H3, Paragraph, List} from './styling/components';
+import {ContainerSm, H1, Paragraph} from './styling/components';
 import ImageBox from './image-box';
 import {breakpointsMediaQueries} from './styling/style';
 import Link from '@docusaurus/Link';
@@ -31,6 +31,8 @@ const TitleSection = styled(H1)`
 const ContributorContainer = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
   justify-content: flex-start;
   margin-bottom: 20px;
 `;
@@ -115,21 +117,6 @@ const SectionContent = styled.div`
   flex-grow: 1;
 `;
 
-const ListTitle = styled.div`
-  font-size: 16px;
-  margin-top: 18px;
-  font-family: ${props => props.theme.fontFamilyMedium};
-
-  :first-child {
-    margin-top: 0;
-  }
-`;
-
-const ListItem = styled.div`
-  font-size: 16px;
-  color: ${props => props.theme.gray};
-`;
-
 const GovernanceLogos = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -187,6 +174,17 @@ export default function ManifestoSection() {
                       src={'/images/logos/CARTO-logo-positive.png'}
                       alt="CARTO"
                     />
+                  </a>
+                </div>
+              </ContributorSection>
+              <ContributorSection>
+                <div className="logo-title">Sponsors</div>
+                <div className="logo">
+                  <a href="https://studio.foursquare.com">
+                    <ImageBox width={150} height={60} src="/images/logos/foursquare.svg" alt="Foursquare" />
+                  </a>
+                  <a href="https://www.esri.com/">
+                    <ImageBox width={120} height={60} src="/images/logos/esri.jpg" alt="Esri" />
                   </a>
                 </div>
               </ContributorSection>
@@ -257,112 +255,6 @@ export default function ManifestoSection() {
         </SectionContainer>
       </ContainerSm>
 
-      <ContainerSm>
-        <SectionContainer>
-          <SectionTitle>Releases</SectionTitle>
-          <SectionContent>
-            <H3>In development</H3>
-            <Paragraph>
-              <ListTitle>math.gl 5.0</ListTitle>
-              <ListItem>
-                Prerelease development is underway. See the{' '}
-                <a href="/math.gl/docs/whats-new">release notes</a>.
-              </ListItem>
-            </Paragraph>
-            <H3>Latest stable releases</H3>
-            <H3>vis.gl 9.0</H3>
-            <Paragraph>
-              <ListTitle>Release Date: Mar 21, 2024</ListTitle>
-              <ListTitle>deck.gl 9.0</ListTitle>
-
-              <ListItem>
-                <a href="https://deck.gl/docs/whats-new">Release Notes</a>
-              </ListItem>
-              <div style={{marginTop: 5}} />
-
-              <ListTitle>luma.gl 9.0</ListTitle>
-              <ListItem>
-                <a href="https://luma.gl/docs/whats-new">Release Notes</a>
-              </ListItem>
-              <div style={{marginTop: 5}} />
-
-              <ListTitle>math.gl 4.0</ListTitle>
-              <ListItem>
-                <a href="/math.gl/docs/whats-new">Release Notes</a>
-              </ListItem>
-              <div style={{marginTop: 5}} />
-
-              <ListTitle>loaders.gl 4.2</ListTitle>
-              <ListItem>
-                <a href="https://loaders.gl/docs/whats-new">Release Notes</a>
-              </ListItem>
-              <div style={{marginTop: 5}} />
-            </Paragraph>
-            <H3>react-map-gl 7.1</H3>
-            <Paragraph>
-              <ListTitle>Release Date: Jun 30, 2023</ListTitle>
-              <ListItem>
-                <a href="https://visgl.github.io/react-map-gl/docs/whats-new">Release Notes</a>
-              </ListItem>
-            </Paragraph>
-          </SectionContent>
-        </SectionContainer>
-      </ContainerSm>
-
-      <ContainerSm>
-        <SectionContainer>
-          <SectionTitle>History</SectionTitle>
-          <SectionContent>
-            <ListTitle>2026</ListTitle>
-            <List>
-              <ListItem>math.gl 5.0 entered prerelease development.</ListItem>
-              <ListItem>math.gl documentation moved to vis.gl/math.gl.</ListItem>
-            </List>
-            <ListTitle>2024</ListTitle>
-            <List>
-              <ListItem>react-google-maps was created.</ListItem>
-            </List>
-            <ListTitle>2023</ListTitle>
-            <List>
-              <ListItem><a href="https://deck.gl/events/new-york-summit-2023/">Open Visualization Collaborator Summit</a> held in New York.</ListItem>
-            </List>
-            <ListTitle>2022</ListTitle>
-            <List>
-              <ListItem>First annual <a href="https://deck.gl/events/madrid-summit-2022/">Open Visualization Collaborator Summit</a> held in Madrid.</ListItem>
-              <ListItem>flowmap.gl joined the vis.gl project.</ListItem>
-              <ListItem>vis.gl and kepler.gl joined the <a href="https://openjsf.org/">OpenJS Foundation</a>.</ListItem>
-              <ListItem>Urban Computing Foundation merged with the OpenJS Foundation.</ListItem>
-              <ListItem>The <a href="https://www.openvisualization.org/">Open Visualization Collaboration Group</a> formed.</ListItem>
-            </List>
-            <ListTitle>2020</ListTitle>
-            <List>
-              <ListItem>vis.gl Open Governance meetings began under the Linux Foundation and UCF.</ListItem>
-              <ListItem>Uber transferred a set of core vis.gl frameworks to the UCF.</ListItem>
-              <ListItem>hubble.gl was created.</ListItem>
-            </List>
-            <ListTitle>2019</ListTitle>
-            <List>
-              <ListItem>Uber created the Urban Computing Foundation and transferred kepler.gl.</ListItem>
-            </List>
-            <ListTitle>2018</ListTitle>
-            <List>
-              <ListItem>Uber open sourced kepler.gl.</ListItem>
-              <ListItem>loaders.gl and nebula.gl were created.</ListItem>
-            </List>
-            <ListTitle>2017</ListTitle>
-            <List>
-              <ListItem>math.gl and probe.gl were created.</ListItem>
-            </List>
-            <ListTitle>2016</ListTitle>
-            <List><ListItem>luma.gl was created.</ListItem></List>
-            <ListTitle>2015</ListTitle>
-            <List>
-              <ListItem>Uber open sourced the core deck.gl framework.</ListItem>
-              <ListItem>Uber developed deck.gl for geospatial visualization.</ListItem>
-            </List>
-          </SectionContent>
-        </SectionContainer>
-      </ContainerSm>
     </Sections>
   );
 }

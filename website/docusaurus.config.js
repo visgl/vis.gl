@@ -46,7 +46,6 @@ const config = {
       name: 'yaml-loader',
       configureWebpack() {
         return {
-          resolve: {fallback: {assert: require.resolve('assert/')}} ,
           module: {rules: [{test: /\.ya?ml$/, use: [{loader: require.resolve('yaml-loader')}]}]}
         };
       }

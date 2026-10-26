@@ -5,7 +5,7 @@ const title = 'VIS.GL';
 
 const Menu = ({toggleMenu, items}) => {
   return (
-    <div onMouseOver={() => toggleMenu(true)} onMouseOut={() => toggleMenu(false)}>
+    <div className="project-menu" onMouseEnter={() => toggleMenu(true)} onMouseLeave={() => toggleMenu(false)}>
       <h1 className="title-link">
         <Link href="/">{title}</Link>
       </h1>
