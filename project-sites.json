@@ -185,6 +185,28 @@
           ]
         }
       ]
+    },
+    {
+      "name": "mjolnir.js",
+      "mountPath": "/mjolnir.js",
+      "source": "projects/mjolnir.js/website/build",
+      "robotsTxt": "User-agent: *\nDisallow: /\n",
+      "build": [
+        {
+          "command": "git",
+          "args": ["submodule", "update", "--init", "--recursive", "--", "projects/mjolnir.js"]
+        },
+        {
+          "cwd": "projects/mjolnir.js/website",
+          "command": "npm",
+          "args": ["install", "--no-package-lock"]
+        },
+        {
+          "cwd": "projects/mjolnir.js/website",
+          "command": "npm",
+          "args": ["run", "docusaurus", "--", "build", "--config", "../../../project-site-configs/mjolnir.js.mjs"]
+        }
+      ]
     }
   ]
 }

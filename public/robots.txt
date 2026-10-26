@@ -7,3 +7,4 @@ Disallow: /tangram.gl/
 Disallow: /react-map-gl/
 Disallow: /dev-tools/
 Disallow: /react-google-maps/
+Disallow: /mjolnir.js/

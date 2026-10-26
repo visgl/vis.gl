@@ -130,6 +130,55 @@ const ListItem = styled.div`
   color: ${props => props.theme.gray};
 `;
 
+const ReleaseTimeline = styled.ol`
+  list-style: none;
+  margin: 24px 0;
+  padding: 0;
+
+  li {
+    border-left: 2px solid ${props => props.theme.gray};
+    padding: 0 0 24px 20px;
+  }
+
+  li:last-child {
+    padding-bottom: 0;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+  }
+
+  time {
+    display: block;
+    color: ${props => props.theme.gray};
+    font-size: 14px;
+    font-weight: normal;
+  }
+`;
+
+// Source: “The road so far…” in the 2026 OpenVis State of the Union slides.
+const DECK_RELEASE_HISTORY = [
+  ['1', '2016-01', 'January 2016',
+    'The first release introduced a WebGL overlay suite for maps, with a layer framework and samples.'],
+  ['2', '2016-04', 'April 2016',
+    'luma.gl and React integration arrived, along with ScatterplotLayer and LineLayer.'],
+  ['3', '2016-11', 'November 2016',
+    '64-bit precision, a shader module system, and new arc and grid layers accompanied the first publicized release and deck.gl website.'],
+  ['4', '2017-04', 'April 2017',
+    'WebGL2 and composite layers expanded the framework, with GeoJSON, paths, polygons, icons, point clouds, and aggregation layers.'],
+  ['5', '2017-12', 'December 2017',
+    'Use without React, modular @deck.gl packages, multiple views, transitions, automatic highlighting, and loading data from URLs.'],
+  ['6', '2018-07', 'July 2018',
+    'High-precision 32-bit projection, TextLayer, GPU aggregation, and interleaved rendering with Mapbox.'],
+  ['7', '2019-04', 'April 2019',
+    'loaders.gl integration enabled binary data and streaming. Layer extensions, lighting and post-processing effects, Google Maps integration, and new bitmap, heatmap, H3, and scenegraph layers broadened the toolkit.'],
+  ['8', '2019-12', 'December 2019–March 2024',
+    'The v8 series brought performance improvements, tiled data and terrain layers, pydeck, GlobeView, and new layer extensions, plus CARTO, ArcGIS, and interleaved Google Maps integration.'],
+  ['9', '2024-03', 'March 2024',
+    'TypeScript, the foundations for WebGPU support, a widget catalog, and views beyond Web Mercator marked the next generation.']
+];
+
 const GovernanceLogos = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -304,6 +353,40 @@ export default function ManifestoSection() {
               <ListItem>
                 <a href="https://visgl.github.io/react-map-gl/docs/whats-new">Release Notes</a>
               </ListItem>
+            </Paragraph>
+          </SectionContent>
+        </SectionContainer>
+      </ContainerSm>
+
+      <ContainerSm>
+        <SectionContainer id="deck-gl-release-history">
+          <SectionTitle as="h2">deck.gl release history</SectionTitle>
+          <SectionContent>
+            <Paragraph>
+              From WebGL map overlays to a framework for large-scale visualization, each major
+              release expanded what developers could build with deck.gl.
+            </Paragraph>
+            <ReleaseTimeline aria-label="deck.gl major releases">
+              {DECK_RELEASE_HISTORY.map(([version, date, label, summary]) => (
+                <li key={version}>
+                  <h3>
+                    deck.gl {version}
+                    <time dateTime={date}>{label}</time>
+                  </h3>
+                  <Paragraph>{summary}</Paragraph>
+                </li>
+              ))}
+            </ReleaseTimeline>
+            <Paragraph>
+              Adapted from the{' '}
+              <a href="https://docs.google.com/presentation/d/18st07cfMUvkTpe2a7VeoTL18HIgQpOYxakH03CHVTiw/edit#slide=id.g3f9dcc3bfa0_0_30">
+                2026 State of the Union slides
+              </a>{' '}
+              presented at the{' '}
+              <a href="https://www.openvisualization.org/summits/zurich-summit-2026">
+                Open Visualization Collaborator Summit in Zürich
+              </a>. For changes within each release, see the{' '}
+              <a href="https://deck.gl/docs/whats-new">deck.gl release notes</a>.
             </Paragraph>
           </SectionContent>
         </SectionContainer>
