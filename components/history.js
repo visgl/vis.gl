@@ -166,7 +166,6 @@ export default function History() {
               <ListItem>
                 vis.gl v10 entered prerelease development.
               </ListItem>
-              <ListItem>math.gl documentation moved to vis.gl/math.gl.</ListItem>
             </List>
             <ListTitle>2025</ListTitle>
             <List>
@@ -200,8 +199,10 @@ export default function History() {
             <List>
               <ListItem>First annual <a href="https://www.openvisualization.org/summits/madrid-summit-2022">Open Visualization Collaborator Summit</a> held at CARTO in Madrid on September 22–23.</ListItem>
               <ListItem>flowmap.gl joined the vis.gl project.</ListItem>
-              <ListItem>vis.gl and kepler.gl joined the <a href="https://openjsf.org/">OpenJS Foundation</a>.</ListItem>
-              <ListItem>Urban Computing Foundation merged with the OpenJS Foundation.</ListItem>
+              <ListItem>
+                vis.gl and kepler.gl joined the <a href="https://openjsf.org/">OpenJS Foundation</a>{' '}
+                through its merger with the Urban Computing Foundation.
+              </ListItem>
               <ListItem>The <a href="https://www.openvisualization.org/">Open Visualization Collaboration Group</a> formed.</ListItem>
             </List>
             <ListTitle>2020</ListTitle>
@@ -232,8 +233,7 @@ export default function History() {
             <List><ListItem>luma.gl was created.</ListItem></List>
             <ListTitle>2015</ListTitle>
             <List>
-              <ListItem>Uber open sourced the core deck.gl framework.</ListItem>
-              <ListItem>Uber developed deck.gl for geospatial visualization.</ListItem>
+              <ListItem>Uber developed and open sourced deck.gl for geospatial visualization.</ListItem>
             </List>
           </SectionContent>
         </SectionContainer>
