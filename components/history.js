@@ -158,6 +158,7 @@ export default function History() {
             <ListTitle>2026</ListTitle>
             <List>
               <ListItem>
+                The fifth{' '}
                 <a href="https://www.openvisualization.org/summits/zurich-summit-2026">
                   Open Visualization Collaborator Summit
                 </a>{' '}
@@ -170,6 +171,7 @@ export default function History() {
             <ListTitle>2025</ListTitle>
             <List>
               <ListItem>
+                The fourth{' '}
                 <a href="https://www.openvisualization.org/summits/seattle-summit-2025">
                   Open Visualization Collaborator Summit
                 </a>{' '}
@@ -179,6 +181,7 @@ export default function History() {
             <ListTitle>2024</ListTitle>
             <List>
               <ListItem>
+                The third{' '}
                 <a href="https://www.openvisualization.org/summits/london-summit-2024">
                   Open Visualization Collaborator Summit
                 </a>{' '}
@@ -193,11 +196,11 @@ export default function History() {
             </List>
             <ListTitle>2023</ListTitle>
             <List>
-              <ListItem><a href="https://www.openvisualization.org/summits/new-york-summit-2023">Open Visualization Collaborator Summit</a> held at Foursquare in New York on September 6–7.</ListItem>
+              <ListItem>The second <a href="https://www.openvisualization.org/summits/new-york-summit-2023">Open Visualization Collaborator Summit</a> held at Foursquare in New York on September 6–7.</ListItem>
             </List>
             <ListTitle>2022</ListTitle>
             <List>
-              <ListItem>First annual <a href="https://www.openvisualization.org/summits/madrid-summit-2022">Open Visualization Collaborator Summit</a> held at CARTO in Madrid on September 22–23.</ListItem>
+              <ListItem>The first <a href="https://www.openvisualization.org/summits/madrid-summit-2022">Open Visualization Collaborator Summit</a> held at CARTO in Madrid on September 22–23.</ListItem>
               <ListItem>flowmap.gl joined the vis.gl project.</ListItem>
               <ListItem>
                 vis.gl and kepler.gl joined the <a href="https://openjsf.org/">OpenJS Foundation</a>{' '}
