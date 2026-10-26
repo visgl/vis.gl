@@ -38,6 +38,9 @@
           label: Showcases
           route: /showcases
       - item:
+          label: Release history
+          route: /history
+      - item:
           label: News
           route: /news
       - item:

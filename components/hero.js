@@ -220,8 +220,8 @@ class Hero extends Component {
         >
           <div className="main">
             {'Open source tools for '}
-            <em>geospatial</em>
-            {' visualization'}
+            <em>big data</em>
+            {' loading, compute and visualization'}
           </div>
           <div className="secondary">
             Composable frameworks for maps, graphics, and data.
