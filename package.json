@@ -27,7 +27,7 @@
     "@luma.gl/shadertools": "~9.4.2",
     "@luma.gl/webgl": "~9.4.2",
     "classnames": "^2.5.1",
-    "markdown-it": "^15.0.1",
+    "markdown-it": "^15.0.3",
     "math.gl": "^2.3.0",
     "react": "19.2.8",
     "react-dom": "19.2.8"
