@@ -83,7 +83,7 @@ const ReleaseTimeline = styled.ol`
 // Historical releases: “The road so far…” in the 2026 OpenVis State of the Union slides.
 const DECK_RELEASE_HISTORY = [
   ['10', '2026', 'End of 2026 (planned)',
-    'Planned highlights include WebGPU-optimized rendering, end-to-end binary columnar data and Apache Arrow support, a GPU graph compute framework, and state-of-the-art coordinate reference system (CRS) support.'],
+    'Planned highlights include WebGPU-optimized rendering, end-to-end binary columnar data and Apache Arrow support, a GPU graph compute framework, and state-of-the-art CRS and map projection support.'],
   ['9', '2024-03', 'March 2024',
     'TypeScript, the foundations for WebGPU support, a widget catalog, and views beyond Web Mercator marked the next generation.'],
   ['8', '2019-12', 'December 2019–March 2024',
