@@ -80,8 +80,10 @@ const ReleaseTimeline = styled.ol`
   }
 `;
 
-// Source: “The road so far…” in the 2026 OpenVis State of the Union slides.
+// Historical releases: “The road so far…” in the 2026 OpenVis State of the Union slides.
 const DECK_RELEASE_HISTORY = [
+  ['10', '2026', 'End of 2026 (planned)',
+    'Planned highlights include WebGPU-optimized rendering, end-to-end binary columnar data and Apache Arrow support, a GPU graph compute framework, and state-of-the-art coordinate reference system (CRS) support.'],
   ['9', '2024-03', 'March 2024',
     'TypeScript, the foundations for WebGPU support, a widget catalog, and views beyond Web Mercator marked the next generation.'],
   ['8', '2019-12', 'December 2019–March 2024',
@@ -257,19 +259,19 @@ export default function History() {
                     <time dateTime={date}>{label}</time>
                   </h3>
                   <Paragraph>{summary}</Paragraph>
-                  <Paragraph>
+                  {RELEASE_LINKS[version] && <Paragraph>
                     {RELEASE_LINKS[version].map(([label, href], index) => (
                       <React.Fragment key={href}>
                         {index > 0 && ' · '}
                         <a href={href}>{label}</a>
                       </React.Fragment>
                     ))}
-                  </Paragraph>
+                  </Paragraph>}
                 </li>
               ))}
             </ReleaseTimeline>
             <Paragraph>
-              Adapted from the{' '}
+              Historical entries adapted from the{' '}
               <a href="https://docs.google.com/presentation/d/18st07cfMUvkTpe2a7VeoTL18HIgQpOYxakH03CHVTiw/edit#slide=id.g3f9dcc3bfa0_0_30">
                 2026 State of the Union slides
               </a>{' '}
