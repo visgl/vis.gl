@@ -169,8 +169,8 @@
         },
         {
           "cwd": "projects/react-google-maps",
-          "command": "npm",
-          "args": ["ci"]
+          "command": "node",
+          "args": ["scripts/install-website.mjs"]
         },
         {
           "cwd": "projects/react-google-maps/website",
