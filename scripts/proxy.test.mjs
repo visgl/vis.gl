@@ -2,7 +2,8 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {proxy, origins} from '../netlify/edge-functions/lib/proxy.mjs';
 
-const url = 'https://raw.githubusercontent.com/visgl/vis.gl/master/README.md';
+const url =
+  'https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/bart-stations.json';
 const req = (headers = {}, method = 'GET', target = url) =>
   new Request(`https://vis.gl/api/proxy?url=${encodeURIComponent(target)}`, {
     method,
@@ -172,7 +173,7 @@ test('allowed redirects and compression metadata', async () => {
       if (calls++ === 0)
         return new Response(null, {
           status: 302,
-          headers: {location: '/visgl/vis.gl/master/README.md'}
+          headers: {location: '/visgl/deck.gl-data/master/website/bart-stations.json'}
         });
       assert.equal(target.href, url);
       return new Response('decoded', {
@@ -239,4 +240,72 @@ test('midstream failures terminate the stream', async () => {
   });
   assert.equal(result.status, 200);
   await assert.rejects(result.text(), /Disconnected/);
+});
+
+test('only reviewed repositories, refs and data directories can be fetched', async () => {
+  const approved = [
+    'visgl/deck.gl-data/master/examples/arc/counties.json',
+    'visgl/deck.gl-data/refs/heads/master/website/bart-stations.json',
+    'visgl/deck.gl-data/master/formats/geoparquet/countries/countries_zstd.parquet',
+    'visgl/deck.gl-data/master/3d-tiles/RoyalExhibitionBuilding/tileset.json',
+    'uber-common/deck.gl-data/master/luma.gl/examples/gltf/papermill/specular/a.jpg',
+    'visgl/react-map-gl/master/examples/.data/feature-example-sf.json',
+    'uber/react-map-gl/master/examples/.data/us-income.geojson',
+    'visgl/deck.gl-community/master/examples/layers/skybox-assets/tycho-negx.jpg',
+    'visgl/deck.gl-community/refs/heads/master/modules/graph-layers/test/data/__fixtures__/dot/karate.dot',
+    'visgl/luma.gl/master/examples/api/cubemap/sky-posx.png'
+  ];
+  for (const path of approved) {
+    const response = await proxy(req({}, 'GET', `https://raw.githubusercontent.com/${path}`), {
+      fetcher: ok
+    });
+    assert.equal(response.status, 200, path);
+    await response.body.cancel();
+  }
+  for (const path of [
+    'someone/deck.gl-data/master/examples/data.json',
+    'visgl/deck.gl-data-fork/master/examples/data.json',
+    'visgl/deck.gl-data/master/README.md',
+    'visgl/deck.gl-data/main/examples/data.json',
+    'visgl/deck.gl-data/refs/tags/master/examples/data.json',
+    'visgl/deck.gl-data/master/examples-private/data.json',
+    'visgl/deck.gl-data/master/examples/',
+    'visgl/deck.gl-data/master/examples/../README.md',
+    'visgl/deck.gl-data/master/examples/%2e%2e/README.md',
+    'visgl/deck.gl-data/master/examples/%252e%252e/README.md',
+    'visgl/deck.gl-data/master/examples/a%2fb.json',
+    'visgl/deck.gl-data/master/examples/a%5cb.json',
+    'visgl/deck.gl-data/master/examples//data.json',
+    'visgl/react-map-gl/master/src/index.ts',
+    'visgl/luma.gl/master/examples/api/cubemap-other/data.png'
+  ]) {
+    let fetched = false;
+    const response = await proxy(req({}, 'GET', `https://raw.githubusercontent.com/${path}`), {
+      fetcher: async () => {
+        fetched = true;
+        return ok();
+      }
+    });
+    assert.equal(response.status, 400, path);
+    assert.equal(fetched, false, path);
+  }
+});
+
+test('redirects cannot escape approved data roots on the same host', async () => {
+  for (const location of [
+    '/visgl/deck.gl-data/master/README.md',
+    '/someone/data/master/examples/file.json',
+    '../README.md',
+    '/visgl/deck.gl-data/main/website/bart-stations.json'
+  ]) {
+    let calls = 0;
+    const response = await proxy(req(), {
+      fetcher: async () => {
+        calls++;
+        return new Response(null, {status: 302, headers: {location}});
+      }
+    });
+    assert.equal(response.status, 502, location);
+    assert.equal(calls, 1, location);
+  }
 });

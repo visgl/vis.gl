@@ -1,3 +1,5 @@
+import {isApprovedDataPath} from './upstreams.mjs';
+
 export const origins = new Set([
   'https://vis.gl',
   'https://visgl.github.io',
@@ -31,7 +33,8 @@ function upstream(value) {
     url.username ||
     url.password ||
     url.port ||
-    !upstreamHosts.has(url.hostname)
+    !upstreamHosts.has(url.hostname) ||
+    !isApprovedDataPath(url)
   )
     throw new Error('Invalid upstream');
   url.hash = '';
